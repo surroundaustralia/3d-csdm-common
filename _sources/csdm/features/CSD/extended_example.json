@@ -22,7 +22,9 @@
     "endedAtTime": "2029-01-01T01:02:03Z"
   },
   "purpose": "code:subdivision",
-  "time": { "date": "2022-05-22" },
+  "time": {
+    "date": "2022-05-22"
+  },
   "horizontalCRS": "epsg:4167",
   "bearingRotation": 0.0,
   "surveyType": "icsm:Subdivision",
@@ -30,7 +32,9 @@
     {
       "id": "DP_119552",
       "name": "DP 119552",
-      "time": { "date": "2022-02-11" },
+      "time": {
+        "date": "2022-02-11"
+      },
       "bearingRotation": 0.0
     }
   ],
@@ -407,8 +411,8 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
-              174.7499979960,
-              -36.9309039370
+              174.749997996,
+              -36.930903937
             ]
           },
           "properties": {
@@ -502,7 +506,7 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
-              174.7504315500,
+              174.75043155,
               -36.9309699441
             ]
           },
@@ -637,7 +641,7 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
-              174.7507910410,
+              174.750791041,
               -36.9312489607
             ]
           },
@@ -813,7 +817,7 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
-              174.7513247880,
+              174.751324788,
               -36.9311247115
             ]
           },
@@ -1209,7 +1213,7 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
-              174.7510108050,
+              174.751010805,
               -36.9310015962
             ]
           },
@@ -1297,7 +1301,7 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
-              174.7509800560,
+              174.750980056,
               -36.9310510313
             ]
           },
@@ -1517,7 +1521,7 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
-              174.7505400740,
+              174.750540074,
               -36.9310610479
             ]
           },
@@ -1588,8 +1592,8 @@
                 -36.9307359096
               ],
               [
-                174.7499979960,
-                -36.9309039370
+                174.749997996,
+                -36.930903937
               ]
             ]
           },
@@ -2202,7 +2206,6 @@
           "geometry": null,
           "properties": {
             "hasFeatureOfInterest": "l566592",
-            "resultTime": "2023-03-10T10:19:25+13:00",
             "hasResult": {
               "distance": 95.06,
               "angle": 141.81944444444443

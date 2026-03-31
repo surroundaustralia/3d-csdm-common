@@ -6,7 +6,6 @@
     "geojson": "https://purl.org/geojson/vocab#",
     "geosparql": "http://www.opengis.net/ont/geosparql#",
     "surv": "https://linked.data.gov.au/def/csdm/surveyfeatures/",
-    "@base": "https://linked.data.gov.au/def/csdm/surveyfeatures/",
     "dct": "http://purl.org/dc/terms/",
     "place": "geojson:geometry",
     "purpose": {

@@ -19,11 +19,13 @@
   "type": "FeatureCollection",
   "featureType": "CSD",
   "purpose": "code:subdivision",
-  "time": { "date": "2022-05-23" },
+  "time": {
+    "date": "2022-05-23"
+  },
   "horizontalCRS": "epsg:4167",
   "bearingRotation": 0.0,
   "surveyType": "icsm-survey-type:Subdivision",
-    "wasGeneratedBy": {
+  "wasGeneratedBy": {
     "id": "DP-1-S2",
     "endedAtTime": "2029-01-01T01:02:03Z"
   },
@@ -32,7 +34,9 @@
     {
       "id": "DP_119552",
       "name": "DP 119552",
-      "time": { "date": "2022-05-23" },
+      "time": {
+        "date": "2022-05-23"
+      },
       "bearingRotation": 0.001
     }
   ],
@@ -124,8 +128,8 @@
           "geometry": {
             "type": "Point",
             "coordinates": [
-              174.7499979960,
-              -36.9309039370
+              174.749997996,
+              -36.930903937
             ]
           },
           "time": null,
@@ -216,7 +220,6 @@
           "geometry": null,
           "properties": {
             "hasFeatureOfInterest": "l973158",
-            "resultTime": "2023-05-22T16:41:00",
             "hasResult": {
               "pose": {
                 "angles": {
