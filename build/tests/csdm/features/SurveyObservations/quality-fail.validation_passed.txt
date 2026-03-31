@@ -1,5 +1,5 @@
 Validation report for icsm.csdm.features.SurveyObservations - Survey Observations
-Generated 2024-07-25T00:08:38.306392+00:00
+Generated 2026-03-31T04:19:20.344015+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -65,7 +65,7 @@ Failed validating 'anyOf' in schema:
                                                                                                'pose': {'$ref': '#/$defs/pose-lenient',
                                                                                                         'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/pose'}},
                                                                                 'x-jsonld-id': 'sosa:hasResult'},
-                                                                  'hasResultQuality': {'$ref': 'https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml'}},
+                                                                  'hasResultQuality': {'$ref': 'https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml'}},
                                                    'required': ['hasResult'],
                                                    'type': 'object'}]},
                'angles': {'description': 'Basic-YPR: Basic GeoPose using '
@@ -90,6 +90,17 @@ Failed validating 'anyOf' in schema:
      'anyOf': [{'$ref': '#/$defs/SurveyVectorObsFeature'},
                {'$ref': '#/$defs/SurveyVectorObsCollection'}],
      'description': 'Survey Vector Observation',
+     'x-jsonld-extra-terms': {'hasResult': {'x-jsonld-context': {'distance': 'https://linked.data.gov.au/def/csdm/surveyfeatures/distance',
+                                                                 'pose': {'@context': {'angles': {'@context': {'pitch': 'https://linked.data.gov.au/def/csdm/utils/geopose/pitch',
+                                                                                                               'roll': 'https://linked.data.gov.au/def/csdm/utils/geopose/roll',
+                                                                                                               'yaw': 'https://linked.data.gov.au/def/csdm/utils/geopose/yaw'},
+                                                                                                  '@id': 'https://linked.data.gov.au/def/csdm/utils/geopose/angles'},
+                                                                                       'position': {'@context': {'h': 'https://linked.data.gov.au/def/csdm/utils/geopose/h',
+                                                                                                                 'lat': 'geo:lat',
+                                                                                                                 'lon': 'geo:long'},
+                                                                                                    '@id': 'https://linked.data.gov.au/def/csdm/utils/geopose/position'}},
+                                                                          '@id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/pose'}},
+                                            'x-jsonld-id': 'sosa:hasResult'}},
      'x-jsonld-prefixes': {'angletype': 'https://linked.data.gov.au/def/csdm/defs/angletypes/',
                            'csdm': 'https://linked.data.gov.au/def/csdm/',
                            'dct': 'http://purl.org/dc/terms/',
@@ -127,17 +138,20 @@ Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:
 Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:
  - Shape :testRequiredProperties: *none*
 
-Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl:
+Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
   Validation Report
   Conforms: True
   
-Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: _:N1a45164d9da040a49ddf7a53178e66b0
+Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:N1a45164d9da040a49ddf7a53178e66b0
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:N1a45164d9da040a49ddf7a53178e66b0
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:N1a45164d9da040a49ddf7a53178e66b0
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:N153f79b49faa4bbc921eb8525730ff88
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*
 
 === End SHACL ===
 

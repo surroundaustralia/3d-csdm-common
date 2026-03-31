@@ -1,4 +1,5 @@
 {
+  "@context": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld",
   "type": "Feature",
   "geometry": null,
   "time": null,
@@ -14,6 +15,5 @@
     "hasResult": {
       "something": "else"
     }
-  },
-  "@context": "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld"
+  }
 }

@@ -18,7 +18,7 @@ $defs:
     type: object
     properties:
       name:
-        $ref: https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
+        $ref: https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
         x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/name
         x-jsonld-type: '@id'
       purpose:
@@ -99,7 +99,7 @@ $defs:
     - type: object
       properties:
         geodeticid:
-          $ref: https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
+          $ref: https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
           x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/geodeticid
       required:
       - geodeticid
@@ -198,11 +198,33 @@ anyOf:
 - $ref: '#/$defs/SurveyedVector'
 x-jsonld-extra-terms:
   place: https://purl.org/geojson/vocab#geometry
+  purpose:
+    x-jsonld-type: '@id'
+    x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/purpose
+  vectorPurpose:
+    x-jsonld-type: '@id'
+    x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/vectorPurpose
+  monumentedBy:
+    x-jsonld-type: '@id'
+    x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/monumentedBy
+  comment: http://www.w3.org/2000/01/rdf-schema#comment
+  note: http://www.w3.org/2000/01/rdf-schema#comment
+  age: https://linked.data.gov.au/def/csdm/surveyfeatures/age
+  geodeticid: https://linked.data.gov.au/def/csdm/surveyfeatures/geodeticid
+  fromSurvey:
+    x-jsonld-type: '@id'
+    x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/fromSurvey
   CadastralMark:
     x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/CadastralMark
     x-jsonld-type: '@id'
   BoundaryMark:
     x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/BoundaryMark
+    x-jsonld-type: '@id'
+  ptQuality:
+    x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/qualityClass
+    x-jsonld-type: '@id'
+  ptQualityMeasure:
+    x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/qualityMeasure
     x-jsonld-type: '@id'
   GeodeticReferenceMark:
     x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/GeodeticReferenceMark
@@ -212,6 +234,9 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   AdoptedVector:
     x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/SurveyedVector
+    x-jsonld-type: '@id'
+  name:
+    x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/name
     x-jsonld-type: '@id'
   label: http://www.w3.org/2000/01/rdf-schema#label
 x-jsonld-prefixes:

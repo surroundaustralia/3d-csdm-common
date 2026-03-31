@@ -1,6 +1,6 @@
-path	@id
-/label	http://www.w3.org/2000/01/rdf-schema#label
-/template	
-/hasPart	http://purl.org/dc/terms/hasPart
-/hasPart/label	http://www.w3.org/2000/01/rdf-schema#label
-/hasPart/type	https://linked.data.gov.au/def/csdm/commonpatterns/namePartType
+path	@id	schema
+/label	http://www.w3.org/2000/01/rdf-schema#label	/github/workspace/build/annotated/csdm/datatypes/compoundName/schema.yaml
+/template		/github/workspace/build/annotated/csdm/datatypes/compoundName/schema.yaml
+/hasPart	http://purl.org/dc/terms/hasPart	/github/workspace/build/annotated/csdm/datatypes/compoundName/schema.yaml
+/hasPart/label	http://www.w3.org/2000/01/rdf-schema#label	/github/workspace/build/annotated/csdm/datatypes/compoundName/schema.yaml
+/hasPart/type	https://linked.data.gov.au/def/csdm/commonpatterns/namePartType	/github/workspace/build/annotated/csdm/datatypes/compoundName/schema.yaml

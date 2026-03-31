@@ -32,7 +32,7 @@ A name with a label, but also a set of parts with roles that can be validated ag
 #### jsonld
 ```jsonld
 {
-  "@context": "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/context.jsonld",
+  "@context": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/context.jsonld",
   "@graph": [
     {
       "description": "Annotation with link and role",
@@ -97,6 +97,8 @@ $defs:
         $ref: '#/$defs/Options'
 allOf:
 - $ref: '#/$defs/AnnotationSet'
+x-jsonld-extra-terms:
+  description: http://purl.org/dc/terms/description
 x-jsonld-prefixes:
   dct: http://purl.org/dc/terms/
 
@@ -104,8 +106,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/schema.json)
-* JSON version: [schema.json](https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/schema.yaml)
+* YAML version: [schema.yaml](https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/schema.json)
+* JSON version: [schema.json](https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/schema.yaml)
 
 
 # JSON-LD Context
@@ -147,7 +149,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/context.jsonld)
+[context.jsonld](https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/context.jsonld)
 
 ## Sources
 
@@ -157,6 +159,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/icsm-au/3d-csdm-common](https://github.com/icsm-au/3d-csdm-common)
+* URL: [https://github.com/surroundaustralia/3d-csdm-common](https://github.com/surroundaustralia/3d-csdm-common)
 * Path: `_sources/csdm/datatypes/annotation`
 

@@ -82,7 +82,7 @@ Either geometry will inherit its CRS from the container's defaults.
 ```jsonld
 {
   "@context": [
-    "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/context.jsonld",
+    "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/context.jsonld",
     {
       "@base": "https://linked.data.gov.au/def/csdm/csd-example/",
       "eg1": "https://linked.data.gov.au/def/csdm/csd-example/",
@@ -152,12 +152,12 @@ Either geometry will inherit its CRS from the container's defaults.
 
 eg1:P1 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "IS I - DP 3333" ;
+    rdfs:comment "All survey marks will have a monumented state - a physical monument may be absent however using a monument type which is an explicit statement about the state" ;
+    commonpatterns:name [ rdfs:label "IS I - DP 3333" ;
             dct:hasPart [ rdfs:label "IS I" ;
                     commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP 3333" ;
                     commonpatterns:namePartType "Source" ] ] ;
-    rdfs:comment "All survey marks will have a monumented state - a physical monument may be absent however using a monument type which is an explicit statement about the state" ;
     surv:monumentedBy [ surv:condition nz-monument-condition:fair ;
             surv:form nz-monument-form:pin ;
             surv:state nz-monument-state:present ] ;
@@ -227,7 +227,7 @@ An example Geodetic Mark extending Survey Point with additional geodeticid attri
 ```jsonld
 {
   "@context": [
-    "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/context.jsonld",
+    "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/context.jsonld",
     {
       "@base": "https://linked.data.gov.au/def/csdm/csd-example/",
       "eg1": "https://linked.data.gov.au/def/csdm/csd-example/",
@@ -294,11 +294,11 @@ An example Geodetic Mark extending Survey Point with additional geodeticid attri
 
 eg1:P2 a surv:GeodeticReferenceMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "IS II - DP 3333" ;
-            dct:hasPart [ rdfs:label "IS II" ;
-                    commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "DP 3333" ;
-                    commonpatterns:namePartType "Source" ] ] ;
+    commonpatterns:name [ rdfs:label "IS II - DP 3333" ;
+            dct:hasPart [ rdfs:label "DP 3333" ;
+                    commonpatterns:namePartType "Source" ],
+                [ rdfs:label "IS II" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
     surv:geodeticid "XX 33455" ;
     surv:monumentedBy [ surv:condition nz-monument-condition:fair ;
             surv:form nz-monument-form:pin ;
@@ -339,7 +339,7 @@ A monument as a standalone object
 ```jsonld
 {
   "@context": [
-    "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/context.jsonld",
+    "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/context.jsonld",
     {
       "@base": "https://linked.data.gov.au/def/csdm/csd-example/",
       "eg1": "https://linked.data.gov.au/def/csdm/csd-example/",
@@ -413,7 +413,7 @@ An example vector (line between two points) using the topo-line schema from the 
 ```jsonld
 {
   "@context": [
-    "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/context.jsonld",
+    "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/context.jsonld",
     {
       "@base": "https://linked.data.gov.au/def/csdm/csd-example/",
       "eg1": "https://linked.data.gov.au/def/csdm/csd-example/",
@@ -456,6 +456,7 @@ An example vector (line between two points) using the topo-line schema from the 
 
 eg1:P1P3 a surv:ObservedVector,
         geojson:Feature ;
+    surv:fromSurvey eg1:csdref-1 ;
     surv:vectorPurpose <code:aPurpose> ;
     geojson:topology [ a geojson:LineString ;
             geojson:relatedFeatures ( eg1:P1 eg1:P3 ) ] .
@@ -486,7 +487,7 @@ $defs:
     type: object
     properties:
       name:
-        $ref: https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
+        $ref: https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
         x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/name
         x-jsonld-type: '@id'
       purpose:
@@ -567,7 +568,7 @@ $defs:
     - type: object
       properties:
         geodeticid:
-          $ref: https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
+          $ref: https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
           x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/geodeticid
       required:
       - geodeticid
@@ -666,11 +667,33 @@ anyOf:
 - $ref: '#/$defs/SurveyedVector'
 x-jsonld-extra-terms:
   place: https://purl.org/geojson/vocab#geometry
+  purpose:
+    x-jsonld-type: '@id'
+    x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/purpose
+  vectorPurpose:
+    x-jsonld-type: '@id'
+    x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/vectorPurpose
+  monumentedBy:
+    x-jsonld-type: '@id'
+    x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/monumentedBy
+  comment: http://www.w3.org/2000/01/rdf-schema#comment
+  note: http://www.w3.org/2000/01/rdf-schema#comment
+  age: https://linked.data.gov.au/def/csdm/surveyfeatures/age
+  geodeticid: https://linked.data.gov.au/def/csdm/surveyfeatures/geodeticid
+  fromSurvey:
+    x-jsonld-type: '@id'
+    x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/fromSurvey
   CadastralMark:
     x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/CadastralMark
     x-jsonld-type: '@id'
   BoundaryMark:
     x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/BoundaryMark
+    x-jsonld-type: '@id'
+  ptQuality:
+    x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/qualityClass
+    x-jsonld-type: '@id'
+  ptQualityMeasure:
+    x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/qualityMeasure
     x-jsonld-type: '@id'
   GeodeticReferenceMark:
     x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/GeodeticReferenceMark
@@ -680,6 +703,9 @@ x-jsonld-extra-terms:
     x-jsonld-type: '@id'
   AdoptedVector:
     x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/SurveyedVector
+    x-jsonld-type: '@id'
+  name:
+    x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/name
     x-jsonld-type: '@id'
   label: http://www.w3.org/2000/01/rdf-schema#label
 x-jsonld-prefixes:
@@ -695,8 +721,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/schema.json)
-* JSON version: [schema.json](https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/schema.yaml)
+* YAML version: [schema.yaml](https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/schema.json)
+* JSON version: [schema.json](https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/schema.yaml)
 
 
 # JSON-LD Context
@@ -704,89 +730,27 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
-    "name": {
-      "@context": {
-        "hasPart": {
-          "@context": {
-            "type": "commonpatterns:namePartType"
-          },
-          "@id": "dct:hasPart"
-        },
-        "name": "commonpatterns:name"
-      },
-      "@id": "rdfs:label",
-      "@type": "@id"
-    },
-    "purpose": {
-      "@type": "@id",
-      "@id": "surv:purpose"
-    },
-    "id": "@id",
     "featureType": "@type",
-    "entityType": "@type",
-    "has_provenance": {
-      "@context": {},
-      "@id": "dct:provenance",
-      "@type": "@id"
+    "properties": "@nest",
+    "Feature": "geojson:Feature",
+    "FeatureCollection": "geojson:FeatureCollection",
+    "GeometryCollection": "geojson:GeometryCollection",
+    "LineString": "geojson:LineString",
+    "MultiLineString": "geojson:MultiLineString",
+    "MultiPoint": "geojson:MultiPoint",
+    "MultiPolygon": "geojson:MultiPolygon",
+    "Point": "geojson:Point",
+    "Polygon": "geojson:Polygon",
+    "features": {
+      "@container": "@set",
+      "@id": "geojson:features"
     },
-    "wasGeneratedBy": {
-      "@context": {},
-      "@id": "prov:wasGeneratedBy",
-      "@type": "@id"
-    },
-    "wasAttributedTo": {
-      "@context": {
-        "href": {
-          "@type": "@id",
-          "@id": "oa:hasTarget"
-        },
-        "rel": {
-          "@context": {
-            "@base": "http://www.iana.org/assignments/relation/"
-          },
-          "@id": "http://www.iana.org/assignments/relation",
-          "@type": "@id"
-        },
-        "type": "dct:type",
-        "hreflang": "dct:language",
-        "title": "rdfs:label",
-        "length": "dct:extent"
-      },
-      "@id": "prov:wasAttributedTo",
-      "@type": "@id"
-    },
-    "wasDerivedFrom": {
-      "@id": "prov:wasDerivedFrom",
-      "@type": "@id"
-    },
-    "alternateOf": {
-      "@id": "prov:alternateOf",
-      "@type": "@id"
-    },
-    "hadPrimarySource": {
-      "@id": "prov:hadPrimarySource",
-      "@type": "@id"
-    },
-    "specializationOf": {
-      "@id": "prov:specializationOf",
-      "@type": "@id"
-    },
-    "wasInvalidatedBy": {
-      "@context": {},
-      "@id": "prov:wasInvalidatedBy",
-      "@type": "@id"
-    },
-    "wasQuotedFrom": {
-      "@id": "prov:wasQuotedFrom",
-      "@type": "@id"
-    },
-    "wasRevisionOf": {
-      "@id": "prov:wasRevisionOf",
-      "@type": "@id"
-    },
-    "atLocation": {
-      "@id": "prov:atLocation",
-      "@type": "@id"
+    "type": "@type",
+    "id": "@id",
+    "geometry": "geojson:geometry",
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
     },
     "links": {
       "@context": {
@@ -808,382 +772,152 @@ Links to the schema:
       },
       "@id": "rdfs:seeAlso"
     },
-    "qualifiedGeneration": {
+    "time": {
       "@context": {
-        "atTime": {
-          "@id": "prov:atTime",
+        "date": {
+          "@id": "owlTime:hasTime",
+          "@type": "xsd:date"
+        },
+        "timestamp": {
+          "@id": "owlTime:hasTime",
           "@type": "xsd:dateTime"
         },
-        "hadRole": {
-          "@id": "prov:hadRole",
-          "@type": "@id"
-        },
-        "influencer": {
-          "@id": "prov:influencer",
-          "@type": "@id"
-        },
-        "hadActivity": {
-          "@id": "prov:hadActivity",
-          "@type": "@id"
-        },
-        "activity": {
-          "@id": "prov:activity",
-          "@type": "@id"
+        "interval": {
+          "@id": "owlTime:hasTime",
+          "@container": "@list"
         }
       },
-      "@id": "prov:qualifiedGeneration",
-      "@type": "@id"
+      "@id": "dct:time"
     },
-    "qualifiedInvalidation": {
+    "coordRefSys": "http://www.opengis.net/def/glossary/term/CoordinateReferenceSystemCRS",
+    "place": "dct:spatial",
+    "Polyhedron": "geojson:Polyhedron",
+    "MultiPolyhedron": "geojson:MultiPolyhedron",
+    "Prism": {
+      "@id": "geojson:Prism",
       "@context": {
-        "atTime": {
-          "@id": "prov:atTime",
-          "@type": "xsd:dateTime"
-        },
-        "hadRole": {
-          "@id": "prov:hadRole",
-          "@type": "@id"
-        },
-        "influencer": {
-          "@id": "prov:influencer",
-          "@type": "@id"
-        },
-        "hadActivity": {
-          "@id": "prov:hadActivity",
-          "@type": "@id"
-        },
-        "activity": {
-          "@id": "prov:activity",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedInvalidation",
-      "@type": "@id"
+        "base": "geojson:prismBase",
+        "lower": "geojson:prismLower",
+        "upper": "geojson:prismUpper"
+      }
     },
-    "qualifiedDerivation": {
+    "MultiPrism": {
+      "@id": "geojson:MultiPrism",
       "@context": {
-        "hadGeneration": {
-          "@context": {
-            "atTime": {
-              "@id": "prov:atTime",
-              "@type": "xsd:dateTime"
-            },
-            "hadRole": {
-              "@id": "prov:hadRole",
-              "@type": "@id"
-            },
-            "influencer": {
-              "@id": "prov:influencer",
-              "@type": "@id"
-            },
-            "activity": {
-              "@id": "prov:activity",
-              "@type": "@id"
-            }
-          },
-          "@id": "prov:hadGeneration",
-          "@type": "@id"
-        },
-        "hadActivity": {
-          "@id": "prov:hadActivity",
-          "@type": "@id"
-        },
-        "hadUsage": {
-          "@context": {
-            "atTime": {
-              "@id": "prov:atTime",
-              "@type": "xsd:dateTime"
-            }
-          },
-          "@id": "prov:hadUsage",
-          "@type": "@id"
-        },
-        "entity": {
-          "@id": "prov:entity",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedDerivation",
-      "@type": "@id"
+        "prisms": "geojson:prisms"
+      }
     },
-    "qualifiedAttribution": {
-      "@context": {
-        "agent": {
-          "@id": "prov:agent",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedAttribution",
-      "@type": "@id"
+    "coordinates": {
+      "@container": "@list",
+      "@id": "geojson:coordinates"
     },
-    "wasInfluencedBy": {
+    "geometries": {
+      "@id": "geojson:geometry",
+      "@container": "@list"
+    },
+    "condition": {
+      "@type": "@id",
+      "@id": "surv:condition"
+    },
+    "form": {
+      "@type": "@id",
+      "@id": "surv:form"
+    },
+    "replaces": {
+      "@type": "@id",
+      "@id": "surv:replaces"
+    },
+    "state": {
+      "@type": "@id",
+      "@id": "surv:state"
+    },
+    "topology": {
       "@context": {
-        "href": {
+        "references": {
+          "@id": "geojson:relatedFeatures",
           "@type": "@id",
-          "@id": "oa:hasTarget"
-        },
-        "rel": {
-          "@context": {
-            "@base": "http://www.iana.org/assignments/relation/"
-          },
-          "@id": "http://www.iana.org/assignments/relation",
-          "@type": "@id"
-        },
-        "type": "dct:type",
-        "hreflang": "dct:language",
-        "title": "rdfs:label",
-        "length": "dct:extent"
-      },
-      "@id": "prov:wasInfluencedBy",
-      "@type": "@id"
-    },
-    "qualifiedInfluence": {
-      "@context": {
-        "influencer": {
-          "@context": {
-            "href": {
-              "@type": "@id",
-              "@id": "oa:hasTarget"
-            },
-            "rel": {
-              "@context": {
-                "@base": "http://www.iana.org/assignments/relation/"
-              },
-              "@id": "http://www.iana.org/assignments/relation",
-              "@type": "@id"
-            },
-            "type": "dct:type",
-            "hreflang": "dct:language",
-            "title": "rdfs:label",
-            "length": "dct:extent"
-          },
-          "@id": "prov:influencer",
-          "@type": "@id"
-        },
-        "entity": {
-          "@id": "prov:entity",
-          "@type": "@id"
-        },
-        "activity": {
-          "@id": "prov:activity",
-          "@type": "@id"
-        },
-        "agent": {
-          "@context": {
-            "href": {
-              "@type": "@id",
-              "@id": "oa:hasTarget"
-            },
-            "rel": {
-              "@context": {
-                "@base": "http://www.iana.org/assignments/relation/"
-              },
-              "@id": "http://www.iana.org/assignments/relation",
-              "@type": "@id"
-            },
-            "type": "dct:type",
-            "hreflang": "dct:language",
-            "title": "rdfs:label",
-            "length": "dct:extent"
-          },
-          "@id": "prov:agent",
-          "@type": "@id"
+          "@container": "@list"
         }
       },
-      "@id": "prov:qualifiedInfluence",
+      "@type": "@id",
+      "@id": "geojson:topology"
+    },
+    "purpose": {
+      "@type": "@id",
+      "@id": "surv:purpose"
+    },
+    "vectorPurpose": {
+      "@type": "@id",
+      "@id": "surv:vectorPurpose"
+    },
+    "monumentedBy": {
+      "@type": "@id",
+      "@id": "surv:monumentedBy"
+    },
+    "comment": "rdfs:comment",
+    "note": "rdfs:comment",
+    "age": "surv:age",
+    "geodeticid": {
+      "@id": "surv:geodeticid",
+      "@context": {
+        "hasPart": {
+          "@context": {
+            "type": "commonpatterns:namePartType"
+          },
+          "@id": "dct:hasPart"
+        }
+      }
+    },
+    "fromSurvey": {
+      "@type": "@id",
+      "@id": "surv:fromSurvey"
+    },
+    "CadastralMark": {
+      "@id": "surv:CadastralMark",
       "@type": "@id"
     },
-    "provType": "@type",
-    "hadMember": {
-      "@context": {},
-      "@id": "prov:hadMember",
+    "BoundaryMark": {
+      "@id": "surv:BoundaryMark",
       "@type": "@id"
     },
+    "ptQuality": {
+      "@id": "commonpatterns:qualityClass",
+      "@type": "@id"
+    },
+    "ptQualityMeasure": {
+      "@id": "commonpatterns:qualityMeasure",
+      "@type": "@id"
+    },
+    "GeodeticReferenceMark": {
+      "@id": "surv:GeodeticReferenceMark",
+      "@type": "@id"
+    },
+    "ObservedVector": {
+      "@id": "surv:ObservedVector",
+      "@type": "@id"
+    },
+    "AdoptedVector": {
+      "@id": "surv:SurveyedVector",
+      "@type": "@id"
+    },
+    "name": {
+      "@id": "commonpatterns:name",
+      "@type": "@id",
+      "@context": {
+        "hasPart": {
+          "@context": {
+            "type": "commonpatterns:namePartType"
+          },
+          "@id": "dct:hasPart"
+        }
+      }
+    },
+    "label": "rdfs:label",
+    "CompoundName": "commonpatterns:CompoundName",
     "activityType": "@type",
-    "endedAtTime": {
-      "@id": "prov:endedAtTime",
-      "@type": "xsd:dateTime"
-    },
-    "wasAssociatedWith": {
-      "@context": {
-        "href": {
-          "@type": "@id",
-          "@id": "oa:hasTarget"
-        },
-        "rel": {
-          "@context": {
-            "@base": "http://www.iana.org/assignments/relation/"
-          },
-          "@id": "http://www.iana.org/assignments/relation",
-          "@type": "@id"
-        },
-        "type": "dct:type",
-        "hreflang": "dct:language",
-        "title": "rdfs:label",
-        "length": "dct:extent"
-      },
-      "@id": "prov:wasAssociatedWith",
-      "@type": "@id"
-    },
-    "wasInformedBy": {
-      "@id": "prov:wasInformedBy",
-      "@type": "@id"
-    },
-    "used": {
-      "@context": {},
-      "@id": "prov:used",
-      "@type": "@id"
-    },
-    "wasStartedBy": {
-      "@context": {},
-      "@id": "prov:wasStartedBy",
-      "@type": "@id"
-    },
-    "wasEndedBy": {
-      "@context": {},
-      "@id": "prov:wasEndedBy",
-      "@type": "@id"
-    },
-    "invalidated": {
-      "@context": {},
-      "@id": "prov:invalidated",
-      "@type": "@id"
-    },
-    "generated": {
-      "@context": {},
-      "@id": "prov:generated",
-      "@type": "@id"
-    },
-    "qualifiedUsage": {
-      "@context": {
-        "atTime": {
-          "@id": "prov:atTime",
-          "@type": "xsd:dateTime"
-        },
-        "entity": {
-          "@id": "prov:entity",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedUsage",
-      "@type": "@id"
-    },
-    "qualifiedCommunication": {
-      "@context": {
-        "atTime": {
-          "@id": "prov:atTime",
-          "@type": "xsd:dateTime"
-        },
-        "hadRole": {
-          "@id": "prov:hadRole",
-          "@type": "@id"
-        },
-        "influencer": {
-          "@id": "prov:influencer",
-          "@type": "@id"
-        },
-        "hadActivity": {
-          "@id": "prov:hadActivity",
-          "@type": "@id"
-        },
-        "activity": {
-          "@id": "prov:activity",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedCommunication",
-      "@type": "@id"
-    },
-    "qualifiedStart": {
-      "@context": {
-        "atTime": {
-          "@id": "prov:atTime",
-          "@type": "xsd:dateTime"
-        },
-        "entity": {
-          "@id": "prov:entity",
-          "@type": "@id"
-        },
-        "hadActivity": {
-          "@id": "prov:hadActivity",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedStart",
-      "@type": "@id"
-    },
-    "qualifiedEnd": {
-      "@context": {
-        "atTime": {
-          "@id": "prov:atTime",
-          "@type": "xsd:dateTime"
-        },
-        "entity": {
-          "@id": "prov:entity",
-          "@type": "@id"
-        },
-        "hadActivity": {
-          "@id": "prov:hadActivity",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedEnd",
-      "@type": "@id"
-    },
-    "qualifiedAssociation": {
-      "@context": {
-        "agent": {
-          "@id": "prov:agent",
-          "@type": "@id"
-        },
-        "hadRole": {
-          "@id": "prov:hadRole",
-          "@type": "@id"
-        },
-        "hadPlan": {
-          "@id": "prov:hadPlan",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedAssociation",
-      "@type": "@id"
-    },
     "agentType": "@type",
-    "actedOnBehalfOf": {
-      "@context": {
-        "href": {
-          "@type": "@id",
-          "@id": "oa:hasTarget"
-        },
-        "rel": {
-          "@context": {
-            "@base": "http://www.iana.org/assignments/relation/"
-          },
-          "@id": "http://www.iana.org/assignments/relation",
-          "@type": "@id"
-        },
-        "type": "dct:type",
-        "hreflang": "dct:language",
-        "title": "rdfs:label",
-        "length": "dct:extent"
-      },
-      "@id": "prov:actedOnBehalfOf",
-      "@type": "@id"
-    },
-    "qualifiedDelegation": {
-      "@context": {
-        "agent": {
-          "@id": "prov:agent",
-          "@type": "@id"
-        },
-        "hadActivity": {
-          "@id": "prov:hadActivity",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedDelegation",
-      "@type": "@id"
-    },
+    "entityType": "@type",
+    "provType": "@type",
     "Activity": "prov:Activity",
     "ActivityInfluence": "prov:ActivityInfluence",
     "Agent": "prov:Agent",
@@ -1234,6 +968,14 @@ Links to the schema:
     "KeyEntityPair": "prov:KeyEntityPair",
     "Insertion": "prov:Insertion",
     "Removal": "prov:Removal",
+    "atTime": {
+      "@id": "prov:atTime",
+      "@type": "xsd:dateTime"
+    },
+    "endedAtTime": {
+      "@id": "prov:endedAtTime",
+      "@type": "xsd:dateTime"
+    },
     "generatedAtTime": {
       "@id": "prov:generatedAtTime",
       "@type": "xsd:dateTime"
@@ -1256,8 +998,108 @@ Links to the schema:
       "@id": "prov:removedKey",
       "@type": "rdfs:Literal"
     },
+    "actedOnBehalfOf": {
+      "@id": "prov:actedOnBehalfOf",
+      "@type": "@id"
+    },
+    "agent": {
+      "@id": "prov:agent",
+      "@type": "@id"
+    },
+    "alternateOf": {
+      "@id": "prov:alternateOf",
+      "@type": "@id"
+    },
+    "atLocation": {
+      "@id": "prov:atLocation",
+      "@type": "@id"
+    },
+    "entity": {
+      "@id": "prov:entity",
+      "@type": "@id"
+    },
+    "generated": {
+      "@id": "prov:generated",
+      "@type": "@id"
+    },
+    "hadActivity": {
+      "@id": "prov:hadActivity",
+      "@type": "@id"
+    },
+    "activity": {
+      "@id": "prov:activity",
+      "@type": "@id"
+    },
+    "hadGeneration": {
+      "@id": "prov:hadGeneration",
+      "@type": "@id"
+    },
+    "hadMember": {
+      "@id": "prov:hadMember",
+      "@type": "@id"
+    },
+    "hadPlan": {
+      "@id": "prov:hadPlan",
+      "@type": "@id"
+    },
+    "hadPrimarySource": {
+      "@id": "prov:hadPrimarySource",
+      "@type": "@id"
+    },
+    "hadRole": {
+      "@id": "prov:hadRole",
+      "@type": "@id"
+    },
+    "hadUsage": {
+      "@id": "prov:hadUsage",
+      "@type": "@id"
+    },
     "influenced": {
       "@id": "prov:influenced",
+      "@type": "@id"
+    },
+    "influencer": {
+      "@id": "prov:influencer",
+      "@type": "@id"
+    },
+    "invalidated": {
+      "@id": "prov:invalidated",
+      "@type": "@id"
+    },
+    "qualifiedAssociation": {
+      "@id": "prov:qualifiedAssociation",
+      "@type": "@id"
+    },
+    "qualifiedAttribution": {
+      "@id": "prov:qualifiedAttribution",
+      "@type": "@id"
+    },
+    "qualifiedCommunication": {
+      "@id": "prov:qualifiedCommunication",
+      "@type": "@id"
+    },
+    "qualifiedDelegation": {
+      "@id": "prov:qualifiedDelegation",
+      "@type": "@id"
+    },
+    "qualifiedDerivation": {
+      "@id": "prov:qualifiedDerivation",
+      "@type": "@id"
+    },
+    "qualifiedEnd": {
+      "@id": "prov:qualifiedEnd",
+      "@type": "@id"
+    },
+    "qualifiedGeneration": {
+      "@id": "prov:qualifiedGeneration",
+      "@type": "@id"
+    },
+    "qualifiedInfluence": {
+      "@id": "prov:qualifiedInfluence",
+      "@type": "@id"
+    },
+    "qualifiedInvalidation": {
+      "@id": "prov:qualifiedInvalidation",
       "@type": "@id"
     },
     "qualifiedPrimarySource": {
@@ -1272,9 +1114,76 @@ Links to the schema:
       "@id": "prov:qualifiedRevision",
       "@type": "@id"
     },
+    "qualifiedStart": {
+      "@id": "prov:qualifiedStart",
+      "@type": "@id"
+    },
+    "qualifiedUsage": {
+      "@id": "prov:qualifiedUsage",
+      "@type": "@id"
+    },
+    "specializationOf": {
+      "@id": "prov:specializationOf",
+      "@type": "@id"
+    },
+    "used": {
+      "@id": "prov:used",
+      "@type": "@id"
+    },
+    "wasAssociatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
+    "wasAttributedTo": {
+      "@id": "prov:wasAttributedTo",
+      "@type": "@id"
+    },
+    "wasDerivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "wasEndedBy": {
+      "@id": "prov:wasEndedBy",
+      "@type": "@id"
+    },
+    "wasGeneratedBy": {
+      "@id": "prov:wasGeneratedBy",
+      "@type": "@id"
+    },
+    "wasInfluencedBy": {
+      "@id": "prov:wasInfluencedBy",
+      "@type": "@id"
+    },
+    "wasInformedBy": {
+      "@id": "prov:wasInformedBy",
+      "@type": "@id"
+    },
+    "wasInvalidatedBy": {
+      "@id": "prov:wasInvalidatedBy",
+      "@type": "@id"
+    },
+    "wasQuotedFrom": {
+      "@id": "prov:wasQuotedFrom",
+      "@type": "@id"
+    },
+    "wasRevisionOf": {
+      "@id": "prov:wasRevisionOf",
+      "@type": "@id"
+    },
+    "wasStartedBy": {
+      "@id": "prov:wasStartedBy",
+      "@type": "@id"
+    },
     "has_anchor": {
       "@id": "prov:has_anchor",
       "@type": "@id"
+    },
+    "has_provenance": {
+      "@id": "dct:provenance",
+      "@type": "@id",
+      "@context": {
+        "name": "rdfs:label"
+      }
     },
     "has_query_service": {
       "@id": "prov:has_query_service",
@@ -1328,126 +1237,6 @@ Links to the schema:
       "@id": "prov:mentionOf",
       "@type": "@id"
     },
-    "ptQuality": {
-      "@id": "commonpatterns:qualityClass",
-      "@type": "@id"
-    },
-    "ptQualityMeasure": {
-      "@id": "commonpatterns:qualityMeasure",
-      "@type": "@id"
-    },
-    "comment": "rdfs:comment",
-    "monumentedBy": {
-      "@context": {},
-      "@type": "@id",
-      "@id": "surv:monumentedBy"
-    },
-    "type": "@type",
-    "properties": "@nest",
-    "geometry": {
-      "@context": {},
-      "@id": "geojson:geometry"
-    },
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
-    },
-    "Feature": "geojson:Feature",
-    "FeatureCollection": "geojson:FeatureCollection",
-    "GeometryCollection": "geojson:GeometryCollection",
-    "LineString": "geojson:LineString",
-    "MultiLineString": "geojson:MultiLineString",
-    "MultiPoint": "geojson:MultiPoint",
-    "MultiPolygon": "geojson:MultiPolygon",
-    "Point": "geojson:Point",
-    "Polygon": "geojson:Polygon",
-    "features": {
-      "@container": "@set",
-      "@id": "geojson:features"
-    },
-    "time": {
-      "@context": {
-        "date": {
-          "@id": "owlTime:hasTime",
-          "@type": "xsd:date"
-        },
-        "timestamp": {
-          "@id": "owlTime:hasTime",
-          "@type": "xsd:dateTime"
-        },
-        "interval": {
-          "@id": "owlTime:hasTime",
-          "@container": "@list"
-        }
-      },
-      "@id": "dct:time"
-    },
-    "coordRefSys": "http://www.opengis.net/def/glossary/term/CoordinateReferenceSystemCRS",
-    "place": "dct:spatial",
-    "Polyhedron": "geojson:Polyhedron",
-    "MultiPolyhedron": "geojson:MultiPolyhedron",
-    "Prism": {
-      "@id": "geojson:Prism",
-      "@context": {
-        "base": "geojson:prismBase",
-        "lower": "geojson:prismLower",
-        "upper": "geojson:prismUpper"
-      }
-    },
-    "MultiPrism": {
-      "@id": "geojson:MultiPrism",
-      "@context": {
-        "prisms": "geojson:prisms"
-      }
-    },
-    "coordinates": {
-      "@container": "@list",
-      "@id": "geojson:coordinates"
-    },
-    "geometries": {
-      "@id": "geojson:geometry",
-      "@container": "@list"
-    },
-    "age": "surv:age",
-    "note": "rdfs:comment",
-    "geodeticid": {
-      "@context": {
-        "hasPart": {
-          "@context": {
-            "type": "commonpatterns:namePartType"
-          },
-          "@id": "dct:hasPart"
-        },
-        "name": "commonpatterns:name"
-      },
-      "@id": "surv:geodeticid"
-    },
-    "condition": {
-      "@type": "@id",
-      "@id": "surv:condition"
-    },
-    "form": {
-      "@type": "@id",
-      "@id": "surv:form"
-    },
-    "replaces": {
-      "@type": "@id",
-      "@id": "surv:replaces"
-    },
-    "state": {
-      "@type": "@id",
-      "@id": "surv:state"
-    },
-    "topology": {
-      "@context": {},
-      "@type": "@id",
-      "@id": "geojson:topology"
-    },
-    "references": {
-      "@id": "geojson:relatedFeatures",
-      "@type": "@id",
-      "@container": "@list"
-    },
     "Arc": "geojson:Arc",
     "ArcWithCenter": "geojson:ArcWithCenter",
     "ArcByChord": "geojson:ArcByChord",
@@ -1457,32 +1246,6 @@ Links to the schema:
     "arcLength": "geojson:arcLength",
     "startTangentVector": "geojson:startTangentVector",
     "endTangentVector": "geojson:endTangentVector",
-    "vectorPurpose": {
-      "@type": "@id",
-      "@id": "surv:vectorPurpose"
-    },
-    "CadastralMark": {
-      "@id": "surv:CadastralMark",
-      "@type": "@id"
-    },
-    "BoundaryMark": {
-      "@id": "surv:BoundaryMark",
-      "@type": "@id"
-    },
-    "GeodeticReferenceMark": {
-      "@id": "surv:GeodeticReferenceMark",
-      "@type": "@id"
-    },
-    "ObservedVector": {
-      "@id": "surv:ObservedVector",
-      "@type": "@id"
-    },
-    "AdoptedVector": {
-      "@id": "surv:SurveyedVector",
-      "@type": "@id"
-    },
-    "label": "rdfs:label",
-    "CompoundName": "commonpatterns:CompoundName",
     "geojson": "https://purl.org/geojson/vocab#",
     "surv": "csdm:surveyfeatures/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -1501,7 +1264,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/context.jsonld)
+[context.jsonld](https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/context.jsonld)
 
 ## Sources
 
@@ -1511,6 +1274,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/icsm-au/3d-csdm-common](https://github.com/icsm-au/3d-csdm-common)
+* URL: [https://github.com/surroundaustralia/3d-csdm-common](https://github.com/surroundaustralia/3d-csdm-common)
 * Path: `_sources/csdm/features/SurveyFeatures`
 

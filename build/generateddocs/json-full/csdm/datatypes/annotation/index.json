@@ -9,7 +9,7 @@
   "itemClass": "schema",
   "register": "icsm-csdm",
   "version": "0.1",
-  "dateOfLastChange": "2024-07-24",
+  "dateOfLastChange": "2026-03-31",
   "link": "https://github.com/icsm-au/3d-csdm-schema",
   "sources": [
     {
@@ -22,21 +22,23 @@
   "tags": [
     "utils"
   ],
-  "shaclRules": {},
+  "shaclShapes": {},
   "dependsOn": [
     "ogc.ogc-utils.iri-or-curie",
     "ogc.geo.json-fg.link-role"
   ],
-  "ldContext": "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/context.jsonld",
+  "ldContext": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/context.jsonld",
   "schema": {
-    "application/yaml": "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/schema.yaml",
-    "application/json": "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/schema.json"
+    "application/yaml": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/schema.yaml",
+    "application/json": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/schema.json"
   },
-  "sourceSchema": "https://icsm-au.github.io/3d-csdm-common/_sources/csdm/datatypes/annotation/schema.json",
-  "sourceLdContext": "https://icsm-au.github.io/3d-csdm-common/_sources/csdm/datatypes/annotation/context.jsonld",
-  "sourceFiles": "https://icsm-au.github.io/3d-csdm-common/_sources/csdm/datatypes/annotation/",
+  "sourceSchema": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/datatypes/annotation/schema.json",
+  "sourceLdContext": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/datatypes/annotation/context.jsonld",
+  "resolvedSchemaProperties": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/resolvedProperties.json",
+  "sourceFiles": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/datatypes/annotation/",
+  "rdfData": [],
   "validationPassed": true,
-  "testOutputs": "https://github.com/icsm-au/3d-csdm-common/blob/main/build/tests/csdm/datatypes/annotation/",
+  "testOutputs": "https://github.com/surroundaustralia/3d-csdm-common/blob/main/build/tests/csdm/datatypes/annotation/",
   "examples": [
     {
       "title": "Example CompoundName",
@@ -47,22 +49,22 @@
           "ref": "example.json",
           "base-uri": "http://www.example.com/namedobjects/",
           "code": "[\n  {\n    \"description\": \"Annotation with link and role\",\n    \"href\": \"http://example.org/aDocument\",\n    \"role\": \"http://example.org/myReason\",\n    \"rel\": \"related\"\n  },\n  {\n    \"description\": \"Annotation with role\",\n    \"role\": \"http://example.org/myReason\"\n  },\n  \"Plain text annotation\"\n]\n",
-          "url": "https://icsm-au.github.io/3d-csdm-common/build/tests/csdm/datatypes/annotation/example_1_1.json"
+          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/annotation/example_1_1.json"
         },
         {
           "language": "jsonld",
-          "code": "{\n  \"@context\": \"https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/context.jsonld\",\n  \"@graph\": [\n    {\n      \"description\": \"Annotation with link and role\",\n      \"href\": \"http://example.org/aDocument\",\n      \"role\": \"http://example.org/myReason\",\n      \"rel\": \"related\"\n    },\n    {\n      \"description\": \"Annotation with role\",\n      \"role\": \"http://example.org/myReason\"\n    },\n    \"Plain text annotation\"\n  ]\n}",
-          "url": "https://icsm-au.github.io/3d-csdm-common/build/tests/csdm/datatypes/annotation/example_1_1.jsonld"
+          "code": "{\n  \"@context\": \"https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/context.jsonld\",\n  \"@graph\": [\n    {\n      \"description\": \"Annotation with link and role\",\n      \"href\": \"http://example.org/aDocument\",\n      \"role\": \"http://example.org/myReason\",\n      \"rel\": \"related\"\n    },\n    {\n      \"description\": \"Annotation with role\",\n      \"role\": \"http://example.org/myReason\"\n    },\n    \"Plain text annotation\"\n  ]\n}",
+          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/annotation/example_1_1.jsonld"
         },
         {
           "language": "ttl",
           "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix ns1: <http://www.iana.org/assignments/> .\n@prefix oa: <http://www.w3.org/ns/oa#> .\n@prefix prof: <http://www.w3.org/ns/dx/prof/> .\n\n[] dcterms:description \"Annotation with role\" ;\n    prof:hasRole <http://example.org/myReason> .\n\n[] dcterms:description \"Annotation with link and role\" ;\n    ns1:relation <http://www.iana.org/assignments/relation/related> ;\n    prof:hasRole <http://example.org/myReason> ;\n    oa:hasTarget <http://example.org/aDocument> .\n\n",
-          "url": "https://icsm-au.github.io/3d-csdm-common/build/tests/csdm/datatypes/annotation/example_1_1.ttl"
+          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/annotation/example_1_1.ttl"
         }
       ]
     }
   ],
-  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$defs:\n  linkWithRole:\n    $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/link-role/schema.yaml\n  codeRef:\n    $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml\n  Options:\n    anyOf:\n    - $ref: '#/$defs/linkWithRole'\n    - properties:\n        role:\n          $ref: '#/$defs/codeRef'\n        description:\n          type: string\n          x-jsonld-id: http://purl.org/dc/terms/description\n      required:\n      - description\n    - type: string\n  AnnotationSet:\n    anyOf:\n    - $ref: '#/$defs/Options'\n    - type: 'null'\n    - type: array\n      items:\n        $ref: '#/$defs/Options'\nallOf:\n- $ref: '#/$defs/AnnotationSet'\nx-jsonld-prefixes:\n  dct: http://purl.org/dc/terms/\n",
-  "gitRepository": "https://github.com/icsm-au/3d-csdm-common",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\n$defs:\n  linkWithRole:\n    $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/link-role/schema.yaml\n  codeRef:\n    $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml\n  Options:\n    anyOf:\n    - $ref: '#/$defs/linkWithRole'\n    - properties:\n        role:\n          $ref: '#/$defs/codeRef'\n        description:\n          type: string\n          x-jsonld-id: http://purl.org/dc/terms/description\n      required:\n      - description\n    - type: string\n  AnnotationSet:\n    anyOf:\n    - $ref: '#/$defs/Options'\n    - type: 'null'\n    - type: array\n      items:\n        $ref: '#/$defs/Options'\nallOf:\n- $ref: '#/$defs/AnnotationSet'\nx-jsonld-extra-terms:\n  description: http://purl.org/dc/terms/description\nx-jsonld-prefixes:\n  dct: http://purl.org/dc/terms/\n",
+  "gitRepository": "https://github.com/surroundaustralia/3d-csdm-common",
   "gitPath": "_sources/csdm/datatypes/annotation"
 }

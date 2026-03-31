@@ -53,6 +53,9 @@
       "$ref": "#/$defs/AnnotationSet"
     }
   ],
+  "x-jsonld-extra-terms": {
+    "description": "http://purl.org/dc/terms/description"
+  },
   "x-jsonld-prefixes": {
     "dct": "http://purl.org/dc/terms/"
   }

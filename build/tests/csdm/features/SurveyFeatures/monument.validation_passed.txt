@@ -1,7 +1,7 @@
 Validation report for icsm.csdm.features.SurveyFeatures - Survey Features
-Generated 2024-07-25T00:08:36.964894+00:00
+Generated 2026-03-31T04:19:17.048347+00:00
 === Files ===
-Using monument (example_3_1) from examples
+Using examples/monument.json from examples
 JSON-LD context is present - uplifting
 Output JSON-LD monument.jsonld created
 Output Turtle monument.ttl created
@@ -12,12 +12,28 @@ Validation passed
 === End JSON Schema ===
 
 === SHACL ===
+Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+ - Shape _:nff874e99f20148d09b57212d7910c8f6b1: *none*
+ - Shape _:nff874e99f20148d09b57212d7910c8f6b3: *none*
+
+Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
+ - Shape topo:testTopoLinesReferencePoints: *none*
+ - Shape topo:testTopoReferencesExist: *none*
+
 Validation result for _sources/csdm/datatypes/compoundName/rules.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:
- - Shape _:n7ff2283c5fcd4284b1a612b5f4b44b78b1: *none*
+ - Shape _:n9b8bccc1567843d0b28940e9de79d7a1b1: *none*
 
 === End SHACL ===
 

@@ -1,7 +1,7 @@
 Validation report for icsm.csdm.features.SurveyObservations - Survey Observations
-Generated 2024-07-25T00:08:38.353674+00:00
+Generated 2026-03-31T04:19:20.455942+00:00
 === Files ===
-Using newvector-3d (example_2_1) from examples
+Using examples/newvector-3d.json from examples
 JSON-LD context is present - uplifting
 Output JSON-LD newvector-3d.jsonld created
 Output Turtle newvector-3d.ttl created
@@ -19,17 +19,20 @@ Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:
 Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:
  - Shape :testRequiredProperties: *none*
 
-Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl:
+Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
   Validation Report
   Conforms: True
   
-Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: _:Nd47cb62e772d4e4087b738a7a4ec4863
+Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:Nd47cb62e772d4e4087b738a7a4ec4863
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:Nd47cb62e772d4e4087b738a7a4ec4863
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:Nd47cb62e772d4e4087b738a7a4ec4863
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:N98ebecc6d009471fb380be096e7a754e
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*
 
 === End SHACL ===
 

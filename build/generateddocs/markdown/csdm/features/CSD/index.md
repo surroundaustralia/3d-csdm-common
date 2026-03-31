@@ -88,7 +88,9 @@ See panel to right - note that a more user friendly "collapsable" version is in 
     }
   },
   "purpose": "code:subdivision",
-  "time": { "date": "2022-05-23" },
+  "time": {
+    "date": "2022-05-23"
+  },
   "horizontalCRS": "epsg:4167",
   "bearingRotation": 0.0,
   "surveyType": "icsm-survey-type:Subdivision",
@@ -97,7 +99,9 @@ See panel to right - note that a more user friendly "collapsable" version is in 
     {
       "id": "DP_119552",
       "name": "DP 119552",
-      "time": { "date": "2022-05-23" },
+      "time": {
+        "date": "2022-05-23"
+      },
       "bearingRotation": 0.001
     }
   ],
@@ -189,8 +193,8 @@ See panel to right - note that a more user friendly "collapsable" version is in 
           "geometry": {
             "type": "Point",
             "coordinates": [
-              174.7499979960,
-              -36.9309039370
+              174.749997996,
+              -36.930903937
             ]
           },
           "time": null,
@@ -283,7 +287,6 @@ See panel to right - note that a more user friendly "collapsable" version is in 
           "place": null,
           "properties": {
             "hasFeatureOfInterest": "l973158",
-            "resultTime": "2023-05-22T16:41:00+2",
             "hasResult": {
               "pose": {
                 "angles": {
@@ -299,14 +302,13 @@ See panel to right - note that a more user friendly "collapsable" version is in 
     }
   ]
 }
-
 ```
 
 #### jsonld
 ```jsonld
 {
   "@context": [
-    "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/context.jsonld",
+    "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/context.jsonld",
     {
       "@base": "https://linked.data.gov.au/def/csdm/csd-example/",
       "eg1": "https://example.org/csd-example/",
@@ -563,7 +565,6 @@ See panel to right - note that a more user friendly "collapsable" version is in 
           "place": null,
           "properties": {
             "hasFeatureOfInterest": "l973158",
-            "resultTime": "2023-05-22T16:41:00+2",
             "hasResult": {
               "pose": {
                 "angles": {
@@ -589,7 +590,6 @@ See panel to right - note that a more user friendly "collapsable" version is in 
 @prefix epsg: <http://www.opengis.net/def/crs/EPSG/0/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix geopose: <https://linked.data.gov.au/def/csdm/utils/geopose/> .
-@prefix icsm-jurisdictions: <https://linked.data.gov.au/def/jurisdictions/> .
 @prefix icsm-survey-type: <https://linked.data.gov.au/def/csdm/icsm-survey-type/> .
 @prefix ns1: <https://linked.data.gov.au/def/csdm/sensors/> .
 @prefix ns2: <http://www.iana.org/assignments/> .
@@ -601,10 +601,8 @@ See panel to right - note that a more user friendly "collapsable" version is in 
 @prefix nz-surveypoint-purpose: <https://linked.data.gov.au/def/csdm/nz-surveypointpurpose/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix registered-surveyors: <https://example.org/surveyors/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .
 @prefix surveyable: <https://linked.data.gov.au/def/csdm/observedProperties/> .
@@ -612,11 +610,9 @@ See panel to right - note that a more user friendly "collapsable" version is in 
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://linked.data.gov.au/def/csdm/csd-example/DP_572532> a container:CSD,
-        geojson:FeatureCollection ;
+<https://linked.data.gov.au/def/csdm/csd-example/DP_572532> a geojson:FeatureCollection ;
     rdfs:label "DP 572532" ;
     dcterms:time [ time:hasTime "2022-05-23"^^xsd:date ] ;
-    prov:wasGeneratedBy <https://linked.data.gov.au/def/csdm/csd-example/DP-1-S2> ;
     container:annotations [ ns2:relation <http://www.iana.org/assignments/relation/related> ;
             prof:hasRole nz-survey-docroles:fieldbook ;
             oa:hasTarget <http://example.com/survey/documentregister/p333-frogsurvey.pdf> ] ;
@@ -627,15 +623,16 @@ See panel to right - note that a more user friendly "collapsable" version is in 
     container:purpose <code:subdivision> ;
     container:referencedCSD <https://linked.data.gov.au/def/csdm/csd-example/DP_119552> ;
     container:surveyType icsm-survey-type:Subdivision ;
-    container:vectorObservations <https://linked.data.gov.au/def/csdm/csd-example/obs> .
+    container:vectorObservations <https://linked.data.gov.au/def/csdm/csd-example/obs> ;
+    geojson:collectionFeatureType "CSD" .
 
 <https://linked.data.gov.au/def/csdm/csd-example/44396823> a surv:CadastralMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "ALP I DP 481392" ;
-            dcterms:hasPart [ rdfs:label "ALP I" ;
-                    commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "DP 481392" ;
-                    commonpatterns:namePartType "Source" ] ] ;
+    commonpatterns:name [ rdfs:label "ALP I DP 481392" ;
+            dcterms:hasPart [ rdfs:label "DP 481392" ;
+                    commonpatterns:namePartType "Source" ],
+                [ rdfs:label "ALP I" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
             surv:form nz-monument-form:pin ;
             surv:state nz-monument-state:original ] ;
@@ -643,25 +640,12 @@ See panel to right - note that a more user friendly "collapsable" version is in 
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 1.747508e+02 -3.693141e+01 ) ] .
 
-<https://linked.data.gov.au/def/csdm/csd-example/Act3> a prov:Entity ;
-    prov:wasAttributedTo icsm-jurisdictions:nz .
-
-<https://linked.data.gov.au/def/csdm/csd-example/DP-1-S2> a prov:Activity ;
-    prov:endedAtTime "2029-01-01T01:02:03+00:00"^^xsd:dateTime ;
-    prov:used <https://linked.data.gov.au/def/csdm/csd-example/Act3> ;
-    prov:wasAssociatedWith registered-surveyors:bc-3 .
-
-<https://linked.data.gov.au/def/csdm/csd-example/DP_119552> rdfs:label "DP 119552" ;
-    dcterms:time [ time:hasTime "2022-05-23"^^xsd:date ] ;
-    container:bearingRotation 1e-03 .
-
 <https://linked.data.gov.au/def/csdm/csd-example/obs> a sosa:ObservationCollection,
         geojson:FeatureCollection ;
     sosa:hasMember [ a geojson:Feature ;
             sosa:hasFeatureOfInterest <https://linked.data.gov.au/def/csdm/csd-example/l973158> ;
             sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;
-                            geopose:angles [ ] ] ] ;
-            sosa:resultTime "2023-05-22T16:41:00+2" ] ;
+                            geopose:angles [ ] ] ] ] ;
     sosa:madeBySensor [ a ns1:DifferentialGPS ;
             ns1:baseSensor "gps+38666" ;
             ns1:roverSensor "gps+37544" ] ;
@@ -680,17 +664,17 @@ See panel to right - note that a more user friendly "collapsable" version is in 
 
 <https://linked.data.gov.au/def/csdm/csd-example/11745104> a surv:GeodeticReferenceMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "RM C DP 119552 (EQ9W)" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "RM" ;
+    commonpatterns:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
+            dcterms:hasPart [ rdfs:label "RM" ;
                     commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "119552" ;
                     commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "EQ9W" ;
-                    commonpatterns:namePartType "geodeticStamp" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "C" ;
-                    commonpatterns:namePartType "Stamp" ] ] ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "EQ9W" ;
+                    commonpatterns:namePartType "geodeticStamp" ] ] ;
     surv:geodeticid "XX FFF" ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
             surv:form nz-monument-form:pin ;
@@ -701,18 +685,23 @@ See panel to right - note that a more user friendly "collapsable" version is in 
 
 <https://linked.data.gov.au/def/csdm/csd-example/1725787> a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "RM E DP 119552" ;
+    rdfs:comment "ALP in channel of drive" ;
+    commonpatterns:name [ rdfs:label "RM E DP 119552" ;
             dcterms:hasPart [ rdfs:label "RM E" ;
                     commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP 119552" ;
                     commonpatterns:namePartType "Source" ] ] ;
-    rdfs:comment "ALP in channel of drive" ;
+    surv:fromSurvey <https://linked.data.gov.au/def/csdm/csd-example/DP_119552> ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
             surv:form nz-monument-form:plaque ;
             surv:state nz-monument-state:original ] ;
     surv:purpose nz-surveypoint-purpose:boundary ;
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 1.747502e+02 -3.693074e+01 ) ] .
+
+<https://linked.data.gov.au/def/csdm/csd-example/DP_119552> rdfs:label "DP 119552" ;
+    dcterms:time [ time:hasTime "2022-05-23"^^xsd:date ] ;
+    container:bearingRotation 1e-03 .
 
 <https://linked.data.gov.au/def/csdm/csd-example/l973158> a geojson:Feature ;
     container:purpose nz-line-purpose:boundary ;
@@ -751,7 +740,9 @@ This has a realistic set of features for a minimal survey (splitting a primary p
     "endedAtTime": "2029-01-01T01:02:03Z"
   },
   "purpose": "code:subdivision",
-  "time": { "date": "2022-05-22" },
+  "time": {
+    "date": "2022-05-22"
+  },
   "horizontalCRS": "epsg:4167",
   "bearingRotation": 0.0,
   "surveyType": "icsm:Subdivision",
@@ -759,7 +750,9 @@ This has a realistic set of features for a minimal survey (splitting a primary p
     {
       "id": "DP_119552",
       "name": "DP 119552",
-      "time": { "date": "2022-02-11" },
+      "time": {
+        "date": "2022-02-11"
+      },
       "bearingRotation": 0.0
     }
   ],
@@ -1136,8 +1129,8 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "geometry": {
             "type": "Point",
             "coordinates": [
-              174.7499979960,
-              -36.9309039370
+              174.749997996,
+              -36.930903937
             ]
           },
           "properties": {
@@ -1231,7 +1224,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "geometry": {
             "type": "Point",
             "coordinates": [
-              174.7504315500,
+              174.75043155,
               -36.9309699441
             ]
           },
@@ -1366,7 +1359,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "geometry": {
             "type": "Point",
             "coordinates": [
-              174.7507910410,
+              174.750791041,
               -36.9312489607
             ]
           },
@@ -1542,7 +1535,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "geometry": {
             "type": "Point",
             "coordinates": [
-              174.7513247880,
+              174.751324788,
               -36.9311247115
             ]
           },
@@ -1938,7 +1931,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "geometry": {
             "type": "Point",
             "coordinates": [
-              174.7510108050,
+              174.751010805,
               -36.9310015962
             ]
           },
@@ -2026,7 +2019,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "geometry": {
             "type": "Point",
             "coordinates": [
-              174.7509800560,
+              174.750980056,
               -36.9310510313
             ]
           },
@@ -2246,7 +2239,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "geometry": {
             "type": "Point",
             "coordinates": [
-              174.7505400740,
+              174.750540074,
               -36.9310610479
             ]
           },
@@ -2317,8 +2310,8 @@ This has a realistic set of features for a minimal survey (splitting a primary p
                 -36.9307359096
               ],
               [
-                174.7499979960,
-                -36.9309039370
+                174.749997996,
+                -36.930903937
               ]
             ]
           },
@@ -2931,7 +2924,6 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "geometry": null,
           "properties": {
             "hasFeatureOfInterest": "l566592",
-            "resultTime": "2023-03-10T10:19:25+13:00",
             "hasResult": {
               "distance": 95.06,
               "angle": 141.81944444444443
@@ -2952,7 +2944,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
 ```jsonld
 {
   "@context": [
-    "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/context.jsonld",
+    "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/context.jsonld",
     {
       "@base": "http://csdm-example-surveys/DP-572532/",
       "eg2": "http://csdm-example-surveys/DP-572532/",
@@ -5161,7 +5153,6 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "geometry": null,
           "properties": {
             "hasFeatureOfInterest": "l566592",
-            "resultTime": "2023-03-10T10:19:25+13:00",
             "hasResult": {
               "distance": 95.06,
               "angle": 141.81944444444443
@@ -5194,7 +5185,6 @@ This has a realistic set of features for a minimal survey (splitting a primary p
 @prefix nz-monument-state: <https://linked.data.gov.au/def/csdm/nz-monument-state/> .
 @prefix nz-surveypoint-purpose: <https://linked.data.gov.au/def/csdm/nz-surveypointpurpose/> .
 @prefix parcel: <https://linked.data.gov.au/def/csdm/parcels/> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -5204,25 +5194,9 @@ This has a realistic set of features for a minimal survey (splitting a primary p
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-eg2:DP_572532 a geojson:FeatureCollection ;
-    rdfs:label "DP 572532" ;
-    dcterms:time [ time:hasTime "2022-05-22"^^xsd:date ] ;
-    prov:wasGeneratedBy eg2:DP-1-S2 ;
-    container:adoptedVectors eg2:adoptedVectors ;
-    container:bearingRotation 0e+00 ;
-    container:horizontalCRS epsg:4167 ;
-    container:observedVectors eg2:observedVectors ;
-    container:parcels eg2:covenants,
-        eg2:primaryparcels ;
-    container:points eg2:BoundaryMarks ;
-    container:purpose <code:subdivision> ;
-    container:referencedCSD eg2:DP_119552 ;
-    container:surveyType <icsm:Subdivision> ;
-    container:vectorObservations eg2:vectorobservations-gps .
-
 eg2:44396823 a surv:CadastralMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "ALP I DP 481392" ;
+    commonpatterns:name [ rdfs:label "ALP I DP 481392" ;
             dcterms:hasPart [ rdfs:label "DP 481392" ;
                     commonpatterns:namePartType "Source" ],
                 [ rdfs:label "ALP I" ;
@@ -5236,14 +5210,14 @@ eg2:44396823 a surv:CadastralMark,
 
 eg2:8446454 a geojson:Feature ;
     parcel:appellation [ rdfs:label "Lot 1 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "572532" ;
+            dcterms:hasPart [ rdfs:label "Lot" ;
+                    commonpatterns:namePartType "ParcelType" ],
+                [ rdfs:label "572532" ;
                     commonpatterns:namePartType "PlanIdentifier" ],
-                [ rdfs:label "1" ;
-                    commonpatterns:namePartType "ParcelIdentifier" ],
                 [ rdfs:label "DP" ;
                     commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "Lot" ;
-                    commonpatterns:namePartType "ParcelType" ] ] ;
+                [ rdfs:label "1" ;
+                    commonpatterns:namePartType "ParcelIdentifier" ] ] ;
     parcel:interest [ parcel:interestLink eg2:1040074 ;
             parcel:interestType <nz-interest-type:fh> ] ;
     parcel:purpose <nz-parcel-purpose:fst> ;
@@ -5275,14 +5249,14 @@ eg2:8446455 a geojson:Feature ;
 eg2:8446456 a parcel:SecondaryParcel,
         geojson:Feature ;
     parcel:appellation [ rdfs:label "Area Z DP 572532" ;
-            dcterms:hasPart [ rdfs:label "Z" ;
-                    commonpatterns:namePartType "ParcelIdentifier" ],
-                [ rdfs:label "DP" ;
+            dcterms:hasPart [ rdfs:label "DP" ;
                     commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "Area" ;
-                    commonpatterns:namePartType "ParcelType" ],
+                [ rdfs:label "Z" ;
+                    commonpatterns:namePartType "ParcelIdentifier" ],
                 [ rdfs:label "572532" ;
-                    commonpatterns:namePartType "PlanIdentifier" ] ] ;
+                    commonpatterns:namePartType "PlanIdentifier" ],
+                [ rdfs:label "Area" ;
+                    commonpatterns:namePartType "ParcelType" ] ] ;
     parcel:interest [ parcel:interestLink eg2:1040075 ;
             parcel:interestType <nz-interest-type:fh> ] ;
     parcel:purpose <nz-parcel-purpose:c-l> ;
@@ -5292,8 +5266,8 @@ eg2:8446456 a parcel:SecondaryParcel,
     geojson:topology [ a geojson:Polygon ;
             geojson:relatedFeatures ( ( eg2:l999724 eg2:l591175 eg2:l369793 eg2:l435861 eg2:l345344 eg2:l685716 eg2:l832940 eg2:l715872 eg2:l641327 eg2:l852048 eg2:l949729 eg2:l951515 eg2:l761760 eg2:l580762 ) ) ] .
 
-eg2:BoundaryMarks a eg2:SurveyPoint,
-        geojson:FeatureCollection ;
+eg2:BoundaryMarks a geojson:FeatureCollection ;
+    geojson:collectionFeatureType "SurveyPoint" ;
     geojson:features eg2:11745104,
         eg2:11745160,
         eg2:11745161,
@@ -5324,12 +5298,6 @@ eg2:BoundaryMarks a eg2:SurveyPoint,
         eg2:49655185,
         eg2:49655186,
         eg2:49655187 .
-
-eg2:DP-1-S2 prov:endedAtTime "2029-01-01T01:02:03+00:00"^^xsd:dateTime .
-
-eg2:DP_119552 rdfs:label "DP 119552" ;
-    dcterms:time [ time:hasTime "2022-02-11"^^xsd:date ] ;
-    container:bearingRotation 0e+00 .
 
 eg2:adoptedVectors a surv:SurveyedVector,
         geojson:FeatureCollection ;
@@ -5363,9 +5331,9 @@ eg2:l520719 a geojson:Feature ;
 eg2:l595769 a geojson:Feature ;
     container:purpose eg2:adoption ;
     geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:44438410 eg2:29960715 ) ],
+            geojson:relatedFeatures ( eg2:44438418 eg2:29960715 ) ],
         [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:44438418 eg2:29960715 ) ] .
+            geojson:relatedFeatures ( eg2:44438410 eg2:29960715 ) ] .
 
 eg2:l599462 a geojson:Feature ;
     container:purpose eg2:radiation ;
@@ -5463,10 +5431,7 @@ eg2:vectorobservations-gps a sosa:ObservationCollection,
     sosa:hasMember [ a geojson:Feature ;
             sosa:hasFeatureOfInterest eg2:l566592 ;
             sosa:hasResult [ surv:distance 9.506e+01 ] ;
-            sosa:resultTime "2023-03-10T10:19:25+13:00" ;
-            ns1:angleAccuracyMeasure 3.928371e-04 ;
             ns1:angleType angletype:bearing ;
-            ns1:distanceAccuracyMeasure 1e-03 ;
             ns1:distanceType distancetype:ellipsoidal ] ;
     sosa:madeBySensor [ a <icsm-equipment-type:gnss> ;
             sosa:hasSubSystem <https://linked.data.gov.au/def/csdm/sensors/s1>,
@@ -5481,16 +5446,17 @@ eg2:vectorobservations-gps a sosa:ObservationCollection,
 
 eg2:11745161 a surv:CadastralMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "LP X DP 119552" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "119552" ;
+    commonpatterns:name [ rdfs:label "LP X DP 119552" ;
+            dcterms:hasPart [ rdfs:label "119552" ;
                     commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "X" ;
                     commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "LP" ;
                     commonpatterns:namePartType "MarkType" ] ] ;
     commonpatterns:qualityMeasure 6 ;
+    surv:fromSurvey eg2:DP_119552 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
             surv:form nz-monument-form:plug ;
             surv:state nz-monument-state:original ] ;
@@ -5500,12 +5466,13 @@ eg2:11745161 a surv:CadastralMark,
 
 eg2:1725787 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "RM E DP 119552" ;
+    rdfs:comment "ALP in channel of drive" ;
+    commonpatterns:name [ rdfs:label "RM E DP 119552" ;
             dcterms:hasPart [ rdfs:label "RM E" ;
                     commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP 119552" ;
                     commonpatterns:namePartType "Source" ] ] ;
-    rdfs:comment "ALP in channel of drive" ;
+    surv:fromSurvey eg2:DP_119552 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
             surv:form nz-monument-form:plaque ;
             surv:state nz-monument-state:original ] ;
@@ -5600,16 +5567,17 @@ eg2:l965727 a geojson:Feature ;
 
 eg2:29962820 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "Peg 4 DP 119552" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
+    commonpatterns:name [ rdfs:label "Peg 4 DP 119552" ;
+            dcterms:hasPart [ rdfs:label "Peg" ;
+                    commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "DP" ;
                     commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "4" ;
                     commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "Peg" ;
-                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "119552" ;
                     commonpatterns:namePartType "Stamp" ] ] ;
     commonpatterns:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_119552 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:peg ;
             surv:state nz-monument-state:adopted ] ;
@@ -5619,16 +5587,17 @@ eg2:29962820 a surv:BoundaryMark,
 
 eg2:29963073 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "Peg 8 DP 119553" ;
-            dcterms:hasPart [ rdfs:label "119553" ;
-                    commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "Peg" ;
+    commonpatterns:name [ rdfs:label "Peg 8 DP 119553" ;
+            dcterms:hasPart [ rdfs:label "Peg" ;
                     commonpatterns:namePartType "MarkType" ],
-                [ rdfs:label "8" ;
-                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ] ] ;
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "119553" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "8" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
     commonpatterns:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_119553 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:peg ;
             surv:state nz-monument-state:adopted ] ;
@@ -5638,7 +5607,7 @@ eg2:29963073 a surv:BoundaryMark,
 
 eg2:29963182 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "Peg 7 DP 119553" ;
+    commonpatterns:name [ rdfs:label "Peg 7 DP 119553" ;
             dcterms:hasPart [ rdfs:label "7" ;
                     commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "Peg" ;
@@ -5648,6 +5617,7 @@ eg2:29963182 a surv:BoundaryMark,
                 [ rdfs:label "119553" ;
                     commonpatterns:namePartType "Stamp" ] ] ;
     commonpatterns:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_119553 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:peg ;
             surv:state nz-monument-state:adopted ] ;
@@ -5657,16 +5627,17 @@ eg2:29963182 a surv:BoundaryMark,
 
 eg2:49655173 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "Peg 19 DP 572532" ;
+    commonpatterns:name [ rdfs:label "Peg 19 DP 572532" ;
             dcterms:hasPart [ rdfs:label "19" ;
                     commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "Peg" ;
                     commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "572532" ;
                     commonpatterns:namePartType "Stamp" ] ] ;
     commonpatterns:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
             surv:form nz-monument-form:Peg ;
             surv:state nz-monument-state:new ] ;
@@ -5676,16 +5647,17 @@ eg2:49655173 a surv:BoundaryMark,
 
 eg2:49655176 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "UNMK 22 DP 572532" ;
+    commonpatterns:name [ rdfs:label "UNMK 22 DP 572532" ;
             dcterms:hasPart [ rdfs:label "UNMK" ;
                     commonpatterns:namePartType "MarkType" ],
-                [ rdfs:label "572532" ;
+                [ rdfs:label "22" ;
                     commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
                     commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "22" ;
+                [ rdfs:label "572532" ;
                     commonpatterns:namePartType "Stamp" ] ] ;
     commonpatterns:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
             surv:state nz-monument-state:new ] ;
@@ -5695,16 +5667,17 @@ eg2:49655176 a surv:BoundaryMark,
 
 eg2:49655177 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "UNMK 23 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "23" ;
+    commonpatterns:name [ rdfs:label "UNMK 23 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "23" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "572532" ;
                     commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType "MarkType" ],
-                [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "572532" ;
-                    commonpatterns:namePartType "Stamp" ] ] ;
+                    commonpatterns:namePartType "MarkType" ] ] ;
     commonpatterns:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
             surv:state nz-monument-state:new ] ;
@@ -5714,16 +5687,17 @@ eg2:49655177 a surv:BoundaryMark,
 
 eg2:49655178 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "UNMK 24 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "572532" ;
-                    commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "UNMK" ;
+    commonpatterns:name [ rdfs:label "UNMK 24 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "UNMK" ;
                     commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "24" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
                     commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "24" ;
+                [ rdfs:label "572532" ;
                     commonpatterns:namePartType "Stamp" ] ] ;
     commonpatterns:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
             surv:state nz-monument-state:new ] ;
@@ -5733,7 +5707,7 @@ eg2:49655178 a surv:BoundaryMark,
 
 eg2:49655179 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "UNMK 25 DP 572532" ;
+    commonpatterns:name [ rdfs:label "UNMK 25 DP 572532" ;
             dcterms:hasPart [ rdfs:label "DP" ;
                     commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "572532" ;
@@ -5743,6 +5717,7 @@ eg2:49655179 a surv:BoundaryMark,
                 [ rdfs:label "25" ;
                     commonpatterns:namePartType "Stamp" ] ] ;
     commonpatterns:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
             surv:state nz-monument-state:new ] ;
@@ -5752,16 +5727,17 @@ eg2:49655179 a surv:BoundaryMark,
 
 eg2:49655180 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "UNMK 26 DP 572532" ;
+    commonpatterns:name [ rdfs:label "UNMK 26 DP 572532" ;
             dcterms:hasPart [ rdfs:label "26" ;
-                    commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "572532" ;
                     commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
                     commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType "MarkType" ] ] ;
+                    commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "572532" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
     commonpatterns:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
             surv:state nz-monument-state:new ] ;
@@ -5771,16 +5747,17 @@ eg2:49655180 a surv:BoundaryMark,
 
 eg2:49655181 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "UNMK 27 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "572532" ;
-                    commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "UNMK" ;
+    commonpatterns:name [ rdfs:label "UNMK 27 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "UNMK" ;
                     commonpatterns:namePartType "MarkType" ],
-                [ rdfs:label "27" ;
-                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ] ] ;
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "572532" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "27" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
     commonpatterns:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
             surv:state nz-monument-state:new ] ;
@@ -5790,16 +5767,17 @@ eg2:49655181 a surv:BoundaryMark,
 
 eg2:49655182 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "UNMK 28 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "572532" ;
-                    commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "28" ;
+    commonpatterns:name [ rdfs:label "UNMK 28 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "572532" ;
                     commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType "MarkType" ] ] ;
+                    commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "28" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
     commonpatterns:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
             surv:state nz-monument-state:new ] ;
@@ -5809,7 +5787,7 @@ eg2:49655182 a surv:BoundaryMark,
 
 eg2:49655183 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "UNMK 29 DP 572532" ;
+    commonpatterns:name [ rdfs:label "UNMK 29 DP 572532" ;
             dcterms:hasPart [ rdfs:label "UNMK" ;
                     commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "DP" ;
@@ -5819,6 +5797,7 @@ eg2:49655183 a surv:BoundaryMark,
                 [ rdfs:label "572532" ;
                     commonpatterns:namePartType "Stamp" ] ] ;
     commonpatterns:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
             surv:state nz-monument-state:new ] ;
@@ -5828,16 +5807,17 @@ eg2:49655183 a surv:BoundaryMark,
 
 eg2:49655184 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "UNMK 30 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "30" ;
-                    commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType "MarkType" ],
+    commonpatterns:name [ rdfs:label "UNMK 30 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "572532" ;
                     commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ] ] ;
+                [ rdfs:label "30" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "UNMK" ;
+                    commonpatterns:namePartType "MarkType" ] ] ;
     commonpatterns:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
             surv:state nz-monument-state:new ] ;
@@ -5882,19 +5862,20 @@ eg2:l999724 a geojson:Feature ;
 
 eg2:11745104 a surv:GeodeticReferenceMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "RM C DP 119552 (EQ9W)" ;
+    rdfs:comment "Brass circular plaque flush in channel" ;
+    commonpatterns:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
             dcterms:hasPart [ rdfs:label "RM" ;
                     commonpatterns:namePartType "MarkType" ],
-                [ rdfs:label "C" ;
-                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
                     commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "119552" ;
                     commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "EQ9W" ;
-                    commonpatterns:namePartType "geodeticStamp" ] ] ;
-    rdfs:comment "Brass circular plaque flush in channel" ;
+                    commonpatterns:namePartType "geodeticStamp" ],
+                [ rdfs:label "C" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
     commonpatterns:qualityMeasure 5 ;
+    surv:fromSurvey eg2:DP_119552 ;
     surv:geodeticid "EQ9W" ;
     surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
             surv:form nz-monument-form:plaque ;
@@ -5905,16 +5886,17 @@ eg2:11745104 a surv:GeodeticReferenceMark,
 
 eg2:11745160 a surv:CadastralMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "RM E DP 119552" ;
-            dcterms:hasPart [ rdfs:label "E" ;
-                    commonpatterns:namePartType "Stamp" ],
+    commonpatterns:name [ rdfs:label "RM E DP 119552" ;
+            dcterms:hasPart [ rdfs:label "RM" ;
+                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "DP" ;
                     commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "RM" ;
-                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "119552" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "E" ;
                     commonpatterns:namePartType "Stamp" ] ] ;
     commonpatterns:qualityMeasure 6 ;
+    surv:fromSurvey eg2:DP_119552 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
             surv:form nz-monument-form:plaque ;
             surv:state nz-monument-state:original ] ;
@@ -5924,16 +5906,17 @@ eg2:11745160 a surv:CadastralMark,
 
 eg2:29959289 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "Peg 3 DP 119553" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ],
+    commonpatterns:name [ rdfs:label "Peg 3 DP 119553" ;
+            dcterms:hasPart [ rdfs:label "3" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "119553" ;
                     commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "Peg" ;
-                    commonpatterns:namePartType "MarkType" ],
-                [ rdfs:label "3" ;
-                    commonpatterns:namePartType "Stamp" ] ] ;
+                    commonpatterns:namePartType "MarkType" ] ] ;
     commonpatterns:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_119553 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-found-replaced ;
             surv:form nz-monument-form:peg ;
             surv:state nz-monument-state:new ] ;
@@ -5943,17 +5926,18 @@ eg2:29959289 a surv:BoundaryMark,
 
 eg2:44438410 a surv:CadastralMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "RM I DP 119553" ;
-            dcterms:hasPart [ rdfs:label "119553" ;
-                    commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "RM" ;
-                    commonpatterns:namePartType "MarkType" ],
-                [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "I" ;
-                    commonpatterns:namePartType "Stamp" ] ] ;
     rdfs:comment "ORM in channel above catch pits" ;
+    commonpatterns:name [ rdfs:label "RM I DP 119553" ;
+            dcterms:hasPart [ rdfs:label "RM" ;
+                    commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "119553" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "I" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ] ] ;
     commonpatterns:qualityMeasure 6 ;
+    surv:fromSurvey eg2:DP_119553 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
             surv:form nz-monument-form:plaque ;
             surv:state nz-monument-state:original ] ;
@@ -5963,16 +5947,17 @@ eg2:44438410 a surv:CadastralMark,
 
 eg2:49655172 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "Peg 18 DP 572532" ;
+    commonpatterns:name [ rdfs:label "Peg 18 DP 572532" ;
             dcterms:hasPart [ rdfs:label "572532" ;
                     commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "18" ;
-                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "Peg" ;
                     commonpatterns:namePartType "MarkType" ],
-                [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ] ] ;
+                [ rdfs:label "18" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
     commonpatterns:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
             surv:form nz-monument-form:Peg ;
             surv:state nz-monument-state:new ] ;
@@ -5982,16 +5967,17 @@ eg2:49655172 a surv:BoundaryMark,
 
 eg2:49655174 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "UNMK 20 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "20" ;
+    commonpatterns:name [ rdfs:label "UNMK 20 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "20" ;
                     commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "572532" ;
                     commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "UNMK" ;
                     commonpatterns:namePartType "MarkType" ] ] ;
     commonpatterns:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
             surv:state nz-monument-state:new ] ;
@@ -6001,16 +5987,17 @@ eg2:49655174 a surv:BoundaryMark,
 
 eg2:49655175 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "UNMK 21 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "21" ;
+    commonpatterns:name [ rdfs:label "UNMK 21 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "UNMK" ;
+                    commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "21" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "572532" ;
                     commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType "MarkType" ],
-                [ rdfs:label "572532" ;
-                    commonpatterns:namePartType "Stamp" ] ] ;
+                    commonpatterns:namePartType "PlanType" ] ] ;
     commonpatterns:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
             surv:state nz-monument-state:new ] ;
@@ -6020,17 +6007,18 @@ eg2:49655175 a surv:BoundaryMark,
 
 eg2:49655186 a surv:CadastralMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "RM H DP 119553" ;
+    rdfs:comment "ORM in channel above catch pits" ;
+    commonpatterns:name [ rdfs:label "RM H DP 119553" ;
             dcterms:hasPart [ rdfs:label "DP" ;
                     commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "RM" ;
-                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "H" ;
                     commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "119553" ;
-                    commonpatterns:namePartType "Stamp" ] ] ;
-    rdfs:comment "ORM in channel above catch pits" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "RM" ;
+                    commonpatterns:namePartType "MarkType" ] ] ;
     commonpatterns:qualityMeasure 6 ;
+    surv:fromSurvey eg2:DP_119553 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
             surv:form nz-monument-form:plaque ;
             surv:state nz-monument-state:original ] ;
@@ -6040,16 +6028,17 @@ eg2:49655186 a surv:CadastralMark,
 
 eg2:49655187 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "Peg 38 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "Peg" ;
-                    commonpatterns:namePartType "MarkType" ],
-                [ rdfs:label "572532" ;
+    commonpatterns:name [ rdfs:label "Peg 38 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "572532" ;
                     commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
                     commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "38" ;
-                    commonpatterns:namePartType "Stamp" ] ] ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "Peg" ;
+                    commonpatterns:namePartType "MarkType" ] ] ;
     commonpatterns:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
             surv:form nz-monument-form:Peg ;
             surv:state nz-monument-state:new ] ;
@@ -6059,16 +6048,17 @@ eg2:49655187 a surv:BoundaryMark,
 
 eg2:29960715 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "Peg 6 DP 119553" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "Peg" ;
-                    commonpatterns:namePartType "MarkType" ],
+    commonpatterns:name [ rdfs:label "Peg 6 DP 119553" ;
+            dcterms:hasPart [ rdfs:label "119553" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "6" ;
                     commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "119553" ;
-                    commonpatterns:namePartType "Stamp" ] ] ;
+                [ rdfs:label "Peg" ;
+                    commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ] ] ;
     commonpatterns:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_119553 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:searched-for-not-found ;
             surv:form nz-monument-form:peg ;
             surv:state nz-monument-state:Adopted ] ;
@@ -6078,17 +6068,18 @@ eg2:29960715 a surv:BoundaryMark,
 
 eg2:44438418 a surv:CadastralMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "ALP I DP 481392" ;
-            dcterms:hasPart [ rdfs:label "I" ;
-                    commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "ALP" ;
+    rdfs:comment "ALP in channel of drive" ;
+    commonpatterns:name [ rdfs:label "ALP I DP 481392" ;
+            dcterms:hasPart [ rdfs:label "ALP" ;
                     commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "481392" ;
                     commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ] ] ;
-    rdfs:comment "ALP in channel of drive" ;
+                [ rdfs:label "I" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
     commonpatterns:qualityMeasure 6 ;
+    surv:fromSurvey eg2:DP_481392 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
             surv:form nz-monument-form:pin ;
             surv:state nz-monument-state:original ] ;
@@ -6098,16 +6089,17 @@ eg2:44438418 a surv:CadastralMark,
 
 eg2:49655170 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "UNMK 14 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "14" ;
-                    commonpatterns:namePartType "Stamp" ],
+    commonpatterns:name [ rdfs:label "UNMK 14 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "UNMK" ;
+                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "572532" ;
                     commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType "MarkType" ] ] ;
+                [ rdfs:label "14" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ] ] ;
     commonpatterns:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:mark-impractible ;
             surv:form nz-monument-form:UNMK ;
             surv:state nz-monument-state:new ] ;
@@ -6117,16 +6109,17 @@ eg2:49655170 a surv:BoundaryMark,
 
 eg2:49655171 a surv:BoundaryMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "DISK 15 DP 572532" ;
+    commonpatterns:name [ rdfs:label "DISK 15 DP 572532" ;
             dcterms:hasPart [ rdfs:label "572532" ;
                     commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "Disk" ;
-                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "DP" ;
                     commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "15" ;
-                    commonpatterns:namePartType "Stamp" ] ] ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "Disk" ;
+                    commonpatterns:namePartType "MarkType" ] ] ;
     commonpatterns:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
             surv:form nz-monument-form:peg ;
             surv:state nz-monument-state:new ] ;
@@ -6134,25 +6127,45 @@ eg2:49655171 a surv:BoundaryMark,
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 1.747505e+02 -3.693106e+01 ) ] .
 
+eg2:DP_119552 rdfs:label "DP 119552" ;
+    dcterms:time [ time:hasTime "2022-02-11"^^xsd:date ] ;
+    container:bearingRotation 0e+00 .
+
 eg2:49655185 a surv:CadastralMark,
         geojson:Feature ;
-    rdfs:label [ rdfs:label "AP 1 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
+    rdfs:comment "Flush in conc" ;
+    commonpatterns:name [ rdfs:label "AP 1 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "572532" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "DP" ;
                     commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "AP" ;
-                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "1" ;
                     commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "572532" ;
-                    commonpatterns:namePartType "Stamp" ] ] ;
-    rdfs:comment "Flush in conc" ;
+                [ rdfs:label "AP" ;
+                    commonpatterns:namePartType "MarkType" ] ] ;
     commonpatterns:qualityMeasure 6 ;
+    surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
             surv:form nz-monument-form:pin ;
             surv:state nz-monument-state:new ] ;
     surv:purpose <icsm:prm> ;
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 1.747504e+02 -3.693097e+01 ) ] .
+
+eg2:DP_572532 a geojson:FeatureCollection ;
+    rdfs:label "DP 572532" ;
+    dcterms:time [ time:hasTime "2022-05-22"^^xsd:date ] ;
+    container:adoptedVectors eg2:adoptedVectors ;
+    container:bearingRotation 0e+00 ;
+    container:horizontalCRS epsg:4167 ;
+    container:observedVectors eg2:observedVectors ;
+    container:parcels eg2:covenants,
+        eg2:primaryparcels ;
+    container:points eg2:BoundaryMarks ;
+    container:purpose <code:subdivision> ;
+    container:referencedCSD eg2:DP_119552 ;
+    container:surveyType <icsm:Subdivision> ;
+    container:vectorObservations eg2:vectorobservations-gps .
 
 
 ```
@@ -6260,7 +6273,7 @@ $defs:
           type: array
           items:
             allOf:
-            - $ref: https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/schema.yaml
+            - $ref: https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/schema.yaml
             - properties:
                 featureType:
                   enum:
@@ -6281,7 +6294,7 @@ $defs:
       properties:
         properties:
           appellation:
-            $ref: https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
+            $ref: https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
             x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/appellation
           parcelType:
             $ref: '#/$defs/coderef'
@@ -6406,7 +6419,7 @@ properties:
     type: string
     x-jsonld-id: https://linked.data.gov.au/def/csdm/container/surveyDescription
   surveyDescriptors:
-    $ref: https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
+    $ref: https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
     x-jsonld-id: https://linked.data.gov.au/def/csdm/container/surveyDescriptors
   purpose:
     oneOf:
@@ -6561,12 +6574,12 @@ properties:
   vectorObservations:
     type: array
     items:
-      $ref: https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/schema.yaml#/$defs/SurveyVectorObsCollection
+      $ref: https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/schema.yaml#/$defs/SurveyVectorObsCollection
     x-jsonld-id: https://linked.data.gov.au/def/csdm/container/vectorObservations
   adoptedObservations:
     type: array
     items:
-      $ref: https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/schema.yaml#/$defs/SurveyVectorObsCollection
+      $ref: https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/schema.yaml#/$defs/SurveyVectorObsCollection
   occupationObservations:
     type: array
     items:
@@ -6610,8 +6623,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/schema.json)
-* JSON version: [schema.json](https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/schema.yaml)
+* YAML version: [schema.yaml](https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/schema.json)
+* JSON version: [schema.json](https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/schema.yaml)
 
 
 # JSON-LD Context
@@ -6619,6 +6632,184 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
+    "type": "@type",
+    "featureType": "geojson:collectionFeatureType",
+    "coordRefSys": "http://www.opengis.net/def/glossary/term/CoordinateReferenceSystemCRS",
+    "features": {
+      "@context": {
+        "featureType": "@type",
+        "links": {
+          "@context": {
+            "href": {
+              "@type": "@id",
+              "@id": "oa:hasTarget"
+            },
+            "rel": {
+              "@context": {
+                "@base": "http://www.iana.org/assignments/relation/"
+              },
+              "@id": "http://www.iana.org/assignments/relation",
+              "@type": "@id"
+            },
+            "type": "dct:type",
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent"
+          },
+          "@id": "rdfs:seeAlso"
+        },
+        "Prism": {
+          "@id": "geojson:Prism",
+          "@context": {
+            "base": "geojson:prismBase",
+            "lower": "geojson:prismLower",
+            "upper": "geojson:prismUpper"
+          }
+        },
+        "MultiPrism": {
+          "@id": "geojson:MultiPrism",
+          "@context": {
+            "prisms": "geojson:prisms"
+          }
+        },
+        "topology": {
+          "@context": {
+            "references": {
+              "@id": "geojson:relatedFeatures",
+              "@type": "@id",
+              "@container": "@list"
+            }
+          },
+          "@type": "@id",
+          "@id": "geojson:topology"
+        }
+      },
+      "@id": "geojson:features",
+      "@container": "@set"
+    },
+    "Feature": "geojson:Feature",
+    "FeatureCollection": "geojson:FeatureCollection",
+    "GeometryCollection": "geojson:GeometryCollection",
+    "LineString": "geojson:LineString",
+    "MultiLineString": "geojson:MultiLineString",
+    "MultiPoint": "geojson:MultiPoint",
+    "MultiPolygon": "geojson:MultiPolygon",
+    "Point": "geojson:Point",
+    "Polygon": "geojson:Polygon",
+    "id": "@id",
+    "properties": "@nest",
+    "geometry": "geojson:geometry",
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
+    },
+    "links": {
+      "@context": {
+        "href": {
+          "@type": "@id",
+          "@id": "oa:hasTarget"
+        },
+        "rel": {
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          },
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id"
+        },
+        "type": "dct:type",
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent"
+      },
+      "@id": "rdfs:seeAlso"
+    },
+    "time": {
+      "@context": {
+        "date": {
+          "@id": "owlTime:hasTime",
+          "@type": "xsd:date"
+        },
+        "timestamp": {
+          "@id": "owlTime:hasTime",
+          "@type": "xsd:dateTime"
+        },
+        "interval": {
+          "@id": "owlTime:hasTime",
+          "@container": "@list"
+        }
+      },
+      "@id": "dct:time"
+    },
+    "place": "dct:spatial",
+    "Polyhedron": "geojson:Polyhedron",
+    "MultiPolyhedron": "geojson:MultiPolyhedron",
+    "Prism": {
+      "@id": "geojson:Prism",
+      "@context": {
+        "base": "geojson:prismBase",
+        "lower": "geojson:prismLower",
+        "upper": "geojson:prismUpper"
+      }
+    },
+    "MultiPrism": {
+      "@id": "geojson:MultiPrism",
+      "@context": {
+        "prisms": "geojson:prisms"
+      }
+    },
+    "coordinates": {
+      "@container": "@list",
+      "@id": "geojson:coordinates"
+    },
+    "geometries": {
+      "@id": "geojson:geometry",
+      "@container": "@list"
+    },
+    "name": "rdfs:label",
+    "bearingRotation": "container:bearingRotation",
+    "annotations": {
+      "@context": {
+        "href": {
+          "@type": "@id",
+          "@id": "oa:hasTarget"
+        },
+        "rel": {
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          },
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id"
+        },
+        "type": "dct:type",
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent",
+        "role": {
+          "@id": "prof:hasRole",
+          "@type": "@id"
+        },
+        "conformsTo": {
+          "@id": "dct:conformsTo",
+          "@type": "@id"
+        }
+      },
+      "@id": "container:annotations"
+    },
+    "CSD": "container:CSD",
+    "locality": "csd:locality",
+    "PrimaryParcel": {
+      "@id": "parcel:PrimaryParcel",
+      "@type": "@id"
+    },
+    "SecondaryParcel": {
+      "@id": "parcel:SecondaryParcel",
+      "@type": "@id"
+    },
+    "parcelQualityClass": {
+      "@id": "parcel:qualityClass",
+      "@type": "@id"
+    },
+    "terrainIntersectionCurve": "parcel:terrainIntersectionCurve",
     "horizontalCRS": {
       "@id": "container:horizontalCRS",
       "@type": "@id"
@@ -6634,13 +6825,13 @@ Links to the schema:
     "surveyDescription": "container:surveyDescription",
     "surveyDescriptors": {
       "@context": {
+        "name": "csdm:commonpatterns/name",
         "hasPart": {
           "@context": {
-            "type": "commonpatterns:namePartType"
+            "type": "csdm:commonpatterns/namePartType"
           },
           "@id": "dct:hasPart"
-        },
-        "name": "commonpatterns:name"
+        }
       },
       "@id": "container:surveyDescriptors"
     },
@@ -6652,12 +6843,7 @@ Links to the schema:
       "@id": "container:surveyType",
       "@type": "@id"
     },
-    "referencedCSDs": {
-      "@context": {
-        "name": "rdfs:label"
-      },
-      "@id": "container:referencedCSD"
-    },
+    "referencedCSDs": "container:referencedCSD",
     "adminUnit": {
       "@context": {
         "href": {
@@ -6720,119 +6906,127 @@ Links to the schema:
     "points": {
       "@context": {
         "features": {
-          "@container": "@set",
-          "@id": "geojson:features"
-        },
-        "name": {
           "@context": {
-            "hasPart": {
+            "featureType": "@type",
+            "links": {
               "@context": {
-                "type": "commonpatterns:namePartType"
+                "href": {
+                  "@type": "@id",
+                  "@id": "oa:hasTarget"
+                },
+                "rel": {
+                  "@context": {
+                    "@base": "http://www.iana.org/assignments/relation/"
+                  },
+                  "@id": "http://www.iana.org/assignments/relation",
+                  "@type": "@id"
+                },
+                "type": "dct:type",
+                "hreflang": "dct:language",
+                "title": "rdfs:label",
+                "length": "dct:extent"
               },
-              "@id": "dct:hasPart"
+              "@id": "rdfs:seeAlso"
             },
-            "name": "commonpatterns:name"
-          },
-          "@id": "rdfs:label",
-          "@type": "@id"
-        },
-        "purpose": {
-          "@type": "@id",
-          "@id": "surv:purpose"
-        },
-        "ptQuality": {
-          "@id": "commonpatterns:qualityClass",
-          "@type": "@id"
-        },
-        "ptQualityMeasure": {
-          "@id": "commonpatterns:qualityMeasure",
-          "@type": "@id"
-        },
-        "comment": "rdfs:comment",
-        "monumentedBy": {
-          "@type": "@id",
-          "@id": "surv:monumentedBy"
-        },
-        "age": "surv:age",
-        "note": "rdfs:comment",
-        "geodeticid": {
-          "@context": {
-            "hasPart": {
+            "Prism": {
+              "@id": "geojson:Prism",
               "@context": {
-                "type": "commonpatterns:namePartType"
-              },
-              "@id": "dct:hasPart"
+                "base": "geojson:prismBase",
+                "lower": "geojson:prismLower",
+                "upper": "geojson:prismUpper"
+              }
             },
-            "name": "commonpatterns:name"
+            "MultiPrism": {
+              "@id": "geojson:MultiPrism",
+              "@context": {
+                "prisms": "geojson:prisms"
+              }
+            },
+            "topology": {
+              "@context": {
+                "references": {
+                  "@id": "geojson:relatedFeatures",
+                  "@type": "@id",
+                  "@container": "@list"
+                }
+              },
+              "@type": "@id",
+              "@id": "geojson:topology"
+            },
+            "condition": {
+              "@type": "@id",
+              "@id": "surv:condition"
+            },
+            "form": {
+              "@type": "@id",
+              "@id": "surv:form"
+            },
+            "replaces": {
+              "@type": "@id",
+              "@id": "surv:replaces"
+            },
+            "state": {
+              "@type": "@id",
+              "@id": "surv:state"
+            },
+            "purpose": {
+              "@type": "@id",
+              "@id": "surv:purpose"
+            },
+            "geodeticid": {
+              "@id": "surv:geodeticid",
+              "@context": {
+                "hasPart": {
+                  "@context": {
+                    "type": "csdm:commonpatterns/namePartType"
+                  },
+                  "@id": "dct:hasPart"
+                }
+              }
+            },
+            "name": {
+              "@id": "csdm:commonpatterns/name",
+              "@type": "@id",
+              "@context": {
+                "hasPart": {
+                  "@context": {
+                    "type": "csdm:commonpatterns/namePartType"
+                  },
+                  "@id": "dct:hasPart"
+                }
+              }
+            }
           },
-          "@id": "surv:geodeticid"
-        },
-        "condition": {
-          "@type": "@id",
-          "@id": "surv:condition"
-        },
-        "form": {
-          "@type": "@id",
-          "@id": "surv:form"
-        },
-        "replaces": {
-          "@type": "@id",
-          "@id": "surv:replaces"
-        },
-        "state": {
-          "@type": "@id",
-          "@id": "surv:state"
-        },
-        "references": {
-          "@id": "geojson:relatedFeatures",
-          "@type": "@id",
-          "@container": "@list"
-        },
-        "vectorPurpose": {
-          "@type": "@id",
-          "@id": "surv:vectorPurpose"
+          "@id": "geojson:features",
+          "@container": "@set"
         }
       },
       "@id": "container:points"
     },
     "observedVectors": {
       "@context": {
-        "features": {
-          "@container": "@set",
-          "@id": "geojson:features"
-        },
-        "references": {
-          "@id": "geojson:relatedFeatures",
-          "@type": "@id",
-          "@container": "@list"
-        }
+        "featureType": "@type"
       },
       "@id": "container:observedVectors"
     },
     "adoptedVectors": {
       "@context": {
-        "features": {
-          "@container": "@set",
-          "@id": "geojson:features"
-        }
+        "featureType": "@type"
       },
       "@id": "container:adoptedVectors"
     },
     "parcels": {
       "@context": {
-        "features": {
-          "@container": "@set",
-          "@id": "geojson:features"
-        },
+        "featureType": "@type",
         "appellation": {
           "@context": {
+            "name": "csdm:commonpatterns/name",
             "hasPart": {
               "@context": {
-                "type": "commonpatterns:namePartType"
+                "type": "csdm:commonpatterns/namePartType"
               },
               "@id": "dct:hasPart"
-            },
-            "name": "commonpatterns:name"
+            }
           },
           "@id": "parcel:appellation"
         },
@@ -6903,60 +7097,518 @@ Links to the schema:
       "@id": "container:parcels"
     },
     "vectorObservations": {
-      "@context": {},
-      "@id": "container:vectorObservations"
-    },
-    "resultTime": "sosa:resultTime",
-    "phenomenonTime": {
-      "@id": "sosa:phenomenonTime",
-      "@type": "@id"
-    },
-    "hasFeatureOfInterest": {
-      "@id": "sosa:hasFeatureOfInterest",
-      "@type": "@id"
-    },
-    "observedProperty": {
-      "@context": {
-        "@base": "https://linked.data.gov.au/def/csdm/property/"
-      },
-      "@id": "sosa:observedProperty",
-      "@type": "@id"
-    },
-    "usedProcedure": {
-      "@id": "sosa:usedProcedure",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@context": {
-        "@base": "https://linked.data.gov.au/def/csdm/sensors/Sensor",
-        "sensorType": "@type",
-        "baseSensor": "csdm:sensors/baseSensor",
-        "roverSensor": "csdm:sensors/roverSensor"
-      },
-      "@id": "sosa:madeBySensor",
-      "@type": "@id"
-    },
-    "hasMember": {
       "@context": {
         "observedProperty": {
+          "@context": {
+            "@base": "https://linked.data.gov.au/def/csdm/property/"
+          },
           "@id": "sosa:observedProperty",
           "@type": "@id"
         },
         "madeBySensor": {
+          "@context": {
+            "@base": "https://linked.data.gov.au/def/csdm/sensors/Sensor",
+            "sensorType": "@type",
+            "baseSensor": "csdm:sensors/baseSensor",
+            "roverSensor": "csdm:sensors/roverSensor"
+          },
           "@id": "sosa:madeBySensor",
           "@type": "@id"
         },
-        "features": {
+        "hasMember": {
+          "@context": {
+            "features": {
+              "@id": "sosa:hasMember",
+              "@type": "@id"
+            }
+          },
           "@id": "sosa:hasMember",
           "@type": "@id"
+        },
+        "featureType": "@type",
+        "features": {
+          "@id": "sosa:hasMember",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "features": {
+              "@container": "@set",
+              "@id": "sosa:hasMember",
+              "@type": "@id"
+            },
+            "hasResult": {
+              "@id": "sosa:hasResult",
+              "@type": "@id",
+              "@context": {
+                "pose": {
+                  "@context": {
+                    "angles": "csdm:utils/geopose/angles"
+                  },
+                  "@id": "surv:pose"
+                },
+                "distance": "surv:distance"
+              }
+            },
+            "hasResultQuality": {
+              "@id": "sosa:hasResultQuality",
+              "@type": "@id",
+              "@context": {
+                "angleAccuracy": "csdm:surveyobs/angleAccuracyMeasure",
+                "distanceAccuracy": "csdm:surveyobs/distanceAccuracyMeasure",
+                "distanceAccuracyClass": {
+                  "@type": "@id",
+                  "@id": "csdm:surveyobs/distanceAccuracyClass"
+                },
+                "angleAccuracyClass": {
+                  "@type": "@id",
+                  "@id": "csdm:surveyobs/angleAccuracyClass"
+                }
+              }
+            }
+          }
+        },
+        "angleType": {
+          "@context": {
+            "@base": "https://linked.data.gov.au/def/csdm/defs/angletypes/"
+          },
+          "@type": "@id",
+          "@id": "csdm:surveyobs/angleType"
+        },
+        "distanceType": {
+          "@context": {
+            "@base": "https://linked.data.gov.au/def/csdm/defs/distancetypes/"
+          },
+          "@type": "@id",
+          "@id": "csdm:surveyobs/distanceType"
         }
       },
-      "@id": "sosa:hasMember",
+      "@id": "container:vectorObservations"
+    },
+    "occupationObservations": {
+      "@context": {
+        "hasMember": {
+          "@context": {
+            "features": {
+              "@id": "sosa:hasMember",
+              "@type": "@id"
+            }
+          },
+          "@id": "sosa:hasMember",
+          "@type": "@id"
+        },
+        "featureType": "@type",
+        "features": {
+          "@id": "sosa:hasMember",
+          "@type": "@id",
+          "@container": "@set",
+          "@context": {
+            "features": {
+              "@container": "@set",
+              "@id": "sosa:hasMember",
+              "@type": "@id"
+            },
+            "hasResult": {
+              "@id": "sosa:hasResult",
+              "@type": "@id",
+              "@context": {
+                "pose": {
+                  "@context": {
+                    "angles": "csdm:utils/geopose/angles"
+                  },
+                  "@id": "surv:pose"
+                },
+                "distance": "surv:distance"
+              }
+            },
+            "hasResultQuality": {
+              "@id": "sosa:hasResultQuality",
+              "@type": "@id",
+              "@context": {
+                "angleAccuracy": "csdm:surveyobs/angleAccuracyMeasure",
+                "distanceAccuracy": "csdm:surveyobs/distanceAccuracyMeasure",
+                "distanceAccuracyClass": {
+                  "@type": "@id",
+                  "@id": "csdm:surveyobs/distanceAccuracyClass"
+                },
+                "angleAccuracyClass": {
+                  "@type": "@id",
+                  "@id": "csdm:surveyobs/angleAccuracyClass"
+                }
+              }
+            }
+          }
+        }
+      },
+      "@id": "container:occupationObservations"
+    },
+    "occupationFeatures": "container:occupationFeatures",
+    "Arc": "geojson:Arc",
+    "ArcWithCenter": "geojson:ArcWithCenter",
+    "ArcByChord": "geojson:ArcByChord",
+    "CircleByCenter": "geojson:CircleByCenter",
+    "CubicSpline": "geojson:CubicSpline",
+    "radius": "geojson:radius",
+    "arcLength": "geojson:arcLength",
+    "startTangentVector": "geojson:startTangentVector",
+    "endTangentVector": "geojson:endTangentVector",
+    "activityType": "@type",
+    "agentType": "@type",
+    "entityType": "@type",
+    "provType": "@type",
+    "Activity": "prov:Activity",
+    "ActivityInfluence": "prov:ActivityInfluence",
+    "Agent": "prov:Agent",
+    "AgentInfluence": "prov:AgentInfluence",
+    "Association": "prov:Association",
+    "Attribution": "prov:Attribution",
+    "Bundle": "prov:Bundle",
+    "Collection": "prov:Collection",
+    "Communication": "prov:Communication",
+    "Delegation": "prov:Delegation",
+    "Derivation": "prov:Derivation",
+    "EmptyCollection": "prov:EmptyCollection",
+    "End": "prov:End",
+    "Entity": "prov:Entity",
+    "EntityInfluence": "prov:EntityInfluence",
+    "Generation": "prov:Generation",
+    "Influence": "prov:Influence",
+    "InstantaneousEvent": "prov:InstantaneousEvent",
+    "Invalidation": "prov:Invalidation",
+    "Location": "prov:Location",
+    "Organization": "prov:Organization",
+    "Person": "prov:Person",
+    "Plan": "prov:Plan",
+    "PrimarySource": "prov:PrimarySource",
+    "Quotation": "prov:Quotation",
+    "Revision": "prov:Revision",
+    "Role": "prov:Role",
+    "SoftwareAgent": "prov:SoftwareAgent",
+    "Start": "prov:Start",
+    "Usage": "prov:Usage",
+    "ServiceDescription": "prov:ServiceDescription",
+    "DirectQueryService": "prov:DirectQueryService",
+    "Accept": "prov:Accept",
+    "Contribute": "prov:Contribute",
+    "Contributor": "prov:Contributor",
+    "Copyright": "prov:Copyright",
+    "Create": "prov:Create",
+    "Creator": "prov:Creator",
+    "Modify": "prov:Modify",
+    "Publish": "prov:Publish",
+    "Publisher": "prov:Publisher",
+    "Replace": "prov:Replace",
+    "RightsAssignment": "prov:RightsAssignment",
+    "RightsHolder": "prov:RightsHolder",
+    "Submit": "prov:Submit",
+    "Dictionary": "prov:Dictionary",
+    "EmptyDictionary": "prov:EmptyDictionary",
+    "KeyEntityPair": "prov:KeyEntityPair",
+    "Insertion": "prov:Insertion",
+    "Removal": "prov:Removal",
+    "atTime": {
+      "@id": "prov:atTime",
+      "@type": "xsd:dateTime"
+    },
+    "endedAtTime": {
+      "@id": "prov:endedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "generatedAtTime": {
+      "@id": "prov:generatedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "invalidatedAtTime": {
+      "@id": "prov:invalidatedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "startedAtTime": {
+      "@id": "prov:startedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "value": "prov:value",
+    "provenanceUriTemplate": "prov:provenanceUriTemplate",
+    "pairKey": {
+      "@id": "prov:pairKey",
+      "@type": "rdfs:Literal"
+    },
+    "removedKey": {
+      "@id": "prov:removedKey",
+      "@type": "rdfs:Literal"
+    },
+    "actedOnBehalfOf": {
+      "@id": "prov:actedOnBehalfOf",
       "@type": "@id"
     },
-    "id": "@id",
-    "properties": "@nest",
-    "featureType": "@type",
+    "agent": {
+      "@id": "prov:agent",
+      "@type": "@id"
+    },
+    "alternateOf": {
+      "@id": "prov:alternateOf",
+      "@type": "@id"
+    },
+    "atLocation": {
+      "@id": "prov:atLocation",
+      "@type": "@id"
+    },
+    "entity": {
+      "@id": "prov:entity",
+      "@type": "@id"
+    },
+    "generated": {
+      "@id": "prov:generated",
+      "@type": "@id"
+    },
+    "hadActivity": {
+      "@id": "prov:hadActivity",
+      "@type": "@id"
+    },
+    "activity": {
+      "@id": "prov:activity",
+      "@type": "@id"
+    },
+    "hadGeneration": {
+      "@id": "prov:hadGeneration",
+      "@type": "@id"
+    },
+    "hadMember": {
+      "@id": "prov:hadMember",
+      "@type": "@id"
+    },
+    "hadPlan": {
+      "@id": "prov:hadPlan",
+      "@type": "@id"
+    },
+    "hadPrimarySource": {
+      "@id": "prov:hadPrimarySource",
+      "@type": "@id"
+    },
+    "hadRole": {
+      "@id": "prov:hadRole",
+      "@type": "@id"
+    },
+    "hadUsage": {
+      "@id": "prov:hadUsage",
+      "@type": "@id"
+    },
+    "influenced": {
+      "@id": "prov:influenced",
+      "@type": "@id"
+    },
+    "influencer": {
+      "@id": "prov:influencer",
+      "@type": "@id"
+    },
+    "invalidated": {
+      "@id": "prov:invalidated",
+      "@type": "@id"
+    },
+    "qualifiedAssociation": {
+      "@id": "prov:qualifiedAssociation",
+      "@type": "@id"
+    },
+    "qualifiedAttribution": {
+      "@id": "prov:qualifiedAttribution",
+      "@type": "@id"
+    },
+    "qualifiedCommunication": {
+      "@id": "prov:qualifiedCommunication",
+      "@type": "@id"
+    },
+    "qualifiedDelegation": {
+      "@id": "prov:qualifiedDelegation",
+      "@type": "@id"
+    },
+    "qualifiedDerivation": {
+      "@id": "prov:qualifiedDerivation",
+      "@type": "@id"
+    },
+    "qualifiedEnd": {
+      "@id": "prov:qualifiedEnd",
+      "@type": "@id"
+    },
+    "qualifiedGeneration": {
+      "@id": "prov:qualifiedGeneration",
+      "@type": "@id"
+    },
+    "qualifiedInfluence": {
+      "@id": "prov:qualifiedInfluence",
+      "@type": "@id"
+    },
+    "qualifiedInvalidation": {
+      "@id": "prov:qualifiedInvalidation",
+      "@type": "@id"
+    },
+    "qualifiedPrimarySource": {
+      "@id": "prov:qualifiedPrimarySource",
+      "@type": "@id"
+    },
+    "qualifiedQuotation": {
+      "@id": "prov:qualifiedQuotation",
+      "@type": "@id"
+    },
+    "qualifiedRevision": {
+      "@id": "prov:qualifiedRevision",
+      "@type": "@id"
+    },
+    "qualifiedStart": {
+      "@id": "prov:qualifiedStart",
+      "@type": "@id"
+    },
+    "qualifiedUsage": {
+      "@id": "prov:qualifiedUsage",
+      "@type": "@id"
+    },
+    "specializationOf": {
+      "@id": "prov:specializationOf",
+      "@type": "@id"
+    },
+    "used": {
+      "@id": "prov:used",
+      "@type": "@id"
+    },
+    "wasAssociatedWith": {
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
+    "wasAttributedTo": {
+      "@id": "prov:wasAttributedTo",
+      "@type": "@id"
+    },
+    "wasDerivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "wasEndedBy": {
+      "@id": "prov:wasEndedBy",
+      "@type": "@id"
+    },
+    "wasInfluencedBy": {
+      "@id": "prov:wasInfluencedBy",
+      "@type": "@id"
+    },
+    "wasInformedBy": {
+      "@id": "prov:wasInformedBy",
+      "@type": "@id"
+    },
+    "wasInvalidatedBy": {
+      "@id": "prov:wasInvalidatedBy",
+      "@type": "@id"
+    },
+    "wasQuotedFrom": {
+      "@id": "prov:wasQuotedFrom",
+      "@type": "@id"
+    },
+    "wasRevisionOf": {
+      "@id": "prov:wasRevisionOf",
+      "@type": "@id"
+    },
+    "wasStartedBy": {
+      "@id": "prov:wasStartedBy",
+      "@type": "@id"
+    },
+    "has_anchor": {
+      "@id": "prov:has_anchor",
+      "@type": "@id"
+    },
+    "has_query_service": {
+      "@id": "prov:has_query_service",
+      "@type": "@id"
+    },
+    "describesService": {
+      "@id": "prov:describesService",
+      "@type": "@id"
+    },
+    "pingback": {
+      "@id": "prov:pingback",
+      "@type": "@id"
+    },
+    "dictionary": {
+      "@id": "prov:dictionary",
+      "@type": "@id"
+    },
+    "derivedByInsertionFrom": {
+      "@id": "prov:derivedByInsertionFrom",
+      "@type": "@id"
+    },
+    "derivedByRemovalFrom": {
+      "@id": "prov:derivedByRemovalFrom",
+      "@type": "@id"
+    },
+    "insertedKeyEntityPair": {
+      "@id": "prov:insertedKeyEntityPair",
+      "@type": "@id"
+    },
+    "hadDictionaryMember": {
+      "@id": "prov:hadDictionaryMember",
+      "@type": "@id"
+    },
+    "pairEntity": {
+      "@id": "prov:pairEntity",
+      "@type": "@id"
+    },
+    "qualifiedInsertion": {
+      "@id": "prov:qualifiedInsertion",
+      "@type": "@id"
+    },
+    "qualifiedRemoval": {
+      "@id": "prov:qualifiedRemoval",
+      "@type": "@id"
+    },
+    "asInBundle": {
+      "@id": "prov:asInBundle",
+      "@type": "@id"
+    },
+    "mentionOf": {
+      "@id": "prov:mentionOf",
+      "@type": "@id"
+    },
+    "CompoundName": "csdm:commonpatterns/CompoundName",
+    "vectorPurpose": {
+      "@type": "@id",
+      "@id": "surv:vectorPurpose"
+    },
+    "monumentedBy": {
+      "@type": "@id",
+      "@id": "surv:monumentedBy"
+    },
+    "comment": "rdfs:comment",
+    "note": "rdfs:comment",
+    "age": "surv:age",
+    "geodeticid": "surv:geodeticid",
+    "fromSurvey": {
+      "@type": "@id",
+      "@id": "surv:fromSurvey"
+    },
+    "CadastralMark": {
+      "@id": "surv:CadastralMark",
+      "@type": "@id"
+    },
+    "BoundaryMark": {
+      "@id": "surv:BoundaryMark",
+      "@type": "@id"
+    },
+    "ptQuality": {
+      "@id": "csdm:commonpatterns/qualityClass",
+      "@type": "@id"
+    },
+    "ptQualityMeasure": {
+      "@id": "csdm:commonpatterns/qualityMeasure",
+      "@type": "@id"
+    },
+    "GeodeticReferenceMark": {
+      "@id": "surv:GeodeticReferenceMark",
+      "@type": "@id"
+    },
+    "ObservedVector": {
+      "@id": "surv:ObservedVector",
+      "@type": "@id"
+    },
+    "AdoptedVector": {
+      "@id": "surv:SurveyedVector",
+      "@type": "@id"
+    },
+    "label": "rdfs:label",
     "ActuatableProperty": {
       "@id": "sosa:ActuatableProperty",
       "@type": "@id"
@@ -7052,48 +7704,6 @@ Links to the schema:
     "detects": {
       "@id": "sosa:detects",
       "@type": "@id"
-    },
-    "features": {
-      "@id": "sosa:hasMember",
-      "@type": "@id",
-      "@context": {
-        "features": {
-          "@container": "@set",
-          "@id": "geojson:features"
-        },
-        "observedProperty": {
-          "@id": "sosa:observedProperty",
-          "@type": "@id"
-        },
-        "madeBySensor": {
-          "@id": "sosa:madeBySensor",
-          "@type": "@id"
-        },
-        "hasResult": {
-          "@id": "sosa:hasResult",
-          "@type": "@id",
-          "@context": {
-            "pose": {
-              "@context": {
-                "angles": "csdm:utils/geopose/angles"
-              },
-              "@id": "surv:pose"
-            },
-            "distance": "surv:distance"
-          }
-        },
-        "angleAccuracy": "csdm:surveyobs/angleAccuracyMeasure",
-        "distanceAccuracy": "csdm:surveyobs/distanceAccuracyMeasure",
-        "distanceAccuracyClass": {
-          "@type": "@id",
-          "@id": "csdm:surveyobs/distanceAccuracyClass"
-        },
-        "angleAccuracyClass": {
-          "@type": "@id",
-          "@id": "csdm:surveyobs/angleAccuracyClass"
-        }
-      },
-      "@container": "@set"
     },
     "forProperty": {
       "@id": "sosa:forProperty",
@@ -7353,795 +7963,29 @@ Links to the schema:
       "@id": "ssn-system:qualityOfObservation",
       "@type": "@id"
     },
-    "angleType": {
-      "@context": {
-        "@base": "https://linked.data.gov.au/def/csdm/defs/angletypes/"
-      },
-      "@type": "@id",
-      "@id": "csdm:surveyobs/angleType"
-    },
-    "distanceType": {
-      "@context": {
-        "@base": "https://linked.data.gov.au/def/csdm/defs/distancetypes/"
-      },
-      "@type": "@id",
-      "@id": "csdm:surveyobs/distanceType"
-    },
-    "occupationObservations": {
-      "@context": {
-        "observedProperty": {
-          "@id": "sosa:observedProperty",
-          "@type": "@id"
-        },
-        "madeBySensor": {
-          "@id": "sosa:madeBySensor",
-          "@type": "@id"
-        },
-        "features": {
-          "@id": "sosa:hasMember",
-          "@type": "@id"
-        }
-      },
-      "@id": "container:occupationObservations"
-    },
-    "occupationFeatures": {
-      "@context": {
-        "features": {
-          "@container": "@set",
-          "@id": "geojson:features"
-        }
-      },
-      "@id": "container:occupationFeatures"
-    },
-    "type": "@type",
-    "geometry": {
-      "@context": {},
-      "@id": "geojson:geometry"
-    },
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
-    },
-    "Feature": "geojson:Feature",
-    "FeatureCollection": "geojson:FeatureCollection",
-    "GeometryCollection": "geojson:GeometryCollection",
-    "LineString": "geojson:LineString",
-    "MultiLineString": "geojson:MultiLineString",
-    "MultiPoint": "geojson:MultiPoint",
-    "MultiPolygon": "geojson:MultiPolygon",
-    "Point": "geojson:Point",
-    "Polygon": "geojson:Polygon",
-    "links": {
-      "@context": {
-        "href": {
-          "@type": "@id",
-          "@id": "oa:hasTarget"
-        },
-        "rel": {
-          "@context": {
-            "@base": "http://www.iana.org/assignments/relation/"
-          },
-          "@id": "http://www.iana.org/assignments/relation",
-          "@type": "@id"
-        },
-        "type": "dct:type",
-        "hreflang": "dct:language",
-        "title": "rdfs:label",
-        "length": "dct:extent"
-      },
-      "@id": "rdfs:seeAlso"
-    },
-    "time": {
-      "@context": {},
-      "@id": "dct:time"
-    },
-    "coordRefSys": "http://www.opengis.net/def/glossary/term/CoordinateReferenceSystemCRS",
-    "place": "dct:spatial",
-    "Polyhedron": "geojson:Polyhedron",
-    "MultiPolyhedron": "geojson:MultiPolyhedron",
-    "Prism": {
-      "@id": "geojson:Prism",
-      "@context": {
-        "base": "geojson:prismBase",
-        "lower": "geojson:prismLower",
-        "upper": "geojson:prismUpper"
-      }
-    },
-    "MultiPrism": {
-      "@id": "geojson:MultiPrism",
-      "@context": {
-        "prisms": "geojson:prisms"
-      }
-    },
-    "coordinates": {
-      "@container": "@list",
-      "@id": "geojson:coordinates"
-    },
-    "geometries": {
-      "@id": "geojson:geometry",
-      "@container": "@list"
-    },
-    "topology": {
-      "@context": {
-        "references": {
-          "@id": "geojson:relatedFeatures",
-          "@type": "@id",
-          "@container": "@list"
-        }
-      },
-      "@type": "@id",
-      "@id": "geojson:topology"
-    },
-    "date": {
-      "@id": "owlTime:hasTime",
-      "@type": "xsd:date"
-    },
-    "timestamp": {
-      "@id": "owlTime:hasTime",
-      "@type": "xsd:dateTime"
-    },
-    "interval": {
-      "@id": "owlTime:hasTime",
-      "@container": "@list"
-    },
-    "name": "rdfs:label",
-    "bearingRotation": "container:bearingRotation",
-    "annotations": {
-      "@context": {
-        "href": {
-          "@type": "@id",
-          "@id": "oa:hasTarget"
-        },
-        "rel": {
-          "@context": {
-            "@base": "http://www.iana.org/assignments/relation/"
-          },
-          "@id": "http://www.iana.org/assignments/relation",
-          "@type": "@id"
-        },
-        "type": "dct:type",
-        "hreflang": "dct:language",
-        "title": "rdfs:label",
-        "length": "dct:extent",
-        "role": {
-          "@id": "prof:hasRole",
-          "@type": "@id"
-        },
-        "conformsTo": {
-          "@id": "dct:conformsTo",
-          "@type": "@id"
-        }
-      },
-      "@id": "container:annotations"
-    },
-    "entityType": "@type",
-    "has_provenance": {
-      "@id": "dct:provenance",
+    "hasMember": {
+      "@id": "sosa:hasMember",
       "@type": "@id"
     },
-    "wasGeneratedBy": {
-      "@context": {},
-      "@id": "prov:wasGeneratedBy",
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
       "@type": "@id"
     },
-    "wasAttributedTo": {
-      "@context": {
-        "href": {
-          "@type": "@id",
-          "@id": "oa:hasTarget"
-        },
-        "rel": {
-          "@context": {
-            "@base": "http://www.iana.org/assignments/relation/"
-          },
-          "@id": "http://www.iana.org/assignments/relation",
-          "@type": "@id"
-        },
-        "type": "dct:type",
-        "hreflang": "dct:language",
-        "title": "rdfs:label",
-        "length": "dct:extent"
-      },
-      "@id": "prov:wasAttributedTo",
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
       "@type": "@id"
     },
-    "wasDerivedFrom": {
-      "@id": "prov:wasDerivedFrom",
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
       "@type": "@id"
     },
-    "alternateOf": {
-      "@id": "prov:alternateOf",
+    "phenomenonTime": {
+      "@id": "sosa:phenomenonTime",
       "@type": "@id"
     },
-    "hadPrimarySource": {
-      "@id": "prov:hadPrimarySource",
-      "@type": "@id"
-    },
-    "specializationOf": {
-      "@id": "prov:specializationOf",
-      "@type": "@id"
-    },
-    "wasInvalidatedBy": {
-      "@context": {},
-      "@id": "prov:wasInvalidatedBy",
-      "@type": "@id"
-    },
-    "wasQuotedFrom": {
-      "@id": "prov:wasQuotedFrom",
-      "@type": "@id"
-    },
-    "wasRevisionOf": {
-      "@id": "prov:wasRevisionOf",
-      "@type": "@id"
-    },
-    "atLocation": {
-      "@id": "prov:atLocation",
-      "@type": "@id"
-    },
-    "qualifiedGeneration": {
-      "@context": {
-        "atTime": {
-          "@id": "prov:atTime",
-          "@type": "xsd:dateTime"
-        },
-        "hadRole": {
-          "@id": "prov:hadRole",
-          "@type": "@id"
-        },
-        "influencer": {
-          "@id": "prov:influencer",
-          "@type": "@id"
-        },
-        "hadActivity": {
-          "@id": "prov:hadActivity",
-          "@type": "@id"
-        },
-        "activity": {
-          "@id": "prov:activity",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedGeneration",
-      "@type": "@id"
-    },
-    "qualifiedInvalidation": {
-      "@context": {
-        "atTime": {
-          "@id": "prov:atTime",
-          "@type": "xsd:dateTime"
-        },
-        "hadRole": {
-          "@id": "prov:hadRole",
-          "@type": "@id"
-        },
-        "influencer": {
-          "@id": "prov:influencer",
-          "@type": "@id"
-        },
-        "hadActivity": {
-          "@id": "prov:hadActivity",
-          "@type": "@id"
-        },
-        "activity": {
-          "@id": "prov:activity",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedInvalidation",
-      "@type": "@id"
-    },
-    "qualifiedDerivation": {
-      "@context": {
-        "hadGeneration": {
-          "@context": {
-            "atTime": {
-              "@id": "prov:atTime",
-              "@type": "xsd:dateTime"
-            },
-            "hadRole": {
-              "@id": "prov:hadRole",
-              "@type": "@id"
-            },
-            "influencer": {
-              "@id": "prov:influencer",
-              "@type": "@id"
-            },
-            "activity": {
-              "@id": "prov:activity",
-              "@type": "@id"
-            }
-          },
-          "@id": "prov:hadGeneration",
-          "@type": "@id"
-        },
-        "hadActivity": {
-          "@id": "prov:hadActivity",
-          "@type": "@id"
-        },
-        "hadUsage": {
-          "@context": {
-            "atTime": {
-              "@id": "prov:atTime",
-              "@type": "xsd:dateTime"
-            }
-          },
-          "@id": "prov:hadUsage",
-          "@type": "@id"
-        },
-        "entity": {
-          "@id": "prov:entity",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedDerivation",
-      "@type": "@id"
-    },
-    "qualifiedAttribution": {
-      "@context": {
-        "agent": {
-          "@id": "prov:agent",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedAttribution",
-      "@type": "@id"
-    },
-    "wasInfluencedBy": {
-      "@context": {
-        "href": {
-          "@type": "@id",
-          "@id": "oa:hasTarget"
-        },
-        "rel": {
-          "@context": {
-            "@base": "http://www.iana.org/assignments/relation/"
-          },
-          "@id": "http://www.iana.org/assignments/relation",
-          "@type": "@id"
-        },
-        "type": "dct:type",
-        "hreflang": "dct:language",
-        "title": "rdfs:label",
-        "length": "dct:extent"
-      },
-      "@id": "prov:wasInfluencedBy",
-      "@type": "@id"
-    },
-    "qualifiedInfluence": {
-      "@context": {
-        "influencer": {
-          "@context": {
-            "href": {
-              "@type": "@id",
-              "@id": "oa:hasTarget"
-            },
-            "rel": {
-              "@context": {
-                "@base": "http://www.iana.org/assignments/relation/"
-              },
-              "@id": "http://www.iana.org/assignments/relation",
-              "@type": "@id"
-            },
-            "type": "dct:type",
-            "hreflang": "dct:language",
-            "title": "rdfs:label",
-            "length": "dct:extent"
-          },
-          "@id": "prov:influencer",
-          "@type": "@id"
-        },
-        "entity": {
-          "@id": "prov:entity",
-          "@type": "@id"
-        },
-        "activity": {
-          "@id": "prov:activity",
-          "@type": "@id"
-        },
-        "agent": {
-          "@context": {
-            "href": {
-              "@type": "@id",
-              "@id": "oa:hasTarget"
-            },
-            "rel": {
-              "@context": {
-                "@base": "http://www.iana.org/assignments/relation/"
-              },
-              "@id": "http://www.iana.org/assignments/relation",
-              "@type": "@id"
-            },
-            "type": "dct:type",
-            "hreflang": "dct:language",
-            "title": "rdfs:label",
-            "length": "dct:extent"
-          },
-          "@id": "prov:agent",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedInfluence",
-      "@type": "@id"
-    },
-    "provType": "@type",
-    "hadMember": {
-      "@context": {},
-      "@id": "prov:hadMember",
-      "@type": "@id"
-    },
-    "activityType": "@type",
-    "endedAtTime": {
-      "@id": "prov:endedAtTime",
-      "@type": "xsd:dateTime"
-    },
-    "wasAssociatedWith": {
-      "@context": {
-        "href": {
-          "@type": "@id",
-          "@id": "oa:hasTarget"
-        },
-        "rel": {
-          "@context": {
-            "@base": "http://www.iana.org/assignments/relation/"
-          },
-          "@id": "http://www.iana.org/assignments/relation",
-          "@type": "@id"
-        },
-        "type": "dct:type",
-        "hreflang": "dct:language",
-        "title": "rdfs:label",
-        "length": "dct:extent"
-      },
-      "@id": "prov:wasAssociatedWith",
-      "@type": "@id"
-    },
-    "wasInformedBy": {
-      "@id": "prov:wasInformedBy",
-      "@type": "@id"
-    },
-    "used": {
-      "@context": {},
-      "@id": "prov:used",
-      "@type": "@id"
-    },
-    "wasStartedBy": {
-      "@context": {},
-      "@id": "prov:wasStartedBy",
-      "@type": "@id"
-    },
-    "wasEndedBy": {
-      "@context": {},
-      "@id": "prov:wasEndedBy",
-      "@type": "@id"
-    },
-    "invalidated": {
-      "@context": {},
-      "@id": "prov:invalidated",
-      "@type": "@id"
-    },
-    "generated": {
-      "@context": {},
-      "@id": "prov:generated",
-      "@type": "@id"
-    },
-    "qualifiedUsage": {
-      "@context": {
-        "atTime": {
-          "@id": "prov:atTime",
-          "@type": "xsd:dateTime"
-        },
-        "entity": {
-          "@id": "prov:entity",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedUsage",
-      "@type": "@id"
-    },
-    "qualifiedCommunication": {
-      "@context": {
-        "atTime": {
-          "@id": "prov:atTime",
-          "@type": "xsd:dateTime"
-        },
-        "hadRole": {
-          "@id": "prov:hadRole",
-          "@type": "@id"
-        },
-        "influencer": {
-          "@id": "prov:influencer",
-          "@type": "@id"
-        },
-        "hadActivity": {
-          "@id": "prov:hadActivity",
-          "@type": "@id"
-        },
-        "activity": {
-          "@id": "prov:activity",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedCommunication",
-      "@type": "@id"
-    },
-    "qualifiedStart": {
-      "@context": {
-        "atTime": {
-          "@id": "prov:atTime",
-          "@type": "xsd:dateTime"
-        },
-        "entity": {
-          "@id": "prov:entity",
-          "@type": "@id"
-        },
-        "hadActivity": {
-          "@id": "prov:hadActivity",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedStart",
-      "@type": "@id"
-    },
-    "qualifiedEnd": {
-      "@context": {
-        "atTime": {
-          "@id": "prov:atTime",
-          "@type": "xsd:dateTime"
-        },
-        "entity": {
-          "@id": "prov:entity",
-          "@type": "@id"
-        },
-        "hadActivity": {
-          "@id": "prov:hadActivity",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedEnd",
-      "@type": "@id"
-    },
-    "qualifiedAssociation": {
-      "@context": {
-        "agent": {
-          "@id": "prov:agent",
-          "@type": "@id"
-        },
-        "hadRole": {
-          "@id": "prov:hadRole",
-          "@type": "@id"
-        },
-        "hadPlan": {
-          "@id": "prov:hadPlan",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedAssociation",
-      "@type": "@id"
-    },
-    "agentType": "@type",
-    "actedOnBehalfOf": {
-      "@context": {
-        "href": {
-          "@type": "@id",
-          "@id": "oa:hasTarget"
-        },
-        "rel": {
-          "@context": {
-            "@base": "http://www.iana.org/assignments/relation/"
-          },
-          "@id": "http://www.iana.org/assignments/relation",
-          "@type": "@id"
-        },
-        "type": "dct:type",
-        "hreflang": "dct:language",
-        "title": "rdfs:label",
-        "length": "dct:extent"
-      },
-      "@id": "prov:actedOnBehalfOf",
-      "@type": "@id"
-    },
-    "qualifiedDelegation": {
-      "@context": {
-        "agent": {
-          "@id": "prov:agent",
-          "@type": "@id"
-        },
-        "hadActivity": {
-          "@id": "prov:hadActivity",
-          "@type": "@id"
-        }
-      },
-      "@id": "prov:qualifiedDelegation",
-      "@type": "@id"
-    },
-    "CSD": "container:CSD",
-    "locality": "csd:locality",
-    "PrimaryParcel": {
-      "@id": "parcel:PrimaryParcel",
-      "@type": "@id"
-    },
-    "SecondaryParcel": {
-      "@id": "parcel:SecondaryParcel",
-      "@type": "@id"
-    },
-    "parcelQualityClass": {
-      "@id": "parcel:qualityClass",
-      "@type": "@id"
-    },
-    "terrainIntersectionCurve": "parcel:terrainIntersectionCurve",
-    "CompoundName": "commonpatterns:CompoundName",
-    "Arc": "geojson:Arc",
-    "ArcWithCenter": "geojson:ArcWithCenter",
-    "ArcByChord": "geojson:ArcByChord",
-    "CircleByCenter": "geojson:CircleByCenter",
-    "CubicSpline": "geojson:CubicSpline",
-    "radius": "geojson:radius",
-    "arcLength": "geojson:arcLength",
-    "startTangentVector": "geojson:startTangentVector",
-    "endTangentVector": "geojson:endTangentVector",
-    "CadastralMark": {
-      "@id": "surv:CadastralMark",
-      "@type": "@id"
-    },
-    "BoundaryMark": {
-      "@id": "surv:BoundaryMark",
-      "@type": "@id"
-    },
-    "GeodeticReferenceMark": {
-      "@id": "surv:GeodeticReferenceMark",
-      "@type": "@id"
-    },
-    "ObservedVector": {
-      "@id": "surv:ObservedVector",
-      "@type": "@id"
-    },
-    "AdoptedVector": {
-      "@id": "surv:SurveyedVector",
-      "@type": "@id"
-    },
-    "label": "rdfs:label",
-    "Activity": "prov:Activity",
-    "ActivityInfluence": "prov:ActivityInfluence",
-    "Agent": "prov:Agent",
-    "AgentInfluence": "prov:AgentInfluence",
-    "Association": "prov:Association",
-    "Attribution": "prov:Attribution",
-    "Bundle": "prov:Bundle",
-    "Collection": "prov:Collection",
-    "Communication": "prov:Communication",
-    "Delegation": "prov:Delegation",
-    "Derivation": "prov:Derivation",
-    "EmptyCollection": "prov:EmptyCollection",
-    "End": "prov:End",
-    "Entity": "prov:Entity",
-    "EntityInfluence": "prov:EntityInfluence",
-    "Generation": "prov:Generation",
-    "Influence": "prov:Influence",
-    "InstantaneousEvent": "prov:InstantaneousEvent",
-    "Invalidation": "prov:Invalidation",
-    "Location": "prov:Location",
-    "Organization": "prov:Organization",
-    "Person": "prov:Person",
-    "Plan": "prov:Plan",
-    "PrimarySource": "prov:PrimarySource",
-    "Quotation": "prov:Quotation",
-    "Revision": "prov:Revision",
-    "Role": "prov:Role",
-    "SoftwareAgent": "prov:SoftwareAgent",
-    "Start": "prov:Start",
-    "Usage": "prov:Usage",
-    "ServiceDescription": "prov:ServiceDescription",
-    "DirectQueryService": "prov:DirectQueryService",
-    "Accept": "prov:Accept",
-    "Contribute": "prov:Contribute",
-    "Contributor": "prov:Contributor",
-    "Copyright": "prov:Copyright",
-    "Create": "prov:Create",
-    "Creator": "prov:Creator",
-    "Modify": "prov:Modify",
-    "Publish": "prov:Publish",
-    "Publisher": "prov:Publisher",
-    "Replace": "prov:Replace",
-    "RightsAssignment": "prov:RightsAssignment",
-    "RightsHolder": "prov:RightsHolder",
-    "Submit": "prov:Submit",
-    "Dictionary": "prov:Dictionary",
-    "EmptyDictionary": "prov:EmptyDictionary",
-    "KeyEntityPair": "prov:KeyEntityPair",
-    "Insertion": "prov:Insertion",
-    "Removal": "prov:Removal",
-    "generatedAtTime": {
-      "@id": "prov:generatedAtTime",
-      "@type": "xsd:dateTime"
-    },
-    "invalidatedAtTime": {
-      "@id": "prov:invalidatedAtTime",
-      "@type": "xsd:dateTime"
-    },
-    "startedAtTime": {
-      "@id": "prov:startedAtTime",
-      "@type": "xsd:dateTime"
-    },
-    "value": "prov:value",
-    "provenanceUriTemplate": "prov:provenanceUriTemplate",
-    "pairKey": {
-      "@id": "prov:pairKey",
-      "@type": "rdfs:Literal"
-    },
-    "removedKey": {
-      "@id": "prov:removedKey",
-      "@type": "rdfs:Literal"
-    },
-    "influenced": {
-      "@id": "prov:influenced",
-      "@type": "@id"
-    },
-    "qualifiedPrimarySource": {
-      "@id": "prov:qualifiedPrimarySource",
-      "@type": "@id"
-    },
-    "qualifiedQuotation": {
-      "@id": "prov:qualifiedQuotation",
-      "@type": "@id"
-    },
-    "qualifiedRevision": {
-      "@id": "prov:qualifiedRevision",
-      "@type": "@id"
-    },
-    "has_anchor": {
-      "@id": "prov:has_anchor",
-      "@type": "@id"
-    },
-    "has_query_service": {
-      "@id": "prov:has_query_service",
-      "@type": "@id"
-    },
-    "describesService": {
-      "@id": "prov:describesService",
-      "@type": "@id"
-    },
-    "pingback": {
-      "@id": "prov:pingback",
-      "@type": "@id"
-    },
-    "dictionary": {
-      "@id": "prov:dictionary",
-      "@type": "@id"
-    },
-    "derivedByInsertionFrom": {
-      "@id": "prov:derivedByInsertionFrom",
-      "@type": "@id"
-    },
-    "derivedByRemovalFrom": {
-      "@id": "prov:derivedByRemovalFrom",
-      "@type": "@id"
-    },
-    "insertedKeyEntityPair": {
-      "@id": "prov:insertedKeyEntityPair",
-      "@type": "@id"
-    },
-    "hadDictionaryMember": {
-      "@id": "prov:hadDictionaryMember",
-      "@type": "@id"
-    },
-    "pairEntity": {
-      "@id": "prov:pairEntity",
-      "@type": "@id"
-    },
-    "qualifiedInsertion": {
-      "@id": "prov:qualifiedInsertion",
-      "@type": "@id"
-    },
-    "qualifiedRemoval": {
-      "@id": "prov:qualifiedRemoval",
-      "@type": "@id"
-    },
-    "asInBundle": {
-      "@id": "prov:asInBundle",
-      "@type": "@id"
-    },
-    "mentionOf": {
-      "@id": "prov:mentionOf",
+    "resultTime": "sosa:resultTime",
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
       "@type": "@id"
     },
     "container": "csdm:container/",
@@ -8149,18 +7993,18 @@ Links to the schema:
     "csd": "csdm:csd/",
     "parcel": "csdm:parcels/",
     "surv": "csdm:surveyfeatures/",
-    "dct": "http://purl.org/dc/terms/",
-    "commonpatterns": "csdm:commonpatterns/",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "csdm": "https://linked.data.gov.au/def/csdm/",
-    "oa": "http://www.w3.org/ns/oa#",
-    "prof": "http://www.w3.org/ns/dx/prof/",
     "geojson": "https://purl.org/geojson/vocab#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "oa": "http://www.w3.org/ns/oa#",
+    "dct": "http://purl.org/dc/terms/",
     "owlTime": "http://www.w3.org/2006/time#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "geosparql": "http://www.opengis.net/ont/geosparql#",
+    "csdm": "https://linked.data.gov.au/def/csdm/",
+    "prof": "http://www.w3.org/ns/dx/prof/",
     "prov": "http://www.w3.org/ns/prov#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "commonpatterns": "csdm:commonpatterns/",
+    "geosparql": "http://www.opengis.net/ont/geosparql#",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn-system": "ssn:systems/",
     "ssn": "http://www.w3.org/ns/ssn/",
@@ -8175,7 +8019,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/context.jsonld)
+[context.jsonld](https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/context.jsonld)
 
 ## Sources
 
@@ -8185,6 +8029,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/icsm-au/3d-csdm-common](https://github.com/icsm-au/3d-csdm-common)
+* URL: [https://github.com/surroundaustralia/3d-csdm-common](https://github.com/surroundaustralia/3d-csdm-common)
 * Path: `_sources/csdm/features/CSD`
 

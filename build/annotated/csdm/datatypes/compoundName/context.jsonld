@@ -1,5 +1,7 @@
 {
   "@context": {
+    "name": "commonpatterns:name",
+    "CompoundName": "commonpatterns:CompoundName",
     "label": "rdfs:label",
     "hasPart": {
       "@context": {
@@ -7,8 +9,6 @@
       },
       "@id": "dct:hasPart"
     },
-    "name": "commonpatterns:name",
-    "CompoundName": "commonpatterns:CompoundName",
     "dct": "http://purl.org/dc/terms/",
     "commonpatterns": "csdm:commonpatterns/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",

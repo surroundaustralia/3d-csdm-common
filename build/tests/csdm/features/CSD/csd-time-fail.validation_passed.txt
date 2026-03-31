@@ -1,5 +1,5 @@
 Validation report for icsm.csdm.features.CSD - Cadastral Survey Dataset
-Generated 2024-07-25T00:08:39.430907+00:00
+Generated 2026-03-31T04:19:21.961995+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -19,10 +19,12 @@ ValidationError: '2023-23-12' is not valid under any of the given schemas
 Failed validating 'oneOf' in schema['allOf'][1]['properties']['time']:
     {'$defs': {'date': {'pattern': '^\\d{4}-\\d{2}-\\d{2}$',
                         'type': 'string'},
-               'interval': {'items': {'oneOf': [{'$ref': '#/$defs/date'},
-                                                {'$ref': '#/$defs/timestamp'},
-                                                {'enum': ['..'],
-                                                 'type': 'string'}]},
+               'interval': {'items': {'anyOf': [{'oneOf': [{'$ref': '#/$defs/date'},
+                                                           {'enum': ['..'],
+                                                            'type': 'string'}]},
+                                                {'oneOf': [{'$ref': '#/$defs/timestamp'},
+                                                           {'enum': ['..'],
+                                                            'type': 'string'}]}]},
                             'maxItems': 2,
                             'minItems': 2,
                             'type': 'array'},
@@ -30,9 +32,10 @@ Failed validating 'oneOf' in schema['allOf'][1]['properties']['time']:
                              'type': 'string'}},
      '$id': 'https://beta.schemas.opengis.net/json-fg/time.json',
      '$schema': 'https://json-schema.org/draft/2020-12/schema',
-     'description': 'This JSON Schema is part of JSON-FG version 0.2.2',
+     'description': 'This JSON Schema is part of JSON-FG version 0.3.0.',
      'oneOf': [{'type': 'null'},
-               {'properties': {'date': {'$ref': '#/$defs/date',
+               {'minProperties': 1,
+                'properties': {'date': {'$ref': '#/$defs/date',
                                         'x-jsonld-id': 'http://www.w3.org/2006/time#hasTime',
                                         'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#date'},
                                'interval': {'$ref': '#/$defs/interval',
@@ -42,7 +45,7 @@ Failed validating 'oneOf' in schema['allOf'][1]['properties']['time']:
                                              'x-jsonld-id': 'http://www.w3.org/2006/time#hasTime',
                                              'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#dateTime'}},
                 'type': 'object'}],
-     'title': 'the time member',
+     'title': "the value of the 'time' member",
      'x-jsonld-prefixes': {'time': 'http://www.w3.org/2006/time#',
                            'xsd': 'http://www.w3.org/2001/XMLSchema#'}}
 
@@ -56,9 +59,9 @@ Validation result for _sources/csdm/shapes/container.shapes.ttl:
   Conforms: True
   
 Focus nodes for _sources/csdm/shapes/container.shapes.ttl:
+ - Shape container:CSD-seeAlso: *none*
  - Shape container:CSD: *none*
  - Shape <https://linked.data.gov.au/def/csdm/surveyprov/SurveyType>: *none*
- - Shape container:CSD-seeAlso: *none*
 
 Validation result for _sources/csdm/shapes/parcel_module.shapes.ttl:
   Validation Report
@@ -66,17 +69,17 @@ Validation result for _sources/csdm/shapes/parcel_module.shapes.ttl:
   
 Focus nodes for _sources/csdm/shapes/parcel_module.shapes.ttl:
  - Shape :ParcelAggregate: *none*
- - Shape :SecondaryParcel: *none*
- - Shape :PrimaryParcel: *none*
- - Shape :PurposeOfSpatialUnit: *none*
- - Shape :ParcelType: *none*
- - Shape :Apellation: *none*
- - Shape :LandInterest: *none*
- - Shape :ParcelState: *none*
- - Shape :EstateParcel: *none*
- - Shape :ParcelQualityClass: *none*
- - Shape :PropertyUnit: *none*
  - Shape :Parcel: *none*
+ - Shape :ParcelState: *none*
+ - Shape :PrimaryParcel: *none*
+ - Shape :Apellation: *none*
+ - Shape :ParcelType: *none*
+ - Shape :EstateParcel: *none*
+ - Shape :SecondaryParcel: *none*
+ - Shape :PropertyUnit: *none*
+ - Shape :PurposeOfSpatialUnit: *none*
+ - Shape :LandInterest: *none*
+ - Shape :ParcelQualityClass: *none*
 
 Validation result for _sources/csdm/features/CSD/tests/obs-match-vectors.shacl:
   Validation Report
@@ -85,20 +88,13 @@ Validation result for _sources/csdm/features/CSD/tests/obs-match-vectors.shacl:
 Focus nodes for _sources/csdm/features/CSD/tests/obs-match-vectors.shacl:
  - Shape :testFOIexists: *none*
 
-Validation result for _sources/csdm/datatypes/compoundName/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:
- - Shape _:nbe0ea4f837ed4dd5b4560f287540d6ceb1: *none*
-
 Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
- - Shape _:n5c58ef26603c4232937d4820a525afb8b3: *none*
- - Shape _:n5c58ef26603c4232937d4820a525afb8b1: *none*
+ - Shape _:n454d23ef5a5647f896fcb616201f3798b1: *none*
+ - Shape _:n454d23ef5a5647f896fcb616201f3798b3: *none*
 
 Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
   Validation Report
@@ -108,6 +104,13 @@ Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/to
  - Shape topo:testTopoLinesReferencePoints: *none*
  - Shape topo:testTopoReferencesExist: *none*
 
+Validation result for _sources/csdm/datatypes/compoundName/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:
+ - Shape _:nebfe60b4905249bd95270582a8f0a130b1: *none*
+
 Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:
   Validation Report
   Conforms: True
@@ -115,17 +118,20 @@ Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:
 Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:
  - Shape :testRequiredProperties: *none*
 
-Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl:
+Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
   Validation Report
   Conforms: True
   
-Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/rules.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedProperty>: *none*
+Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
  - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
  - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*
 
 === End SHACL ===
 

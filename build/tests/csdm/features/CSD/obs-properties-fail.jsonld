@@ -1,6 +1,6 @@
 {
   "@context": [
-    "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/context.jsonld",
+    "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/context.jsonld",
     {
       "@base": "https://linked.data.gov.au/def/csdm/csd-example/",
       "eg1": "https://linked.data.gov.au/def/csdm/csd-example/",
@@ -217,7 +217,6 @@
           "properties": {
             "hasFeatureOfInterest": "l973158",
             "observedProperty": "fails content - not a URI",
-            "resultTime": "2023-05-22T16:41:00+2",
             "hasResult": {
               "pose": {
                 "angles": {
@@ -236,7 +235,6 @@
           "place": null,
           "properties": {
             "hasFeatureOfInterest": "l973158",
-            "resultTime": "2023-05-22T16:41:00+2",
             "hasResult": {
               "pose": {
                 "angles": {

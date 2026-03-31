@@ -184,7 +184,7 @@
               "items": {
                 "allOf": [
                   {
-                    "$ref": "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/schema.json"
+                    "$ref": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/schema.json"
                   },
                   {
                     "properties": {
@@ -222,7 +222,7 @@
         "properties": {
           "properties": {
             "appellation": {
-              "$ref": "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.json",
+              "$ref": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.json",
               "x-jsonld-id": "https://linked.data.gov.au/def/csdm/parcels/appellation"
             },
             "parcelType": {
@@ -397,7 +397,7 @@
       "x-jsonld-id": "https://linked.data.gov.au/def/csdm/container/surveyDescription"
     },
     "surveyDescriptors": {
-      "$ref": "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.json",
+      "$ref": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.json",
       "x-jsonld-id": "https://linked.data.gov.au/def/csdm/container/surveyDescriptors"
     },
     "purpose": {
@@ -677,14 +677,14 @@
     "vectorObservations": {
       "type": "array",
       "items": {
-        "$ref": "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/schema.json#/$defs/SurveyVectorObsCollection"
+        "$ref": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/schema.json#/$defs/SurveyVectorObsCollection"
       },
       "x-jsonld-id": "https://linked.data.gov.au/def/csdm/container/vectorObservations"
     },
     "adoptedObservations": {
       "type": "array",
       "items": {
-        "$ref": "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/schema.json#/$defs/SurveyVectorObsCollection"
+        "$ref": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/schema.json#/$defs/SurveyVectorObsCollection"
       }
     },
     "occupationObservations": {

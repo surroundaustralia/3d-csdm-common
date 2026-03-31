@@ -1,4 +1,10 @@
 path
+/time
 /referencedCSDs/id
+/observedVectors/_anyOf/1/features
+/observedVectors/_anyOf/1/features/featureType
+/adoptedVectors/_anyOf/1/features
+/adoptedVectors/_anyOf/1/features/featureType
 /parcels/features
+/parcels/_oneOf/1/features
 /adoptedObservations

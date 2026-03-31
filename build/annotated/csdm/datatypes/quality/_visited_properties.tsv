@@ -1,5 +1,5 @@
-path	@id
-/angleAccuracy	https://linked.data.gov.au/def/csdm/surveyobs/angleAccuracyMeasure
-/distanceAccuracy	https://linked.data.gov.au/def/csdm/surveyobs/distanceAccuracyMeasure
-/distanceAccuracyClass	https://linked.data.gov.au/def/csdm/surveyobs/distanceAccuracyClass
-/angleAccuracyClass	https://linked.data.gov.au/def/csdm/surveyobs/angleAccuracyClass
+path	@id	schema
+/angleAccuracy	https://linked.data.gov.au/def/csdm/surveyobs/angleAccuracyMeasure	/github/workspace/build/annotated/csdm/datatypes/quality/schema.yaml
+/distanceAccuracy	https://linked.data.gov.au/def/csdm/surveyobs/distanceAccuracyMeasure	/github/workspace/build/annotated/csdm/datatypes/quality/schema.yaml
+/distanceAccuracyClass	https://linked.data.gov.au/def/csdm/surveyobs/distanceAccuracyClass	/github/workspace/build/annotated/csdm/datatypes/quality/schema.yaml
+/angleAccuracyClass	https://linked.data.gov.au/def/csdm/surveyobs/angleAccuracyClass	/github/workspace/build/annotated/csdm/datatypes/quality/schema.yaml

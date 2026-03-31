@@ -1,6 +1,5 @@
 @prefix commonpatterns: <https://linked.data.gov.au/def/csdm/commonpatterns/> .
 @prefix container: <https://linked.data.gov.au/def/csdm/container/> .
-@prefix csd: <https://linked.data.gov.au/def/csdm/csd/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix eg1: <https://linked.data.gov.au/def/csdm/csd-example/> .
 @prefix epsg: <http://www.opengis.net/def/crs/EPSG/0/> .
@@ -12,8 +11,27 @@
 @prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-eg1:LT_584372 a csd:CSD,
-        geojson:FeatureCollection ;
+eg1:4494877 a eg1:OccupationMark,
+        geojson:Feature ;
+    dct:spatial [ a geojson:Point ;
+            geojson:coordinates ( 7.62376e+05 3.664124e+05 ) ] ;
+    rdfs:comment "Wooden Post" ;
+    commonpatterns:name [ rdfs:label "Post II LT 584372" ;
+            dct:hasPart [ rdfs:label "584372" ;
+                    commonpatterns:namePartType "PlanStamp" ],
+                [ rdfs:label "LT" ;
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "Post" ;
+                    commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "II" ;
+                    commonpatterns:namePartType "MarkStamp" ] ] ;
+    surv:age "40+ years" ;
+    surv:fromSurvey eg1:LT_584372 ;
+    surv:purpose nz-surveypoint-purpose:occupation ;
+    geojson:topology [ a eg1:Touches ;
+            geojson:relatedFeatures ( eg1:964009 ) ] .
+
+eg1:LT_584372 a geojson:FeatureCollection ;
     rdfs:label "LT 584372" ;
     dct:time [ owlTime:hasTime "2022-10-29"^^xsd:date ] ;
     container:bearingRotation 0e+00 ;
@@ -22,37 +40,19 @@ eg1:LT_584372 a csd:CSD,
     container:points eg1:OccupationMarks ;
     container:purpose <nz-survey-purpose:lts> ;
     container:surveyDescription "Lots 1 and 2 being adverse possession over parts of Sections 8 and 9 Block XXIV Mamaku Village" ;
-    container:surveyType <nz-survey-type:ltp> .
+    container:surveyType <nz-survey-type:ltp> ;
+    geojson:collectionFeatureType "csd:CSD" .
 
-eg1:4494877 a eg1:OccupationMark,
-        geojson:Feature ;
-    rdfs:label [ rdfs:label "Post II LT 584372" ;
-            dct:hasPart [ rdfs:label "LT" ;
-                    commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "584372" ;
-                    commonpatterns:namePartType "PlanStamp" ],
-                [ rdfs:label "II" ;
-                    commonpatterns:namePartType "MarkStamp" ],
-                [ rdfs:label "Post" ;
-                    commonpatterns:namePartType "MarkType" ] ] ;
-    dct:spatial [ a geojson:Point ;
-            geojson:coordinates ( 7.62376e+05 3.664124e+05 ) ] ;
-    rdfs:comment "Wooden Post" ;
-    surv:age "40+ years" ;
-    surv:purpose nz-surveypoint-purpose:occupation ;
-    geojson:topology [ a eg1:Touches ;
-            geojson:relatedFeatures ( eg1:964009 ) ] .
-
-eg1:OccupationMarks a eg1:OccupationMark,
-        geojson:FeatureCollection ;
+eg1:OccupationMarks a geojson:FeatureCollection ;
+    geojson:collectionFeatureType "OccupationMark" ;
     geojson:features eg1:4494877 .
 
 eg1:occupation-example a geojson:FeatureCollection ;
-    owlTime:hasTime "2022-10-29"^^xsd:date ;
     geojson:features eg1:964009 .
 
 eg1:964009 a geojson:Feature ;
     rdfs:label "fence" ;
+    surv:age "40+ years" ;
     geojson:geometry [ a geojson:LineString ;
             geojson:coordinates ( ( 1.760826e+02 -3.809876e+01 ) ( 1.760832e+02 -3.809946e+01 ) ) ] .
 

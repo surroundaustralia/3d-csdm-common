@@ -5,6 +5,7 @@
 
 eg1:P1P3 a surv:ObservedVector,
         geojson:Feature ;
+    surv:fromSurvey eg1:csdref-1 ;
     surv:vectorPurpose <code:aPurpose> ;
     geojson:topology [ a geojson:LineString ;
             geojson:relatedFeatures ( eg1:P1 eg1:P3 ) ] .

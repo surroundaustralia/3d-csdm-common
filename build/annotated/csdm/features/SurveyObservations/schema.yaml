@@ -58,7 +58,7 @@ $defs:
     - type: object
       properties:
         hasResultQuality:
-          $ref: https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml
+          $ref: https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml
         hasResult:
           properties:
             pose:
@@ -125,6 +125,26 @@ $defs:
 anyOf:
 - $ref: '#/$defs/SurveyVectorObsFeature'
 - $ref: '#/$defs/SurveyVectorObsCollection'
+x-jsonld-extra-terms:
+  hasResult:
+    x-jsonld-id: sosa:hasResult
+    x-jsonld-context:
+      pose:
+        '@id': https://linked.data.gov.au/def/csdm/surveyfeatures/pose
+        '@context':
+          position:
+            '@id': https://linked.data.gov.au/def/csdm/utils/geopose/position
+            '@context':
+              lat: geo:lat
+              lon: geo:long
+              h: https://linked.data.gov.au/def/csdm/utils/geopose/h
+          angles:
+            '@id': https://linked.data.gov.au/def/csdm/utils/geopose/angles
+            '@context':
+              yaw: https://linked.data.gov.au/def/csdm/utils/geopose/yaw
+              pitch: https://linked.data.gov.au/def/csdm/utils/geopose/pitch
+              roll: https://linked.data.gov.au/def/csdm/utils/geopose/roll
+      distance: https://linked.data.gov.au/def/csdm/surveyfeatures/distance
 x-jsonld-prefixes:
   csdm: https://linked.data.gov.au/def/csdm/
   surv: https://linked.data.gov.au/def/csdm/surveyfeatures/

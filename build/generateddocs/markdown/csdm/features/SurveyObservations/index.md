@@ -57,6 +57,7 @@ An example observation of a vector based on bearing and distance - in 2D
 #### jsonld
 ```jsonld
 {
+  "@context": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld",
   "type": "Feature",
   "geometry": null,
   "time": null,
@@ -84,8 +85,7 @@ An example observation of a vector based on bearing and distance - in 2D
         "distance": 333207.1
       }
     }
-  },
-  "@context": "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld"
+  }
 }
 ```
 
@@ -93,8 +93,8 @@ An example observation of a vector based on bearing and distance - in 2D
 ```ttl
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix geopose: <https://linked.data.gov.au/def/csdm/utils/geopose/> .
-@prefix ns1: <https://linked.data.gov.au/def/csdm/surveyobs/> .
-@prefix ns2: <https://linked.data.gov.au/def/csdm/sensors/> .
+@prefix ns1: <https://linked.data.gov.au/def/csdm/sensors/> .
+@prefix ns2: <https://linked.data.gov.au/def/csdm/surveyobs/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -103,13 +103,13 @@ An example observation of a vector based on bearing and distance - in 2D
     sosa:hasFeatureOfInterest <file:///github/workspace/l973158> ;
     sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;
                     geopose:angles [ ] ] ] ;
-    sosa:hasResultQuality [ ns1:angleAccuracyClass <http://any.valid/> ;
-            ns1:angleAccuracyMeasure 2.815469e-02 ;
-            ns1:distanceAccuracyClass <http://any.valid/> ;
-            ns1:distanceAccuracyMeasure 1.00138e-04 ] ;
-    sosa:madeBySensor [ a ns2:DifferentialGPS ;
-            ns2:baseSensor "gps+38666" ;
-            ns2:roverSensor "gps+37544" ] ;
+    sosa:hasResultQuality [ ns2:angleAccuracyClass <http://any.valid/> ;
+            ns2:angleAccuracyMeasure 2.815469e-02 ;
+            ns2:distanceAccuracyClass <http://any.valid/> ;
+            ns2:distanceAccuracyMeasure 1.00138e-04 ] ;
+    sosa:madeBySensor [ a ns1:DifferentialGPS ;
+            ns1:baseSensor "gps+38666" ;
+            ns1:roverSensor "gps+37544" ] ;
     sosa:observedProperty <https://linked.data.gov.au/def/csdm/property/pose> ;
     sosa:resultTime "2023-05-22T16:41:00" .
 
@@ -151,6 +151,7 @@ An example observation of a vector based on bearing,pitch (azimuth angle) and di
 #### jsonld
 ```jsonld
 {
+  "@context": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld",
   "type": "Feature",
   "geometry": null,
   "time": null,
@@ -173,8 +174,7 @@ An example observation of a vector based on bearing,pitch (azimuth angle) and di
         "distance": 333207.1
       }
     }
-  },
-  "@context": "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld"
+  }
 }
 ```
 
@@ -227,6 +227,7 @@ Example Survey Observation - vector only distance
 #### jsonld
 ```jsonld
 {
+  "@context": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld",
   "type": "Feature",
   "geometry": null,
   "properties": {
@@ -241,8 +242,7 @@ Example Survey Observation - vector only distance
     "hasResult": {
       "distance": 333207.1
     }
-  },
-  "@context": "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld"
+  }
 }
 ```
 
@@ -300,6 +300,7 @@ Example Survey Observation - vector only bearing
 #### jsonld
 ```jsonld
 {
+  "@context": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld",
   "type": "Feature",
   "geometry": null,
   "time": null,
@@ -321,8 +322,7 @@ Example Survey Observation - vector only bearing
         }
       }
     }
-  },
-  "@context": "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld"
+  }
 }
 ```
 
@@ -395,7 +395,7 @@ Example Collection of Survey Observations
 ```jsonld
 {
   "@context": [
-    "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld",
+    "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld",
     {}
   ],
   "id": "vectorObservations",
@@ -441,8 +441,8 @@ Example Collection of Survey Observations
 @prefix distancetype: <https://linked.data.gov.au/def/csdm/defs/distancetypes/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix geopose: <https://linked.data.gov.au/def/csdm/utils/geopose/> .
-@prefix ns1: <https://linked.data.gov.au/def/csdm/surveyobs/> .
-@prefix ns2: <https://linked.data.gov.au/def/csdm/sensors/> .
+@prefix ns1: <https://linked.data.gov.au/def/csdm/sensors/> .
+@prefix ns2: <https://linked.data.gov.au/def/csdm/surveyobs/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .
 @prefix surveyable: <https://linked.data.gov.au/def/csdm/defs/surveyableproperties/> .
@@ -455,14 +455,14 @@ Example Collection of Survey Observations
             sosa:hasFeatureOfInterest <http://www.example.com/features/l973158> ;
             sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;
                             geopose:angles [ ] ] ] ] ;
-    sosa:madeBySensor [ a ns2:DifferentialGPS ;
-            ns2:baseSensor "gps+38666" ;
-            ns2:roverSensor "gps+37544" ] ;
+    sosa:madeBySensor [ a ns1:DifferentialGPS ;
+            ns1:baseSensor "gps+38666" ;
+            ns1:roverSensor "gps+37544" ] ;
     sosa:observedProperty surveyable:VectorDetermination ;
     sosa:resultTime "2023-05-24T00:00:00" ;
     sosa:usedProcedure surveyproc:traverse ;
-    ns1:angleType angletype:bearing ;
-    ns1:distanceType distancetype:ellipsoidal .
+    ns2:angleType angletype:bearing ;
+    ns2:distanceType distancetype:ellipsoidal .
 
 
 ```
@@ -530,7 +530,7 @@ $defs:
     - type: object
       properties:
         hasResultQuality:
-          $ref: https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml
+          $ref: https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml
         hasResult:
           properties:
             pose:
@@ -597,6 +597,26 @@ $defs:
 anyOf:
 - $ref: '#/$defs/SurveyVectorObsFeature'
 - $ref: '#/$defs/SurveyVectorObsCollection'
+x-jsonld-extra-terms:
+  hasResult:
+    x-jsonld-id: sosa:hasResult
+    x-jsonld-context:
+      pose:
+        '@id': https://linked.data.gov.au/def/csdm/surveyfeatures/pose
+        '@context':
+          position:
+            '@id': https://linked.data.gov.au/def/csdm/utils/geopose/position
+            '@context':
+              lat: geo:lat
+              lon: geo:long
+              h: https://linked.data.gov.au/def/csdm/utils/geopose/h
+          angles:
+            '@id': https://linked.data.gov.au/def/csdm/utils/geopose/angles
+            '@context':
+              yaw: https://linked.data.gov.au/def/csdm/utils/geopose/yaw
+              pitch: https://linked.data.gov.au/def/csdm/utils/geopose/pitch
+              roll: https://linked.data.gov.au/def/csdm/utils/geopose/roll
+      distance: https://linked.data.gov.au/def/csdm/surveyfeatures/distance
 x-jsonld-prefixes:
   csdm: https://linked.data.gov.au/def/csdm/
   surv: https://linked.data.gov.au/def/csdm/surveyfeatures/
@@ -612,8 +632,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/schema.json)
-* JSON version: [schema.json](https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/schema.yaml)
+* YAML version: [schema.yaml](https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/schema.json)
+* JSON version: [schema.json](https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/schema.yaml)
 
 
 # JSON-LD Context
@@ -621,17 +641,6 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
-    "type": "@type",
-    "id": "@id",
-    "properties": "@nest",
-    "geometry": {
-      "@context": {},
-      "@id": "geojson:geometry"
-    },
-    "bbox": {
-      "@container": "@list",
-      "@id": "geojson:bbox"
-    },
     "Feature": "geojson:Feature",
     "FeatureCollection": "geojson:FeatureCollection",
     "GeometryCollection": "geojson:GeometryCollection",
@@ -644,11 +653,8 @@ Links to the schema:
     "features": {
       "@container": "@set",
       "@id": "sosa:hasMember",
+      "@type": "@id",
       "@context": {
-        "features": {
-          "@container": "@set",
-          "@id": "geojson:features"
-        },
         "observedProperty": {
           "@id": "sosa:observedProperty",
           "@type": "@id"
@@ -658,6 +664,14 @@ Links to the schema:
           "@type": "@id"
         }
       }
+    },
+    "type": "@type",
+    "id": "@id",
+    "properties": "@nest",
+    "geometry": "geojson:geometry",
+    "bbox": {
+      "@container": "@list",
+      "@id": "geojson:bbox"
     },
     "links": {
       "@context": {
@@ -722,36 +736,6 @@ Links to the schema:
     "geometries": {
       "@id": "geojson:geometry",
       "@container": "@list"
-    },
-    "resultTime": "sosa:resultTime",
-    "phenomenonTime": {
-      "@id": "sosa:phenomenonTime",
-      "@type": "@id"
-    },
-    "hasFeatureOfInterest": {
-      "@id": "sosa:hasFeatureOfInterest",
-      "@type": "@id"
-    },
-    "observedProperty": {
-      "@context": {
-        "@base": "https://linked.data.gov.au/def/csdm/property/"
-      },
-      "@id": "sosa:observedProperty",
-      "@type": "@id"
-    },
-    "usedProcedure": {
-      "@id": "sosa:usedProcedure",
-      "@type": "@id"
-    },
-    "madeBySensor": {
-      "@context": {
-        "@base": "https://linked.data.gov.au/def/csdm/sensors/Sensor",
-        "sensorType": "@type",
-        "baseSensor": "csdm:sensors/baseSensor",
-        "roverSensor": "csdm:sensors/roverSensor"
-      },
-      "@id": "sosa:madeBySensor",
-      "@type": "@id"
     },
     "ActuatableProperty": {
       "@id": "sosa:ActuatableProperty",
@@ -865,20 +849,16 @@ Links to the schema:
       "@id": "sosa:hasMember",
       "@type": "@id",
       "@context": {
+        "hasResult": {
+          "@id": "sosa:hasResult",
+          "@type": "@id"
+        },
         "observedProperty": {
           "@id": "sosa:observedProperty",
           "@type": "@id"
         },
         "madeBySensor": {
           "@id": "sosa:madeBySensor",
-          "@type": "@id"
-        },
-        "features": {
-          "@id": "sosa:hasMember",
-          "@type": "@id"
-        },
-        "hasResult": {
-          "@id": "sosa:hasResult",
           "@type": "@id"
         }
       }
@@ -910,7 +890,19 @@ Links to the schema:
     },
     "hasResultQuality": {
       "@id": "sosa:hasResultQuality",
-      "@type": "@id"
+      "@type": "@id",
+      "@context": {
+        "angleAccuracy": "csdm:surveyobs/angleAccuracyMeasure",
+        "distanceAccuracy": "csdm:surveyobs/distanceAccuracyMeasure",
+        "distanceAccuracyClass": {
+          "@type": "@id",
+          "@id": "csdm:surveyobs/distanceAccuracyClass"
+        },
+        "angleAccuracyClass": {
+          "@type": "@id",
+          "@id": "csdm:surveyobs/angleAccuracyClass"
+        }
+      }
     },
     "hasSample": {
       "@id": "sosa:hasSample",
@@ -1138,29 +1130,35 @@ Links to the schema:
       "@id": "ssn-system:qualityOfObservation",
       "@type": "@id"
     },
-    "angleAccuracy": "csdm:surveyobs/angleAccuracyMeasure",
-    "distanceAccuracy": "csdm:surveyobs/distanceAccuracyMeasure",
-    "distanceAccuracyClass": {
-      "@type": "@id",
-      "@id": "csdm:surveyobs/distanceAccuracyClass"
+    "resultTime": "sosa:resultTime",
+    "phenomenonTime": {
+      "@id": "sosa:phenomenonTime",
+      "@type": "@id"
     },
-    "angleAccuracyClass": {
-      "@type": "@id",
-      "@id": "csdm:surveyobs/angleAccuracyClass"
+    "hasFeatureOfInterest": {
+      "@id": "sosa:hasFeatureOfInterest",
+      "@type": "@id"
     },
-    "angleType": {
+    "observedProperty": {
       "@context": {
-        "@base": "https://linked.data.gov.au/def/csdm/defs/angletypes/"
+        "@base": "https://linked.data.gov.au/def/csdm/property/"
       },
-      "@type": "@id",
-      "@id": "csdm:surveyobs/angleType"
+      "@id": "sosa:observedProperty",
+      "@type": "@id"
     },
-    "distanceType": {
+    "usedProcedure": {
+      "@id": "sosa:usedProcedure",
+      "@type": "@id"
+    },
+    "madeBySensor": {
       "@context": {
-        "@base": "https://linked.data.gov.au/def/csdm/defs/distancetypes/"
+        "@base": "https://linked.data.gov.au/def/csdm/sensors/Sensor",
+        "sensorType": "@type",
+        "baseSensor": "csdm:sensors/baseSensor",
+        "roverSensor": "csdm:sensors/roverSensor"
       },
-      "@type": "@id",
-      "@id": "csdm:surveyobs/distanceType"
+      "@id": "sosa:madeBySensor",
+      "@type": "@id"
     },
     "geojson": "https://purl.org/geojson/vocab#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -1178,13 +1176,27 @@ Links to the schema:
     "distancetype": "csdm:defs/distancetypes/",
     "surveyproc": "csdm:defs/surveyprocedures/",
     "surveyable": "csdm:defs/surveyableproperties/",
+    "angleType": {
+      "@context": {
+        "@base": "https://linked.data.gov.au/def/csdm/defs/angletypes/"
+      },
+      "@type": "@id",
+      "@id": "csdm:surveyobs/angleType"
+    },
+    "distanceType": {
+      "@context": {
+        "@base": "https://linked.data.gov.au/def/csdm/defs/distancetypes/"
+      },
+      "@type": "@id",
+      "@id": "csdm:surveyobs/distanceType"
+    },
     "@version": 1.1
   }
 }
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld)
+[context.jsonld](https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld)
 
 ## Sources
 
@@ -1194,6 +1206,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/icsm-au/3d-csdm-common](https://github.com/icsm-au/3d-csdm-common)
+* URL: [https://github.com/surroundaustralia/3d-csdm-common](https://github.com/surroundaustralia/3d-csdm-common)
 * Path: `_sources/csdm/features/SurveyObservations`
 

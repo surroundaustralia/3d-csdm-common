@@ -2,7 +2,7 @@
   "title": "Validation report for icsm.csdm.features.SurveyFeatures - Survey Features",
   "bblockName": "Survey Features",
   "bblockId": "icsm.csdm.features.SurveyFeatures",
-  "generated": "2024-07-25T00:08:37.067799+00:00",
+  "generated": "2026-03-31T04:19:17.362437+00:00",
   "result": true,
   "items": [
     {
@@ -10,16 +10,11 @@
         "type": "TEST_RESOURCE",
         "requireFail": false,
         "filename": "_sources/csdm/features/SurveyFeatures/tests/occupationmark.json",
-        "url": "https://icsm-au.github.io/3d-csdm-common/_sources/csdm/features/SurveyFeatures/tests/occupationmark.json",
+        "url": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyFeatures/tests/occupationmark.json",
         "language": "json"
       },
       "result": true,
       "sections": [
-        {
-          "name": "GENERAL",
-          "title": "General",
-          "entries": []
-        },
         {
           "name": "FILES",
           "title": "Files",
@@ -62,19 +57,53 @@
           ]
         },
         {
-          "name": "JSON_LD",
-          "title": "JSON-LD",
-          "entries": []
-        },
-        {
-          "name": "TURTLE",
-          "title": "Turtle",
-          "entries": []
-        },
-        {
           "name": "SHACL",
           "title": "SHACL",
           "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
+              "focusNodes": {
+                "_:nff874e99f20148d09b57212d7910c8f6b1": {
+                  "nodes": [
+                    "eg1:P1/geojson:geometry"
+                  ]
+                },
+                "_:nff874e99f20148d09b57212d7910c8f6b3": {
+                  "nodes": [
+                    "eg1:P1/geojson:geometry"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n - Shape _:nff874e99f20148d09b57212d7910c8f6b1: eg1:P1/geojson:geometry\n - Shape _:nff874e99f20148d09b57212d7910c8f6b3: eg1:P1/geojson:geometry\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
+              "focusNodes": {
+                "topo:testTopoLinesReferencePoints": {
+                  "nodes": []
+                },
+                "topo:testTopoReferencesExist": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:\n - Shape topo:testTopoLinesReferencePoints: *none*\n - Shape topo:testTopoReferencesExist: *none*\n"
+            },
             {
               "op": "shacl-report",
               "shaclFile": "_sources/csdm/datatypes/compoundName/rules.shacl",
@@ -85,19 +114,16 @@
             {
               "shaclFile": "_sources/csdm/datatypes/compoundName/rules.shacl",
               "focusNodes": {
-                "_:n7ff2283c5fcd4284b1a612b5f4b44b78b1": {
-                  "nodes": []
+                "_:n9b8bccc1567843d0b28940e9de79d7a1b1": {
+                  "nodes": [
+                    "eg1:P1/commonpatterns:name"
+                  ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n7ff2283c5fcd4284b1a612b5f4b44b78b1: *none*\n"
+              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n9b8bccc1567843d0b28940e9de79d7a1b1: eg1:P1/commonpatterns:name\n"
             }
           ]
-        },
-        {
-          "name": "UNKNOWN",
-          "title": "Unknown errors",
-          "entries": []
         }
       ]
     },
@@ -105,26 +131,21 @@
       "source": {
         "type": "EXAMPLE",
         "requireFail": false,
-        "filename": "build/tests/csdm/features/SurveyFeatures/surveymark",
-        "url": "https://icsm-au.github.io/3d-csdm-common/build/tests/csdm/features/SurveyFeatures/surveymark",
+        "filename": "build/tests/csdm/features/SurveyFeatures/surveymark.json",
+        "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/features/SurveyFeatures/surveymark.json",
         "exampleIndex": 1,
         "snippetIndex": 1,
-        "language": "json"
+        "language": "application/json"
       },
       "result": true,
       "sections": [
-        {
-          "name": "GENERAL",
-          "title": "General",
-          "entries": []
-        },
         {
           "name": "FILES",
           "title": "Files",
           "entries": [
             {
               "isError": false,
-              "message": "Using surveymark (example_1_1) from examples"
+              "message": "Using examples/surveymark.json from examples"
             },
             {
               "op": "jsonld-uplift",
@@ -160,19 +181,53 @@
           ]
         },
         {
-          "name": "JSON_LD",
-          "title": "JSON-LD",
-          "entries": []
-        },
-        {
-          "name": "TURTLE",
-          "title": "Turtle",
-          "entries": []
-        },
-        {
           "name": "SHACL",
           "title": "SHACL",
           "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
+              "focusNodes": {
+                "_:nff874e99f20148d09b57212d7910c8f6b1": {
+                  "nodes": [
+                    "eg1:P1/geojson:geometry"
+                  ]
+                },
+                "_:nff874e99f20148d09b57212d7910c8f6b3": {
+                  "nodes": [
+                    "eg1:P1/geojson:geometry"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n - Shape _:nff874e99f20148d09b57212d7910c8f6b1: eg1:P1/geojson:geometry\n - Shape _:nff874e99f20148d09b57212d7910c8f6b3: eg1:P1/geojson:geometry\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
+              "focusNodes": {
+                "topo:testTopoLinesReferencePoints": {
+                  "nodes": []
+                },
+                "topo:testTopoReferencesExist": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:\n - Shape topo:testTopoLinesReferencePoints: *none*\n - Shape topo:testTopoReferencesExist: *none*\n"
+            },
             {
               "op": "shacl-report",
               "shaclFile": "_sources/csdm/datatypes/compoundName/rules.shacl",
@@ -183,19 +238,16 @@
             {
               "shaclFile": "_sources/csdm/datatypes/compoundName/rules.shacl",
               "focusNodes": {
-                "_:n7ff2283c5fcd4284b1a612b5f4b44b78b1": {
-                  "nodes": []
+                "_:n9b8bccc1567843d0b28940e9de79d7a1b1": {
+                  "nodes": [
+                    "eg1:P1/commonpatterns:name"
+                  ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n7ff2283c5fcd4284b1a612b5f4b44b78b1: *none*\n"
+              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n9b8bccc1567843d0b28940e9de79d7a1b1: eg1:P1/commonpatterns:name\n"
             }
           ]
-        },
-        {
-          "name": "UNKNOWN",
-          "title": "Unknown errors",
-          "entries": []
         }
       ]
     },
@@ -203,26 +255,21 @@
       "source": {
         "type": "EXAMPLE",
         "requireFail": false,
-        "filename": "build/tests/csdm/features/SurveyFeatures/geodeticmark",
-        "url": "https://icsm-au.github.io/3d-csdm-common/build/tests/csdm/features/SurveyFeatures/geodeticmark",
+        "filename": "build/tests/csdm/features/SurveyFeatures/geodeticmark.json",
+        "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/features/SurveyFeatures/geodeticmark.json",
         "exampleIndex": 2,
         "snippetIndex": 1,
-        "language": "json"
+        "language": "application/json"
       },
       "result": true,
       "sections": [
-        {
-          "name": "GENERAL",
-          "title": "General",
-          "entries": []
-        },
         {
           "name": "FILES",
           "title": "Files",
           "entries": [
             {
               "isError": false,
-              "message": "Using geodeticmark (example_2_1) from examples"
+              "message": "Using examples/geodeticmark.json from examples"
             },
             {
               "op": "jsonld-uplift",
@@ -258,19 +305,53 @@
           ]
         },
         {
-          "name": "JSON_LD",
-          "title": "JSON-LD",
-          "entries": []
-        },
-        {
-          "name": "TURTLE",
-          "title": "Turtle",
-          "entries": []
-        },
-        {
           "name": "SHACL",
           "title": "SHACL",
           "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
+              "focusNodes": {
+                "_:nff874e99f20148d09b57212d7910c8f6b1": {
+                  "nodes": [
+                    "eg1:P2/geojson:geometry"
+                  ]
+                },
+                "_:nff874e99f20148d09b57212d7910c8f6b3": {
+                  "nodes": [
+                    "eg1:P2/geojson:geometry"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n - Shape _:nff874e99f20148d09b57212d7910c8f6b1: eg1:P2/geojson:geometry\n - Shape _:nff874e99f20148d09b57212d7910c8f6b3: eg1:P2/geojson:geometry\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
+              "focusNodes": {
+                "topo:testTopoLinesReferencePoints": {
+                  "nodes": []
+                },
+                "topo:testTopoReferencesExist": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:\n - Shape topo:testTopoLinesReferencePoints: *none*\n - Shape topo:testTopoReferencesExist: *none*\n"
+            },
             {
               "op": "shacl-report",
               "shaclFile": "_sources/csdm/datatypes/compoundName/rules.shacl",
@@ -281,19 +362,16 @@
             {
               "shaclFile": "_sources/csdm/datatypes/compoundName/rules.shacl",
               "focusNodes": {
-                "_:n7ff2283c5fcd4284b1a612b5f4b44b78b1": {
-                  "nodes": []
+                "_:n9b8bccc1567843d0b28940e9de79d7a1b1": {
+                  "nodes": [
+                    "eg1:P2/commonpatterns:name"
+                  ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n7ff2283c5fcd4284b1a612b5f4b44b78b1: *none*\n"
+              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n9b8bccc1567843d0b28940e9de79d7a1b1: eg1:P2/commonpatterns:name\n"
             }
           ]
-        },
-        {
-          "name": "UNKNOWN",
-          "title": "Unknown errors",
-          "entries": []
         }
       ]
     },
@@ -301,26 +379,21 @@
       "source": {
         "type": "EXAMPLE",
         "requireFail": false,
-        "filename": "build/tests/csdm/features/SurveyFeatures/monument",
-        "url": "https://icsm-au.github.io/3d-csdm-common/build/tests/csdm/features/SurveyFeatures/monument",
+        "filename": "build/tests/csdm/features/SurveyFeatures/monument.json",
+        "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/features/SurveyFeatures/monument.json",
         "exampleIndex": 3,
         "snippetIndex": 1,
-        "language": "json"
+        "language": "application/json"
       },
       "result": true,
       "sections": [
-        {
-          "name": "GENERAL",
-          "title": "General",
-          "entries": []
-        },
         {
           "name": "FILES",
           "title": "Files",
           "entries": [
             {
               "isError": false,
-              "message": "Using monument (example_3_1) from examples"
+              "message": "Using examples/monument.json from examples"
             },
             {
               "op": "jsonld-uplift",
@@ -356,19 +429,49 @@
           ]
         },
         {
-          "name": "JSON_LD",
-          "title": "JSON-LD",
-          "entries": []
-        },
-        {
-          "name": "TURTLE",
-          "title": "Turtle",
-          "entries": []
-        },
-        {
           "name": "SHACL",
           "title": "SHACL",
           "entries": [
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
+              "focusNodes": {
+                "_:nff874e99f20148d09b57212d7910c8f6b1": {
+                  "nodes": []
+                },
+                "_:nff874e99f20148d09b57212d7910c8f6b3": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n - Shape _:nff874e99f20148d09b57212d7910c8f6b1: *none*\n - Shape _:nff874e99f20148d09b57212d7910c8f6b3: *none*\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
+              "focusNodes": {
+                "topo:testTopoLinesReferencePoints": {
+                  "nodes": []
+                },
+                "topo:testTopoReferencesExist": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:\n - Shape topo:testTopoLinesReferencePoints: *none*\n - Shape topo:testTopoReferencesExist: *none*\n"
+            },
             {
               "op": "shacl-report",
               "shaclFile": "_sources/csdm/datatypes/compoundName/rules.shacl",
@@ -379,19 +482,14 @@
             {
               "shaclFile": "_sources/csdm/datatypes/compoundName/rules.shacl",
               "focusNodes": {
-                "_:n7ff2283c5fcd4284b1a612b5f4b44b78b1": {
+                "_:n9b8bccc1567843d0b28940e9de79d7a1b1": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n7ff2283c5fcd4284b1a612b5f4b44b78b1: *none*\n"
+              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n9b8bccc1567843d0b28940e9de79d7a1b1: *none*\n"
             }
           ]
-        },
-        {
-          "name": "UNKNOWN",
-          "title": "Unknown errors",
-          "entries": []
         }
       ]
     },
@@ -399,26 +497,21 @@
       "source": {
         "type": "EXAMPLE",
         "requireFail": false,
-        "filename": "build/tests/csdm/features/SurveyFeatures/surveyvectors",
-        "url": "https://icsm-au.github.io/3d-csdm-common/build/tests/csdm/features/SurveyFeatures/surveyvectors",
+        "filename": "build/tests/csdm/features/SurveyFeatures/surveyvectors.json",
+        "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/features/SurveyFeatures/surveyvectors.json",
         "exampleIndex": 4,
         "snippetIndex": 1,
-        "language": "json"
+        "language": "application/json"
       },
       "result": true,
       "sections": [
-        {
-          "name": "GENERAL",
-          "title": "General",
-          "entries": []
-        },
         {
           "name": "FILES",
           "title": "Files",
           "entries": [
             {
               "isError": false,
-              "message": "Using surveyvectors (example_4_1) from examples"
+              "message": "Using examples/surveyvectors.json from examples"
             },
             {
               "op": "jsonld-uplift",
@@ -435,7 +528,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "surveyvectors.ttl",
-              "size": 10,
+              "size": 11,
               "isError": false,
               "message": "Output Turtle surveyvectors.ttl created"
             }
@@ -454,19 +547,57 @@
           ]
         },
         {
-          "name": "JSON_LD",
-          "title": "JSON-LD",
-          "entries": []
-        },
-        {
-          "name": "TURTLE",
-          "title": "Turtle",
-          "entries": []
-        },
-        {
           "name": "SHACL",
           "title": "SHACL",
           "entries": [
+            {
+              "isError": false,
+              "message": "Using snippet SHACL closures:\n - examples/points.ttl"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
+              "focusNodes": {
+                "_:nff874e99f20148d09b57212d7910c8f6b1": {
+                  "nodes": []
+                },
+                "_:nff874e99f20148d09b57212d7910c8f6b3": {
+                  "nodes": []
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n - Shape _:nff874e99f20148d09b57212d7910c8f6b1: *none*\n - Shape _:nff874e99f20148d09b57212d7910c8f6b3: *none*\n"
+            },
+            {
+              "op": "shacl-report",
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
+              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
+              "isError": false,
+              "message": "Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:\n  Validation Report\n  Conforms: True\n  "
+            },
+            {
+              "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
+              "focusNodes": {
+                "topo:testTopoLinesReferencePoints": {
+                  "nodes": [
+                    "eg1:P1P3/geojson:topology"
+                  ]
+                },
+                "topo:testTopoReferencesExist": {
+                  "nodes": [
+                    "eg1:P1P3/geojson:topology"
+                  ]
+                }
+              },
+              "isError": false,
+              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:\n - Shape topo:testTopoLinesReferencePoints: eg1:P1P3/geojson:topology\n - Shape topo:testTopoReferencesExist: eg1:P1P3/geojson:topology\n"
+            },
             {
               "op": "shacl-report",
               "shaclFile": "_sources/csdm/datatypes/compoundName/rules.shacl",
@@ -477,19 +608,14 @@
             {
               "shaclFile": "_sources/csdm/datatypes/compoundName/rules.shacl",
               "focusNodes": {
-                "_:n7ff2283c5fcd4284b1a612b5f4b44b78b1": {
+                "_:n9b8bccc1567843d0b28940e9de79d7a1b1": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n7ff2283c5fcd4284b1a612b5f4b44b78b1: *none*\n"
+              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n9b8bccc1567843d0b28940e9de79d7a1b1: *none*\n"
             }
           ]
-        },
-        {
-          "name": "UNKNOWN",
-          "title": "Unknown errors",
-          "entries": []
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "@context": [
-    "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/context.jsonld",
+    "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/context.jsonld",
     {
       "@base": "http://csdm-example-surveys/DP-572532/",
       "eg2": "http://csdm-example-surveys/DP-572532/",
@@ -2209,7 +2209,6 @@
           "geometry": null,
           "properties": {
             "hasFeatureOfInterest": "l566592",
-            "resultTime": "2023-03-10T10:19:25+13:00",
             "hasResult": {
               "distance": 95.06,
               "angle": 141.81944444444443

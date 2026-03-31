@@ -34,6 +34,7 @@ A name with a label, but also a set of parts with roles that can be validated ag
 #### jsonld
 ```jsonld
 {
+  "@context": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/context.jsonld",
   "id": "CompoundNameExample",
   "type": "CompoundName",
   "label": "IS II - DP 3333",
@@ -47,8 +48,7 @@ A name with a label, but also a set of parts with roles that can be validated ag
       "type": "Stamp",
       "label": "IS II"
     }
-  ],
-  "@context": "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/context.jsonld"
+  ]
 }
 ```
 
@@ -59,10 +59,10 @@ A name with a label, but also a set of parts with roles that can be validated ag
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 [] rdfs:label "IS II - DP 3333" ;
-    dcterms:hasPart [ rdfs:label "IS II" ;
-            commonpatterns:namePartType "Stamp" ],
-        [ rdfs:label "DP 3333" ;
-            commonpatterns:namePartType "Source" ] .
+    dcterms:hasPart [ rdfs:label "DP 3333" ;
+            commonpatterns:namePartType "Source" ],
+        [ rdfs:label "IS II" ;
+            commonpatterns:namePartType "Stamp" ] .
 
 
 ```
@@ -107,8 +107,8 @@ x-jsonld-prefixes:
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.json)
-* JSON version: [schema.json](https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml)
+* YAML version: [schema.yaml](https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.json)
+* JSON version: [schema.json](https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml)
 
 
 # JSON-LD Context
@@ -116,6 +116,8 @@ Links to the schema:
 ```jsonld
 {
   "@context": {
+    "name": "commonpatterns:name",
+    "CompoundName": "commonpatterns:CompoundName",
     "label": "rdfs:label",
     "hasPart": {
       "@context": {
@@ -123,8 +125,6 @@ Links to the schema:
       },
       "@id": "dct:hasPart"
     },
-    "name": "commonpatterns:name",
-    "CompoundName": "commonpatterns:CompoundName",
     "dct": "http://purl.org/dc/terms/",
     "commonpatterns": "csdm:commonpatterns/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -135,7 +135,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/context.jsonld)
+[context.jsonld](https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/context.jsonld)
 
 ## Sources
 
@@ -145,6 +145,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/icsm-au/3d-csdm-common](https://github.com/icsm-au/3d-csdm-common)
+* URL: [https://github.com/surroundaustralia/3d-csdm-common](https://github.com/surroundaustralia/3d-csdm-common)
 * Path: `_sources/csdm/datatypes/compoundName`
 

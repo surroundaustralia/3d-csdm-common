@@ -1,7 +1,7 @@
 {
+  "@context": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/context.jsonld",
   "distanceAccuracy": 0.000100138048,
   "angleAccuracy": 0.028154691543,
   "distanceAccuracyClass": "http://any.valid/",
-  "angleAccuracyClass": "http://any.valid/",
-  "@context": "https://icsm-au.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/context.jsonld"
+  "angleAccuracyClass": "http://any.valid/"
 }
