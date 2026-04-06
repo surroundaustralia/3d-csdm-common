@@ -23,12 +23,24 @@
           "label": {
             "type": "string"
           },
+          "ref": {
+            "$ref": "bblocks://ogc.ogc-utils.iri-or-curie"
+          },
           "type": {
             "type": "string"
           }
         },
-        "required": [
-          "label"
+        "anyOf": [
+          {
+            "required": [
+              "label"
+            ]
+          },
+          {
+            "required": [
+              "ref"
+            ]
+          }
         ]
       }
     }
