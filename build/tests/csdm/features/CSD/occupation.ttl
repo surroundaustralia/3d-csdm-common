@@ -19,12 +19,12 @@ eg1:4494877 a eg1:OccupationMark,
     commonpatterns:name [ rdfs:label "Post II LT 584372" ;
             dct:hasPart [ rdfs:label "584372" ;
                     commonpatterns:namePartType "PlanStamp" ],
-                [ rdfs:label "LT" ;
-                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "II" ;
+                    commonpatterns:namePartType "MarkStamp" ],
                 [ rdfs:label "Post" ;
                     commonpatterns:namePartType "MarkType" ],
-                [ rdfs:label "II" ;
-                    commonpatterns:namePartType "MarkStamp" ] ] ;
+                [ rdfs:label "LT" ;
+                    commonpatterns:namePartType "PlanType" ] ] ;
     surv:age "40+ years" ;
     surv:fromSurvey eg1:LT_584372 ;
     surv:purpose nz-surveypoint-purpose:occupation ;

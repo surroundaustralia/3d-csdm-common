@@ -16,11 +16,18 @@ properties:
         label:
           type: string
           x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label
+        ref:
+          $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml
+          x-jsonld-type: '@id'
+          x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/namePartRef
         type:
           type: string
           x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/namePartType
-      required:
-      - label
+      anyOf:
+      - required:
+        - label
+      - required:
+        - ref
     x-jsonld-id: http://purl.org/dc/terms/hasPart
 x-jsonld-extra-terms:
   name: https://linked.data.gov.au/def/csdm/commonpatterns/name

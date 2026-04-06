@@ -1,5 +1,5 @@
 Validation report for icsm.csdm.features.CSD - Cadastral Survey Dataset
-Generated 2026-03-31T04:19:27.481969+00:00
+Generated 2026-04-06T22:39:37.199187+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -44,13 +44,20 @@ On instance['vectorObservations'][0]['properties']:
 === End JSON Schema ===
 
 === SHACL ===
+Validation result for _sources/csdm/features/CSD/tests/obs-match-vectors.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/csdm/features/CSD/tests/obs-match-vectors.shacl:
+ - Shape :testFOIexists: eg1:FailsToDeclareObservedProperty,eg1:FailsValueObservedProperty
+
 Validation result for _sources/csdm/shapes/container.shapes.ttl:
   Validation Report
   Conforms: True
   
 Focus nodes for _sources/csdm/shapes/container.shapes.ttl:
- - Shape container:CSD-seeAlso: *none*
  - Shape container:CSD: *none*
+ - Shape container:CSD-seeAlso: *none*
  - Shape <https://linked.data.gov.au/def/csdm/surveyprov/SurveyType>: *none*
 
 Validation result for _sources/csdm/shapes/parcel_module.shapes.ttl:
@@ -58,33 +65,26 @@ Validation result for _sources/csdm/shapes/parcel_module.shapes.ttl:
   Conforms: True
   
 Focus nodes for _sources/csdm/shapes/parcel_module.shapes.ttl:
- - Shape :ParcelAggregate: *none*
- - Shape :Parcel: *none*
- - Shape :ParcelState: *none*
- - Shape :PrimaryParcel: *none*
- - Shape :Apellation: *none*
- - Shape :ParcelType: *none*
  - Shape :EstateParcel: *none*
- - Shape :SecondaryParcel: *none*
- - Shape :PropertyUnit: *none*
  - Shape :PurposeOfSpatialUnit: *none*
- - Shape :LandInterest: *none*
+ - Shape :ParcelType: *none*
+ - Shape :ParcelState: *none*
+ - Shape :PropertyUnit: *none*
+ - Shape :Apellation: *none*
+ - Shape :SecondaryParcel: *none*
+ - Shape :PrimaryParcel: *none*
+ - Shape :Parcel: *none*
+ - Shape :ParcelAggregate: *none*
  - Shape :ParcelQualityClass: *none*
-
-Validation result for _sources/csdm/features/CSD/tests/obs-match-vectors.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for _sources/csdm/features/CSD/tests/obs-match-vectors.shacl:
- - Shape :testFOIexists: eg1:FailsValueObservedProperty,eg1:FailsToDeclareObservedProperty
+ - Shape :LandInterest: *none*
 
 Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
- - Shape _:n454d23ef5a5647f896fcb616201f3798b1: eg1:44396823/geojson:geometry,eg1:1725787/geojson:geometry,eg1:11745104/geojson:geometry
- - Shape _:n454d23ef5a5647f896fcb616201f3798b3: eg1:44396823/geojson:geometry,eg1:1725787/geojson:geometry,eg1:11745104/geojson:geometry
+ - Shape _:ne1f8ccf5c38f42ab83e61f7909dca348b3: eg1:44396823/geojson:geometry,eg1:11745104/geojson:geometry,eg1:1725787/geojson:geometry
+ - Shape _:ne1f8ccf5c38f42ab83e61f7909dca348b1: eg1:44396823/geojson:geometry,eg1:11745104/geojson:geometry,eg1:1725787/geojson:geometry
 
 Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
   Validation Report
@@ -99,14 +99,7 @@ Validation result for _sources/csdm/datatypes/compoundName/rules.shacl:
   Conforms: True
   
 Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:
- - Shape _:nebfe60b4905249bd95270582a8f0a130b1: eg1:44396823/commonpatterns:name,eg1:11745104/commonpatterns:name,eg1:1725787/commonpatterns:name
-
-Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:
- - Shape :testRequiredProperties: eg1:obs
+ - Shape _:n0c03e0e6df5a4e6da0872b5befd06f2ab1: eg1:44396823/commonpatterns:name,eg1:1725787/commonpatterns:name,eg1:11745104/commonpatterns:name
 
 
 ** Validation error **
@@ -136,15 +129,22 @@ Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/prop
   	Message: sosa:observedProperty is required
   
 Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: eg1:obs
  - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*
  - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
  - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: eg1:obs
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: eg1:FailsValueObservedProperty,eg1:FailsToDeclareObservedProperty
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: eg1:obs
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: eg1:obs
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: eg1:FailsToDeclareObservedProperty,eg1:FailsValueObservedProperty
  - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: eg1:obs
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+
+Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:
+ - Shape :testRequiredProperties: eg1:obs
 
 === End SHACL ===
 

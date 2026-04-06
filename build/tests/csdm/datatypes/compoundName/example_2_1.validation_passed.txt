@@ -1,10 +1,10 @@
 Validation report for icsm.csdm.datatypes.compoundName - Compound Name
-Generated 2026-04-06T22:39:21.984397+00:00
+Generated 2026-04-06T22:39:22.044033+00:00
 === Files ===
-Using examples/strings.json from examples
+Using examples/coderefs.json from examples
 JSON-LD context is present - uplifting
-Output JSON-LD example_1_1.jsonld created
-Output Turtle example_1_1.ttl created
+Output JSON-LD example_2_1.jsonld created
+Output Turtle example_2_1.ttl created
 === End Files ===
 
 === JSON Schema ===

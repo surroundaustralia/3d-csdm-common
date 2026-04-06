@@ -9,7 +9,7 @@
   "itemClass": "schema",
   "register": "icsm-csdm",
   "version": "0.1",
-  "dateOfLastChange": "2026-03-31",
+  "dateOfLastChange": "2026-04-06",
   "link": "https://github.com/icsm-au/3d-csdm-schema",
   "sources": [
     {
@@ -27,6 +27,9 @@
       "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/datatypes/compoundName/rules.shacl"
     ]
   },
+  "dependsOn": [
+    "ogc.ogc-utils.iri-or-curie"
+  ],
   "ldContext": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/context.jsonld",
   "schema": {
     "application/yaml": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml",
@@ -46,7 +49,7 @@
       "snippets": [
         {
           "language": "json",
-          "ref": "example.json",
+          "ref": "examples/strings.json",
           "base-uri": "http://www.example.com/namedobjects/",
           "code": "{\n    \"id\": \"CompoundNameExample\",\n    \"type\": \"CompoundName\",\n    \"label\": \"IS II - DP 3333\",\n    \"comment\": \"note: label may be absent or subject to rules regarding presence of parts\",\n    \"hasPart\": [\n        {\n            \"type\": \"Source\",\n            \"label\": \"DP 3333\"\n        },\n        {\n            \"type\": \"Stamp\",\n            \"label\": \"IS II\"\n        }\n    ]\n}",
           "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/compoundName/example_1_1.json"
@@ -58,13 +61,36 @@
         },
         {
           "language": "ttl",
-          "code": "@prefix commonpatterns: <https://linked.data.gov.au/def/csdm/commonpatterns/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n[] rdfs:label \"IS II - DP 3333\" ;\n    dcterms:hasPart [ rdfs:label \"DP 3333\" ;\n            commonpatterns:namePartType \"Source\" ],\n        [ rdfs:label \"IS II\" ;\n            commonpatterns:namePartType \"Stamp\" ] .\n\n",
+          "code": "@prefix commonpatterns: <https://linked.data.gov.au/def/csdm/commonpatterns/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n[] rdfs:label \"IS II - DP 3333\" ;\n    dcterms:hasPart [ rdfs:label \"IS II\" ;\n            commonpatterns:namePartType \"Stamp\" ],\n        [ rdfs:label \"DP 3333\" ;\n            commonpatterns:namePartType \"Source\" ] .\n\n",
           "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/compoundName/example_1_1.ttl"
+        }
+      ]
+    },
+    {
+      "title": "Referenced Parts",
+      "content": "An example name where part of the name is a reference to a vocabulary source.  This can us used for validation and multi-linual applications",
+      "snippets": [
+        {
+          "language": "json",
+          "ref": "examples/coderefs.json",
+          "base-uri": "http://www.example.com/namedobjects/",
+          "code": "{\n    \"id\": \"CompoundNameExample\",\n    \"type\": \"CompoundName\",\n    \"label\": \"IS II - DP 3333\",\n    \"comment\": \"the label of the part is optional - but can be cross checked\",\n    \"hasPart\": [\n        {\n            \"type\": \"wa-plan:planTypes\",\n            \"ref\": \"wa-plan-register:dp333\",\n            \"label\": \"DP 3333\"\n        },\n        {\n            \"type\": \"Stamp\",\n            \"label\": \"IS II\"\n        }\n    ]\n}",
+          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/compoundName/example_2_1.json"
+        },
+        {
+          "language": "jsonld",
+          "code": "{\n  \"@context\": \"https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/context.jsonld\",\n  \"id\": \"CompoundNameExample\",\n  \"type\": \"CompoundName\",\n  \"label\": \"IS II - DP 3333\",\n  \"comment\": \"the label of the part is optional - but can be cross checked\",\n  \"hasPart\": [\n    {\n      \"type\": \"wa-plan:planTypes\",\n      \"ref\": \"wa-plan-register:dp333\",\n      \"label\": \"DP 3333\"\n    },\n    {\n      \"type\": \"Stamp\",\n      \"label\": \"IS II\"\n    }\n  ]\n}",
+          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/compoundName/example_2_1.jsonld"
+        },
+        {
+          "language": "ttl",
+          "code": "@prefix commonpatterns: <https://linked.data.gov.au/def/csdm/commonpatterns/> .\n@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n[] rdfs:label \"IS II - DP 3333\" ;\n    dcterms:hasPart [ rdfs:label \"IS II\" ;\n            commonpatterns:namePartType \"Stamp\" ],\n        [ rdfs:label \"DP 3333\" ;\n            commonpatterns:namePartRef <wa-plan-register:dp333> ;\n            commonpatterns:namePartType \"wa-plan:planTypes\" ] .\n\n",
+          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/compoundName/example_2_1.ttl"
         }
       ]
     }
   ],
-  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Compound Name\nproperties:\n  label:\n    anyOf:\n    - type: 'null'\n    - type: string\n    x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label\n  template:\n    type: string\n  hasPart:\n    type: array\n    items:\n      type: object\n      properties:\n        label:\n          type: string\n          x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label\n        type:\n          type: string\n          x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/namePartType\n      required:\n      - label\n    x-jsonld-id: http://purl.org/dc/terms/hasPart\nx-jsonld-extra-terms:\n  name: https://linked.data.gov.au/def/csdm/commonpatterns/name\n  CompoundName: https://linked.data.gov.au/def/csdm/commonpatterns/CompoundName\nx-jsonld-prefixes:\n  dct: http://purl.org/dc/terms/\n  commonpatterns: https://linked.data.gov.au/def/csdm/commonpatterns/\n  rdfs: http://www.w3.org/2000/01/rdf-schema#\n  csdm: https://linked.data.gov.au/def/csdm/\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Compound Name\nproperties:\n  label:\n    anyOf:\n    - type: 'null'\n    - type: string\n    x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label\n  template:\n    type: string\n  hasPart:\n    type: array\n    items:\n      type: object\n      properties:\n        label:\n          type: string\n          x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label\n        ref:\n          $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml\n          x-jsonld-type: '@id'\n          x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/namePartRef\n        type:\n          type: string\n          x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/namePartType\n      anyOf:\n      - required:\n        - label\n      - required:\n        - ref\n    x-jsonld-id: http://purl.org/dc/terms/hasPart\nx-jsonld-extra-terms:\n  name: https://linked.data.gov.au/def/csdm/commonpatterns/name\n  CompoundName: https://linked.data.gov.au/def/csdm/commonpatterns/CompoundName\nx-jsonld-prefixes:\n  dct: http://purl.org/dc/terms/\n  commonpatterns: https://linked.data.gov.au/def/csdm/commonpatterns/\n  rdfs: http://www.w3.org/2000/01/rdf-schema#\n  csdm: https://linked.data.gov.au/def/csdm/\n",
   "gitRepository": "https://github.com/surroundaustralia/3d-csdm-common",
   "gitPath": "_sources/csdm/datatypes/compoundName"
 }

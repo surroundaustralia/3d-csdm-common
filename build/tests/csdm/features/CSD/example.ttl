@@ -5,8 +5,8 @@
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix geopose: <https://linked.data.gov.au/def/csdm/utils/geopose/> .
 @prefix icsm-survey-type: <https://linked.data.gov.au/def/csdm/icsm-survey-type/> .
-@prefix ns1: <https://linked.data.gov.au/def/csdm/sensors/> .
-@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns2: <https://linked.data.gov.au/def/csdm/sensors/> .
 @prefix nz-line-purpose: <https://linked.data.gov.au/def/csdm/nz-linepurpose/> .
 @prefix nz-monument-condition: <https://linked.data.gov.au/def/csdm/nz-monument-condition/> .
 @prefix nz-monument-form: <https://linked.data.gov.au/def/csdm/nz-monument-form/> .
@@ -27,7 +27,7 @@
 <https://linked.data.gov.au/def/csdm/csd-example/DP_572532> a geojson:FeatureCollection ;
     rdfs:label "DP 572532" ;
     dcterms:time [ time:hasTime "2022-05-23"^^xsd:date ] ;
-    container:annotations [ ns2:relation <http://www.iana.org/assignments/relation/related> ;
+    container:annotations [ ns1:relation <http://www.iana.org/assignments/relation/related> ;
             prof:hasRole nz-survey-docroles:fieldbook ;
             oa:hasTarget <http://example.com/survey/documentregister/p333-frogsurvey.pdf> ] ;
     container:bearingRotation 0e+00 ;
@@ -60,9 +60,9 @@
             sosa:hasFeatureOfInterest <https://linked.data.gov.au/def/csdm/csd-example/l973158> ;
             sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;
                             geopose:angles [ ] ] ] ] ;
-    sosa:madeBySensor [ a ns1:DifferentialGPS ;
-            ns1:baseSensor "gps+38666" ;
-            ns1:roverSensor "gps+37544" ] ;
+    sosa:madeBySensor [ a ns2:DifferentialGPS ;
+            ns2:baseSensor "gps+38666" ;
+            ns2:roverSensor "gps+37544" ] ;
     sosa:observedProperty surveyable:VectorDetermination ;
     sosa:resultTime "2023-05-24T00:00:00Z" ;
     sosa:usedProcedure surveyproc:traverse .
@@ -79,16 +79,16 @@
 <https://linked.data.gov.au/def/csdm/csd-example/11745104> a surv:GeodeticReferenceMark,
         geojson:Feature ;
     commonpatterns:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
-            dcterms:hasPart [ rdfs:label "RM" ;
-                    commonpatterns:namePartType "MarkType" ],
-                [ rdfs:label "119552" ;
-                    commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "DP" ;
+            dcterms:hasPart [ rdfs:label "DP" ;
                     commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "EQ9W" ;
+                    commonpatterns:namePartType "geodeticStamp" ],
                 [ rdfs:label "C" ;
                     commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "EQ9W" ;
-                    commonpatterns:namePartType "geodeticStamp" ] ] ;
+                [ rdfs:label "119552" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "RM" ;
+                    commonpatterns:namePartType "MarkType" ] ] ;
     surv:geodeticid "XX FFF" ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
             surv:form nz-monument-form:pin ;

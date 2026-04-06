@@ -2,7 +2,7 @@
   "title": "Validation report for icsm.csdm.features.SurveyFeatures - Survey Features",
   "bblockName": "Survey Features",
   "bblockId": "icsm.csdm.features.SurveyFeatures",
-  "generated": "2026-03-31T04:19:17.362437+00:00",
+  "generated": "2026-04-06T22:39:25.410035+00:00",
   "result": true,
   "items": [
     {
@@ -70,19 +70,19 @@
             {
               "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
               "focusNodes": {
-                "_:nff874e99f20148d09b57212d7910c8f6b1": {
+                "_:n368ec14e7bfb44d7848c7ca666e2b599b3": {
                   "nodes": [
                     "eg1:P1/geojson:geometry"
                   ]
                 },
-                "_:nff874e99f20148d09b57212d7910c8f6b3": {
+                "_:n368ec14e7bfb44d7848c7ca666e2b599b1": {
                   "nodes": [
                     "eg1:P1/geojson:geometry"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n - Shape _:nff874e99f20148d09b57212d7910c8f6b1: eg1:P1/geojson:geometry\n - Shape _:nff874e99f20148d09b57212d7910c8f6b3: eg1:P1/geojson:geometry\n"
+              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n - Shape _:n368ec14e7bfb44d7848c7ca666e2b599b3: eg1:P1/geojson:geometry\n - Shape _:n368ec14e7bfb44d7848c7ca666e2b599b1: eg1:P1/geojson:geometry\n"
             },
             {
               "op": "shacl-report",
@@ -114,14 +114,14 @@
             {
               "shaclFile": "_sources/csdm/datatypes/compoundName/rules.shacl",
               "focusNodes": {
-                "_:n9b8bccc1567843d0b28940e9de79d7a1b1": {
+                "_:na19b3e61e39b4610932914a69f67f340b1": {
                   "nodes": [
                     "eg1:P1/commonpatterns:name"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n9b8bccc1567843d0b28940e9de79d7a1b1: eg1:P1/commonpatterns:name\n"
+              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:na19b3e61e39b4610932914a69f67f340b1: eg1:P1/commonpatterns:name\n"
             }
           ]
         }
@@ -194,19 +194,19 @@
             {
               "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
               "focusNodes": {
-                "_:nff874e99f20148d09b57212d7910c8f6b1": {
+                "_:n368ec14e7bfb44d7848c7ca666e2b599b3": {
                   "nodes": [
                     "eg1:P1/geojson:geometry"
                   ]
                 },
-                "_:nff874e99f20148d09b57212d7910c8f6b3": {
+                "_:n368ec14e7bfb44d7848c7ca666e2b599b1": {
                   "nodes": [
                     "eg1:P1/geojson:geometry"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n - Shape _:nff874e99f20148d09b57212d7910c8f6b1: eg1:P1/geojson:geometry\n - Shape _:nff874e99f20148d09b57212d7910c8f6b3: eg1:P1/geojson:geometry\n"
+              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n - Shape _:n368ec14e7bfb44d7848c7ca666e2b599b3: eg1:P1/geojson:geometry\n - Shape _:n368ec14e7bfb44d7848c7ca666e2b599b1: eg1:P1/geojson:geometry\n"
             },
             {
               "op": "shacl-report",
@@ -238,14 +238,14 @@
             {
               "shaclFile": "_sources/csdm/datatypes/compoundName/rules.shacl",
               "focusNodes": {
-                "_:n9b8bccc1567843d0b28940e9de79d7a1b1": {
+                "_:na19b3e61e39b4610932914a69f67f340b1": {
                   "nodes": [
                     "eg1:P1/commonpatterns:name"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n9b8bccc1567843d0b28940e9de79d7a1b1: eg1:P1/commonpatterns:name\n"
+              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:na19b3e61e39b4610932914a69f67f340b1: eg1:P1/commonpatterns:name\n"
             }
           ]
         }
@@ -318,19 +318,19 @@
             {
               "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
               "focusNodes": {
-                "_:nff874e99f20148d09b57212d7910c8f6b1": {
+                "_:n368ec14e7bfb44d7848c7ca666e2b599b3": {
                   "nodes": [
                     "eg1:P2/geojson:geometry"
                   ]
                 },
-                "_:nff874e99f20148d09b57212d7910c8f6b3": {
+                "_:n368ec14e7bfb44d7848c7ca666e2b599b1": {
                   "nodes": [
                     "eg1:P2/geojson:geometry"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n - Shape _:nff874e99f20148d09b57212d7910c8f6b1: eg1:P2/geojson:geometry\n - Shape _:nff874e99f20148d09b57212d7910c8f6b3: eg1:P2/geojson:geometry\n"
+              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n - Shape _:n368ec14e7bfb44d7848c7ca666e2b599b3: eg1:P2/geojson:geometry\n - Shape _:n368ec14e7bfb44d7848c7ca666e2b599b1: eg1:P2/geojson:geometry\n"
             },
             {
               "op": "shacl-report",
@@ -362,14 +362,14 @@
             {
               "shaclFile": "_sources/csdm/datatypes/compoundName/rules.shacl",
               "focusNodes": {
-                "_:n9b8bccc1567843d0b28940e9de79d7a1b1": {
+                "_:na19b3e61e39b4610932914a69f67f340b1": {
                   "nodes": [
                     "eg1:P2/commonpatterns:name"
                   ]
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n9b8bccc1567843d0b28940e9de79d7a1b1: eg1:P2/commonpatterns:name\n"
+              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:na19b3e61e39b4610932914a69f67f340b1: eg1:P2/commonpatterns:name\n"
             }
           ]
         }
@@ -442,15 +442,15 @@
             {
               "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
               "focusNodes": {
-                "_:nff874e99f20148d09b57212d7910c8f6b1": {
+                "_:n368ec14e7bfb44d7848c7ca666e2b599b3": {
                   "nodes": []
                 },
-                "_:nff874e99f20148d09b57212d7910c8f6b3": {
+                "_:n368ec14e7bfb44d7848c7ca666e2b599b1": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n - Shape _:nff874e99f20148d09b57212d7910c8f6b1: *none*\n - Shape _:nff874e99f20148d09b57212d7910c8f6b3: *none*\n"
+              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n - Shape _:n368ec14e7bfb44d7848c7ca666e2b599b3: *none*\n - Shape _:n368ec14e7bfb44d7848c7ca666e2b599b1: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -482,12 +482,12 @@
             {
               "shaclFile": "_sources/csdm/datatypes/compoundName/rules.shacl",
               "focusNodes": {
-                "_:n9b8bccc1567843d0b28940e9de79d7a1b1": {
+                "_:na19b3e61e39b4610932914a69f67f340b1": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n9b8bccc1567843d0b28940e9de79d7a1b1: *none*\n"
+              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:na19b3e61e39b4610932914a69f67f340b1: *none*\n"
             }
           ]
         }
@@ -564,15 +564,15 @@
             {
               "shaclFile": "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl",
               "focusNodes": {
-                "_:nff874e99f20148d09b57212d7910c8f6b1": {
+                "_:n368ec14e7bfb44d7848c7ca666e2b599b3": {
                   "nodes": []
                 },
-                "_:nff874e99f20148d09b57212d7910c8f6b3": {
+                "_:n368ec14e7bfb44d7848c7ca666e2b599b1": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n - Shape _:nff874e99f20148d09b57212d7910c8f6b1: *none*\n - Shape _:nff874e99f20148d09b57212d7910c8f6b3: *none*\n"
+              "message": "Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:\n - Shape _:n368ec14e7bfb44d7848c7ca666e2b599b3: *none*\n - Shape _:n368ec14e7bfb44d7848c7ca666e2b599b1: *none*\n"
             },
             {
               "op": "shacl-report",
@@ -608,12 +608,12 @@
             {
               "shaclFile": "_sources/csdm/datatypes/compoundName/rules.shacl",
               "focusNodes": {
-                "_:n9b8bccc1567843d0b28940e9de79d7a1b1": {
+                "_:na19b3e61e39b4610932914a69f67f340b1": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n9b8bccc1567843d0b28940e9de79d7a1b1: *none*\n"
+              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:na19b3e61e39b4610932914a69f67f340b1: *none*\n"
             }
           ]
         }

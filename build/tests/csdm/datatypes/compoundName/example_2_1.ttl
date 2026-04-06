@@ -6,5 +6,6 @@
     dcterms:hasPart [ rdfs:label "IS II" ;
             commonpatterns:namePartType "Stamp" ],
         [ rdfs:label "DP 3333" ;
-            commonpatterns:namePartType "Source" ] .
+            commonpatterns:namePartRef <wa-plan-register:dp333> ;
+            commonpatterns:namePartType "wa-plan:planTypes" ] .
 

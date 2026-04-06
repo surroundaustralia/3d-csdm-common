@@ -9,7 +9,7 @@
   "itemClass": "schema",
   "register": "icsm-csdm",
   "version": "0.1",
-  "dateOfLastChange": "2026-03-31",
+  "dateOfLastChange": "2026-04-06",
   "link": "https://github.com/icsm-au/3d-csdm-schema",
   "sources": [
     {
@@ -39,13 +39,13 @@
     ]
   },
   "dependsOn": [
-    "ogc.ogc-utils.prov",
     "ogc.geo.topo.features.topo-line",
-    "ogc.geo.common.data_types.geojson",
+    "icsm.csdm.datatypes.compoundName",
+    "ogc.ogc-utils.prov",
     "ogc.geo.json-fg.feature",
-    "ogc.geo.json-fg.feature-lenient",
+    "ogc.geo.common.data_types.geojson",
     "ogc.ogc-utils.iri-or-curie",
-    "icsm.csdm.datatypes.compoundName"
+    "ogc.geo.json-fg.feature-lenient"
   ],
   "ldContext": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/context.jsonld",
   "schema": {
@@ -79,7 +79,7 @@
         },
         {
           "language": "ttl",
-          "code": "@prefix commonpatterns: <https://linked.data.gov.au/def/csdm/commonpatterns/> .\n@prefix dct: <http://purl.org/dc/terms/> .\n@prefix eg1: <https://linked.data.gov.au/def/csdm/csd-example/> .\n@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix nz-monument-condition: <https://linked.data.gov.au/def/csdm/nz-monument-condition/> .\n@prefix nz-monument-form: <https://linked.data.gov.au/def/csdm/nz-monument-form/> .\n@prefix nz-monument-state: <https://linked.data.gov.au/def/csdm/nz-monument-state/> .\n@prefix nz-surveypoint-purpose: <https://linked.data.gov.au/def/csdm/nz-surveypoint-purpose/> .\n@prefix nz-surveypoint-state: <https://linked.data.gov.au/def/csdm/nz-surveypoint-state/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\neg1:P1 a surv:BoundaryMark,\n        geojson:Feature ;\n    rdfs:comment \"All survey marks will have a monumented state - a physical monument may be absent however using a monument type which is an explicit statement about the state\" ;\n    commonpatterns:name [ rdfs:label \"IS I - DP 3333\" ;\n            dct:hasPart [ rdfs:label \"IS I\" ;\n                    commonpatterns:namePartType \"Stamp\" ],\n                [ rdfs:label \"DP 3333\" ;\n                    commonpatterns:namePartType \"Source\" ] ] ;\n    surv:monumentedBy [ surv:condition nz-monument-condition:fair ;\n            surv:form nz-monument-form:pin ;\n            surv:state nz-monument-state:present ] ;\n    surv:purpose nz-surveypoint-purpose:boundary ;\n    surv:state nz-surveypoint-state:original ;\n    geojson:geometry [ a geojson:Point ;\n            geojson:coordinates ( 1.1e+00 2.7e+00 ) ] .\n\n",
+          "code": "@prefix commonpatterns: <https://linked.data.gov.au/def/csdm/commonpatterns/> .\n@prefix dct: <http://purl.org/dc/terms/> .\n@prefix eg1: <https://linked.data.gov.au/def/csdm/csd-example/> .\n@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix nz-monument-condition: <https://linked.data.gov.au/def/csdm/nz-monument-condition/> .\n@prefix nz-monument-form: <https://linked.data.gov.au/def/csdm/nz-monument-form/> .\n@prefix nz-monument-state: <https://linked.data.gov.au/def/csdm/nz-monument-state/> .\n@prefix nz-surveypoint-purpose: <https://linked.data.gov.au/def/csdm/nz-surveypoint-purpose/> .\n@prefix nz-surveypoint-state: <https://linked.data.gov.au/def/csdm/nz-surveypoint-state/> .\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\neg1:P1 a surv:BoundaryMark,\n        geojson:Feature ;\n    rdfs:comment \"All survey marks will have a monumented state - a physical monument may be absent however using a monument type which is an explicit statement about the state\" ;\n    commonpatterns:name [ rdfs:label \"IS I - DP 3333\" ;\n            dct:hasPart [ rdfs:label \"DP 3333\" ;\n                    commonpatterns:namePartType \"Source\" ],\n                [ rdfs:label \"IS I\" ;\n                    commonpatterns:namePartType \"Stamp\" ] ] ;\n    surv:monumentedBy [ surv:condition nz-monument-condition:fair ;\n            surv:form nz-monument-form:pin ;\n            surv:state nz-monument-state:present ] ;\n    surv:purpose nz-surveypoint-purpose:boundary ;\n    surv:state nz-surveypoint-state:original ;\n    geojson:geometry [ a geojson:Point ;\n            geojson:coordinates ( 1.1e+00 2.7e+00 ) ] .\n\n",
           "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/features/SurveyFeatures/surveymark.ttl"
         }
       ]

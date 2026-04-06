@@ -5,6 +5,10 @@
     "label": "rdfs:label",
     "hasPart": {
       "@context": {
+        "ref": {
+          "@type": "@id",
+          "@id": "commonpatterns:namePartRef"
+        },
         "type": "commonpatterns:namePartType"
       },
       "@id": "dct:hasPart"

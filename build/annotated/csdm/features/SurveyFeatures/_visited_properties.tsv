@@ -6,6 +6,7 @@ path	@id	schema
 /_anyOf/0/properties/name/template		https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
 /_anyOf/0/properties/name/hasPart	http://purl.org/dc/terms/hasPart	https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
 /_anyOf/0/properties/name/hasPart/label	http://www.w3.org/2000/01/rdf-schema#label	https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
+/_anyOf/0/properties/name/hasPart/ref	https://linked.data.gov.au/def/csdm/commonpatterns/namePartRef	https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
 /_anyOf/0/properties/name/hasPart/type	https://linked.data.gov.au/def/csdm/commonpatterns/namePartType	https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
 /_anyOf/0/properties/purpose	https://linked.data.gov.au/def/csdm/surveyfeatures/purpose	/github/workspace/build/annotated/csdm/features/SurveyFeatures/schema.yaml
 /_anyOf/0/properties/has_provenance		/github/workspace/build/annotated/csdm/features/SurveyFeatures/schema.yaml

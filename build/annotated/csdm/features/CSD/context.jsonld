@@ -196,6 +196,10 @@
         "name": "csdm:commonpatterns/name",
         "hasPart": {
           "@context": {
+            "ref": {
+              "@type": "@id",
+              "@id": "csdm:commonpatterns/namePartRef"
+            },
             "type": "csdm:commonpatterns/namePartType"
           },
           "@id": "dct:hasPart"
@@ -346,6 +350,10 @@
               "@context": {
                 "hasPart": {
                   "@context": {
+                    "ref": {
+                      "@type": "@id",
+                      "@id": "csdm:commonpatterns/namePartRef"
+                    },
                     "type": "csdm:commonpatterns/namePartType"
                   },
                   "@id": "dct:hasPart"
@@ -358,6 +366,10 @@
               "@context": {
                 "hasPart": {
                   "@context": {
+                    "ref": {
+                      "@type": "@id",
+                      "@id": "csdm:commonpatterns/namePartRef"
+                    },
                     "type": "csdm:commonpatterns/namePartType"
                   },
                   "@id": "dct:hasPart"
@@ -391,6 +403,10 @@
             "name": "csdm:commonpatterns/name",
             "hasPart": {
               "@context": {
+                "ref": {
+                  "@type": "@id",
+                  "@id": "csdm:commonpatterns/namePartRef"
+                },
                 "type": "csdm:commonpatterns/namePartType"
               },
               "@id": "dct:hasPart"

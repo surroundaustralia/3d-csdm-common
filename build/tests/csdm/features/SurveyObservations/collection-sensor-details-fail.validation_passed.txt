@@ -1,5 +1,5 @@
 Validation report for icsm.csdm.features.SurveyObservations - Survey Observations
-Generated 2026-03-31T04:19:20.025654+00:00
+Generated 2026-04-06T22:39:28.575215+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -63,18 +63,18 @@ Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/prop
               BIND(CONCAT(STR(?memberValue), " != ", STR(?collectionValue)) as ?failedValue)
           }
       ") ]
-  	Message: Collection member values do not match those of the collections (http://www.w3.org/ns/sosa/resultTime property in N7cfb267416214beb80c53aa44dab288a: 2023-05-22T16:41:00 != 2023-05-24)
+  	Message: Collection member values do not match those of the collections (http://www.w3.org/ns/sosa/resultTime property in N0681149be70e4ce28cf2bb8a0810c88c: 2023-05-22T16:41:00 != 2023-05-24)
   
 Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <file:///github/workspace/vectorObservations>
  - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*
  - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
  - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <file:///github/workspace/vectorObservations>
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <file:///github/workspace/vectorObservations>
  - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <file:///github/workspace/vectorObservations>/sosa:hasMember
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <file:///github/workspace/vectorObservations>
  - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <file:///github/workspace/vectorObservations>
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
 
 === End SHACL ===
 

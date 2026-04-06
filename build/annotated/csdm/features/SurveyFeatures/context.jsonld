@@ -132,6 +132,10 @@
       "@context": {
         "hasPart": {
           "@context": {
+            "ref": {
+              "@type": "@id",
+              "@id": "commonpatterns:namePartRef"
+            },
             "type": "commonpatterns:namePartType"
           },
           "@id": "dct:hasPart"
@@ -176,6 +180,10 @@
       "@context": {
         "hasPart": {
           "@context": {
+            "ref": {
+              "@type": "@id",
+              "@id": "commonpatterns:namePartRef"
+            },
             "type": "commonpatterns:namePartType"
           },
           "@id": "dct:hasPart"

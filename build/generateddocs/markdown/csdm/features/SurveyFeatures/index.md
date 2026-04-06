@@ -154,10 +154,10 @@ eg1:P1 a surv:BoundaryMark,
         geojson:Feature ;
     rdfs:comment "All survey marks will have a monumented state - a physical monument may be absent however using a monument type which is an explicit statement about the state" ;
     commonpatterns:name [ rdfs:label "IS I - DP 3333" ;
-            dct:hasPart [ rdfs:label "IS I" ;
-                    commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "DP 3333" ;
-                    commonpatterns:namePartType "Source" ] ] ;
+            dct:hasPart [ rdfs:label "DP 3333" ;
+                    commonpatterns:namePartType "Source" ],
+                [ rdfs:label "IS I" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
     surv:monumentedBy [ surv:condition nz-monument-condition:fair ;
             surv:form nz-monument-form:pin ;
             surv:state nz-monument-state:present ] ;
@@ -862,6 +862,10 @@ Links to the schema:
       "@context": {
         "hasPart": {
           "@context": {
+            "ref": {
+              "@type": "@id",
+              "@id": "commonpatterns:namePartRef"
+            },
             "type": "commonpatterns:namePartType"
           },
           "@id": "dct:hasPart"
@@ -906,6 +910,10 @@ Links to the schema:
       "@context": {
         "hasPart": {
           "@context": {
+            "ref": {
+              "@type": "@id",
+              "@id": "commonpatterns:namePartRef"
+            },
             "type": "commonpatterns:namePartType"
           },
           "@id": "dct:hasPart"
