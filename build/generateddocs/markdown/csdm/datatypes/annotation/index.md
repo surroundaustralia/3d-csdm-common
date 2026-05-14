@@ -56,13 +56,13 @@ A name with a label, but also a set of parts with roles that can be validated ag
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
 
-[] dcterms:description "Annotation with role" ;
-    prof:hasRole <http://example.org/myReason> .
-
 [] dcterms:description "Annotation with link and role" ;
     ns1:relation <http://www.iana.org/assignments/relation/related> ;
     prof:hasRole <http://example.org/myReason> ;
     oa:hasTarget <http://example.org/aDocument> .
+
+[] dcterms:description "Annotation with role" ;
+    prof:hasRole <http://example.org/myReason> .
 
 
 ```

@@ -1560,7 +1560,7 @@
       ]
     }
   ],
-  "observedVectors": [
+  "edges": [
     {
       "id": "observedVectors",
       "type": "FeatureCollection",
@@ -2044,9 +2044,7 @@
           }
         }
       ]
-    }
-  ],
-  "adoptedVectors": [
+    },
     {
       "id": "adoptedVectors",
       "type": "FeatureCollection",

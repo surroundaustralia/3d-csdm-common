@@ -54,12 +54,12 @@
           "$ref": "https://geojson.org/schema/FeatureCollection.json"
         },
         {
-          "$ref": "https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature-collection/schema.json"
+          "$ref": "https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature-collection/schema.json"
         }
       ]
     },
     "TopoFeatureCollection": {
-      "$ref": "https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature-collection/schema.json"
+      "$ref": "https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature-collection/schema.json"
     },
     "SOSAObsCollection": {
       "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.json"
@@ -67,24 +67,24 @@
     "TopoLine": {
       "allOf": [
         {
-          "$ref": "https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-line/schema.json"
+          "$ref": "https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-line/schema.json"
         }
       ]
     },
     "TopoArc": {
-      "$ref": "https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-arc/schema.json"
+      "$ref": "https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-arc/schema.json"
     },
     "SubtendedAngleVector": {
       "allOf": [
         {
-          "$ref": "https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature/schema.json"
+          "$ref": "https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature/schema.json"
         },
         {
           "properties": {
             "topology": {
               "allOf": [
                 {
-                  "$ref": "https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/datatypes/topology/schema.json"
+                  "$ref": "https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/datatypes/topology/schema.json"
                 },
                 {
                   "properties": {
@@ -722,6 +722,7 @@
   "x-jsonld-extra-terms": {
     "CSD": "https://linked.data.gov.au/def/csdm/container/CSD",
     "locality": "https://linked.data.gov.au/def/csdm/csd/locality",
+    "edges": "topo:edges",
     "PrimaryParcel": {
       "x-jsonld-id": "https://linked.data.gov.au/def/csdm/parcels/PrimaryParcel",
       "x-jsonld-type": "@id"

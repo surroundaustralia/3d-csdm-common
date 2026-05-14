@@ -30,23 +30,23 @@ $defs:
     - $ref: https://beta.schemas.opengis.net/json-fg/featurecollection.json
     - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/feature-lenient/schema.yaml
     - $ref: https://geojson.org/schema/FeatureCollection.json
-    - $ref: https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature-collection/schema.yaml
+    - $ref: https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature-collection/schema.yaml
   TopoFeatureCollection:
-    $ref: https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature-collection/schema.yaml
+    $ref: https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature-collection/schema.yaml
   SOSAObsCollection:
     $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml
   TopoLine:
     allOf:
-    - $ref: https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-line/schema.yaml
+    - $ref: https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-line/schema.yaml
   TopoArc:
-    $ref: https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-arc/schema.yaml
+    $ref: https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-arc/schema.yaml
   SubtendedAngleVector:
     allOf:
-    - $ref: https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature/schema.yaml
+    - $ref: https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature/schema.yaml
     - properties:
         topology:
           allOf:
-          - $ref: https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/datatypes/topology/schema.yaml
+          - $ref: https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/datatypes/topology/schema.yaml
           - properties:
               type:
                 type: string
@@ -427,6 +427,7 @@ oneOf:
 x-jsonld-extra-terms:
   CSD: https://linked.data.gov.au/def/csdm/container/CSD
   locality: https://linked.data.gov.au/def/csdm/csd/locality
+  edges: topo:edges
   PrimaryParcel:
     x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/PrimaryParcel
     x-jsonld-type: '@id'

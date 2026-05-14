@@ -17,14 +17,14 @@ eg1:4494877 a eg1:OccupationMark,
             geojson:coordinates ( 7.62376e+05 3.664124e+05 ) ] ;
     rdfs:comment "Wooden Post" ;
     commonpatterns:name [ rdfs:label "Post II LT 584372" ;
-            dct:hasPart [ rdfs:label "584372" ;
-                    commonpatterns:namePartType "PlanStamp" ],
-                [ rdfs:label "II" ;
-                    commonpatterns:namePartType "MarkStamp" ],
-                [ rdfs:label "Post" ;
-                    commonpatterns:namePartType "MarkType" ],
+            dct:hasPart [ rdfs:label "Post" ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
+                [ rdfs:label "584372" ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanStamp> ],
                 [ rdfs:label "LT" ;
-                    commonpatterns:namePartType "PlanType" ] ] ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
+                [ rdfs:label "II" ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkStamp> ] ] ;
     surv:age "40+ years" ;
     surv:fromSurvey eg1:LT_584372 ;
     surv:purpose nz-surveypoint-purpose:occupation ;
@@ -48,6 +48,7 @@ eg1:OccupationMarks a geojson:FeatureCollection ;
     geojson:features eg1:4494877 .
 
 eg1:occupation-example a geojson:FeatureCollection ;
+    owlTime:hasTime "2022-10-29"^^xsd:date ;
     geojson:features eg1:964009 .
 
 eg1:964009 a geojson:Feature ;

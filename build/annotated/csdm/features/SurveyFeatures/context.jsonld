@@ -104,8 +104,32 @@
     "topology": {
       "@context": {
         "references": {
+          "@context": {
+            "ref": {
+              "@type": "@id",
+              "@id": "topo:ref"
+            }
+          },
           "@id": "geojson:relatedFeatures",
           "@type": "@id",
+          "@container": "@list"
+        },
+        "directed_references": {
+          "@context": {
+            "ref": {
+              "@type": "@id",
+              "@id": "topo:ref"
+            }
+          },
+          "@id": "topo:directedReferences",
+          "@container": "@list"
+        },
+        "rings": {
+          "@id": "topo:rings",
+          "@container": "@list"
+        },
+        "shells": {
+          "@id": "topo:shells",
           "@container": "@list"
         }
       },
@@ -136,7 +160,13 @@
               "@type": "@id",
               "@id": "commonpatterns:namePartRef"
             },
-            "type": "commonpatterns:namePartType"
+            "type": {
+              "@context": {
+                "@base": "https://linked.data.gov.au/def/csdm/names/localPartType/"
+              },
+              "@type": "@id",
+              "@id": "commonpatterns:namePartType"
+            }
           },
           "@id": "dct:hasPart"
         }
@@ -184,7 +214,13 @@
               "@type": "@id",
               "@id": "commonpatterns:namePartRef"
             },
-            "type": "commonpatterns:namePartType"
+            "type": {
+              "@context": {
+                "@base": "https://linked.data.gov.au/def/csdm/names/localPartType/"
+              },
+              "@type": "@id",
+              "@id": "commonpatterns:namePartType"
+            }
           },
           "@id": "dct:hasPart"
         }
@@ -524,6 +560,13 @@
     "arcLength": "geojson:arcLength",
     "startTangentVector": "geojson:startTangentVector",
     "endTangentVector": "geojson:endTangentVector",
+    "ref": "topo:ref",
+    "orientation": "topo:orientation",
+    "Edge": "topo:Edge",
+    "Face": "topo:Face",
+    "Ring": "topo:Ring",
+    "Shell": "topo:Shell",
+    "Solid": "topo:Solid",
     "geojson": "https://purl.org/geojson/vocab#",
     "surv": "csdm:surveyfeatures/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -536,6 +579,7 @@
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "oa": "http://www.w3.org/ns/oa#",
     "owlTime": "http://www.w3.org/2006/time#",
+    "topo": "https://purl.org/geojson/topo#",
     "@version": 1.1
   }
 }

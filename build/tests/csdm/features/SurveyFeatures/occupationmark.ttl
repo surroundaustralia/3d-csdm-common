@@ -17,9 +17,9 @@ eg1:P1 a surv:BoundaryMark,
     rdfs:comment "All survey marks will have a monumented state - a physical monument may be absent however using a monument type which is an explicit statement about the state" ;
     commonpatterns:name [ rdfs:label "IS I - DP 3333" ;
             dct:hasPart [ rdfs:label "IS I" ;
-                    commonpatterns:namePartType "Stamp" ],
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
                 [ rdfs:label "DP 3333" ;
-                    commonpatterns:namePartType "Source" ] ] ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Source> ] ] ;
     surv:monumentedBy [ surv:condition nz-monument-condition:fair ;
             surv:form nz-monument-form:pin ;
             surv:state nz-monument-state:present ] ;

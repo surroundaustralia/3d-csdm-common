@@ -4,8 +4,8 @@
 
 [] rdfs:label "IS II - DP 3333" ;
     dcterms:hasPart [ rdfs:label "IS II" ;
-            commonpatterns:namePartType "Stamp" ],
+            commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
         [ rdfs:label "DP 3333" ;
             commonpatterns:namePartRef <wa-plan-register:dp333> ;
-            commonpatterns:namePartType "wa-plan:planTypes" ] .
+            commonpatterns:namePartType <wa-plan:planTypes> ] .
 

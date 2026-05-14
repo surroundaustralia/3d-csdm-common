@@ -155,9 +155,9 @@ eg1:P1 a surv:BoundaryMark,
     rdfs:comment "All survey marks will have a monumented state - a physical monument may be absent however using a monument type which is an explicit statement about the state" ;
     commonpatterns:name [ rdfs:label "IS I - DP 3333" ;
             dct:hasPart [ rdfs:label "DP 3333" ;
-                    commonpatterns:namePartType "Source" ],
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Source> ],
                 [ rdfs:label "IS I" ;
-                    commonpatterns:namePartType "Stamp" ] ] ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
     surv:monumentedBy [ surv:condition nz-monument-condition:fair ;
             surv:form nz-monument-form:pin ;
             surv:state nz-monument-state:present ] ;
@@ -295,10 +295,10 @@ An example Geodetic Mark extending Survey Point with additional geodeticid attri
 eg1:P2 a surv:GeodeticReferenceMark,
         geojson:Feature ;
     commonpatterns:name [ rdfs:label "IS II - DP 3333" ;
-            dct:hasPart [ rdfs:label "DP 3333" ;
-                    commonpatterns:namePartType "Source" ],
-                [ rdfs:label "IS II" ;
-                    commonpatterns:namePartType "Stamp" ] ] ;
+            dct:hasPart [ rdfs:label "IS II" ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+                [ rdfs:label "DP 3333" ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Source> ] ] ;
     surv:geodeticid "XX 33455" ;
     surv:monumentedBy [ surv:condition nz-monument-condition:fair ;
             surv:form nz-monument-form:pin ;
@@ -477,7 +477,7 @@ $defs:
     - type: string
     - type: 'null'
   TopoLine:
-    $ref: https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-line/schema.yaml
+    $ref: https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-line/schema.yaml
   FeatureOptions:
     anyOf:
     - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/feature/schema.yaml
@@ -834,8 +834,32 @@ Links to the schema:
     "topology": {
       "@context": {
         "references": {
+          "@context": {
+            "ref": {
+              "@type": "@id",
+              "@id": "topo:ref"
+            }
+          },
           "@id": "geojson:relatedFeatures",
           "@type": "@id",
+          "@container": "@list"
+        },
+        "directed_references": {
+          "@context": {
+            "ref": {
+              "@type": "@id",
+              "@id": "topo:ref"
+            }
+          },
+          "@id": "topo:directedReferences",
+          "@container": "@list"
+        },
+        "rings": {
+          "@id": "topo:rings",
+          "@container": "@list"
+        },
+        "shells": {
+          "@id": "topo:shells",
           "@container": "@list"
         }
       },
@@ -866,7 +890,13 @@ Links to the schema:
               "@type": "@id",
               "@id": "commonpatterns:namePartRef"
             },
-            "type": "commonpatterns:namePartType"
+            "type": {
+              "@context": {
+                "@base": "https://linked.data.gov.au/def/csdm/names/localPartType/"
+              },
+              "@type": "@id",
+              "@id": "commonpatterns:namePartType"
+            }
           },
           "@id": "dct:hasPart"
         }
@@ -914,7 +944,13 @@ Links to the schema:
               "@type": "@id",
               "@id": "commonpatterns:namePartRef"
             },
-            "type": "commonpatterns:namePartType"
+            "type": {
+              "@context": {
+                "@base": "https://linked.data.gov.au/def/csdm/names/localPartType/"
+              },
+              "@type": "@id",
+              "@id": "commonpatterns:namePartType"
+            }
           },
           "@id": "dct:hasPart"
         }
@@ -1254,6 +1290,13 @@ Links to the schema:
     "arcLength": "geojson:arcLength",
     "startTangentVector": "geojson:startTangentVector",
     "endTangentVector": "geojson:endTangentVector",
+    "ref": "topo:ref",
+    "orientation": "topo:orientation",
+    "Edge": "topo:Edge",
+    "Face": "topo:Face",
+    "Ring": "topo:Ring",
+    "Shell": "topo:Shell",
+    "Solid": "topo:Solid",
     "geojson": "https://purl.org/geojson/vocab#",
     "surv": "csdm:surveyfeatures/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -1266,6 +1309,7 @@ Links to the schema:
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "oa": "http://www.w3.org/ns/oa#",
     "owlTime": "http://www.w3.org/2006/time#",
+    "topo": "https://purl.org/geojson/topo#",
     "@version": 1.1
   }
 }

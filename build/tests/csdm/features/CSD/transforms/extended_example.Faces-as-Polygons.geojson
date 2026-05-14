@@ -1,0 +1,268 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "0",
+      "type": "Feature",
+      "properties": {
+        "appellation": {
+          "label": "Lot 1 DP 572532",
+          "hasPart": [
+            {
+              "type": "PlanType",
+              "label": "DP"
+            },
+            {
+              "type": "PlanIdentifier",
+              "label": "572532"
+            },
+            {
+              "type": "ParcelType",
+              "label": "Lot"
+            },
+            {
+              "type": "ParcelIdentifier",
+              "label": "1"
+            }
+          ]
+        },
+        "area": 484,
+        "parcelType": "nz-parcel-type:fee-simple-title",
+        "parcelPurpose": "nz-parcel-purpose:fst",
+        "parcelState": "nz-parcel-state:created",
+        "class": "nz-parcel-class:allotment",
+        "interests": [
+          {
+            "interestLink": "1040074",
+            "interestType": "nz-interest-type:fh"
+          }
+        ],
+        "burdened": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.750540074,
+              -36.9310610479
+            ],
+            [
+              174.7507225544,
+              -36.9310215435
+            ],
+            [
+              174.7507606923,
+              -36.9310291431
+            ],
+            [
+              174.7509672626,
+              -36.9311839118
+            ],
+            [
+              174.7509918818,
+              -36.9312023381
+            ],
+            [
+              174.750540074,
+              -36.9310610479
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "id": "1",
+      "type": "Feature",
+      "properties": {
+        "appellation": {
+          "label": "Lot 2 DP 572532",
+          "hasPart": [
+            {
+              "type": "PlanType",
+              "label": "DP"
+            },
+            {
+              "type": "PlanIdentifier",
+              "label": "572532"
+            },
+            {
+              "type": "ParcelType",
+              "label": "Lot"
+            },
+            {
+              "type": "ParcelIdentifier",
+              "label": "2"
+            }
+          ]
+        },
+        "area": 1196,
+        "parcelType": "nz-parcel-type:fee-simple-title",
+        "parcelPurpose": "nz-parcel-purpose:fst",
+        "parcelState": "nz-parcel-state:created",
+        "class": "nz-parcel-class:allotment",
+        "interests": [
+          {
+            "interestLink": "1040075",
+            "interestType": "nz-interest-type:fh"
+          }
+        ],
+        "burdened": null
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7505110058,
+              -36.9310392342
+            ],
+            [
+              174.7508909488,
+              -36.9309571156
+            ],
+            [
+              174.7512489947,
+              -36.9308797133
+            ],
+            [
+              174.751324788,
+              -36.9311247115
+            ],
+            [
+              174.7510988383,
+              -36.9311774613
+            ],
+            [
+              174.7509672626,
+              -36.9311839118
+            ],
+            [
+              174.7507606923,
+              -36.9310291431
+            ],
+            [
+              174.7507225544,
+              -36.9310215435
+            ],
+            [
+              174.750540074,
+              -36.9310610479
+            ],
+            [
+              174.7505110058,
+              -36.9310392342
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "type": "Feature",
+      "properties": {
+        "appellation": {
+          "label": "Area Z DP 572532",
+          "hasPart": [
+            {
+              "type": "PlanType",
+              "label": "DP"
+            },
+            {
+              "type": "PlanIdentifier",
+              "label": "572532"
+            },
+            {
+              "type": "ParcelType",
+              "label": "Area"
+            },
+            {
+              "type": "ParcelIdentifier",
+              "label": "Z"
+            }
+          ]
+        },
+        "area": 1196,
+        "parcelType": "nz-parcel-type:covenant-land",
+        "parcelPurpose": "nz-parcel-purpose:c-l",
+        "parcelState": "nz-parcel-state:created",
+        "class": null,
+        "interests": [
+          {
+            "interestLink": "1040075",
+            "interestType": "nz-interest-type:fh"
+          }
+        ],
+        "burdened": {
+          "x-comment": "References the parcel ID of the burdened primary parcel.",
+          "references": [
+            "8446455"
+          ]
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7508909488,
+              -36.9309571156
+            ],
+            [
+              174.7512489947,
+              -36.9308797133
+            ],
+            [
+              174.7513031028,
+              -36.9310543825
+            ],
+            [
+              174.751324788,
+              -36.9311247115
+            ],
+            [
+              174.7510438631,
+              -36.9311710421
+            ],
+            [
+              174.7509568685,
+              -36.9311076188
+            ],
+            [
+              174.7509509094,
+              -36.9310856987
+            ],
+            [
+              174.7509573691,
+              -36.9310656315
+            ],
+            [
+              174.750980056,
+              -36.9310510313
+            ],
+            [
+              174.7510101475,
+              -36.9310253792
+            ],
+            [
+              174.751010805,
+              -36.9310015962
+            ],
+            [
+              174.7509925285,
+              -36.9309870924
+            ],
+            [
+              174.7509396099,
+              -36.9309904554
+            ],
+            [
+              174.7508909488,
+              -36.9309571156
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

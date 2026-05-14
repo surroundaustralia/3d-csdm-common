@@ -9,7 +9,7 @@
   "itemClass": "schema",
   "register": "icsm-csdm",
   "version": "0.1",
-  "dateOfLastChange": "2026-04-06",
+  "dateOfLastChange": "2026-05-14",
   "link": "https://github.com/icsm-au/3d-csdm-schema",
   "sources": [
     {
@@ -33,14 +33,17 @@
     ],
     "ogc.sosa.properties.observation": [
       "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl"
+    ],
+    "ogc.geo.features.feature": [
+      "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
     ]
   },
   "dependsOn": [
-    "icsm.csdm.datatypes.quality",
     "ogc.sosa.properties.observation",
-    "ogc.sosa.properties.observationCollection",
+    "icsm.csdm.datatypes.quality",
     "ogc.ogc-utils.iri-or-curie",
-    "ogc.sosa.features.observation"
+    "ogc.sosa.features.observation",
+    "ogc.sosa.properties.observationCollection"
   ],
   "ldContext": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld",
   "schema": {
@@ -51,7 +54,6 @@
   "sourceLdContext": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/context.jsonld",
   "resolvedSchemaProperties": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/resolvedProperties.json",
   "sourceFiles": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/",
-  "rdfData": [],
   "validationPassed": true,
   "testOutputs": "https://github.com/surroundaustralia/3d-csdm-common/blob/main/build/tests/csdm/features/SurveyObservations/",
   "description": "## Survey Point\n\nAny point of interest in a survey. It may relate to a boundary corner (marked or unmarked), a cadastral mark, a geodetic reference mark, or an occupation mark.\n\nThis is an abstract class, usually implemented by a subclass such as a SurevyMark with additional details.\n\n",
@@ -63,7 +65,7 @@
       "snippets": [
         {
           "language": "json",
-          "ref": "examples/newvector.json",
+          "ref": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/examples/newvector.json",
           "code": "{\n  \"type\": \"Feature\",\n  \"geometry\": null,\n  \"time\": null,\n  \"place\": null,\n  \"properties\": {\n    \"hasFeatureOfInterest\": \"l973158\",\n    \"observedProperty\": \"pose\",\n    \"resultTime\": \"2023-05-22T16:41:00\",\n    \"madeBySensor\": {\n      \"sensorType\": \"DifferentialGPS\",\n      \"baseSensor\": \"gps+38666\",\n      \"roverSensor\": \"gps+37544\"\n    },\n    \"hasResultQuality\": {\n      \"distanceAccuracy\": 0.000100138048,\n      \"angleAccuracy\": 0.028154691543,\n      \"distanceAccuracyClass\": \"http://any.valid/\",\n      \"angleAccuracyClass\": \"http://any.valid/\"\n    },\n    \"hasResult\": {\n      \"pose\": {\n        \"angles\": {\n          \"yaw\": 231.38\n        },\n        \"distance\": 333207.1\n      }\n    }\n  }\n}",
           "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/features/SurveyObservations/newvector.json"
         },
@@ -86,7 +88,7 @@
       "snippets": [
         {
           "language": "json",
-          "ref": "examples/newvector-3d.json",
+          "ref": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/examples/newvector-3d.json",
           "code": "{\n  \"type\": \"Feature\",\n  \"geometry\": null,\n  \"time\": null,\n  \"place\": null,\n  \"properties\": {\n    \"hasFeatureOfInterest\": \"l973158\",\n    \"observedProperty\": \"pose\",\n    \"resultTime\": \"2023-05-22T16:41:00\",\n    \"madeBySensor\": {\n      \"sensorType\": \"DifferentialGPS\",\n      \"baseSensor\": \"gps+38666\",\n      \"roverSensor\": \"gps+37544\"\n    },\n    \"hasResult\": {\n      \"pose\": {\n        \"angles\": {\n          \"yaw\": 231.38,\n          \"pitch\": -0.001\n        },\n        \"distance\": 333207.1\n      }\n    }\n  }\n}",
           "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/features/SurveyObservations/newvector-3d.json"
         },
@@ -108,7 +110,7 @@
       "snippets": [
         {
           "language": "json",
-          "ref": "examples/onlydistance.json",
+          "ref": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/examples/onlydistance.json",
           "code": "{\n  \"type\": \"Feature\",\n  \"geometry\": null,\n  \"properties\": {\n    \"hasFeatureOfInterest\": \"l973158\",\n    \"observedProperty\": \"pose\",\n    \"resultTime\": \"2023-05-22T16:41:00+2\",\n    \"madeBySensor\": {\n      \"sensorType\": \"DifferentialGPS\",\n      \"baseSensor\": \"gps+38666\",\n      \"roverSensor\": \"gps+37544\"\n    },\n    \"hasResult\": {\n      \"distance\": 333207.1\n    }\n  }\n}",
           "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/features/SurveyObservations/example_3_1.json"
         },
@@ -130,7 +132,7 @@
       "snippets": [
         {
           "language": "json",
-          "ref": "examples/onlybearing.json",
+          "ref": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/examples/onlybearing.json",
           "code": "{\n  \"type\": \"Feature\",\n  \"geometry\": null,\n  \"time\": null,\n  \"place\": null,\n  \"properties\": {\n    \"hasFeatureOfInterest\": \"l973158\",\n    \"observedProperty\": \"pose\",\n    \"resultTime\": \"2023-05-22T16:41:00\",\n    \"madeBySensor\": {\n      \"sensorType\": \"DifferentialGPS\",\n      \"baseSensor\": \"gps+38666\",\n      \"roverSensor\": \"gps+37544\"\n    },\n    \"hasResult\": {\n      \"pose\": {\n        \"angles\": {\n          \"yaw\": 231.38,\n          \"pitch\": -0.001\n        }\n      }\n    }\n  }\n}",
           "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/features/SurveyObservations/example_4_1.json"
         },
@@ -153,7 +155,7 @@
       "snippets": [
         {
           "language": "json",
-          "ref": "examples/collection.json",
+          "ref": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/examples/collection.json",
           "base-uri": "http://www.example.com/features/",
           "code": "{\n  \"@context\": {\n  },\n  \"id\": \"vectorObservations\",\n  \"type\": \"FeatureCollection\",\n  \"featureType\": \"sosa:ObservationCollection\",\n  \"time\": null,\n  \"properties\": {\n    \"resultTime\": \"2023-05-24T00:00:00\",\n    \"observedProperty\": \"surveyable:VectorDetermination\",\n    \"usedProcedure\": \"surveyproc:traverse\",\n    \"angleType\": \"angletype:bearing\",\n    \"distanceType\": \"distancetype:ellipsoidal\",\n    \"madeBySensor\": {\n      \"sensorType\": \"DifferentialGPS\",\n      \"baseSensor\": \"gps+38666\",\n      \"roverSensor\": \"gps+37544\"\n    }\n  },\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"geometry\": null,\n      \"properties\": {\n        \"hasFeatureOfInterest\": \"l973158\",\n        \"hasResult\": {\n          \"pose\": {\n            \"angles\": {\n              \"yaw\": 231.38,\n              \"pitch\": -0.001\n            },\n            \"distance\": 333207.1\n          }\n        }\n      }\n    }\n  ]\n}",
           "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/features/SurveyObservations/collection.json"
@@ -165,7 +167,7 @@
         },
         {
           "language": "ttl",
-          "code": "@prefix angletype: <https://linked.data.gov.au/def/csdm/defs/angletypes/> .\n@prefix distancetype: <https://linked.data.gov.au/def/csdm/defs/distancetypes/> .\n@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix geopose: <https://linked.data.gov.au/def/csdm/utils/geopose/> .\n@prefix ns1: <https://linked.data.gov.au/def/csdm/surveyobs/> .\n@prefix ns2: <https://linked.data.gov.au/def/csdm/sensors/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .\n@prefix surveyable: <https://linked.data.gov.au/def/csdm/defs/surveyableproperties/> .\n@prefix surveyproc: <https://linked.data.gov.au/def/csdm/defs/surveyprocedures/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<http://www.example.com/features/vectorObservations> a sosa:ObservationCollection,\n        geojson:FeatureCollection ;\n    sosa:hasMember [ a geojson:Feature ;\n            sosa:hasFeatureOfInterest <http://www.example.com/features/l973158> ;\n            sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;\n                            geopose:angles [ ] ] ] ] ;\n    sosa:madeBySensor [ a ns2:DifferentialGPS ;\n            ns2:baseSensor \"gps+38666\" ;\n            ns2:roverSensor \"gps+37544\" ] ;\n    sosa:observedProperty surveyable:VectorDetermination ;\n    sosa:resultTime \"2023-05-24T00:00:00\" ;\n    sosa:usedProcedure surveyproc:traverse ;\n    ns1:angleType angletype:bearing ;\n    ns1:distanceType distancetype:ellipsoidal .\n\n",
+          "code": "@prefix angletype: <https://linked.data.gov.au/def/csdm/defs/angletypes/> .\n@prefix distancetype: <https://linked.data.gov.au/def/csdm/defs/distancetypes/> .\n@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix geopose: <https://linked.data.gov.au/def/csdm/utils/geopose/> .\n@prefix ns1: <https://linked.data.gov.au/def/csdm/sensors/> .\n@prefix ns2: <https://linked.data.gov.au/def/csdm/surveyobs/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .\n@prefix surveyable: <https://linked.data.gov.au/def/csdm/defs/surveyableproperties/> .\n@prefix surveyproc: <https://linked.data.gov.au/def/csdm/defs/surveyprocedures/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n<http://www.example.com/features/vectorObservations> a sosa:ObservationCollection,\n        geojson:FeatureCollection ;\n    sosa:hasMember [ a geojson:Feature ;\n            sosa:hasFeatureOfInterest <http://www.example.com/features/l973158> ;\n            sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;\n                            geopose:angles [ ] ] ] ] ;\n    sosa:madeBySensor [ a ns1:DifferentialGPS ;\n            ns1:baseSensor \"gps+38666\" ;\n            ns1:roverSensor \"gps+37544\" ] ;\n    sosa:observedProperty surveyable:VectorDetermination ;\n    sosa:resultTime \"2023-05-24T00:00:00\" ;\n    sosa:usedProcedure surveyproc:traverse ;\n    ns2:angleType angletype:bearing ;\n    ns2:distanceType distancetype:ellipsoidal .\n\n",
           "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/features/SurveyObservations/collection.ttl"
         }
       ]

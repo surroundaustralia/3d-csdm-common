@@ -59,10 +59,10 @@ A name with a label, but also a set of parts with roles that can be validated ag
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 [] rdfs:label "IS II - DP 3333" ;
-    dcterms:hasPart [ rdfs:label "IS II" ;
-            commonpatterns:namePartType "Stamp" ],
-        [ rdfs:label "DP 3333" ;
-            commonpatterns:namePartType "Source" ] .
+    dcterms:hasPart [ rdfs:label "DP 3333" ;
+            commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Source> ],
+        [ rdfs:label "IS II" ;
+            commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] .
 
 
 ```
@@ -121,10 +121,10 @@ An example name where part of the name is a reference to a vocabulary source.  T
 
 [] rdfs:label "IS II - DP 3333" ;
     dcterms:hasPart [ rdfs:label "IS II" ;
-            commonpatterns:namePartType "Stamp" ],
+            commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
         [ rdfs:label "DP 3333" ;
             commonpatterns:namePartRef <wa-plan-register:dp333> ;
-            commonpatterns:namePartType "wa-plan:planTypes" ] .
+            commonpatterns:namePartType <wa-plan:planTypes> ] .
 
 
 ```
@@ -156,6 +156,8 @@ properties:
           x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/namePartRef
         type:
           type: string
+          x-jsonld-type: '@id'
+          x-jsonld-base: https://linked.data.gov.au/def/csdm/names/localPartType/
           x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/namePartType
       anyOf:
       - required:
@@ -194,7 +196,13 @@ Links to the schema:
           "@type": "@id",
           "@id": "commonpatterns:namePartRef"
         },
-        "type": "commonpatterns:namePartType"
+        "type": {
+          "@context": {
+            "@base": "https://linked.data.gov.au/def/csdm/names/localPartType/"
+          },
+          "@type": "@id",
+          "@id": "commonpatterns:namePartType"
+        }
       },
       "@id": "dct:hasPart"
     },

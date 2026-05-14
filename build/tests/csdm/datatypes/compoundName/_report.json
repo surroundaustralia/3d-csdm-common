@@ -2,7 +2,7 @@
   "title": "Validation report for icsm.csdm.datatypes.compoundName - Compound Name",
   "bblockName": "Compound Name",
   "bblockId": "icsm.csdm.datatypes.compoundName",
-  "generated": "2026-04-06T22:39:22.044093+00:00",
+  "generated": "2026-05-14T09:01:47.525593+00:00",
   "result": true,
   "items": [
     {
@@ -72,12 +72,12 @@
             {
               "shaclFile": "_sources/csdm/datatypes/compoundName/rules.shacl",
               "focusNodes": {
-                "_:n603bf44b43cc4b0d9f4e7fba4200701bb1": {
+                "_:n3792ba39f567490badbb220944a81236b1": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n603bf44b43cc4b0d9f4e7fba4200701bb1: *none*\n"
+              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n3792ba39f567490badbb220944a81236b1: *none*\n"
             }
           ]
         }
@@ -150,12 +150,12 @@
             {
               "shaclFile": "_sources/csdm/datatypes/compoundName/rules.shacl",
               "focusNodes": {
-                "_:n603bf44b43cc4b0d9f4e7fba4200701bb1": {
+                "_:n3792ba39f567490badbb220944a81236b1": {
                   "nodes": []
                 }
               },
               "isError": false,
-              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n603bf44b43cc4b0d9f4e7fba4200701bb1: *none*\n"
+              "message": "Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:\n - Shape _:n3792ba39f567490badbb220944a81236b1: *none*\n"
             }
           ]
         }

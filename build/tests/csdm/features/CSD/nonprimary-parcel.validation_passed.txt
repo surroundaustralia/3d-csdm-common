@@ -1,5 +1,5 @@
 Validation report for icsm.csdm.features.CSD - Cadastral Survey Dataset
-Generated 2026-04-06T22:39:36.959147+00:00
+Generated 2026-05-14T09:02:03.676830+00:00
 === Files ===
 Using nonprimary-parcel.json from test resources
 JSON-LD context is present - uplifting
@@ -12,6 +12,24 @@ Validation passed
 === End JSON Schema ===
 
 === SHACL ===
+Validation result for _sources/csdm/shapes/parcel_module.shapes.ttl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/csdm/shapes/parcel_module.shapes.ttl:
+ - Shape :EstateParcel: *none*
+ - Shape :PurposeOfSpatialUnit: *none*
+ - Shape :PrimaryParcel: *none*
+ - Shape :SecondaryParcel: *none*
+ - Shape :Apellation: *none*
+ - Shape :LandInterest: *none*
+ - Shape :ParcelType: *none*
+ - Shape :ParcelState: *none*
+ - Shape :ParcelAggregate: *none*
+ - Shape :ParcelQualityClass: *none*
+ - Shape :PropertyUnit: *none*
+ - Shape :Parcel: *none*
+
 Validation result for _sources/csdm/features/CSD/tests/obs-match-vectors.shacl:
   Validation Report
   Conforms: True
@@ -24,65 +42,48 @@ Validation result for _sources/csdm/shapes/container.shapes.ttl:
   Conforms: True
   
 Focus nodes for _sources/csdm/shapes/container.shapes.ttl:
+ - Shape <https://linked.data.gov.au/def/csdm/surveyprov/SurveyType>: *none*
  - Shape container:CSD: *none*
  - Shape container:CSD-seeAlso: *none*
- - Shape <https://linked.data.gov.au/def/csdm/surveyprov/SurveyType>: *none*
 
-Validation result for _sources/csdm/shapes/parcel_module.shapes.ttl:
+Validation result for https://surroundaustralia.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
   Validation Report
   Conforms: True
   
-Focus nodes for _sources/csdm/shapes/parcel_module.shapes.ttl:
- - Shape :EstateParcel: *none*
- - Shape :PurposeOfSpatialUnit: *none*
- - Shape :ParcelType: *none*
- - Shape :ParcelState: *none*
- - Shape :PropertyUnit: *none*
- - Shape :Apellation: *none*
- - Shape :SecondaryParcel: *none*
- - Shape :PrimaryParcel: *none*
- - Shape :Parcel: *none*
- - Shape :ParcelAggregate: *none*
- - Shape :ParcelQualityClass: *none*
- - Shape :LandInterest: *none*
+Focus nodes for https://surroundaustralia.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
+ - Shape topo:testTopoLinesReferencePoints: base:20220174/geojson:topology,base:20220172/geojson:topology,base:20220175/geojson:topology,base:20220192/geojson:topology,base:20220191/geojson:topology,base:20220170/geojson:topology,base:20220171/geojson:topology,base:20220176/geojson:topology,base:20220189/geojson:topology,base:20220173/geojson:topology
+ - Shape topo:testTopoReferencesExist: base:12595522/geojson:topology,base:20220174/geojson:topology,base:20220172/geojson:topology,base:20220175/geojson:topology,base:20220192/geojson:topology,base:20220191/geojson:topology,base:20220170/geojson:topology,base:20220171/geojson:topology,base:20220176/geojson:topology,base:20220189/geojson:topology,base:12595541/geojson:topology,base:12595523/geojson:topology,base:20220173/geojson:topology
 
-Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+Validation result for https://surroundaustralia.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
   Validation Report
   Conforms: True
   
-Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
- - Shape _:ne1f8ccf5c38f42ab83e61f7909dca348b3: *none*
- - Shape _:ne1f8ccf5c38f42ab83e61f7909dca348b1: base:17876566/dct:spatial,base:17876565/dct:spatial,base:17876567/dct:spatial,base:17876564/dct:spatial,base:17876570/dct:spatial,base:17876568/dct:spatial,base:17876563/dct:spatial,base:17876569/dct:spatial
+Focus nodes for https://surroundaustralia.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+ - Shape _:n401bf544ec424aa0b025609af3e9af75b3: *none*
+ - Shape _:n401bf544ec424aa0b025609af3e9af75b1: base:17876564/dct:spatial,base:17876563/dct:spatial,base:17876568/dct:spatial,base:17876570/dct:spatial,base:17876567/dct:spatial,base:17876569/dct:spatial,base:17876566/dct:spatial,base:17876565/dct:spatial
 
-Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
+Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
   Validation Report
   Conforms: True
   
-Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
- - Shape topo:testTopoLinesReferencePoints: base:20220172/geojson:topology,base:20220189/geojson:topology,base:20220174/geojson:topology,base:20220176/geojson:topology,base:20220170/geojson:topology,base:20220191/geojson:topology,base:20220173/geojson:topology,base:20220171/geojson:topology,base:20220192/geojson:topology,base:20220175/geojson:topology
- - Shape topo:testTopoReferencesExist: base:20220172/geojson:topology,base:20220189/geojson:topology,base:20220174/geojson:topology,base:20220176/geojson:topology,base:12595523/geojson:topology,base:20220170/geojson:topology,base:20220191/geojson:topology,base:12595541/geojson:topology,base:12595522/geojson:topology,base:20220173/geojson:topology,base:20220171/geojson:topology,base:20220192/geojson:topology,base:20220175/geojson:topology
+Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:FeatureShape: *none*
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:FeatureCollectionShape: base:SecondaryParcels,base:BoundaryMark,base:PrimaryParcels,base:observedVectors
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
 
-Validation result for _sources/csdm/datatypes/compoundName/rules.shacl:
+Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
   Validation Report
   Conforms: True
   
-Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:
- - Shape _:n0c03e0e6df5a4e6da0872b5befd06f2ab1: *none*
-
-Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <vectorobservation:theodolite+edm>
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <vectorobservation:theodolite+edm>
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <vectorobservation:theodolite+edm>
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:FeatureShape: base:17876568,base:17876566,base:20220175,base:17876564,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,base:20220176,<vectorobservation:theodolite+edm>/sosa:hasMember,base:12595522,base:20220174,base:20220192,base:12595523,base:20220191,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,base:17876567,base:20220170,base:20220189,base:17876563,<vectorobservation:theodolite+edm>/sosa:hasMember,base:17876569,<vectorobservation:theodolite+edm>/sosa:hasMember,base:17876565,base:12595541,base:20220172,<vectorobservation:theodolite+edm>/sosa:hasMember,base:20220173,base:20220171,<vectorobservation:theodolite+edm>/sosa:hasMember,base:17876570
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:LinkShape: *none*
 
 Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:
   Validation Report
@@ -90,6 +91,28 @@ Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:
   
 Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:
  - Shape :testRequiredProperties: <vectorobservation:theodolite+edm>
+
+Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <vectorobservation:theodolite+edm>
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <vectorobservation:theodolite+edm>
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <vectorobservation:theodolite+edm>
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember,<vectorobservation:theodolite+edm>/sosa:hasMember
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
+
+Validation result for _sources/csdm/datatypes/compoundName/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:
+ - Shape _:n3fbf451262ca4f4d91744641ba401716b1: *none*
 
 === End SHACL ===
 

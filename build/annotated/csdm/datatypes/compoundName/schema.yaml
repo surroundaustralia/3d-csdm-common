@@ -22,6 +22,8 @@ properties:
           x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/namePartRef
         type:
           type: string
+          x-jsonld-type: '@id'
+          x-jsonld-base: https://linked.data.gov.au/def/csdm/names/localPartType/
           x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/namePartType
       anyOf:
       - required:

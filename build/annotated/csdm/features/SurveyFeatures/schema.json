@@ -16,7 +16,7 @@
       ]
     },
     "TopoLine": {
-      "$ref": "https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-line/schema.json"
+      "$ref": "https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-line/schema.json"
     },
     "FeatureOptions": {
       "anyOf": [

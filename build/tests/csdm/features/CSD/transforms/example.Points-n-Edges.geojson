@@ -1,0 +1,157 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "0",
+      "type": "Feature",
+      "properties": {
+        "name": {
+          "label": "RM E DP 119552",
+          "hasPart": [
+            {
+              "type": "Source",
+              "label": "DP 119552"
+            },
+            {
+              "type": "Stamp",
+              "label": "RM E"
+            }
+          ]
+        },
+        "purpose": "nz-surveypoint-purpose:boundary",
+        "fromSurvey": "DP_119552",
+        "comment": "ALP in channel of drive",
+        "occupation": {
+          "comment": "No occupation"
+        },
+        "monumentedBy": {
+          "form": "nz-monument-form:plaque",
+          "condition": "nz-monument-condition:markfound",
+          "state": "nz-monument-state:original"
+        },
+        "geodeticid": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.7501603083,
+          -36.9307359096
+        ]
+      }
+    },
+    {
+      "id": "1",
+      "type": "Feature",
+      "properties": {
+        "name": {
+          "label": "ALP I DP 481392",
+          "hasPart": [
+            {
+              "type": "Source",
+              "label": "DP 481392"
+            },
+            {
+              "type": "Stamp",
+              "label": "ALP I"
+            }
+          ]
+        },
+        "purpose": "nz-surveypoint-purpose:nonBoundary",
+        "fromSurvey": null,
+        "comment": null,
+        "occupation": {
+          "comment": "ALP in channel of drive"
+        },
+        "monumentedBy": {
+          "form": "nz-monument-form:pin",
+          "condition": "nz-monument-condition:markfound",
+          "state": "nz-monument-state:original"
+        },
+        "geodeticid": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.7508196767,
+          -36.9314093194
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "type": "Feature",
+      "properties": {
+        "name": {
+          "label": "RM C DP 119552 (EQ9W)",
+          "hasPart": [
+            {
+              "type": "PlanType",
+              "label": "DP"
+            },
+            {
+              "type": "Stamp",
+              "label": "119552"
+            },
+            {
+              "type": "MarkType",
+              "label": "RM"
+            },
+            {
+              "type": "Stamp",
+              "label": "C"
+            },
+            {
+              "type": "geodeticStamp",
+              "label": "EQ9W"
+            }
+          ]
+        },
+        "purpose": "prm",
+        "fromSurvey": null,
+        "comment": null,
+        "occupation": {
+          "comment": "ALP in channel of drive"
+        },
+        "monumentedBy": {
+          "form": "nz-monument-form:pin",
+          "condition": "nz-monument-condition:markfound",
+          "state": "nz-monument-state:original"
+        },
+        "geodeticid": "XX FFF"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.749997996,
+          -36.930903937
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "purpose": "nz-line-purpose:boundary",
+        "fromSurvey": null,
+        "comment": null,
+        "occupation": null,
+        "monumentedBy": null,
+        "geodeticid": null
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            174.7501603083,
+            -36.9307359096
+          ],
+          [
+            174.749997996,
+            -36.930903937
+          ]
+        ]
+      }
+    }
+  ]
+}
