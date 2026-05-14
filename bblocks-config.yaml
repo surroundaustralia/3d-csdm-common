@@ -39,7 +39,7 @@ description: |
 
 imports:
   - default
-  - https://opengeospatial.github.io/ogcapi-sosa/build/register.json
-  - https://ogcincubator.github.io/topo-feature/build/register.json
-  - https://ogcincubator.github.io/bblock-prov-schema/build/register.json
+  - https://opengeospatial.github.io/ogcapi-sosa
+  - https://surroundaustralia.github.io/topo-feature
+  - https://ogcincubator.github.io/bblock-prov-schema
 

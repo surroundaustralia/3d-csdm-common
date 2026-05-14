@@ -36,6 +36,9 @@
     "locality": {
       "@id": "csd:locality"
     },
+    "edges": {
+      "@id": "topo:edges"
+    },
     "observedVectors": {
       "@id": "container:observedVectors"
     },

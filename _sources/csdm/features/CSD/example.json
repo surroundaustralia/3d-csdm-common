@@ -206,7 +206,7 @@
       ]
     }
   ],
-  "observedVectors": [
+  "edges": [
     {
       "id": "ov",
       "type": "FeatureCollection",

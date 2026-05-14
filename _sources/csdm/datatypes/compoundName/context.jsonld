@@ -9,6 +9,8 @@
       "@id": "dct:hasPart",
       "@context": {
         "type": {
+          "@type": "@id",
+          "@base": "https://linked.data.gov.au/def/csdm/names/localPartType/",
           "@id": "commonpatterns:namePartType"
         },
         "ref": {
@@ -23,7 +25,6 @@
     "name": {
       "@id": "commonpatterns:name"
     },
-    "CompoundName":  "commonpatterns:CompoundName"
-
+    "CompoundName": "commonpatterns:CompoundName"
   }
 }
