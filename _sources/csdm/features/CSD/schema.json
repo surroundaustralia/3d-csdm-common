@@ -212,107 +212,6 @@
           }
         }
       }
-    },
-    "ParcelProperties": {
-      "properties": {
-        "properties": {
-          "properties": {
-            "appellation": {
-              "$ref": "../../datatypes/compoundName/schema.json"
-            },
-            "parcelType": {
-              "$ref": "#/$defs/coderef"
-            },
-            "parcelState": {
-              "$ref": "#/$defs/coderef"
-            },
-            "address": {
-              "type": "object"
-            },
-            "parcelPurpose": {
-              "$ref": "#/$defs/coderef"
-            },
-            "area": {
-              "type": "number"
-            },
-            "floor": {
-              "type": "string"
-            },
-            "zmin": {
-              "type": "number"
-            },
-            "zmax": {
-              "type": "number"
-            },
-            "interests": {
-              "type": "array",
-              "additionalProperties": false,
-              "items": {
-                "properties": {
-                  "interestLink": {
-                    "$ref": "#/$defs/coderef"
-                  },
-                  "interestName": {
-                    "type": "string"
-                  },
-                  "interestType": {
-                    "$ref": "#/$defs/coderef"
-                  },
-                  "dateInForce": {
-                    "$ref": "#/$defs/dateTime"
-                  },
-                  "dateExpires": {
-                    "$ref": "#/$defs/dateTime"
-                  },
-                  "statuteLink": {
-                    "$ref": "#/$defs/coderef"
-                  },
-                  "statuteName": {
-                    "type": "string"
-                  },
-                  "benefitedPartyName": {
-                    "type": "string"
-                  },
-                  "benefitedPartyLink": {
-                    "$ref": "#/$defs/coderef"
-                  },
-                  "originalSurveyLink": {
-                    "$ref": "#/$defs/coderef"
-                  },
-                  "referencedParcel": {
-                    "$ref": "#/$defs/coderef"
-                  },
-                  "burdenedParcels": {
-                    "$ref": "#/$defs/coderefList"
-                  },
-                  "benefitedParcels": {
-                    "$ref": "#/$defs/coderefList"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "entitlementPortion": {
-                    "type": "string"
-                  },
-                  "liabilityPortion": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "interestLink",
-                  "interestType"
-                ]
-              },
-              "required": [
-                "appellation",
-                "parcelType",
-                "parcelState",
-                "parcelPurpose"
-              ]
-            }
-          }
-        }
-      }
     }
   },
   "allOf": [
@@ -538,7 +437,7 @@
       "items": {
         "allOf": [
           {
-            "$ref": "#/$defs/FeatureCollectionOptions"
+            "$ref": "bblocks://ogc.land-parcels.parcelCollection"
           },
           {
             "properties": {
@@ -549,12 +448,6 @@
                   "SecondaryParcel",
                   "surv:SecondaryParcel"
                 ]
-              },
-              "features": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/$defs/ParcelProperties"
-                }
               }
             },
             "required": [

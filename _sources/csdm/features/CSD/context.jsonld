@@ -3,7 +3,6 @@
     "csd": "https://linked.data.gov.au/def/csdm/csd/",
     "sdo": "https://schema.org/" ,
     "surv": "https://linked.data.gov.au/def/csdm/surveyfeatures/",
-    "parcel": "https://linked.data.gov.au/def/csdm/parcels/",
     "container": "https://linked.data.gov.au/def/csdm/container/",
     "featureType": "@type",
     "CSD": {
@@ -71,85 +70,6 @@
     },
     "SecondaryParcel": {
       "@id": "parcel:SecondaryParcel",
-      "@type": "@id"
-    },
-    "appellation": "parcel:appellation",
-    "parcelType": {
-      "@id": "parcel:type",
-      "@type": "@id"
-    },
-    "parcelPurpose": {
-      "@id": "parcel:purpose",
-      "@type": "@id"
-    },
-    "parcelQualityClass": {
-      "@id": "parcel:qualityClass",
-      "@type": "@id"
-    },
-    "area": {
-      "@id": "parcel:surfaceArea"
-    },
-     "floor": {
-      "@id": "parcel:floor"
-    },
-     "zmin": {
-      "@id": "parcel:zmin"
-    },
-     "zmax": {
-      "@id": "parcel:zmax"
-    },
-    "terrainIntersectionCurve": {
-      "@id": "parcel:terrainIntersectionCurve"
-    },
-    "interests": {
-      "@id": "parcel:interest",
-      "@container": "@set",
-      "@context": {
-        "interestLink": {
-          "@type": "@id",
-          "@id": "parcel:interestLink"
-        },
-        "interestName": "parcel:interestName",
-        "interestType": {
-          "@type": "@id",
-          "@id": "parcel:interestType"
-        },
-        "dateInForce": "parcel:interestDateInForce",
-        "dateExpires": "parcel:interestDateExpires",
-        "statuteLink": {
-          "@type": "@id",
-          "@id": "parcel:statuteLink"
-        },
-        "statuteName": "parcel:statuteName",
-        "benefitedPartyLink": {
-          "@type": "@id",
-          "@id": "parcel:benefitedPartyLink"
-        },
-        "benefitedPartyName": "parcel:benefitedPartyName",
-        "referencedParcel": {
-          "@type": "@id",
-          "@id": "parcel:referencedParcel"
-        },
-        "originalSurveyLink": {
-          "@type": "@id",
-          "@id": "parcel:originalSurveyLink"
-        },
-        "burdenedParcels": {
-          "@id": "parcel:burdened",
-          "@container": "@set"
-
-        },
-        "benefitedParcels": {
-          "@id": "parcel:benefited",
-          "@container": "@set"
-        },
-        "entitlementPortion": "parcel:entitlementPortion",
-        "liabilityPortion": "parcel:liabilityPortion",
-        "description": "parcel:interestDescription"
-      }
-    },
-    "parcelState": {
-      "@id": "parcel:state",
       "@type": "@id"
     },
     "referencedCSDs": {
