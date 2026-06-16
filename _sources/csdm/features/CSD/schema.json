@@ -246,7 +246,7 @@
       "type": "string"
     },
     "surveyDescriptors": {
-      "$ref": "../../datatypes/compoundName/schema.json"
+      "$ref": "bblocks://ogc.bbr.utils.compoundName"
     },
     "purpose": {
       "oneOf": [
@@ -437,7 +437,7 @@
       "items": {
         "allOf": [
           {
-            "$ref": "bblocks://ogc.land-parcels.parcelCollection"
+            "$ref": "bblocks://ogc.ladm.land-parcels.parcelCollection"
           },
           {
             "properties": {
