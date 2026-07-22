@@ -78,7 +78,6 @@ def process(input_data,mode,number):
                             coords[n]=[ geomsmap[node][0] for node in ring ]
                             n += 1
                     except Exception as e:
-                        print(e)
                         coords =  [ geomsmap[node] for node in feat["topology"]["references"] ]
 
                 elif "directed_references" in feat["topology"] :

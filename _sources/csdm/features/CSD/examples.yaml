@@ -2,9 +2,7 @@
   content: |-
     A minimal survey (CSDM container) with a few key objects populated - no occupations for example.
 
-    See panel to right - note that a more user friendly "collapsable" version is in development. 
-    <A href=https://github.com/icsm-au/3d-csdm-schema/blob/main/build/tests/csdm/features/CSD/example_1_1.json>View in github:</A>
-
+    (Note different views available in panel to right)
   base-output-filename: example
   snippets:
     - language: json
@@ -14,7 +12,7 @@
 
 - title: Extended Example CSDM container
   content: |-
-    This has a realistic set of features for a minimal survey (splitting a primary parcel, one secondary etc.
+    This has a realistic set of features for a minimal survey (splitting a primary parcel, one secondary etc.)
 
 
   base-output-filename: extended_example

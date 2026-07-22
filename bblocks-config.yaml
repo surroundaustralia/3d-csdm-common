@@ -44,3 +44,8 @@ imports:
   - https://surroundaustralia.github.io/topo-feature
   - https://ogcincubator.github.io/bblock-prov-schema
 
+plugins:
+  transforms:
+    - pip: git+https://github.com/ogcincubator/topo-functions.git
+      modules:
+        - topo2geojson
