@@ -217,7 +217,7 @@
           "id": "l973158",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "1725787",
               "11745104"

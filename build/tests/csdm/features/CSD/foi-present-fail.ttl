@@ -1,4 +1,4 @@
-@prefix commonpatterns: <https://linked.data.gov.au/def/csdm/commonpatterns/> .
+@prefix commonpatterns: <https://w3id.org/ogc/utils/label/> .
 @prefix container: <https://linked.data.gov.au/def/csdm/container/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix eg1: <https://linked.data.gov.au/def/csdm/csd-example/> .
@@ -7,6 +7,7 @@
 @prefix geopose: <https://linked.data.gov.au/def/csdm/utils/geopose/> .
 @prefix icsm-survey-type: <https://linked.data.gov.au/def/csdm/icsm-survey-type/> .
 @prefix ns1: <https://linked.data.gov.au/def/csdm/sensors/> .
+@prefix ns2: <https://linked.data.gov.au/def/csdm/commonpatterns/> .
 @prefix nz-line-purpose: <https://linked.data.gov.au/def/csdm/nz-linepurpose/> .
 @prefix nz-monument-condition: <https://linked.data.gov.au/def/csdm/nz-monument-condition/> .
 @prefix nz-monument-form: <https://linked.data.gov.au/def/csdm/nz-monument-form/> .
@@ -19,6 +20,7 @@
 @prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .
 @prefix surveyable: <https://linked.data.gov.au/def/csdm/observedProperties/> .
 @prefix surveyproc: <https://linked.data.gov.au/def/csdm/observationProcedures/> .
+@prefix topo: <https://purl.org/geojson/topo#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 eg1:DP_572532 a geojson:FeatureCollection ;
@@ -36,11 +38,11 @@ eg1:DP_572532 a geojson:FeatureCollection ;
 
 eg1:44396823 a surv:CadastralMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "ALP I DP 481392" ;
+    ns2:name [ rdfs:label "ALP I DP 481392" ;
             dct:hasPart [ rdfs:label "DP 481392" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Source> ],
+                    commonpatterns:namePartType "Source" ],
                 [ rdfs:label "ALP I" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
             surv:form nz-monument-form:pin ;
             surv:state nz-monument-state:original ] ;
@@ -51,7 +53,7 @@ eg1:44396823 a surv:CadastralMark,
 eg1:l973158 a geojson:Feature ;
     container:purpose nz-line-purpose:boundary ;
     geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg1:1725787 eg1:11745104 ) ] .
+            topo:relatedFeatures ( eg1:1725787 eg1:11745104 ) ] .
 
 eg1:obs a sosa:ObservationCollection,
         geojson:FeatureCollection ;
@@ -77,17 +79,17 @@ eg1:points a geojson:FeatureCollection ;
 
 eg1:11745104 a surv:GeodeticReferenceMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
-            dct:hasPart [ rdfs:label "C" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "119552" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "RM" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
-                [ rdfs:label "EQ9W" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/geodeticStamp> ],
+    ns2:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
+            dct:hasPart [ rdfs:label "119552" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ] ] ;
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "C" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "EQ9W" ;
+                    commonpatterns:namePartType "geodeticStamp" ],
+                [ rdfs:label "RM" ;
+                    commonpatterns:namePartType "MarkType" ] ] ;
     surv:geodeticid "XX FFF" ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
             surv:form nz-monument-form:pin ;
@@ -99,11 +101,11 @@ eg1:11745104 a surv:GeodeticReferenceMark,
 eg1:1725787 a surv:BoundaryMark,
         geojson:Feature ;
     rdfs:comment "ALP in channel of drive" ;
-    commonpatterns:name [ rdfs:label "RM E DP 119552" ;
+    ns2:name [ rdfs:label "RM E DP 119552" ;
             dct:hasPart [ rdfs:label "DP 119552" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Source> ],
+                    commonpatterns:namePartType "Source" ],
                 [ rdfs:label "RM E" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
     surv:fromSurvey eg1:DP_119552 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
             surv:form nz-monument-form:plaque ;

@@ -9,7 +9,7 @@
   "itemClass": "schema",
   "register": "icsm-csdm",
   "version": "0.1",
-  "dateOfLastChange": "2026-05-14",
+  "dateOfLastChange": "2026-07-22",
   "link": "https://github.com/icsm-au/3d-csdm-schema",
   "sources": [
     {
@@ -47,18 +47,21 @@
           "language": "json",
           "ref": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/datatypes/annotation/example.json",
           "base-uri": "http://www.example.com/namedobjects/",
-          "code": "[\n  {\n    \"description\": \"Annotation with link and role\",\n    \"href\": \"http://example.org/aDocument\",\n    \"role\": \"http://example.org/myReason\",\n    \"rel\": \"related\"\n  },\n  {\n    \"description\": \"Annotation with role\",\n    \"role\": \"http://example.org/myReason\"\n  },\n  \"Plain text annotation\"\n]\n",
-          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/annotation/example_1_1.json"
+          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/annotation/example_1_1.json",
+          "sizeBytes": 293,
+          "code": "[\n  {\n    \"description\": \"Annotation with link and role\",\n    \"href\": \"http://example.org/aDocument\",\n    \"role\": \"http://example.org/myReason\",\n    \"rel\": \"related\"\n  },\n  {\n    \"description\": \"Annotation with role\",\n    \"role\": \"http://example.org/myReason\"\n  },\n  \"Plain text annotation\"\n]\n"
         },
         {
           "language": "jsonld",
-          "code": "{\n  \"@context\": \"https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/context.jsonld\",\n  \"@graph\": [\n    {\n      \"description\": \"Annotation with link and role\",\n      \"href\": \"http://example.org/aDocument\",\n      \"role\": \"http://example.org/myReason\",\n      \"rel\": \"related\"\n    },\n    {\n      \"description\": \"Annotation with role\",\n      \"role\": \"http://example.org/myReason\"\n    },\n    \"Plain text annotation\"\n  ]\n}",
-          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/annotation/example_1_1.jsonld"
+          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/annotation/example_1_1.jsonld",
+          "sizeBytes": 457,
+          "code": "{\n  \"@context\": \"https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/context.jsonld\",\n  \"@graph\": [\n    {\n      \"description\": \"Annotation with link and role\",\n      \"href\": \"http://example.org/aDocument\",\n      \"role\": \"http://example.org/myReason\",\n      \"rel\": \"related\"\n    },\n    {\n      \"description\": \"Annotation with role\",\n      \"role\": \"http://example.org/myReason\"\n    },\n    \"Plain text annotation\"\n  ]\n}"
         },
         {
           "language": "ttl",
-          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix ns1: <http://www.iana.org/assignments/> .\n@prefix oa: <http://www.w3.org/ns/oa#> .\n@prefix prof: <http://www.w3.org/ns/dx/prof/> .\n\n[] dcterms:description \"Annotation with link and role\" ;\n    ns1:relation <http://www.iana.org/assignments/relation/related> ;\n    prof:hasRole <http://example.org/myReason> ;\n    oa:hasTarget <http://example.org/aDocument> .\n\n[] dcterms:description \"Annotation with role\" ;\n    prof:hasRole <http://example.org/myReason> .\n\n",
-          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/annotation/example_1_1.ttl"
+          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/annotation/example_1_1.ttl",
+          "sizeBytes": 512,
+          "code": "@prefix dcterms: <http://purl.org/dc/terms/> .\n@prefix ns1: <http://www.iana.org/assignments/> .\n@prefix oa: <http://www.w3.org/ns/oa#> .\n@prefix prof: <http://www.w3.org/ns/dx/prof/> .\n\n[] dcterms:description \"Annotation with role\" ;\n    prof:hasRole <http://example.org/myReason> .\n\n[] dcterms:description \"Annotation with link and role\" ;\n    ns1:relation <http://www.iana.org/assignments/relation/related> ;\n    prof:hasRole <http://example.org/myReason> ;\n    oa:hasTarget <http://example.org/aDocument> .\n\n"
         }
       ]
     }

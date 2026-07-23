@@ -9,7 +9,7 @@
   "itemClass": "schema",
   "register": "icsm-csdm",
   "version": "0.1",
-  "dateOfLastChange": "2026-05-14",
+  "dateOfLastChange": "2026-07-22",
   "link": "https://github.com/icsm-au/3d-csdm-schema",
   "sources": [
     {
@@ -43,18 +43,21 @@
           "language": "json",
           "ref": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/datatypes/quality/example.json",
           "base-uri": "http://www.example.com/namedobjects/",
-          "code": "{\n  \"distanceAccuracy\": 0.000100138048,\n  \"angleAccuracy\": 0.028154691543,\n  \"distanceAccuracyClass\": \"http://any.valid/\",\n  \"angleAccuracyClass\": \"http://any.valid/\"\n}",
-          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/quality/example_1_1.json"
+          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/quality/example_1_1.json",
+          "sizeBytes": 168,
+          "code": "{\n  \"distanceAccuracy\": 0.000100138048,\n  \"angleAccuracy\": 0.028154691543,\n  \"distanceAccuracyClass\": \"http://any.valid/\",\n  \"angleAccuracyClass\": \"http://any.valid/\"\n}"
         },
         {
           "language": "jsonld",
-          "code": "{\n  \"@context\": \"https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/context.jsonld\",\n  \"distanceAccuracy\": 0.000100138048,\n  \"angleAccuracy\": 0.028154691543,\n  \"distanceAccuracyClass\": \"http://any.valid/\",\n  \"angleAccuracyClass\": \"http://any.valid/\"\n}",
-          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/quality/example_1_1.jsonld"
+          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/quality/example_1_1.jsonld",
+          "sizeBytes": 290,
+          "code": "{\n  \"@context\": \"https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/context.jsonld\",\n  \"distanceAccuracy\": 0.000100138048,\n  \"angleAccuracy\": 0.028154691543,\n  \"distanceAccuracyClass\": \"http://any.valid/\",\n  \"angleAccuracyClass\": \"http://any.valid/\"\n}"
         },
         {
           "language": "ttl",
-          "code": "@prefix ns1: <https://linked.data.gov.au/def/csdm/surveyobs/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] ns1:angleAccuracyClass <http://any.valid/> ;\n    ns1:angleAccuracyMeasure 2.815469e-02 ;\n    ns1:distanceAccuracyClass <http://any.valid/> ;\n    ns1:distanceAccuracyMeasure 1.00138e-04 .\n\n",
-          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/quality/example_1_1.ttl"
+          "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/datatypes/quality/example_1_1.ttl",
+          "sizeBytes": 307,
+          "code": "@prefix ns1: <https://linked.data.gov.au/def/csdm/surveyobs/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] ns1:angleAccuracyClass <http://any.valid/> ;\n    ns1:angleAccuracyMeasure 2.815469e-02 ;\n    ns1:distanceAccuracyClass <http://any.valid/> ;\n    ns1:distanceAccuracyMeasure 1.00138e-04 .\n\n"
         }
       ]
     }

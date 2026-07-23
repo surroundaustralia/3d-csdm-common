@@ -9,26 +9,27 @@ CSDM container for survey features and observations. This schema defines key met
 
 ## Description
 
-## Cadastral Survey
+## Cadastral Survey Data Exchange 
 
-This is the container for exchange of data using the Cadastral Survey Data Model.
+A FG-JSON (and hence GeoJSON) compatible encoding of the 3D Cadastral Survey Data Model. 
 
-It is modelled as a GeoJSON Feature Collection, consequently all the surveyed features can be:
+This model comprises a series of modules based on standardised patterns, such as ISO 19109 General Feature Model, ISO 19156 Observations and Measurements, W3C Provenance Vocabulary.
 
-- referenced internally using an obvious pattern (and generic tool support)
-- visualised by a GeoJSON aware client.
+![Design Approach](assets/design.png)
 
-Addition properties carry nested CSDs containing adopted features, provenance, annotations and the set of observations performed in a survey.
+Each of these modules is described independently and is implemented as a complete building block either within the directory structure of this repository or connected (as a git submodule).
 
+> This encoding uses the OGC "semantic uplift" aproach to bind simple, reusable JSON schema elements to the underlying data models using a JSON-LD context. Implementers do not need to understand this annotation mechanism, however it automatically provides for unambiguous semantics and documentation of data conformant to the encoding schema.
 
+The structure of this is a container object with a set of metadata properties and collections of features and observations.  Observations are grouped as ObservationCollections to minimise duplication of information.
 
+![Container View](assets/CSD_logical.png)
 ## Examples
 
 ### Example CSDM container
 A minimal survey (CSDM container) with a few key objects populated - no occupations for example.
 
-See panel to right - note that a more user friendly "collapsable" version is in development. 
-<A href=https://github.com/icsm-au/3d-csdm-schema/blob/main/build/tests/csdm/features/CSD/example_1_1.json>View in github:</A>
+(Note different views available in panel to right)
 #### json
 ```json
 {
@@ -250,7 +251,7 @@ See panel to right - note that a more user friendly "collapsable" version is in 
           "id": "l973158",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "1725787",
               "11745104"
@@ -528,7 +529,7 @@ See panel to right - note that a more user friendly "collapsable" version is in 
           "id": "l973158",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "1725787",
               "11745104"
@@ -584,15 +585,16 @@ See panel to right - note that a more user friendly "collapsable" version is in 
 
 #### ttl
 ```ttl
-@prefix commonpatterns: <https://linked.data.gov.au/def/csdm/commonpatterns/> .
+@prefix commonpatterns: <https://w3id.org/ogc/utils/label/> .
 @prefix container: <https://linked.data.gov.au/def/csdm/container/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix epsg: <http://www.opengis.net/def/crs/EPSG/0/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix geopose: <https://linked.data.gov.au/def/csdm/utils/geopose/> .
 @prefix icsm-survey-type: <https://linked.data.gov.au/def/csdm/icsm-survey-type/> .
-@prefix ns1: <https://linked.data.gov.au/def/csdm/sensors/> .
+@prefix ns1: <https://linked.data.gov.au/def/csdm/commonpatterns/> .
 @prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns3: <https://linked.data.gov.au/def/csdm/sensors/> .
 @prefix nz-line-purpose: <https://linked.data.gov.au/def/csdm/nz-linepurpose/> .
 @prefix nz-monument-condition: <https://linked.data.gov.au/def/csdm/nz-monument-condition/> .
 @prefix nz-monument-form: <https://linked.data.gov.au/def/csdm/nz-monument-form/> .
@@ -629,11 +631,11 @@ See panel to right - note that a more user friendly "collapsable" version is in 
 
 <https://linked.data.gov.au/def/csdm/csd-example/44396823> a surv:CadastralMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "ALP I DP 481392" ;
-            dcterms:hasPart [ rdfs:label "ALP I" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "DP 481392" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Source> ] ] ;
+    ns1:name [ rdfs:label "ALP I DP 481392" ;
+            dcterms:hasPart [ rdfs:label "DP 481392" ;
+                    commonpatterns:namePartType "Source" ],
+                [ rdfs:label "ALP I" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
             surv:form nz-monument-form:pin ;
             surv:state nz-monument-state:original ] ;
@@ -647,9 +649,9 @@ See panel to right - note that a more user friendly "collapsable" version is in 
             sosa:hasFeatureOfInterest <https://linked.data.gov.au/def/csdm/csd-example/l973158> ;
             sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;
                             geopose:angles [ ] ] ] ] ;
-    sosa:madeBySensor [ a ns1:DifferentialGPS ;
-            ns1:baseSensor "gps+38666" ;
-            ns1:roverSensor "gps+37544" ] ;
+    sosa:madeBySensor [ a ns3:DifferentialGPS ;
+            ns3:baseSensor "gps+38666" ;
+            ns3:roverSensor "gps+37544" ] ;
     sosa:observedProperty surveyable:VectorDetermination ;
     sosa:resultTime "2023-05-24T00:00:00Z" ;
     sosa:usedProcedure surveyproc:traverse .
@@ -665,17 +667,17 @@ See panel to right - note that a more user friendly "collapsable" version is in 
 
 <https://linked.data.gov.au/def/csdm/csd-example/11745104> a surv:GeodeticReferenceMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
-            dcterms:hasPart [ rdfs:label "EQ9W" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/geodeticStamp> ],
-                [ rdfs:label "RM" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
-                [ rdfs:label "119552" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "C" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+    ns1:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
+            dcterms:hasPart [ rdfs:label "C" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "EQ9W" ;
+                    commonpatterns:namePartType "geodeticStamp" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ] ] ;
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "119552" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "RM" ;
+                    commonpatterns:namePartType "MarkType" ] ] ;
     surv:geodeticid "XX FFF" ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
             surv:form nz-monument-form:pin ;
@@ -687,11 +689,11 @@ See panel to right - note that a more user friendly "collapsable" version is in 
 <https://linked.data.gov.au/def/csdm/csd-example/1725787> a surv:BoundaryMark,
         geojson:Feature ;
     rdfs:comment "ALP in channel of drive" ;
-    commonpatterns:name [ rdfs:label "RM E DP 119552" ;
+    ns1:name [ rdfs:label "RM E DP 119552" ;
             dcterms:hasPart [ rdfs:label "RM E" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP 119552" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Source> ] ] ;
+                    commonpatterns:namePartType "Source" ] ] ;
     surv:fromSurvey <https://linked.data.gov.au/def/csdm/csd-example/DP_119552> ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
             surv:form nz-monument-form:plaque ;
@@ -706,15 +708,15 @@ See panel to right - note that a more user friendly "collapsable" version is in 
 
 <https://linked.data.gov.au/def/csdm/csd-example/l973158> a geojson:Feature ;
     container:purpose nz-line-purpose:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( <https://linked.data.gov.au/def/csdm/csd-example/1725787> <https://linked.data.gov.au/def/csdm/csd-example/11745104> ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( <https://linked.data.gov.au/def/csdm/csd-example/1725787> <https://linked.data.gov.au/def/csdm/csd-example/11745104> ) ] .
 
 
 ```
 
 
 ### Extended Example CSDM container
-This has a realistic set of features for a minimal survey (splitting a primary parcel, one secondary etc.
+This has a realistic set of features for a minimal survey (splitting a primary parcel, one secondary etc.)
 #### json
 ```json
 {
@@ -805,7 +807,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
               ]
             },
             "area": 484,
-            "parcelType": "nz-parcel-type:fee-simple-title",
+            "parcelType": "nz-parcel-type:l",
             "parcelPurpose": "nz-parcel-purpose:fst",
             "parcelState": "nz-parcel-state:created",
             "class": "nz-parcel-class:allotment",
@@ -861,7 +863,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
               ]
             },
             "area": 1196,
-            "parcelType": "nz-parcel-type:fee-simple-title",
+            "parcelType": "nz-parcel-type:l",
             "parcelPurpose": "nz-parcel-purpose:fst",
             "parcelState": "nz-parcel-state:created",
             "class": "nz-parcel-class:allotment",
@@ -2290,7 +2292,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l566592",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "11745160",
               "44438418"
@@ -2303,21 +2305,9 @@ This has a realistic set of features for a minimal survey (splitting a primary p
         {
           "type": "Feature",
           "id": "l973158",
-          "geometry": {
-            "type": "LineString",
-            "coordinates": [
-              [
-                174.7501603083,
-                -36.9307359096
-              ],
-              [
-                174.749997996,
-                -36.930903937
-              ]
-            ]
-          },
+          "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "1725787",
               "11745104"
@@ -2332,7 +2322,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l910380",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "11745160",
               "11745161"
@@ -2347,7 +2337,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l472486",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "11745160",
               "49655185"
@@ -2362,7 +2352,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l922788",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "49655186"
@@ -2377,7 +2367,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l773277",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "44438410"
@@ -2392,7 +2382,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l388393",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "49655172"
@@ -2407,7 +2397,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l941613",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "49655187"
@@ -2422,7 +2412,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l818068",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "49655170"
@@ -2437,7 +2427,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l599462",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "49655171"
@@ -2452,7 +2442,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l746686",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "29959289",
               "49655174"
@@ -2467,7 +2457,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l999724",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655174",
               "29962820"
@@ -2482,7 +2472,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l591175",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "29962820",
               "29963073"
@@ -2497,7 +2487,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l874826",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655175",
               "49655170"
@@ -2512,7 +2502,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l369793",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "29963073",
               "29963182"
@@ -2527,7 +2517,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l435861",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "29963182",
               "49655175"
@@ -2542,7 +2532,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l965727",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655170",
               "29960715"
@@ -2557,7 +2547,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l535242",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655171",
               "49655173"
@@ -2572,7 +2562,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l535759",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655173",
               "49655172"
@@ -2587,7 +2577,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l985190",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655172",
               "49655187"
@@ -2602,7 +2592,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l952702",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655187",
               "49655170"
@@ -2617,7 +2607,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l580762",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655174",
               "49655176"
@@ -2632,7 +2622,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l761760",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655176",
               "49655177"
@@ -2647,7 +2637,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l951515",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655177",
               "49655178"
@@ -2662,7 +2652,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l949729",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655178",
               "49655179"
@@ -2677,7 +2667,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l852048",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655179",
               "49655180"
@@ -2692,7 +2682,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l641327",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655180",
               "49655181"
@@ -2707,7 +2697,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l715872",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655181",
               "49655182"
@@ -2722,7 +2712,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l832940",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655182",
               "49655183"
@@ -2737,7 +2727,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l685716",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655183",
               "49655184"
@@ -2752,7 +2742,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l345344",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655184",
               "49655175"
@@ -2774,7 +2764,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l636624",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "11745104",
               "49655186"
@@ -2789,7 +2779,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l595769",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "44438410",
               "29960715"
@@ -2804,7 +2794,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l520719",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "44438410",
               "49655186"
@@ -2819,7 +2809,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l947230",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "11745104",
               "44438418"
@@ -2834,7 +2824,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l595769",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "44438418",
               "29960715"
@@ -2849,7 +2839,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l622186",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "44438418",
               "29959289"
@@ -2864,7 +2854,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l329256",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "29959289",
               "49655171"
@@ -2879,7 +2869,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l589282",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655171",
               "29960715"
@@ -3032,7 +3022,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
               ]
             },
             "area": 484,
-            "parcelType": "nz-parcel-type:fee-simple-title",
+            "parcelType": "nz-parcel-type:l",
             "parcelPurpose": "nz-parcel-purpose:fst",
             "parcelState": "nz-parcel-state:created",
             "class": "nz-parcel-class:allotment",
@@ -3088,7 +3078,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
               ]
             },
             "area": 1196,
-            "parcelType": "nz-parcel-type:fee-simple-title",
+            "parcelType": "nz-parcel-type:l",
             "parcelPurpose": "nz-parcel-purpose:fst",
             "parcelState": "nz-parcel-state:created",
             "class": "nz-parcel-class:allotment",
@@ -4517,7 +4507,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l566592",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "11745160",
               "44438418"
@@ -4530,21 +4520,9 @@ This has a realistic set of features for a minimal survey (splitting a primary p
         {
           "type": "Feature",
           "id": "l973158",
-          "geometry": {
-            "type": "LineString",
-            "coordinates": [
-              [
-                174.7501603083,
-                -36.9307359096
-              ],
-              [
-                174.749997996,
-                -36.930903937
-              ]
-            ]
-          },
+          "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "1725787",
               "11745104"
@@ -4559,7 +4537,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l910380",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "11745160",
               "11745161"
@@ -4574,7 +4552,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l472486",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "11745160",
               "49655185"
@@ -4589,7 +4567,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l922788",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "49655186"
@@ -4604,7 +4582,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l773277",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "44438410"
@@ -4619,7 +4597,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l388393",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "49655172"
@@ -4634,7 +4612,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l941613",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "49655187"
@@ -4649,7 +4627,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l818068",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "49655170"
@@ -4664,7 +4642,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l599462",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "49655171"
@@ -4679,7 +4657,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l746686",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "29959289",
               "49655174"
@@ -4694,7 +4672,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l999724",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655174",
               "29962820"
@@ -4709,7 +4687,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l591175",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "29962820",
               "29963073"
@@ -4724,7 +4702,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l874826",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655175",
               "49655170"
@@ -4739,7 +4717,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l369793",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "29963073",
               "29963182"
@@ -4754,7 +4732,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l435861",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "29963182",
               "49655175"
@@ -4769,7 +4747,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l965727",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655170",
               "29960715"
@@ -4784,7 +4762,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l535242",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655171",
               "49655173"
@@ -4799,7 +4777,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l535759",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655173",
               "49655172"
@@ -4814,7 +4792,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l985190",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655172",
               "49655187"
@@ -4829,7 +4807,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l952702",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655187",
               "49655170"
@@ -4844,7 +4822,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l580762",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655174",
               "49655176"
@@ -4859,7 +4837,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l761760",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655176",
               "49655177"
@@ -4874,7 +4852,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l951515",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655177",
               "49655178"
@@ -4889,7 +4867,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l949729",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655178",
               "49655179"
@@ -4904,7 +4882,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l852048",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655179",
               "49655180"
@@ -4919,7 +4897,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l641327",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655180",
               "49655181"
@@ -4934,7 +4912,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l715872",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655181",
               "49655182"
@@ -4949,7 +4927,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l832940",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655182",
               "49655183"
@@ -4964,7 +4942,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l685716",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655183",
               "49655184"
@@ -4979,7 +4957,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l345344",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655184",
               "49655175"
@@ -5001,7 +4979,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l636624",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "11745104",
               "49655186"
@@ -5016,7 +4994,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l595769",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "44438410",
               "29960715"
@@ -5031,7 +5009,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l520719",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "44438410",
               "49655186"
@@ -5046,7 +5024,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l947230",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "11745104",
               "44438418"
@@ -5061,7 +5039,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l595769",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "44438418",
               "29960715"
@@ -5076,7 +5054,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l622186",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "44438418",
               "29959289"
@@ -5091,7 +5069,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l329256",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "29959289",
               "49655171"
@@ -5106,7 +5084,7 @@ This has a realistic set of features for a minimal survey (splitting a primary p
           "id": "l589282",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655171",
               "29960715"
@@ -5169,19 +5147,20 @@ This has a realistic set of features for a minimal survey (splitting a primary p
 #### ttl
 ```ttl
 @prefix angletype: <https://linked.data.gov.au/def/csdm/defs/angletypes/> .
-@prefix commonpatterns: <https://linked.data.gov.au/def/csdm/commonpatterns/> .
+@prefix commonpatterns: <https://w3id.org/ogc/utils/label/> .
 @prefix container: <https://linked.data.gov.au/def/csdm/container/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix distancetype: <https://linked.data.gov.au/def/csdm/defs/distancetypes/> .
 @prefix eg2: <http://csdm-example-surveys/DP-572532/> .
 @prefix epsg: <http://www.opengis.net/def/crs/EPSG/0/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <https://linked.data.gov.au/def/csdm/surveyobs/> .
+@prefix ns1: <https://linked.data.gov.au/def/csdm/commonpatterns/> .
+@prefix ns2: <https://linked.data.gov.au/def/csdm/surveyobs/> .
 @prefix nz-monument-condition: <https://linked.data.gov.au/def/csdm/nz-monument-condition/> .
 @prefix nz-monument-form: <https://linked.data.gov.au/def/csdm/nz-monument-form/> .
 @prefix nz-monument-state: <https://linked.data.gov.au/def/csdm/nz-monument-state/> .
 @prefix nz-surveypoint-purpose: <https://linked.data.gov.au/def/csdm/nz-surveypointpurpose/> .
-@prefix parcel: <https://linked.data.gov.au/def/csdm/parcels/> .
+@prefix parcel: <https://w3id.org/ogc/ladm/parcels/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -5194,11 +5173,11 @@ This has a realistic set of features for a minimal survey (splitting a primary p
 
 eg2:44396823 a surv:CadastralMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "ALP I DP 481392" ;
-            dcterms:hasPart [ rdfs:label "DP 481392" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Source> ],
-                [ rdfs:label "ALP I" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
+    ns1:name [ rdfs:label "ALP I DP 481392" ;
+            dcterms:hasPart [ rdfs:label "ALP I" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "DP 481392" ;
+                    commonpatterns:namePartType "Source" ] ] ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
             surv:form nz-monument-form:pin ;
             surv:state nz-monument-state:original ] ;
@@ -5207,62 +5186,62 @@ eg2:44396823 a surv:CadastralMark,
             geojson:coordinates ( 1.747508e+02 -3.693141e+01 ) ] .
 
 eg2:8446454 a geojson:Feature ;
+    geojson:topology [ a geojson:Polygon ;
+            topo:relatedFeatures ( ( eg2:l535242 eg2:l535759 eg2:l985190 eg2:l952702 eg2:l965727 eg2:l589282 ) ) ] ;
     parcel:appellation [ rdfs:label "Lot 1 DP 572532" ;
             dcterms:hasPart [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanIdentifier> ],
-                [ rdfs:label "1" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/ParcelIdentifier> ],
-                [ rdfs:label "Lot" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/ParcelType> ],
+                    commonpatterns:namePartType "PlanIdentifier" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ] ] ;
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "1" ;
+                    commonpatterns:namePartType "ParcelIdentifier" ],
+                [ rdfs:label "Lot" ;
+                    commonpatterns:namePartType "ParcelType" ] ] ;
     parcel:interest [ parcel:interestLink eg2:1040074 ;
             parcel:interestType <nz-interest-type:fh> ] ;
     parcel:purpose <nz-parcel-purpose:fst> ;
     parcel:state <nz-parcel-state:created> ;
     parcel:surfaceArea 484 ;
-    parcel:type <nz-parcel-type:fee-simple-title> ;
-    geojson:topology [ a geojson:Polygon ;
-            geojson:relatedFeatures ( ( eg2:l535242 eg2:l535759 eg2:l985190 eg2:l952702 eg2:l965727 eg2:l589282 ) ) ] .
+    parcel:type <nz-parcel-type:l> .
 
 eg2:8446455 a geojson:Feature ;
+    geojson:topology [ a geojson:Polygon ;
+            topo:relatedFeatures ( ( eg2:l746686 eg2:l999724 eg2:l591175 eg2:l435861 eg2:l874826 eg2:l952702 eg2:l985190 eg2:l535759 eg2:l535242 eg2:l329256 ) ) ] ;
     parcel:appellation [ rdfs:label "Lot 2 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "2" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/ParcelIdentifier> ],
-                [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanIdentifier> ],
+            dcterms:hasPart [ rdfs:label "572532" ;
+                    commonpatterns:namePartType "PlanIdentifier" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "Lot" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/ParcelType> ] ] ;
+                    commonpatterns:namePartType "ParcelType" ],
+                [ rdfs:label "2" ;
+                    commonpatterns:namePartType "ParcelIdentifier" ] ] ;
     parcel:interest [ parcel:interestLink eg2:1040075 ;
             parcel:interestType <nz-interest-type:fh> ] ;
     parcel:purpose <nz-parcel-purpose:fst> ;
     parcel:state <nz-parcel-state:created> ;
     parcel:surfaceArea 1196 ;
-    parcel:type <nz-parcel-type:fee-simple-title> ;
-    geojson:topology [ a geojson:Polygon ;
-            geojson:relatedFeatures ( ( eg2:l746686 eg2:l999724 eg2:l591175 eg2:l435861 eg2:l874826 eg2:l952702 eg2:l985190 eg2:l535759 eg2:l535242 eg2:l329256 ) ) ] .
+    parcel:type <nz-parcel-type:l> .
 
-eg2:8446456 a parcel:SecondaryParcel,
-        geojson:Feature ;
+eg2:8446456 a geojson:Feature,
+        parcel:SecondaryParcel ;
+    geojson:topology [ a geojson:Polygon ;
+            topo:relatedFeatures ( ( eg2:l999724 eg2:l591175 eg2:l369793 eg2:l435861 eg2:l345344 eg2:l685716 eg2:l832940 eg2:l715872 eg2:l641327 eg2:l852048 eg2:l949729 eg2:l951515 eg2:l761760 eg2:l580762 ) ) ] ;
     parcel:appellation [ rdfs:label "Area Z DP 572532" ;
-            dcterms:hasPart [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanIdentifier> ],
+            dcterms:hasPart [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "572532" ;
+                    commonpatterns:namePartType "PlanIdentifier" ],
                 [ rdfs:label "Area" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/ParcelType> ],
+                    commonpatterns:namePartType "ParcelType" ],
                 [ rdfs:label "Z" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/ParcelIdentifier> ],
-                [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ] ] ;
+                    commonpatterns:namePartType "ParcelIdentifier" ] ] ;
     parcel:interest [ parcel:interestLink eg2:1040075 ;
             parcel:interestType <nz-interest-type:fh> ] ;
     parcel:purpose <nz-parcel-purpose:c-l> ;
     parcel:state <nz-parcel-state:created> ;
     parcel:surfaceArea 1196 ;
-    parcel:type <nz-parcel-type:covenant-land> ;
-    geojson:topology [ a geojson:Polygon ;
-            geojson:relatedFeatures ( ( eg2:l999724 eg2:l591175 eg2:l369793 eg2:l435861 eg2:l345344 eg2:l685716 eg2:l832940 eg2:l715872 eg2:l641327 eg2:l852048 eg2:l949729 eg2:l951515 eg2:l761760 eg2:l580762 ) ) ] .
+    parcel:type <nz-parcel-type:covenant-land> .
 
 eg2:BoundaryMarks a geojson:FeatureCollection ;
     geojson:collectionFeatureType "SurveyPoint" ;
@@ -5307,83 +5286,81 @@ eg2:adoptedVectors a geojson:FeatureCollection ;
         eg2:l636624,
         eg2:l947230 .
 
-eg2:covenants a parcel:SecondaryParcel,
-        geojson:FeatureCollection ;
+eg2:covenants a geojson:FeatureCollection,
+        parcel:SecondaryParcel ;
     geojson:features eg2:8446456 .
 
 eg2:l388393 a geojson:Feature ;
     container:purpose eg2:radiation ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655185 eg2:49655172 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655185 eg2:49655172 ) ] .
 
 eg2:l472486 a geojson:Feature ;
     container:purpose eg2:traverse ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:11745160 eg2:49655185 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:11745160 eg2:49655185 ) ] .
 
 eg2:l520719 a geojson:Feature ;
     container:purpose eg2:adoption ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:44438410 eg2:49655186 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:44438410 eg2:49655186 ) ] .
 
 eg2:l595769 a geojson:Feature ;
     container:purpose eg2:adoption ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:44438418 eg2:29960715 ) ],
-        [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:44438410 eg2:29960715 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:44438418 eg2:29960715 ) ],
+        [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:44438410 eg2:29960715 ) ] .
 
 eg2:l599462 a geojson:Feature ;
     container:purpose eg2:radiation ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655185 eg2:49655171 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655185 eg2:49655171 ) ] .
 
 eg2:l622186 a geojson:Feature ;
     container:purpose eg2:adoption ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:44438418 eg2:29959289 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:44438418 eg2:29959289 ) ] .
 
 eg2:l636624 a geojson:Feature ;
     container:purpose eg2:adoption ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:11745104 eg2:49655186 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:11745104 eg2:49655186 ) ] .
 
 eg2:l773277 a geojson:Feature ;
     container:purpose eg2:traverse ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655185 eg2:44438410 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655185 eg2:44438410 ) ] .
 
 eg2:l818068 a geojson:Feature ;
     container:purpose eg2:calculation ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655185 eg2:49655170 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655185 eg2:49655170 ) ] .
 
 eg2:l910380 a geojson:Feature ;
     container:purpose eg2:traverse ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:11745160 eg2:11745161 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:11745160 eg2:11745161 ) ] .
 
 eg2:l922788 a geojson:Feature ;
     container:purpose eg2:radiation ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655185 eg2:49655186 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655185 eg2:49655186 ) ] .
 
 eg2:l941613 a geojson:Feature ;
     container:purpose eg2:radiation ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655185 eg2:49655187 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655185 eg2:49655187 ) ] .
 
 eg2:l947230 a geojson:Feature ;
     container:purpose eg2:adoption ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:11745104 eg2:44438418 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:11745104 eg2:44438418 ) ] .
 
 eg2:l973158 a geojson:Feature ;
     container:purpose eg2:traverse ;
-    geojson:geometry [ a geojson:LineString ;
-            geojson:coordinates ( ( 1.747502e+02 -3.693074e+01 ) ( 1.7475e+02 -3.69309e+01 ) ) ] ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:1725787 eg2:11745104 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:1725787 eg2:11745104 ) ] .
 
 eg2:observedVectors a geojson:FeatureCollection ;
     geojson:collectionFeatureType "ObservedVector" ;
@@ -5419,8 +5396,8 @@ eg2:observedVectors a geojson:FeatureCollection ;
         eg2:l985190,
         eg2:l999724 .
 
-eg2:primaryparcels a parcel:PrimaryParcel,
-        geojson:FeatureCollection ;
+eg2:primaryparcels a geojson:FeatureCollection,
+        parcel:PrimaryParcel ;
     geojson:features eg2:8446454,
         eg2:8446455 .
 
@@ -5429,8 +5406,8 @@ eg2:vectorobservations-gps a sosa:ObservationCollection,
     sosa:hasMember [ a geojson:Feature ;
             sosa:hasFeatureOfInterest eg2:l566592 ;
             sosa:hasResult [ surv:distance 9.506e+01 ] ;
-            ns1:angleType angletype:bearing ;
-            ns1:distanceType distancetype:ellipsoidal ] ;
+            ns2:angleType angletype:bearing ;
+            ns2:distanceType distancetype:ellipsoidal ] ;
     sosa:madeBySensor [ a <icsm-equipment-type:gnss> ;
             sosa:hasSubSystem <https://linked.data.gov.au/def/csdm/sensors/s1>,
                 <https://linked.data.gov.au/def/csdm/sensors/s2> ] ;
@@ -5444,16 +5421,16 @@ eg2:vectorobservations-gps a sosa:ObservationCollection,
 
 eg2:11745161 a surv:CadastralMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "LP X DP 119552" ;
-            dcterms:hasPart [ rdfs:label "LP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
-                [ rdfs:label "119552" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+    ns1:name [ rdfs:label "LP X DP 119552" ;
+            dcterms:hasPart [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "X" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ] ] ;
-    commonpatterns:qualityMeasure 6 ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "LP" ;
+                    commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "119552" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
+    ns1:qualityMeasure 6 ;
     surv:fromSurvey eg2:DP_119552 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
             surv:form nz-monument-form:plug ;
@@ -5465,11 +5442,11 @@ eg2:11745161 a surv:CadastralMark,
 eg2:1725787 a surv:BoundaryMark,
         geojson:Feature ;
     rdfs:comment "ALP in channel of drive" ;
-    commonpatterns:name [ rdfs:label "RM E DP 119552" ;
-            dcterms:hasPart [ rdfs:label "RM E" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "DP 119552" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Source> ] ] ;
+    ns1:name [ rdfs:label "RM E DP 119552" ;
+            dcterms:hasPart [ rdfs:label "DP 119552" ;
+                    commonpatterns:namePartType "Source" ],
+                [ rdfs:label "RM E" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
     surv:fromSurvey eg2:DP_119552 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
             surv:form nz-monument-form:plaque ;
@@ -5480,101 +5457,101 @@ eg2:1725787 a surv:BoundaryMark,
 
 eg2:l329256 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:29959289 eg2:49655171 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:29959289 eg2:49655171 ) ] .
 
 eg2:l345344 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655184 eg2:49655175 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655184 eg2:49655175 ) ] .
 
 eg2:l369793 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:29963073 eg2:29963182 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:29963073 eg2:29963182 ) ] .
 
 eg2:l566592 a geojson:Feature ;
     container:purpose eg2:radiation ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:11745160 eg2:44438418 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:11745160 eg2:44438418 ) ] .
 
 eg2:l580762 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655174 eg2:49655176 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655174 eg2:49655176 ) ] .
 
 eg2:l589282 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655171 eg2:29960715 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655171 eg2:29960715 ) ] .
 
 eg2:l641327 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655180 eg2:49655181 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655180 eg2:49655181 ) ] .
 
 eg2:l685716 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655183 eg2:49655184 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655183 eg2:49655184 ) ] .
 
 eg2:l715872 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655181 eg2:49655182 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655181 eg2:49655182 ) ] .
 
 eg2:l746686 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:29959289 eg2:49655174 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:29959289 eg2:49655174 ) ] .
 
 eg2:l761760 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655176 eg2:49655177 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655176 eg2:49655177 ) ] .
 
 eg2:l832940 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655182 eg2:49655183 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655182 eg2:49655183 ) ] .
 
 eg2:l852048 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655179 eg2:49655180 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655179 eg2:49655180 ) ] .
 
 eg2:l874826 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655175 eg2:49655170 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655175 eg2:49655170 ) ] .
 
 eg2:l949729 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655178 eg2:49655179 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655178 eg2:49655179 ) ] .
 
 eg2:l951515 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655177 eg2:49655178 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655177 eg2:49655178 ) ] .
 
 eg2:l965727 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655170 eg2:29960715 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655170 eg2:29960715 ) ] .
 
 eg2:29962820 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "Peg 4 DP 119552" ;
+    ns1:name [ rdfs:label "Peg 4 DP 119552" ;
             dcterms:hasPart [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
-                [ rdfs:label "119552" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "Peg" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
+                    commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "119552" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "4" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
-    commonpatterns:qualityMeasure 7 ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
+    ns1:qualityMeasure 7 ;
     surv:fromSurvey eg2:DP_119552 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:peg ;
@@ -5585,16 +5562,16 @@ eg2:29962820 a surv:BoundaryMark,
 
 eg2:29963073 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "Peg 8 DP 119553" ;
-            dcterms:hasPart [ rdfs:label "8" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "119553" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+    ns1:name [ rdfs:label "Peg 8 DP 119553" ;
+            dcterms:hasPart [ rdfs:label "119553" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "Peg" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
+                    commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "8" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ] ] ;
-    commonpatterns:qualityMeasure 7 ;
+                    commonpatterns:namePartType "PlanType" ] ] ;
+    ns1:qualityMeasure 7 ;
     surv:fromSurvey eg2:DP_119553 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:peg ;
@@ -5605,16 +5582,16 @@ eg2:29963073 a surv:BoundaryMark,
 
 eg2:29963182 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "Peg 7 DP 119553" ;
-            dcterms:hasPart [ rdfs:label "119553" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+    ns1:name [ rdfs:label "Peg 7 DP 119553" ;
+            dcterms:hasPart [ rdfs:label "7" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "Peg" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
-                [ rdfs:label "7" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+                    commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "119553" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ] ] ;
-    commonpatterns:qualityMeasure 7 ;
+                    commonpatterns:namePartType "PlanType" ] ] ;
+    ns1:qualityMeasure 7 ;
     surv:fromSurvey eg2:DP_119553 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:peg ;
@@ -5625,16 +5602,16 @@ eg2:29963182 a surv:BoundaryMark,
 
 eg2:49655173 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "Peg 19 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "Peg" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
+    ns1:name [ rdfs:label "Peg 19 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "572532" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "19" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "Peg" ;
+                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ] ] ;
-    commonpatterns:qualityMeasure 7 ;
+                    commonpatterns:namePartType "PlanType" ] ] ;
+    ns1:qualityMeasure 7 ;
     surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
             surv:form nz-monument-form:Peg ;
@@ -5645,16 +5622,16 @@ eg2:49655173 a surv:BoundaryMark,
 
 eg2:49655176 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "UNMK 22 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+    ns1:name [ rdfs:label "UNMK 22 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "22" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
-                [ rdfs:label "22" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "572532" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ] ] ;
-    commonpatterns:qualityMeasure 8 ;
+                    commonpatterns:namePartType "MarkType" ] ] ;
+    ns1:qualityMeasure 8 ;
     surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
@@ -5665,16 +5642,16 @@ eg2:49655176 a surv:BoundaryMark,
 
 eg2:49655177 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "UNMK 23 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "23" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+    ns1:name [ rdfs:label "UNMK 23 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "572532" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "23" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
-                [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
-    commonpatterns:qualityMeasure 8 ;
+                    commonpatterns:namePartType "MarkType" ] ] ;
+    ns1:qualityMeasure 8 ;
     surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
@@ -5685,16 +5662,16 @@ eg2:49655177 a surv:BoundaryMark,
 
 eg2:49655178 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "UNMK 24 DP 572532" ;
+    ns1:name [ rdfs:label "UNMK 24 DP 572532" ;
             dcterms:hasPart [ rdfs:label "24" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "UNMK" ;
+                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
-    commonpatterns:qualityMeasure 8 ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
+    ns1:qualityMeasure 8 ;
     surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
@@ -5705,16 +5682,16 @@ eg2:49655178 a surv:BoundaryMark,
 
 eg2:49655179 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "UNMK 25 DP 572532" ;
+    ns1:name [ rdfs:label "UNMK 25 DP 572532" ;
             dcterms:hasPart [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
-                [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "25" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ] ] ;
-    commonpatterns:qualityMeasure 8 ;
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "25" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "572532" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
+    ns1:qualityMeasure 8 ;
     surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
@@ -5725,16 +5702,16 @@ eg2:49655179 a surv:BoundaryMark,
 
 eg2:49655180 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "UNMK 26 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "26" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+    ns1:name [ rdfs:label "UNMK 26 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
-                [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
+                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
-    commonpatterns:qualityMeasure 8 ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "26" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
+    ns1:qualityMeasure 8 ;
     surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
@@ -5745,16 +5722,16 @@ eg2:49655180 a surv:BoundaryMark,
 
 eg2:49655181 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "UNMK 27 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
+    ns1:name [ rdfs:label "UNMK 27 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "27" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "27" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "UNMK" ;
+                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ] ] ;
-    commonpatterns:qualityMeasure 8 ;
+                    commonpatterns:namePartType "PlanType" ] ] ;
+    ns1:qualityMeasure 8 ;
     surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
@@ -5765,16 +5742,16 @@ eg2:49655181 a surv:BoundaryMark,
 
 eg2:49655182 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "UNMK 28 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "28" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+    ns1:name [ rdfs:label "UNMK 28 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "UNMK" ;
+                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "28" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ] ] ;
-    commonpatterns:qualityMeasure 8 ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
+    ns1:qualityMeasure 8 ;
     surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
@@ -5785,16 +5762,16 @@ eg2:49655182 a surv:BoundaryMark,
 
 eg2:49655183 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "UNMK 29 DP 572532" ;
+    ns1:name [ rdfs:label "UNMK 29 DP 572532" ;
             dcterms:hasPart [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
-                [ rdfs:label "29" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
+                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
-    commonpatterns:qualityMeasure 8 ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "29" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
+    ns1:qualityMeasure 8 ;
     surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
@@ -5805,16 +5782,16 @@ eg2:49655183 a surv:BoundaryMark,
 
 eg2:49655184 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "UNMK 30 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
-                [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
+    ns1:name [ rdfs:label "UNMK 30 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "UNMK" ;
+                    commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "30" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
-    commonpatterns:qualityMeasure 8 ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "572532" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
+    ns1:qualityMeasure 8 ;
     surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
@@ -5825,54 +5802,54 @@ eg2:49655184 a surv:BoundaryMark,
 
 eg2:l435861 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:29963182 eg2:49655175 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:29963182 eg2:49655175 ) ] .
 
 eg2:l535242 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655171 eg2:49655173 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655171 eg2:49655173 ) ] .
 
 eg2:l535759 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655173 eg2:49655172 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655173 eg2:49655172 ) ] .
 
 eg2:l591175 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:29962820 eg2:29963073 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:29962820 eg2:29963073 ) ] .
 
 eg2:l952702 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655187 eg2:49655170 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655187 eg2:49655170 ) ] .
 
 eg2:l985190 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655172 eg2:49655187 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655172 eg2:49655187 ) ] .
 
 eg2:l999724 a geojson:Feature ;
     container:purpose eg2:boundary ;
-    geojson:topology [ a geojson:LineString ;
-            geojson:relatedFeatures ( eg2:49655174 eg2:29962820 ) ] .
+    geojson:topology [ a topo:Edge ;
+            topo:relatedFeatures ( eg2:49655174 eg2:29962820 ) ] .
 
 eg2:11745104 a surv:GeodeticReferenceMark,
         geojson:Feature ;
     rdfs:comment "Brass circular plaque flush in channel" ;
-    commonpatterns:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
-            dcterms:hasPart [ rdfs:label "C" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "RM" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
+    ns1:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
+            dcterms:hasPart [ rdfs:label "EQ9W" ;
+                    commonpatterns:namePartType "geodeticStamp" ],
                 [ rdfs:label "119552" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "EQ9W" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/geodeticStamp> ],
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ] ] ;
-    commonpatterns:qualityMeasure 5 ;
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "C" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "RM" ;
+                    commonpatterns:namePartType "MarkType" ] ] ;
+    ns1:qualityMeasure 5 ;
     surv:fromSurvey eg2:DP_119552 ;
     surv:geodeticid "EQ9W" ;
     surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
@@ -5884,16 +5861,16 @@ eg2:11745104 a surv:GeodeticReferenceMark,
 
 eg2:11745160 a surv:CadastralMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "RM E DP 119552" ;
+    ns1:name [ rdfs:label "RM E DP 119552" ;
             dcterms:hasPart [ rdfs:label "E" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "RM" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
-                [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "119552" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
-    commonpatterns:qualityMeasure 6 ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "RM" ;
+                    commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ] ] ;
+    ns1:qualityMeasure 6 ;
     surv:fromSurvey eg2:DP_119552 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
             surv:form nz-monument-form:plaque ;
@@ -5904,16 +5881,16 @@ eg2:11745160 a surv:CadastralMark,
 
 eg2:29959289 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "Peg 3 DP 119553" ;
-            dcterms:hasPart [ rdfs:label "Peg" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
+    ns1:name [ rdfs:label "Peg 3 DP 119553" ;
+            dcterms:hasPart [ rdfs:label "3" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "Peg" ;
+                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "119553" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "3" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
-    commonpatterns:qualityMeasure 7 ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
+    ns1:qualityMeasure 7 ;
     surv:fromSurvey eg2:DP_119553 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-found-replaced ;
             surv:form nz-monument-form:peg ;
@@ -5925,16 +5902,16 @@ eg2:29959289 a surv:BoundaryMark,
 eg2:44438410 a surv:CadastralMark,
         geojson:Feature ;
     rdfs:comment "ORM in channel above catch pits" ;
-    commonpatterns:name [ rdfs:label "RM I DP 119553" ;
-            dcterms:hasPart [ rdfs:label "RM" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
-                [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
+    ns1:name [ rdfs:label "RM I DP 119553" ;
+            dcterms:hasPart [ rdfs:label "119553" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "I" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "119553" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
-    commonpatterns:qualityMeasure 6 ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "RM" ;
+                    commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ] ] ;
+    ns1:qualityMeasure 6 ;
     surv:fromSurvey eg2:DP_119553 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
             surv:form nz-monument-form:plaque ;
@@ -5945,16 +5922,16 @@ eg2:44438410 a surv:CadastralMark,
 
 eg2:49655172 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "Peg 18 DP 572532" ;
+    ns1:name [ rdfs:label "Peg 18 DP 572532" ;
             dcterms:hasPart [ rdfs:label "18" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
-                [ rdfs:label "Peg" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
-    commonpatterns:qualityMeasure 7 ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "Peg" ;
+                    commonpatterns:namePartType "MarkType" ] ] ;
+    ns1:qualityMeasure 7 ;
     surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
             surv:form nz-monument-form:Peg ;
@@ -5965,16 +5942,16 @@ eg2:49655172 a surv:BoundaryMark,
 
 eg2:49655174 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "UNMK 20 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "20" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
+    ns1:name [ rdfs:label "UNMK 20 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "572532" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ] ] ;
-    commonpatterns:qualityMeasure 7 ;
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "UNMK" ;
+                    commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "20" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
+    ns1:qualityMeasure 7 ;
     surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
@@ -5985,16 +5962,16 @@ eg2:49655174 a surv:BoundaryMark,
 
 eg2:49655175 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "UNMK 21 DP 572532" ;
+    ns1:name [ rdfs:label "UNMK 21 DP 572532" ;
             dcterms:hasPart [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
-                [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "21" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
-    commonpatterns:qualityMeasure 7 ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "UNMK" ;
+                    commonpatterns:namePartType "MarkType" ] ] ;
+    ns1:qualityMeasure 7 ;
     surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
             surv:form nz-monument-form:UNMK ;
@@ -6006,16 +5983,16 @@ eg2:49655175 a surv:BoundaryMark,
 eg2:49655186 a surv:CadastralMark,
         geojson:Feature ;
     rdfs:comment "ORM in channel above catch pits" ;
-    commonpatterns:name [ rdfs:label "RM H DP 119553" ;
+    ns1:name [ rdfs:label "RM H DP 119553" ;
             dcterms:hasPart [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
-                [ rdfs:label "RM" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
-                [ rdfs:label "H" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "119553" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
-    commonpatterns:qualityMeasure 6 ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "RM" ;
+                    commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "H" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
+    ns1:qualityMeasure 6 ;
     surv:fromSurvey eg2:DP_119553 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
             surv:form nz-monument-form:plaque ;
@@ -6026,16 +6003,16 @@ eg2:49655186 a surv:CadastralMark,
 
 eg2:49655187 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "Peg 38 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "Peg" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
-                [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
-                [ rdfs:label "38" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+    ns1:name [ rdfs:label "Peg 38 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "38" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
-    commonpatterns:qualityMeasure 7 ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "Peg" ;
+                    commonpatterns:namePartType "MarkType" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ] ] ;
+    ns1:qualityMeasure 7 ;
     surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
             surv:form nz-monument-form:Peg ;
@@ -6046,16 +6023,16 @@ eg2:49655187 a surv:BoundaryMark,
 
 eg2:29960715 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "Peg 6 DP 119553" ;
+    ns1:name [ rdfs:label "Peg 6 DP 119553" ;
             dcterms:hasPart [ rdfs:label "119553" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "6" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "Peg" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ] ] ;
-    commonpatterns:qualityMeasure 7 ;
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "Peg" ;
+                    commonpatterns:namePartType "MarkType" ] ] ;
+    ns1:qualityMeasure 7 ;
     surv:fromSurvey eg2:DP_119553 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:searched-for-not-found ;
             surv:form nz-monument-form:peg ;
@@ -6067,16 +6044,16 @@ eg2:29960715 a surv:BoundaryMark,
 eg2:44438418 a surv:CadastralMark,
         geojson:Feature ;
     rdfs:comment "ALP in channel of drive" ;
-    commonpatterns:name [ rdfs:label "ALP I DP 481392" ;
+    ns1:name [ rdfs:label "ALP I DP 481392" ;
             dcterms:hasPart [ rdfs:label "I" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
-                [ rdfs:label "ALP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "481392" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
-    commonpatterns:qualityMeasure 6 ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "ALP" ;
+                    commonpatterns:namePartType "MarkType" ] ] ;
+    ns1:qualityMeasure 6 ;
     surv:fromSurvey eg2:DP_481392 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
             surv:form nz-monument-form:pin ;
@@ -6087,16 +6064,16 @@ eg2:44438418 a surv:CadastralMark,
 
 eg2:49655170 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "UNMK 14 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
-                [ rdfs:label "UNMK" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
-                [ rdfs:label "14" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+    ns1:name [ rdfs:label "UNMK 14 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "UNMK" ;
+                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ] ] ;
-    commonpatterns:qualityMeasure 7 ;
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "572532" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "14" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
+    ns1:qualityMeasure 7 ;
     surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:mark-impractible ;
             surv:form nz-monument-form:UNMK ;
@@ -6107,16 +6084,16 @@ eg2:49655170 a surv:BoundaryMark,
 
 eg2:49655171 a surv:BoundaryMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "DISK 15 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "Disk" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
-                [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+    ns1:name [ rdfs:label "DISK 15 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "572532" ;
+                    commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "Disk" ;
+                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "15" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
-    commonpatterns:qualityMeasure 7 ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
+    ns1:qualityMeasure 7 ;
     surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
             surv:form nz-monument-form:peg ;
@@ -6132,16 +6109,16 @@ eg2:DP_119552 rdfs:label "DP 119552" ;
 eg2:49655185 a surv:CadastralMark,
         geojson:Feature ;
     rdfs:comment "Flush in conc" ;
-    commonpatterns:name [ rdfs:label "AP 1 DP 572532" ;
+    ns1:name [ rdfs:label "AP 1 DP 572532" ;
             dcterms:hasPart [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/PlanType> ],
-                [ rdfs:label "1" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ],
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "AP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/MarkType> ],
+                    commonpatterns:namePartType "MarkType" ],
                 [ rdfs:label "572532" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/names/localPartType/Stamp> ] ] ;
-    commonpatterns:qualityMeasure 6 ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "1" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
+    ns1:qualityMeasure 6 ;
     surv:fromSurvey eg2:DP_572532 ;
     surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
             surv:form nz-monument-form:pin ;
@@ -6203,23 +6180,23 @@ $defs:
     - $ref: https://beta.schemas.opengis.net/json-fg/featurecollection.json
     - $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/json-fg/feature-lenient/schema.yaml
     - $ref: https://geojson.org/schema/FeatureCollection.json
-    - $ref: https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature-collection/schema.yaml
+    - $ref: https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature-collection/schema.yaml
   TopoFeatureCollection:
-    $ref: https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature-collection/schema.yaml
+    $ref: https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature-collection/schema.yaml
   SOSAObsCollection:
     $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml
   TopoLine:
     allOf:
-    - $ref: https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-line/schema.yaml
+    - $ref: https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-line/schema.yaml
   TopoArc:
-    $ref: https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-arc/schema.yaml
+    $ref: https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-arc/schema.yaml
   SubtendedAngleVector:
     allOf:
-    - $ref: https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature/schema.yaml
+    - $ref: https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature/schema.yaml
     - properties:
         topology:
           allOf:
-          - $ref: https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/datatypes/topology/schema.yaml
+          - $ref: https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/datatypes/topology/schema.yaml
           - properties:
               type:
                 type: string
@@ -6287,112 +6264,6 @@ $defs:
       features:
         items:
           $ref: '#/$defs/TopoVector'
-  ParcelProperties:
-    properties:
-      properties:
-        properties:
-          appellation:
-            $ref: https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
-            x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/appellation
-          parcelType:
-            $ref: '#/$defs/coderef'
-            x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/type
-            x-jsonld-type: '@id'
-          parcelState:
-            $ref: '#/$defs/coderef'
-            x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/state
-            x-jsonld-type: '@id'
-          address:
-            type: object
-            x-jsonld-id: https://schema.org/address
-          parcelPurpose:
-            $ref: '#/$defs/coderef'
-            x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/purpose
-            x-jsonld-type: '@id'
-          area:
-            type: number
-            x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/surfaceArea
-          floor:
-            type: string
-            x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/floor
-          zmin:
-            type: number
-            x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/zmin
-          zmax:
-            type: number
-            x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/zmax
-          interests:
-            type: array
-            additionalProperties: false
-            items:
-              properties:
-                interestLink:
-                  $ref: '#/$defs/coderef'
-                  x-jsonld-type: '@id'
-                  x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/interestLink
-                interestName:
-                  type: string
-                  x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/interestName
-                interestType:
-                  $ref: '#/$defs/coderef'
-                  x-jsonld-type: '@id'
-                  x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/interestType
-                dateInForce:
-                  $ref: '#/$defs/dateTime'
-                  x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/interestDateInForce
-                dateExpires:
-                  $ref: '#/$defs/dateTime'
-                  x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/interestDateExpires
-                statuteLink:
-                  $ref: '#/$defs/coderef'
-                  x-jsonld-type: '@id'
-                  x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/statuteLink
-                statuteName:
-                  type: string
-                  x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/statuteName
-                benefitedPartyName:
-                  type: string
-                  x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/benefitedPartyName
-                benefitedPartyLink:
-                  $ref: '#/$defs/coderef'
-                  x-jsonld-type: '@id'
-                  x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/benefitedPartyLink
-                originalSurveyLink:
-                  $ref: '#/$defs/coderef'
-                  x-jsonld-type: '@id'
-                  x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/originalSurveyLink
-                referencedParcel:
-                  $ref: '#/$defs/coderef'
-                  x-jsonld-type: '@id'
-                  x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/referencedParcel
-                burdenedParcels:
-                  $ref: '#/$defs/coderefList'
-                  x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/burdened
-                  x-jsonld-container: '@set'
-                benefitedParcels:
-                  $ref: '#/$defs/coderefList'
-                  x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/benefited
-                  x-jsonld-container: '@set'
-                description:
-                  type: string
-                  x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/interestDescription
-                entitlementPortion:
-                  type: string
-                  x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/entitlementPortion
-                liabilityPortion:
-                  type: string
-                  x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/liabilityPortion
-              required:
-              - interestLink
-              - interestType
-            required:
-            - appellation
-            - parcelType
-            - parcelState
-            - parcelPurpose
-            x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/interest
-            x-jsonld-container: '@set'
-        x-jsonld-id: '@nest'
 allOf:
 - $ref: '#/$defs/FeatureCollectionOptions'
 - properties:
@@ -6417,7 +6288,7 @@ properties:
     type: string
     x-jsonld-id: https://linked.data.gov.au/def/csdm/container/surveyDescription
   surveyDescriptors:
-    $ref: https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.yaml
+    $ref: https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema.yaml
     x-jsonld-id: https://linked.data.gov.au/def/csdm/container/surveyDescriptors
   purpose:
     oneOf:
@@ -6530,7 +6401,7 @@ properties:
     type: array
     items:
       allOf:
-      - $ref: '#/$defs/FeatureCollectionOptions'
+      - $ref: https://ogcincubator.github.io/bblocks-land-parcels/build/annotated/ladm/land-parcels/parcelCollection/schema.yaml
       - properties:
           featureType:
             enum:
@@ -6539,10 +6410,6 @@ properties:
             - SecondaryParcel
             - surv:SecondaryParcel
             x-jsonld-id: '@type'
-          features:
-            type: array
-            items:
-              $ref: '#/$defs/ParcelProperties'
         required:
         - featureType
       - oneOf:
@@ -6599,23 +6466,19 @@ oneOf:
   - compoundCRS
 x-jsonld-extra-terms:
   CSD: https://linked.data.gov.au/def/csdm/container/CSD
+  address: https://schema.org/address
   locality: https://linked.data.gov.au/def/csdm/csd/locality
   edges: topo:edges
   PrimaryParcel:
-    x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/PrimaryParcel
+    x-jsonld-id: parcel:PrimaryParcel
     x-jsonld-type: '@id'
   SecondaryParcel:
-    x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/SecondaryParcel
+    x-jsonld-id: parcel:SecondaryParcel
     x-jsonld-type: '@id'
-  parcelQualityClass:
-    x-jsonld-id: https://linked.data.gov.au/def/csdm/parcels/qualityClass
-    x-jsonld-type: '@id'
-  terrainIntersectionCurve: https://linked.data.gov.au/def/csdm/parcels/terrainIntersectionCurve
 x-jsonld-prefixes:
   container: https://linked.data.gov.au/def/csdm/container/
   sdo: https://schema.org/
   csd: https://linked.data.gov.au/def/csdm/csd/
-  parcel: https://linked.data.gov.au/def/csdm/parcels/
   surv: https://linked.data.gov.au/def/csdm/surveyfeatures/
 
 ```
@@ -6674,13 +6537,7 @@ Links to the schema:
         "topology": {
           "@context": {
             "references": {
-              "@context": {
-                "ref": {
-                  "@type": "@id",
-                  "@id": "topo:ref"
-                }
-              },
-              "@id": "geojson:relatedFeatures",
+              "@id": "topo:relatedFeatures",
               "@type": "@id",
               "@container": "@list"
             },
@@ -6694,12 +6551,34 @@ Links to the schema:
               "@id": "topo:directedReferences",
               "@container": "@list"
             },
-            "rings": {
-              "@id": "topo:rings",
-              "@container": "@list"
-            },
-            "shells": {
-              "@id": "topo:shells",
+            "relationships": {
+              "@context": {
+                "href": {
+                  "@type": "@id",
+                  "@id": "oa:hasTarget"
+                },
+                "rel": {
+                  "@context": {
+                    "@base": "http://www.iana.org/assignments/relation/"
+                  },
+                  "@id": "http://www.iana.org/assignments/relation",
+                  "@type": "@id"
+                },
+                "type": "dct:type",
+                "hreflang": "dct:language",
+                "title": "rdfs:label",
+                "length": "dct:extent",
+                "role": {
+                  "@id": "prof:hasRole",
+                  "@type": "@id"
+                },
+                "conformsTo": {
+                  "@id": "dct:conformsTo",
+                  "@type": "@id"
+                }
+              },
+              "@id": "topo:relatedFeatures",
+              "@type": "@id",
               "@container": "@list"
             }
           },
@@ -6815,6 +6694,7 @@ Links to the schema:
       "@id": "container:annotations"
     },
     "CSD": "container:CSD",
+    "address": "sdo:address",
     "locality": "csd:locality",
     "edges": "topo:edges",
     "PrimaryParcel": {
@@ -6825,11 +6705,6 @@ Links to the schema:
       "@id": "parcel:SecondaryParcel",
       "@type": "@id"
     },
-    "parcelQualityClass": {
-      "@id": "parcel:qualityClass",
-      "@type": "@id"
-    },
-    "terrainIntersectionCurve": "parcel:terrainIntersectionCurve",
     "horizontalCRS": {
       "@id": "container:horizontalCRS",
       "@type": "@id"
@@ -6845,20 +6720,11 @@ Links to the schema:
     "surveyDescription": "container:surveyDescription",
     "surveyDescriptors": {
       "@context": {
-        "name": "csdm:commonpatterns/name",
+        "name": "commonpatterns:name",
         "hasPart": {
           "@context": {
-            "ref": {
-              "@type": "@id",
-              "@id": "csdm:commonpatterns/namePartRef"
-            },
-            "type": {
-              "@context": {
-                "@base": "https://linked.data.gov.au/def/csdm/names/localPartType/"
-              },
-              "@type": "@id",
-              "@id": "csdm:commonpatterns/namePartType"
-            }
+            "ref": "commonpatterns:namePartRef",
+            "type": "commonpatterns:namePartType"
           },
           "@id": "dct:hasPart"
         }
@@ -6975,13 +6841,7 @@ Links to the schema:
             "topology": {
               "@context": {
                 "references": {
-                  "@context": {
-                    "ref": {
-                      "@type": "@id",
-                      "@id": "topo:ref"
-                    }
-                  },
-                  "@id": "geojson:relatedFeatures",
+                  "@id": "topo:relatedFeatures",
                   "@type": "@id",
                   "@container": "@list"
                 },
@@ -6995,12 +6855,34 @@ Links to the schema:
                   "@id": "topo:directedReferences",
                   "@container": "@list"
                 },
-                "rings": {
-                  "@id": "topo:rings",
-                  "@container": "@list"
-                },
-                "shells": {
-                  "@id": "topo:shells",
+                "relationships": {
+                  "@context": {
+                    "href": {
+                      "@type": "@id",
+                      "@id": "oa:hasTarget"
+                    },
+                    "rel": {
+                      "@context": {
+                        "@base": "http://www.iana.org/assignments/relation/"
+                      },
+                      "@id": "http://www.iana.org/assignments/relation",
+                      "@type": "@id"
+                    },
+                    "type": "dct:type",
+                    "hreflang": "dct:language",
+                    "title": "rdfs:label",
+                    "length": "dct:extent",
+                    "role": {
+                      "@id": "prof:hasRole",
+                      "@type": "@id"
+                    },
+                    "conformsTo": {
+                      "@id": "dct:conformsTo",
+                      "@type": "@id"
+                    }
+                  },
+                  "@id": "topo:relatedFeatures",
+                  "@type": "@id",
                   "@container": "@list"
                 }
               },
@@ -7030,19 +6912,11 @@ Links to the schema:
             "geodeticid": {
               "@id": "surv:geodeticid",
               "@context": {
+                "name": "commonpatterns:name",
                 "hasPart": {
                   "@context": {
-                    "ref": {
-                      "@type": "@id",
-                      "@id": "csdm:commonpatterns/namePartRef"
-                    },
-                    "type": {
-                      "@context": {
-                        "@base": "https://linked.data.gov.au/def/csdm/names/localPartType/"
-                      },
-                      "@type": "@id",
-                      "@id": "csdm:commonpatterns/namePartType"
-                    }
+                    "ref": "commonpatterns:namePartRef",
+                    "type": "commonpatterns:namePartType"
                   },
                   "@id": "dct:hasPart"
                 }
@@ -7052,19 +6926,11 @@ Links to the schema:
               "@id": "csdm:commonpatterns/name",
               "@type": "@id",
               "@context": {
+                "name": "commonpatterns:name",
                 "hasPart": {
                   "@context": {
-                    "ref": {
-                      "@type": "@id",
-                      "@id": "csdm:commonpatterns/namePartRef"
-                    },
-                    "type": {
-                      "@context": {
-                        "@base": "https://linked.data.gov.au/def/csdm/names/localPartType/"
-                      },
-                      "@type": "@id",
-                      "@id": "csdm:commonpatterns/namePartType"
-                    }
+                    "ref": "commonpatterns:namePartRef",
+                    "type": "commonpatterns:namePartType"
                   },
                   "@id": "dct:hasPart"
                 }
@@ -7091,92 +6957,171 @@ Links to the schema:
     },
     "parcels": {
       "@context": {
-        "featureType": "@type",
-        "appellation": {
+        "features": {
           "@context": {
-            "name": "csdm:commonpatterns/name",
-            "hasPart": {
+            "Prism": {
+              "@id": "geojson:Prism",
               "@context": {
-                "ref": {
+                "base": "geojson:prismBase",
+                "lower": "geojson:prismLower",
+                "upper": "geojson:prismUpper"
+              }
+            },
+            "MultiPrism": {
+              "@id": "geojson:MultiPrism",
+              "@context": {
+                "prisms": "geojson:prisms"
+              }
+            },
+            "topology": {
+              "@context": {
+                "references": {
+                  "@id": "topo:relatedFeatures",
                   "@type": "@id",
-                  "@id": "csdm:commonpatterns/namePartRef"
+                  "@container": "@list"
                 },
-                "type": {
+                "directed_references": {
                   "@context": {
-                    "@base": "https://linked.data.gov.au/def/csdm/names/localPartType/"
+                    "ref": {
+                      "@type": "@id",
+                      "@id": "topo:ref"
+                    }
                   },
+                  "@id": "topo:directedReferences",
+                  "@container": "@list"
+                },
+                "relationships": {
+                  "@context": {
+                    "href": {
+                      "@type": "@id",
+                      "@id": "oa:hasTarget"
+                    },
+                    "rel": {
+                      "@context": {
+                        "@base": "http://www.iana.org/assignments/relation/"
+                      },
+                      "@id": "http://www.iana.org/assignments/relation",
+                      "@type": "@id"
+                    },
+                    "type": "dct:type",
+                    "hreflang": "dct:language",
+                    "title": "rdfs:label",
+                    "length": "dct:extent",
+                    "role": {
+                      "@id": "prof:hasRole",
+                      "@type": "@id"
+                    },
+                    "conformsTo": {
+                      "@id": "dct:conformsTo",
+                      "@type": "@id"
+                    }
+                  },
+                  "@id": "topo:relatedFeatures",
                   "@type": "@id",
-                  "@id": "csdm:commonpatterns/namePartType"
+                  "@container": "@list"
                 }
               },
-              "@id": "dct:hasPart"
+              "@type": "@id",
+              "@id": "geojson:topology"
+            },
+            "points": {
+              "@id": "topo:points",
+              "@container": "@list"
+            },
+            "edges": {
+              "@id": "topo:edges",
+              "@container": "@list"
+            },
+            "bearingRotation": "parcel:bearingRotation",
+            "parcels": "parcel:parcels",
+            "PrimaryParcel": {
+              "@id": "parcel:PrimaryParcel",
+              "@type": "@id"
+            },
+            "SecondaryParcel": {
+              "@id": "parcel:SecondaryParcel",
+              "@type": "@id"
+            },
+            "appellation": {
+              "@context": {
+                "name": "commonpatterns:name",
+                "hasPart": {
+                  "@context": {
+                    "ref": "commonpatterns:namePartRef",
+                    "type": "commonpatterns:namePartType"
+                  },
+                  "@id": "dct:hasPart"
+                }
+              },
+              "@id": "parcel:appellation"
+            },
+            "parcelType": {
+              "@id": "parcel:type",
+              "@type": "@id"
+            },
+            "parcelState": {
+              "@id": "parcel:state",
+              "@type": "@id"
+            },
+            "parcelPurpose": {
+              "@id": "parcel:purpose",
+              "@type": "@id"
+            },
+            "area": "parcel:surfaceArea",
+            "floor": "parcel:floor",
+            "zmin": "parcel:zmin",
+            "zmax": "parcel:zmax",
+            "interests": {
+              "@context": {
+                "interestLink": {
+                  "@type": "@id",
+                  "@id": "parcel:interestLink"
+                },
+                "interestName": "parcel:interestName",
+                "interestType": {
+                  "@type": "@id",
+                  "@id": "parcel:interestType"
+                },
+                "dateInForce": "parcel:interestDateInForce",
+                "dateExpires": "parcel:interestDateExpires",
+                "statuteLink": {
+                  "@type": "@id",
+                  "@id": "parcel:statuteLink"
+                },
+                "statuteName": "parcel:statuteName",
+                "benefitedPartyName": "parcel:benefitedPartyName",
+                "benefitedPartyLink": {
+                  "@type": "@id",
+                  "@id": "parcel:benefitedPartyLink"
+                },
+                "originalSurveyLink": {
+                  "@type": "@id",
+                  "@id": "parcel:originalSurveyLink"
+                },
+                "referencedParcel": {
+                  "@type": "@id",
+                  "@id": "parcel:referencedParcel"
+                },
+                "burdenedParcels": {
+                  "@id": "parcel:burdened",
+                  "@container": "@set"
+                },
+                "benefitedParcels": {
+                  "@id": "parcel:benefited",
+                  "@container": "@set"
+                },
+                "description": "parcel:interestDescription",
+                "entitlementPortion": "parcel:entitlementPortion",
+                "liabilityPortion": "parcel:liabilityPortion"
+              },
+              "@id": "parcel:interest",
+              "@container": "@set"
             }
           },
-          "@id": "parcel:appellation"
-        },
-        "parcelType": {
-          "@id": "parcel:type",
-          "@type": "@id"
-        },
-        "parcelState": {
-          "@id": "parcel:state",
-          "@type": "@id"
-        },
-        "address": "sdo:address",
-        "parcelPurpose": {
-          "@id": "parcel:purpose",
-          "@type": "@id"
-        },
-        "area": "parcel:surfaceArea",
-        "floor": "parcel:floor",
-        "zmin": "parcel:zmin",
-        "zmax": "parcel:zmax",
-        "interests": {
-          "@context": {
-            "interestLink": {
-              "@type": "@id",
-              "@id": "parcel:interestLink"
-            },
-            "interestName": "parcel:interestName",
-            "interestType": {
-              "@type": "@id",
-              "@id": "parcel:interestType"
-            },
-            "dateInForce": "parcel:interestDateInForce",
-            "dateExpires": "parcel:interestDateExpires",
-            "statuteLink": {
-              "@type": "@id",
-              "@id": "parcel:statuteLink"
-            },
-            "statuteName": "parcel:statuteName",
-            "benefitedPartyName": "parcel:benefitedPartyName",
-            "benefitedPartyLink": {
-              "@type": "@id",
-              "@id": "parcel:benefitedPartyLink"
-            },
-            "originalSurveyLink": {
-              "@type": "@id",
-              "@id": "parcel:originalSurveyLink"
-            },
-            "referencedParcel": {
-              "@type": "@id",
-              "@id": "parcel:referencedParcel"
-            },
-            "burdenedParcels": {
-              "@id": "parcel:burdened",
-              "@container": "@set"
-            },
-            "benefitedParcels": {
-              "@id": "parcel:benefited",
-              "@container": "@set"
-            },
-            "description": "parcel:interestDescription",
-            "entitlementPortion": "parcel:entitlementPortion",
-            "liabilityPortion": "parcel:liabilityPortion"
-          },
-          "@id": "parcel:interest",
+          "@id": "geojson:features",
           "@container": "@set"
-        }
+        },
+        "featureType": "@type"
       },
       "@id": "container:parcels"
     },
@@ -7342,6 +7287,18 @@ Links to the schema:
     "Ring": "topo:Ring",
     "Shell": "topo:Shell",
     "Solid": "topo:Solid",
+    "rings": {
+      "@id": "topo:rings",
+      "@container": "@list"
+    },
+    "shells": {
+      "@id": "topo:shells",
+      "@container": "@list"
+    },
+    "faces": {
+      "@id": "topo:faces",
+      "@container": "@list"
+    },
     "activityType": "@type",
     "agentType": "@type",
     "entityType": "@type",
@@ -7654,7 +7611,7 @@ Links to the schema:
       "@id": "prov:mentionOf",
       "@type": "@id"
     },
-    "CompoundName": "csdm:commonpatterns/CompoundName",
+    "CompoundName": "commonpatterns:CompoundName",
     "vectorPurpose": {
       "@type": "@id",
       "@id": "surv:vectorPurpose"
@@ -7700,6 +7657,15 @@ Links to the schema:
       "@type": "@id"
     },
     "label": "rdfs:label",
+    "parcelQualityClass": {
+      "@id": "parcel:qualityClass",
+      "@type": "@id"
+    },
+    "terrainIntersectionCurve": "parcel:terrainIntersectionCurve",
+    "solids": {
+      "@id": "topo:shells",
+      "@container": "@list"
+    },
     "ActuatableProperty": {
       "@id": "sosa:ActuatableProperty",
       "@type": "@id"
@@ -8082,7 +8048,6 @@ Links to the schema:
     "container": "csdm:container/",
     "sdo": "https://schema.org/",
     "csd": "csdm:csd/",
-    "parcel": "csdm:parcels/",
     "surv": "csdm:surveyfeatures/",
     "geojson": "https://purl.org/geojson/vocab#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -8090,13 +8055,14 @@ Links to the schema:
     "dct": "http://purl.org/dc/terms/",
     "owlTime": "http://www.w3.org/2006/time#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "csdm": "https://linked.data.gov.au/def/csdm/",
     "topo": "https://purl.org/geojson/topo#",
     "prof": "http://www.w3.org/ns/dx/prof/",
     "prov": "http://www.w3.org/ns/prov#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "commonpatterns": "csdm:commonpatterns/",
+    "commonpatterns": "https://w3id.org/ogc/utils/label/",
+    "csdm": "https://linked.data.gov.au/def/csdm/",
     "geosparql": "http://www.opengis.net/ont/geosparql#",
+    "parcel": "https://w3id.org/ogc/ladm/parcels/",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn-system": "ssn:systems/",
     "ssn": "http://www.w3.org/ns/ssn/",

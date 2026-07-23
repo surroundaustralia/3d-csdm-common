@@ -1,5 +1,5 @@
 Validation report for icsm.csdm.datatypes.quality - SurveyQuality
-Generated 2026-05-14T09:01:47.437429+00:00
+Generated 2026-07-23T02:11:10.222117+00:00
 === Files ===
 Using example.json from examples
 JSON-LD context is present - uplifting

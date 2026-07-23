@@ -104,13 +104,7 @@
     "topology": {
       "@context": {
         "references": {
-          "@context": {
-            "ref": {
-              "@type": "@id",
-              "@id": "topo:ref"
-            }
-          },
-          "@id": "geojson:relatedFeatures",
+          "@id": "topo:relatedFeatures",
           "@type": "@id",
           "@container": "@list"
         },
@@ -124,12 +118,34 @@
           "@id": "topo:directedReferences",
           "@container": "@list"
         },
-        "rings": {
-          "@id": "topo:rings",
-          "@container": "@list"
-        },
-        "shells": {
-          "@id": "topo:shells",
+        "relationships": {
+          "@context": {
+            "href": {
+              "@type": "@id",
+              "@id": "oa:hasTarget"
+            },
+            "rel": {
+              "@context": {
+                "@base": "http://www.iana.org/assignments/relation/"
+              },
+              "@id": "http://www.iana.org/assignments/relation",
+              "@type": "@id"
+            },
+            "type": "dct:type",
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent",
+            "role": {
+              "@id": "prof:hasRole",
+              "@type": "@id"
+            },
+            "conformsTo": {
+              "@id": "dct:conformsTo",
+              "@type": "@id"
+            }
+          },
+          "@id": "topo:relatedFeatures",
+          "@type": "@id",
           "@container": "@list"
         }
       },
@@ -154,19 +170,11 @@
     "geodeticid": {
       "@id": "surv:geodeticid",
       "@context": {
+        "name": "https://w3id.org/ogc/utils/label/name",
         "hasPart": {
           "@context": {
-            "ref": {
-              "@type": "@id",
-              "@id": "commonpatterns:namePartRef"
-            },
-            "type": {
-              "@context": {
-                "@base": "https://linked.data.gov.au/def/csdm/names/localPartType/"
-              },
-              "@type": "@id",
-              "@id": "commonpatterns:namePartType"
-            }
+            "ref": "https://w3id.org/ogc/utils/label/namePartRef",
+            "type": "https://w3id.org/ogc/utils/label/namePartType"
           },
           "@id": "dct:hasPart"
         }
@@ -208,26 +216,18 @@
       "@id": "commonpatterns:name",
       "@type": "@id",
       "@context": {
+        "name": "https://w3id.org/ogc/utils/label/name",
         "hasPart": {
           "@context": {
-            "ref": {
-              "@type": "@id",
-              "@id": "commonpatterns:namePartRef"
-            },
-            "type": {
-              "@context": {
-                "@base": "https://linked.data.gov.au/def/csdm/names/localPartType/"
-              },
-              "@type": "@id",
-              "@id": "commonpatterns:namePartType"
-            }
+            "ref": "https://w3id.org/ogc/utils/label/namePartRef",
+            "type": "https://w3id.org/ogc/utils/label/namePartType"
           },
           "@id": "dct:hasPart"
         }
       }
     },
     "label": "rdfs:label",
-    "CompoundName": "commonpatterns:CompoundName",
+    "CompoundName": "https://w3id.org/ogc/utils/label/CompoundName",
     "activityType": "@type",
     "agentType": "@type",
     "entityType": "@type",
@@ -567,6 +567,18 @@
     "Ring": "topo:Ring",
     "Shell": "topo:Shell",
     "Solid": "topo:Solid",
+    "rings": {
+      "@id": "topo:rings",
+      "@container": "@list"
+    },
+    "shells": {
+      "@id": "topo:shells",
+      "@container": "@list"
+    },
+    "faces": {
+      "@id": "topo:faces",
+      "@container": "@list"
+    },
     "geojson": "https://purl.org/geojson/vocab#",
     "surv": "csdm:surveyfeatures/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
@@ -580,6 +592,7 @@
     "oa": "http://www.w3.org/ns/oa#",
     "owlTime": "http://www.w3.org/2006/time#",
     "topo": "https://purl.org/geojson/topo#",
+    "prof": "http://www.w3.org/ns/dx/prof/",
     "@version": 1.1
   }
 }

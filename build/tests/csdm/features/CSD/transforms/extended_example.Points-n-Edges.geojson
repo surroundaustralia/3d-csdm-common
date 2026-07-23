@@ -2,8 +2,14 @@
   "type": "FeatureCollection",
   "features": [
     {
-      "id": "0",
       "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.7501603083,
+          -36.9307359096
+        ]
+      },
       "properties": {
         "name": {
           "label": "RM E DP 119552",
@@ -29,20 +35,19 @@
           "condition": "nz-monument-condition:markfound",
           "state": "nz-monument-state:original"
         },
-        "ptQualityMeasure": null,
-        "geodeticid": null
+        "feature_id": "1725787"
       },
+      "id": "1725787"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7501603083,
-          -36.9307359096
+          174.7508196767,
+          -36.9314093194
         ]
-      }
-    },
-    {
-      "id": "1",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "ALP I DP 481392",
@@ -58,8 +63,6 @@
           ]
         },
         "purpose": "nz-surveypoint-purpose:nonBoundary",
-        "fromSurvey": null,
-        "comment": null,
         "occupation": {
           "comment": "ALP in channel of drive"
         },
@@ -68,20 +71,19 @@
           "condition": "nz-monument-condition:markfound",
           "state": "nz-monument-state:original"
         },
-        "ptQualityMeasure": null,
-        "geodeticid": null
+        "feature_id": "44396823"
       },
+      "id": "44396823"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7508196767,
-          -36.9314093194
+          174.7501603083,
+          -36.9307359096
         ]
-      }
-    },
-    {
-      "id": "2",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "RM E DP 119552",
@@ -106,27 +108,26 @@
         },
         "purpose": "nz-surveypoint-purpose:non-boundary",
         "fromSurvey": "DP_119552",
+        "ptQualityMeasure": 6,
         "comment": null,
-        "occupation": null,
         "monumentedBy": {
           "form": "nz-monument-form:plaque",
           "condition": "nz-monument-condition:mark-found",
           "state": "nz-monument-state:original"
         },
-        "ptQualityMeasure": 6.0,
-        "geodeticid": null
+        "feature_id": "11745160"
       },
+      "id": "11745160"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7501603083,
-          -36.9307359096
+          174.7508196767,
+          -36.9314093194
         ]
-      }
-    },
-    {
-      "id": "3",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "ALP I DP 481392",
@@ -151,27 +152,26 @@
         },
         "purpose": "nz-surveypoint-purpose:non-boundary",
         "fromSurvey": "DP_481392",
+        "ptQualityMeasure": 6,
         "comment": "ALP in channel of drive",
-        "occupation": null,
         "monumentedBy": {
           "form": "nz-monument-form:pin",
           "condition": "nz-monument-condition:mark-found",
           "state": "nz-monument-state:original"
         },
-        "ptQualityMeasure": 6.0,
-        "geodeticid": null
+        "feature_id": "44438418"
       },
+      "id": "44438418"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7508196767,
-          -36.9314093194
+          174.749997996,
+          -36.930903937
         ]
-      }
-    },
-    {
-      "id": "4",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "RM C DP 119552 (EQ9W)",
@@ -198,29 +198,29 @@
             }
           ]
         },
+        "geodeticid": "EQ9W",
         "purpose": "nz-surveypoint-purpose:prm",
         "fromSurvey": "DP_119552",
+        "ptQualityMeasure": 5,
         "comment": "Brass circular plaque flush in channel",
-        "occupation": null,
         "monumentedBy": {
           "form": "nz-monument-form:plaque",
           "condition": "nz-monument-condition:reliably-placed",
           "state": "nz-monument-state:original"
         },
-        "ptQualityMeasure": 5.0,
-        "geodeticid": "EQ9W"
+        "feature_id": "11745104"
       },
+      "id": "11745104"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.749997996,
-          -36.930903937
+          174.7503985651,
+          -36.9303670583
         ]
-      }
-    },
-    {
-      "id": "5",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "LP X DP 119552",
@@ -245,27 +245,26 @@
         },
         "purpose": "nz-surveypoint-purpose:non-boundary",
         "fromSurvey": "DP_119552",
+        "ptQualityMeasure": 6,
         "comment": null,
-        "occupation": null,
         "monumentedBy": {
           "form": "nz-monument-form:plug",
           "condition": "nz-monument-condition:mark-found",
           "state": "nz-monument-state:original"
         },
-        "ptQualityMeasure": 6.0,
-        "geodeticid": null
+        "feature_id": "11745161"
       },
+      "id": "11745161"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7503985651,
-          -36.9303670583
+          174.75043155,
+          -36.9309699441
         ]
-      }
-    },
-    {
-      "id": "6",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "AP 1 DP 572532",
@@ -290,27 +289,26 @@
         },
         "purpose": "icsm:prm",
         "fromSurvey": "DP_572532",
+        "ptQualityMeasure": 6,
         "comment": "Flush in conc",
-        "occupation": null,
         "monumentedBy": {
           "form": "nz-monument-form:pin",
           "condition": "nz-monument-condition:reliably-placed",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 6.0,
-        "geodeticid": null
+        "feature_id": "49655185"
       },
+      "id": "49655185"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.75043155,
-          -36.9309699441
+          174.7505837059,
+          -36.9311866966
         ]
-      }
-    },
-    {
-      "id": "7",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "RM I DP 119553",
@@ -335,27 +333,26 @@
         },
         "purpose": "nz-surveypoint-purpose:prm",
         "fromSurvey": "DP_119553",
+        "ptQualityMeasure": 6,
         "comment": "ORM in channel above catch pits",
-        "occupation": null,
         "monumentedBy": {
           "form": "nz-monument-form:plaque",
           "condition": "nz-monument-condition:mark-found",
           "state": "nz-monument-state:original"
         },
-        "ptQualityMeasure": 6.0,
-        "geodeticid": null
+        "feature_id": "44438410"
       },
+      "id": "44438410"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7505837059,
-          -36.9311866966
+          174.7502384493,
+          -36.9309318616
         ]
-      }
-    },
-    {
-      "id": "8",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "RM H DP 119553",
@@ -380,27 +377,26 @@
         },
         "purpose": "nz-surveypoint-purpose:non-boundary",
         "fromSurvey": "DP_119553",
+        "ptQualityMeasure": 6,
         "comment": "ORM in channel above catch pits",
-        "occupation": null,
         "monumentedBy": {
           "form": "nz-monument-form:plaque",
           "condition": "nz-monument-condition:mark-found",
           "state": "nz-monument-state:original"
         },
-        "ptQualityMeasure": 6.0,
-        "geodeticid": null
+        "feature_id": "49655186"
       },
+      "id": "49655186"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7502384493,
-          -36.9309318616
+          174.750791041,
+          -36.9312489607
         ]
-      }
-    },
-    {
-      "id": "9",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "Peg 6 DP 119553",
@@ -425,27 +421,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_119553",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 7,
         "monumentedBy": {
           "form": "nz-monument-form:peg",
           "condition": "nz-monument-condition:searched-for-not-found",
           "state": "nz-monument-state:Adopted"
         },
-        "ptQualityMeasure": 7.0,
-        "geodeticid": null
+        "feature_id": "29960715"
       },
+      "id": "29960715"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.750791041,
-          -36.9312489607
+          174.7505110058,
+          -36.9310392342
         ]
-      }
-    },
-    {
-      "id": "10",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "Peg 3 DP 119553",
@@ -470,27 +464,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_119553",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 7,
         "monumentedBy": {
           "form": "nz-monument-form:peg",
           "condition": "nz-monument-condition:not-found-replaced",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 7.0,
-        "geodeticid": null
+        "feature_id": "29959289"
       },
+      "id": "29959289"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7505110058,
-          -36.9310392342
+          174.7512489947,
+          -36.9308797133
         ]
-      }
-    },
-    {
-      "id": "11",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "Peg 4 DP 119552",
@@ -515,27 +507,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_119552",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 7,
         "monumentedBy": {
           "form": "nz-monument-form:peg",
           "condition": "nz-monument-condition:not-specified",
           "state": "nz-monument-state:adopted"
         },
-        "ptQualityMeasure": 7.0,
-        "geodeticid": null
+        "feature_id": "29962820"
       },
+      "id": "29962820"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7512489947,
-          -36.9308797133
+          174.7513031028,
+          -36.9310543825
         ]
-      }
-    },
-    {
-      "id": "12",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "Peg 8 DP 119553",
@@ -560,27 +550,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_119553",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 7,
         "monumentedBy": {
           "form": "nz-monument-form:peg",
           "condition": "nz-monument-condition:not-specified",
           "state": "nz-monument-state:adopted"
         },
-        "ptQualityMeasure": 7.0,
-        "geodeticid": null
+        "feature_id": "29963073"
       },
+      "id": "29963073"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7513031028,
-          -36.9310543825
+          174.751324788,
+          -36.9311247115
         ]
-      }
-    },
-    {
-      "id": "13",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "Peg 7 DP 119553",
@@ -605,27 +593,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_119553",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 7,
         "monumentedBy": {
           "form": "nz-monument-form:peg",
           "condition": "nz-monument-condition:not-specified",
           "state": "nz-monument-state:adopted"
         },
-        "ptQualityMeasure": 7.0,
-        "geodeticid": null
+        "feature_id": "29963182"
       },
+      "id": "29963182"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.751324788,
-          -36.9311247115
+          174.7509918818,
+          -36.9312023381
         ]
-      }
-    },
-    {
-      "id": "14",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "UNMK 14 DP 572532",
@@ -650,27 +636,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_572532",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 7,
         "monumentedBy": {
           "form": "nz-monument-form:UNMK",
           "condition": "nz-monument-condition:mark-impractible",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 7.0,
-        "geodeticid": null
+        "feature_id": "49655170"
       },
+      "id": "49655170"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7509918818,
-          -36.9312023381
+          174.7507606923,
+          -36.9310291431
         ]
-      }
-    },
-    {
-      "id": "15",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "Peg 18 DP 572532",
@@ -695,27 +679,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_572532",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 7,
         "monumentedBy": {
           "form": "nz-monument-form:Peg",
           "condition": "nz-monument-condition:reliably-placed",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 7.0,
-        "geodeticid": null
+        "feature_id": "49655172"
       },
+      "id": "49655172"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7507606923,
-          -36.9310291431
+          174.7507225544,
+          -36.9310215435
         ]
-      }
-    },
-    {
-      "id": "16",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "Peg 19 DP 572532",
@@ -740,27 +722,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_572532",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 7,
         "monumentedBy": {
           "form": "nz-monument-form:Peg",
           "condition": "nz-monument-condition:reliably-placed",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 7.0,
-        "geodeticid": null
+        "feature_id": "49655173"
       },
+      "id": "49655173"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7507225544,
-          -36.9310215435
+          174.7509672626,
+          -36.9311839118
         ]
-      }
-    },
-    {
-      "id": "17",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "Peg 38 DP 572532",
@@ -785,27 +765,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_572532",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 7,
         "monumentedBy": {
           "form": "nz-monument-form:Peg",
           "condition": "nz-monument-condition:reliably-placed",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 7.0,
-        "geodeticid": null
+        "feature_id": "49655187"
       },
+      "id": "49655187"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7509672626,
-          -36.9311839118
+          174.7508909488,
+          -36.9309571156
         ]
-      }
-    },
-    {
-      "id": "18",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "UNMK 20 DP 572532",
@@ -830,27 +808,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_572532",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 7,
         "monumentedBy": {
           "form": "nz-monument-form:UNMK",
           "condition": "nz-monument-condition:not-specified",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 7.0,
-        "geodeticid": null
+        "feature_id": "49655174"
       },
+      "id": "49655174"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7508909488,
-          -36.9309571156
+          174.7510988383,
+          -36.9311774613
         ]
-      }
-    },
-    {
-      "id": "19",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "UNMK 21 DP 572532",
@@ -875,27 +851,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_572532",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 7,
         "monumentedBy": {
           "form": "nz-monument-form:UNMK",
           "condition": "nz-monument-condition:not-specified",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 7.0,
-        "geodeticid": null
+        "feature_id": "49655175"
       },
+      "id": "49655175"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7510988383,
-          -36.9311774613
+          174.7509396099,
+          -36.9309904554
         ]
-      }
-    },
-    {
-      "id": "20",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "UNMK 22 DP 572532",
@@ -920,27 +894,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_572532",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 8,
         "monumentedBy": {
           "form": "nz-monument-form:UNMK",
           "condition": "nz-monument-condition:not-specified",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 8.0,
-        "geodeticid": null
+        "feature_id": "49655176"
       },
+      "id": "49655176"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7509396099,
-          -36.9309904554
+          174.7509925285,
+          -36.9309870924
         ]
-      }
-    },
-    {
-      "id": "21",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "UNMK 23 DP 572532",
@@ -965,27 +937,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_572532",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 8,
         "monumentedBy": {
           "form": "nz-monument-form:UNMK",
           "condition": "nz-monument-condition:not-specified",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 8.0,
-        "geodeticid": null
+        "feature_id": "49655177"
       },
+      "id": "49655177"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7509925285,
-          -36.9309870924
+          174.751010805,
+          -36.9310015962
         ]
-      }
-    },
-    {
-      "id": "22",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "UNMK 24 DP 572532",
@@ -1010,27 +980,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_572532",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 8,
         "monumentedBy": {
           "form": "nz-monument-form:UNMK",
           "condition": "nz-monument-condition:not-specified",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 8.0,
-        "geodeticid": null
+        "feature_id": "49655178"
       },
+      "id": "49655178"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.751010805,
-          -36.9310015962
+          174.7510101475,
+          -36.9310253792
         ]
-      }
-    },
-    {
-      "id": "23",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "UNMK 25 DP 572532",
@@ -1055,27 +1023,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_572532",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 8,
         "monumentedBy": {
           "form": "nz-monument-form:UNMK",
           "condition": "nz-monument-condition:not-specified",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 8.0,
-        "geodeticid": null
+        "feature_id": "49655179"
       },
+      "id": "49655179"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7510101475,
-          -36.9310253792
+          174.750980056,
+          -36.9310510313
         ]
-      }
-    },
-    {
-      "id": "24",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "UNMK 26 DP 572532",
@@ -1100,27 +1066,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_572532",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 8,
         "monumentedBy": {
           "form": "nz-monument-form:UNMK",
           "condition": "nz-monument-condition:not-specified",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 8.0,
-        "geodeticid": null
+        "feature_id": "49655180"
       },
+      "id": "49655180"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.750980056,
-          -36.9310510313
+          174.7509573691,
+          -36.9310656315
         ]
-      }
-    },
-    {
-      "id": "25",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "UNMK 27 DP 572532",
@@ -1145,27 +1109,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_572532",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 8,
         "monumentedBy": {
           "form": "nz-monument-form:UNMK",
           "condition": "nz-monument-condition:not-specified",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 8.0,
-        "geodeticid": null
+        "feature_id": "49655181"
       },
+      "id": "49655181"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7509573691,
-          -36.9310656315
+          174.7509509094,
+          -36.9310856987
         ]
-      }
-    },
-    {
-      "id": "26",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "UNMK 28 DP 572532",
@@ -1190,27 +1152,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_572532",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 8,
         "monumentedBy": {
           "form": "nz-monument-form:UNMK",
           "condition": "nz-monument-condition:not-specified",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 8.0,
-        "geodeticid": null
+        "feature_id": "49655182"
       },
+      "id": "49655182"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7509509094,
-          -36.9310856987
+          174.7509568685,
+          -36.9311076188
         ]
-      }
-    },
-    {
-      "id": "27",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "UNMK 29 DP 572532",
@@ -1235,27 +1195,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_572532",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 8,
         "monumentedBy": {
           "form": "nz-monument-form:UNMK",
           "condition": "nz-monument-condition:not-specified",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 8.0,
-        "geodeticid": null
+        "feature_id": "49655183"
       },
+      "id": "49655183"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7509568685,
-          -36.9311076188
+          174.7510438631,
+          -36.9311710421
         ]
-      }
-    },
-    {
-      "id": "28",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "UNMK 30 DP 572532",
@@ -1280,27 +1238,25 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_572532",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 8,
         "monumentedBy": {
           "form": "nz-monument-form:UNMK",
           "condition": "nz-monument-condition:not-specified",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 8.0,
-        "geodeticid": null
+        "feature_id": "49655184"
       },
+      "id": "49655184"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7510438631,
-          -36.9311710421
+          174.750540074,
+          -36.9310610479
         ]
-      }
-    },
-    {
-      "id": "29",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "DISK 15 DP 572532",
@@ -1325,37 +1281,18 @@
         },
         "purpose": "boundary",
         "fromSurvey": "DP_572532",
-        "comment": null,
-        "occupation": null,
+        "ptQualityMeasure": 7,
         "monumentedBy": {
           "form": "nz-monument-form:peg",
           "condition": "nz-monument-condition:reliably-placed",
           "state": "nz-monument-state:new"
         },
-        "ptQualityMeasure": 7.0,
-        "geodeticid": null
+        "feature_id": "49655171"
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          174.750540074,
-          -36.9310610479
-        ]
-      }
+      "id": "49655171"
     },
     {
-      "id": "30",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "radiation",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1368,21 +1305,14 @@
             -36.9314093194
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "radiation"
+      },
+      "id": "l566592"
     },
     {
-      "id": "31",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "traverse",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1395,21 +1325,14 @@
             -36.930903937
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "traverse"
+      },
+      "id": "l973158"
     },
     {
-      "id": "32",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "traverse",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1422,21 +1345,14 @@
             -36.9303670583
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "traverse"
+      },
+      "id": "l910380"
     },
     {
-      "id": "33",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "traverse",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1449,21 +1365,14 @@
             -36.9309699441
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "traverse"
+      },
+      "id": "l472486"
     },
     {
-      "id": "34",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "radiation",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1476,21 +1385,14 @@
             -36.9309318616
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "radiation"
+      },
+      "id": "l922788"
     },
     {
-      "id": "35",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "traverse",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1503,21 +1405,14 @@
             -36.9311866966
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "traverse"
+      },
+      "id": "l773277"
     },
     {
-      "id": "36",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "radiation",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1530,21 +1425,14 @@
             -36.9310291431
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "radiation"
+      },
+      "id": "l388393"
     },
     {
-      "id": "37",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "radiation",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1557,21 +1445,14 @@
             -36.9311839118
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "radiation"
+      },
+      "id": "l941613"
     },
     {
-      "id": "38",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "calculation",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1584,21 +1465,14 @@
             -36.9312023381
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "calculation"
+      },
+      "id": "l818068"
     },
     {
-      "id": "39",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "radiation",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1611,21 +1485,14 @@
             -36.9310610479
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "radiation"
+      },
+      "id": "l599462"
     },
     {
-      "id": "40",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1638,21 +1505,14 @@
             -36.9309571156
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l746686"
     },
     {
-      "id": "41",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1665,21 +1525,14 @@
             -36.9308797133
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l999724"
     },
     {
-      "id": "42",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1692,21 +1545,14 @@
             -36.9310543825
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l591175"
     },
     {
-      "id": "43",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1719,21 +1565,14 @@
             -36.9312023381
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l874826"
     },
     {
-      "id": "44",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1746,21 +1585,14 @@
             -36.9311247115
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l369793"
     },
     {
-      "id": "45",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1773,21 +1605,14 @@
             -36.9311774613
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l435861"
     },
     {
-      "id": "46",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1800,21 +1625,14 @@
             -36.9312489607
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l965727"
     },
     {
-      "id": "47",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1827,21 +1645,14 @@
             -36.9310215435
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l535242"
     },
     {
-      "id": "48",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1854,21 +1665,14 @@
             -36.9310291431
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l535759"
     },
     {
-      "id": "49",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1881,21 +1685,14 @@
             -36.9311839118
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l985190"
     },
     {
-      "id": "50",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1908,21 +1705,14 @@
             -36.9312023381
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l952702"
     },
     {
-      "id": "51",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1935,21 +1725,14 @@
             -36.9309904554
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l580762"
     },
     {
-      "id": "52",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1962,21 +1745,14 @@
             -36.9309870924
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l761760"
     },
     {
-      "id": "53",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -1989,21 +1765,14 @@
             -36.9310015962
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l951515"
     },
     {
-      "id": "54",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -2016,21 +1785,14 @@
             -36.9310253792
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l949729"
     },
     {
-      "id": "55",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -2043,21 +1805,14 @@
             -36.9310510313
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l852048"
     },
     {
-      "id": "56",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -2070,21 +1825,14 @@
             -36.9310656315
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l641327"
     },
     {
-      "id": "57",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -2097,21 +1845,14 @@
             -36.9310856987
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l715872"
     },
     {
-      "id": "58",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -2124,21 +1865,14 @@
             -36.9311076188
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l832940"
     },
     {
-      "id": "59",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -2151,21 +1885,14 @@
             -36.9311710421
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l685716"
     },
     {
-      "id": "60",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -2178,21 +1905,14 @@
             -36.9311774613
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l345344"
     },
     {
-      "id": "61",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "adoption",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -2205,21 +1925,14 @@
             -36.9309318616
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "adoption"
+      },
+      "id": "l636624"
     },
     {
-      "id": "62",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "adoption",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -2232,21 +1945,14 @@
             -36.9312489607
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "adoption"
+      },
+      "id": "l595769"
     },
     {
-      "id": "63",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "adoption",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -2259,21 +1965,14 @@
             -36.9309318616
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "adoption"
+      },
+      "id": "l520719"
     },
     {
-      "id": "64",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "adoption",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -2286,21 +1985,14 @@
             -36.9314093194
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "adoption"
+      },
+      "id": "l947230"
     },
     {
-      "id": "65",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "adoption",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -2313,21 +2005,14 @@
             -36.9312489607
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "adoption"
+      },
+      "id": "l595769"
     },
     {
-      "id": "66",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "adoption",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -2340,21 +2025,14 @@
             -36.9310392342
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "adoption"
+      },
+      "id": "l622186"
     },
     {
-      "id": "67",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -2367,21 +2045,14 @@
             -36.9310610479
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l329256"
     },
     {
-      "id": "68",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "ptQualityMeasure": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -2394,7 +2065,29 @@
             -36.9312489607
           ]
         ]
-      }
+      },
+      "properties": {
+        "purpose": "boundary"
+      },
+      "id": "l589282"
+    }
+  ],
+  "@context": [
+    "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/featureCollection/context.jsonld",
+    {
+      "@base": "http://csdm-example-surveys/DP-572532/",
+      "eg2": "http://csdm-example-surveys/DP-572532/",
+      "surveyable": "https://linked.data.gov.au/def/csdm/observedProperties/",
+      "surveyproc": "https://linked.data.gov.au/def/csdm/observationProcedures/",
+      "nz-surveypoint-purpose": "https://linked.data.gov.au/def/csdm/nz-surveypointpurpose/",
+      "nz-line-purpose": "https://linked.data.gov.au/def/csdm/nz-linepurpose/",
+      "icsm-survey-type": "https://linked.data.gov.au/def/csdm/icsm-survey-type/",
+      "nz-monument-form": "https://linked.data.gov.au/def/csdm/nz-monument-form/",
+      "nz-monument-condition": "https://linked.data.gov.au/def/csdm/nz-monument-condition/",
+      "nz-monument-state": "https://linked.data.gov.au/def/csdm/nz-monument-state/",
+      "registered-surveyors": "https://example.org/surveyors/",
+      "icsm-jurisdictions": "https://linked.data.gov.au/def/jurisdictions/",
+      "epsg": "http://www.opengis.net/def/crs/EPSG/0/"
     }
   ]
 }

@@ -16,7 +16,7 @@
       ]
     },
     "TopoLine": {
-      "$ref": "https://surroundaustralia.github.io/topo-feature/build/annotated/geo/topo/features/topo-line/schema.json"
+      "$ref": "https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-line/schema.json"
     },
     "FeatureOptions": {
       "anyOf": [
@@ -35,7 +35,7 @@
       "type": "object",
       "properties": {
         "name": {
-          "$ref": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.json",
+          "$ref": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema.json",
           "x-jsonld-id": "https://linked.data.gov.au/def/csdm/commonpatterns/name",
           "x-jsonld-type": "@id"
         },
@@ -173,7 +173,7 @@
           "type": "object",
           "properties": {
             "geodeticid": {
-              "$ref": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/compoundName/schema.json",
+              "$ref": "https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema.json",
               "x-jsonld-id": "https://linked.data.gov.au/def/csdm/surveyfeatures/geodeticid"
             }
           },

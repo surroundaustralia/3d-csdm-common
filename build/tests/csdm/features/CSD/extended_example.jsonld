@@ -89,7 +89,7 @@
               ]
             },
             "area": 484,
-            "parcelType": "nz-parcel-type:fee-simple-title",
+            "parcelType": "nz-parcel-type:l",
             "parcelPurpose": "nz-parcel-purpose:fst",
             "parcelState": "nz-parcel-state:created",
             "class": "nz-parcel-class:allotment",
@@ -145,7 +145,7 @@
               ]
             },
             "area": 1196,
-            "parcelType": "nz-parcel-type:fee-simple-title",
+            "parcelType": "nz-parcel-type:l",
             "parcelPurpose": "nz-parcel-purpose:fst",
             "parcelState": "nz-parcel-state:created",
             "class": "nz-parcel-class:allotment",
@@ -1574,7 +1574,7 @@
           "id": "l566592",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "11745160",
               "44438418"
@@ -1587,21 +1587,9 @@
         {
           "type": "Feature",
           "id": "l973158",
-          "geometry": {
-            "type": "LineString",
-            "coordinates": [
-              [
-                174.7501603083,
-                -36.9307359096
-              ],
-              [
-                174.749997996,
-                -36.930903937
-              ]
-            ]
-          },
+          "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "1725787",
               "11745104"
@@ -1616,7 +1604,7 @@
           "id": "l910380",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "11745160",
               "11745161"
@@ -1631,7 +1619,7 @@
           "id": "l472486",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "11745160",
               "49655185"
@@ -1646,7 +1634,7 @@
           "id": "l922788",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "49655186"
@@ -1661,7 +1649,7 @@
           "id": "l773277",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "44438410"
@@ -1676,7 +1664,7 @@
           "id": "l388393",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "49655172"
@@ -1691,7 +1679,7 @@
           "id": "l941613",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "49655187"
@@ -1706,7 +1694,7 @@
           "id": "l818068",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "49655170"
@@ -1721,7 +1709,7 @@
           "id": "l599462",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655185",
               "49655171"
@@ -1736,7 +1724,7 @@
           "id": "l746686",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "29959289",
               "49655174"
@@ -1751,7 +1739,7 @@
           "id": "l999724",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655174",
               "29962820"
@@ -1766,7 +1754,7 @@
           "id": "l591175",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "29962820",
               "29963073"
@@ -1781,7 +1769,7 @@
           "id": "l874826",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655175",
               "49655170"
@@ -1796,7 +1784,7 @@
           "id": "l369793",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "29963073",
               "29963182"
@@ -1811,7 +1799,7 @@
           "id": "l435861",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "29963182",
               "49655175"
@@ -1826,7 +1814,7 @@
           "id": "l965727",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655170",
               "29960715"
@@ -1841,7 +1829,7 @@
           "id": "l535242",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655171",
               "49655173"
@@ -1856,7 +1844,7 @@
           "id": "l535759",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655173",
               "49655172"
@@ -1871,7 +1859,7 @@
           "id": "l985190",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655172",
               "49655187"
@@ -1886,7 +1874,7 @@
           "id": "l952702",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655187",
               "49655170"
@@ -1901,7 +1889,7 @@
           "id": "l580762",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655174",
               "49655176"
@@ -1916,7 +1904,7 @@
           "id": "l761760",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655176",
               "49655177"
@@ -1931,7 +1919,7 @@
           "id": "l951515",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655177",
               "49655178"
@@ -1946,7 +1934,7 @@
           "id": "l949729",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655178",
               "49655179"
@@ -1961,7 +1949,7 @@
           "id": "l852048",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655179",
               "49655180"
@@ -1976,7 +1964,7 @@
           "id": "l641327",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655180",
               "49655181"
@@ -1991,7 +1979,7 @@
           "id": "l715872",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655181",
               "49655182"
@@ -2006,7 +1994,7 @@
           "id": "l832940",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655182",
               "49655183"
@@ -2021,7 +2009,7 @@
           "id": "l685716",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655183",
               "49655184"
@@ -2036,7 +2024,7 @@
           "id": "l345344",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655184",
               "49655175"
@@ -2058,7 +2046,7 @@
           "id": "l636624",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "11745104",
               "49655186"
@@ -2073,7 +2061,7 @@
           "id": "l595769",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "44438410",
               "29960715"
@@ -2088,7 +2076,7 @@
           "id": "l520719",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "44438410",
               "49655186"
@@ -2103,7 +2091,7 @@
           "id": "l947230",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "11745104",
               "44438418"
@@ -2118,7 +2106,7 @@
           "id": "l595769",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "44438418",
               "29960715"
@@ -2133,7 +2121,7 @@
           "id": "l622186",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "44438418",
               "29959289"
@@ -2148,7 +2136,7 @@
           "id": "l329256",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "29959289",
               "49655171"
@@ -2163,7 +2151,7 @@
           "id": "l589282",
           "geometry": null,
           "topology": {
-            "type": "LineString",
+            "type": "Edge",
             "references": [
               "49655171",
               "29960715"

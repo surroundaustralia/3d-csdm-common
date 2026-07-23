@@ -2,8 +2,14 @@
   "type": "FeatureCollection",
   "features": [
     {
-      "id": "0",
       "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          174.7501603083,
+          -36.9307359096
+        ]
+      },
       "properties": {
         "name": {
           "label": "RM E DP 119552",
@@ -29,19 +35,19 @@
           "condition": "nz-monument-condition:markfound",
           "state": "nz-monument-state:original"
         },
-        "geodeticid": null
+        "feature_id": "1725787"
       },
+      "id": "1725787"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7501603083,
-          -36.9307359096
+          174.7508196767,
+          -36.9314093194
         ]
-      }
-    },
-    {
-      "id": "1",
-      "type": "Feature",
+      },
       "properties": {
         "name": {
           "label": "ALP I DP 481392",
@@ -57,8 +63,6 @@
           ]
         },
         "purpose": "nz-surveypoint-purpose:nonBoundary",
-        "fromSurvey": null,
-        "comment": null,
         "occupation": {
           "comment": "ALP in channel of drive"
         },
@@ -67,20 +71,21 @@
           "condition": "nz-monument-condition:markfound",
           "state": "nz-monument-state:original"
         },
-        "geodeticid": null
+        "feature_id": "44396823"
       },
+      "id": "44396823"
+    },
+    {
+      "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          174.7508196767,
-          -36.9314093194
+          174.749997996,
+          -36.930903937
         ]
-      }
-    },
-    {
-      "id": "2",
-      "type": "Feature",
+      },
       "properties": {
+        "geodeticid": "XX FFF",
         "name": {
           "label": "RM C DP 119552 (EQ9W)",
           "hasPart": [
@@ -106,39 +111,21 @@
             }
           ]
         },
-        "purpose": "prm",
-        "fromSurvey": null,
-        "comment": null,
         "occupation": {
           "comment": "ALP in channel of drive"
         },
+        "purpose": "prm",
         "monumentedBy": {
           "form": "nz-monument-form:pin",
           "condition": "nz-monument-condition:markfound",
           "state": "nz-monument-state:original"
         },
-        "geodeticid": "XX FFF"
+        "feature_id": "11745104"
       },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          174.749997996,
-          -36.930903937
-        ]
-      }
+      "id": "11745104"
     },
     {
-      "id": "3",
       "type": "Feature",
-      "properties": {
-        "name": null,
-        "purpose": "nz-line-purpose:boundary",
-        "fromSurvey": null,
-        "comment": null,
-        "occupation": null,
-        "monumentedBy": null,
-        "geodeticid": null
-      },
       "geometry": {
         "type": "LineString",
         "coordinates": [
@@ -151,6 +138,41 @@
             -36.930903937
           ]
         ]
+      },
+      "properties": {
+        "purpose": "nz-line-purpose:boundary"
+      },
+      "id": "l973158"
+    }
+  ],
+  "@context": [
+    "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/featureCollection/context.jsonld",
+    {
+      "@base": "https://linked.data.gov.au/def/csdm/csd-example/",
+      "eg1": "https://example.org/csd-example/",
+      "registered-surveyors": "https://example.org/surveyors/",
+      "surveyable": "https://linked.data.gov.au/def/csdm/observedProperties/",
+      "surveyproc": "https://linked.data.gov.au/def/csdm/observationProcedures/",
+      "nz-survey-docroles": "https://linked.data.gov.au/def/csdm/nz-survey-docroles/",
+      "nz-surveypoint-purpose": "https://linked.data.gov.au/def/csdm/nz-surveypointpurpose/",
+      "nz-line-purpose": "https://linked.data.gov.au/def/csdm/nz-linepurpose/",
+      "icsm-survey-type": "https://linked.data.gov.au/def/csdm/icsm-survey-type/",
+      "nz-monument-form": "https://linked.data.gov.au/def/csdm/nz-monument-form/",
+      "nz-monument-condition": "https://linked.data.gov.au/def/csdm/nz-monument-condition/",
+      "nz-monument-state": "https://linked.data.gov.au/def/csdm/nz-monument-state/",
+      "icsm-jurisdictions": "https://linked.data.gov.au/def/jurisdictions/",
+      "epsg": "http://www.opengis.net/def/crs/EPSG/0/",
+      "activityType": {
+        "@id": "@type",
+        "@context": {
+          "@base": "https://linked.data.gov.au/def/csdm/nz-surveyactivities/"
+        }
+      },
+      "agentType": {
+        "@id": "@type",
+        "@context": {
+          "@base": "https://linked.data.gov.au/def/csdm/nz-surveyagents/"
+        }
       }
     }
   ]

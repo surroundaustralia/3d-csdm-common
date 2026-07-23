@@ -1,5 +1,5 @@
 Validation report for icsm.csdm.features.SurveyFeatures - Survey Features
-Generated 2026-05-14T09:01:55.370640+00:00
+Generated 2026-07-23T02:11:18.066962+00:00
 === Files ===
 Using examples/surveyvectors.json from examples
 JSON-LD context is present - uplifting
@@ -14,47 +14,49 @@ Validation passed
 === SHACL ===
 Using snippet SHACL closures:
  - examples/points.ttl
-Validation result for _sources/csdm/datatypes/compoundName/rules.shacl:
+Validation result for https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl:
   Validation Report
   Conforms: True
   
-Focus nodes for _sources/csdm/datatypes/compoundName/rules.shacl:
- - Shape _:n0c07ba45c74e4d3bbbe9fb269aaaae5fb1: *none*
+Focus nodes for https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl:
+ - Shape _:na5fd5ffd80e945f69bfec1e60a47a4a0b1: *none*
 
 Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:FeatureShape: eg1:P1P3
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
  - Shape geojson:GeometryShape: *none*
+ - Shape geojson:FeatureShape: eg1:P1P3
  - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
 
-Validation result for https://surroundaustralia.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
+Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
   Validation Report
   Conforms: True
   
-Focus nodes for https://surroundaustralia.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
- - Shape topo:testTopoLinesReferencePoints: eg1:P1P3/geojson:topology
- - Shape topo:testTopoReferencesExist: eg1:P1P3/geojson:topology
+Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
+ - Shape toporules:testTopoLinesReferencePoints: eg1:P1P3/geojson:topology
+ - Shape toporules:testTopoReferencesExist: eg1:P1P3/geojson:topology
+ - Shape toporules:testTopoEdgesReferencePoints: eg1:P1P3/geojson:topology
+ - Shape toporules:testTopoDirectedReferencesExist: *none*
 
-Validation result for https://surroundaustralia.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
   Validation Report
   Conforms: True
   
-Focus nodes for https://surroundaustralia.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
- - Shape _:nf40ae5a017aa43d6a1ff99816e1caab2b1: *none*
- - Shape _:nf40ae5a017aa43d6a1ff99816e1caab2b3: *none*
+Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+ - Shape _:n7c6fffdb0f7d472c8684a8c205377b77b3: *none*
+ - Shape _:n7c6fffdb0f7d472c8684a8c205377b77b1: *none*
 
 Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
- - Shape geojson:FeatureShape: *none*
  - Shape geojson:GeometryShape: *none*
+ - Shape geojson:FeatureShape: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
  - Shape geojson:LinkShape: *none*
  - Shape geojson:FeatureCollectionShape: *none*

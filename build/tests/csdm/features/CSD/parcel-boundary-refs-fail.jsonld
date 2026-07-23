@@ -89,7 +89,7 @@
               ]
             },
             "area": 484,
-            "parcelType": "nz-parcel-type:fee-simple-title",
+            "parcelType": "nz-parcel-type:l",
             "state": "nz-parcel-state:created",
             "class": "nz-parcel-class:allotment",
             "interests": [
@@ -144,7 +144,7 @@
               ]
             },
             "area": 1196,
-            "parcelType": "nz-parcel-type:fee-simple-title",
+            "parcelType": "nz-parcel-type:l",
             "parcelPurpose": "nz-parcel-purpose:fst",
             "parcelState": "nz-parcel-state:created",
             "class": "nz-parcel-class:allotment",
