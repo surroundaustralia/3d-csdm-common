@@ -9,7 +9,7 @@
   "itemClass": "schema",
   "register": "icsm-csdm",
   "version": "0.1",
-  "dateOfLastChange": "2026-07-22",
+  "dateOfLastChange": "2026-08-03",
   "link": "https://github.com/icsm-au/3d-csdm-schema",
   "sources": [
     {
@@ -24,8 +24,8 @@
   ],
   "shaclShapes": {},
   "dependsOn": [
-    "ogc.ogc-utils.iri-or-curie",
-    "ogc.geo.json-fg.link-role"
+    "ogc.geo.json-fg.link-role",
+    "ogc.ogc-utils.iri-or-curie"
   ],
   "ldContext": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/context.jsonld",
   "schema": {

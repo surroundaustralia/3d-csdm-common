@@ -538,6 +538,10 @@
               "@id": "topo:edges",
               "@container": "@list"
             },
+            "solids": {
+              "@id": "topo:solids",
+              "@container": "@list"
+            },
             "bearingRotation": "parcel:bearingRotation",
             "parcels": "parcel:parcels",
             "PrimaryParcel": {
@@ -1168,8 +1172,8 @@
       "@type": "@id"
     },
     "terrainIntersectionCurve": "parcel:terrainIntersectionCurve",
-    "solids": {
-      "@id": "topo:shells",
+    "directed_references": {
+      "@id": "topo:directedReferences",
       "@container": "@list"
     },
     "ActuatableProperty": {

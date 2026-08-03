@@ -86,15 +86,15 @@
     dct:spatial [ a geojson:Point ;
             geojson:coordinates ( 1.7475e+02 -3.69309e+01 ) ] ;
     ns1:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
-            dct:hasPart [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "EQ9W" ;
+            dct:hasPart [ rdfs:label "EQ9W" ;
                     commonpatterns:namePartType "geodeticStamp" ],
-                [ rdfs:label "119552" ;
+                [ rdfs:label "C" ;
                     commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "RM" ;
                     commonpatterns:namePartType "MarkType" ],
-                [ rdfs:label "C" ;
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
+                [ rdfs:label "119552" ;
                     commonpatterns:namePartType "Stamp" ] ] ;
     surv:geodeticid "XX FFF" ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
@@ -108,10 +108,10 @@
             geojson:coordinates ( 1.747502e+02 -3.693074e+01 ) ] ;
     rdfs:comment "ALP in channel of drive" ;
     ns1:name [ rdfs:label "RM E DP 119552" ;
-            dct:hasPart [ rdfs:label "RM E" ;
-                    commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "DP 119552" ;
-                    commonpatterns:namePartType "Source" ] ] ;
+            dct:hasPart [ rdfs:label "DP 119552" ;
+                    commonpatterns:namePartType "Source" ],
+                [ rdfs:label "RM E" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
     surv:fromSurvey <https://linked.data.gov.au/def/csdm/csd-example/DP_119552> ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
             surv:form nz-monument-form:plaque ;

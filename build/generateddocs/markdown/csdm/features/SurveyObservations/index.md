@@ -93,8 +93,8 @@ An example observation of a vector based on bearing and distance - in 2D
 ```ttl
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix geopose: <https://linked.data.gov.au/def/csdm/utils/geopose/> .
-@prefix ns1: <https://linked.data.gov.au/def/csdm/sensors/> .
-@prefix ns2: <https://linked.data.gov.au/def/csdm/surveyobs/> .
+@prefix ns1: <https://linked.data.gov.au/def/csdm/surveyobs/> .
+@prefix ns2: <https://linked.data.gov.au/def/csdm/sensors/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -103,13 +103,13 @@ An example observation of a vector based on bearing and distance - in 2D
     sosa:hasFeatureOfInterest <file:///github/workspace/l973158> ;
     sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;
                     geopose:angles [ ] ] ] ;
-    sosa:hasResultQuality [ ns2:angleAccuracyClass <http://any.valid/> ;
-            ns2:angleAccuracyMeasure 2.815469e-02 ;
-            ns2:distanceAccuracyClass <http://any.valid/> ;
-            ns2:distanceAccuracyMeasure 1.00138e-04 ] ;
-    sosa:madeBySensor [ a ns1:DifferentialGPS ;
-            ns1:baseSensor "gps+38666" ;
-            ns1:roverSensor "gps+37544" ] ;
+    sosa:hasResultQuality [ ns1:angleAccuracyClass <http://any.valid/> ;
+            ns1:angleAccuracyMeasure 2.815469e-02 ;
+            ns1:distanceAccuracyClass <http://any.valid/> ;
+            ns1:distanceAccuracyMeasure 1.00138e-04 ] ;
+    sosa:madeBySensor [ a ns2:DifferentialGPS ;
+            ns2:baseSensor "gps+38666" ;
+            ns2:roverSensor "gps+37544" ] ;
     sosa:observedProperty <https://linked.data.gov.au/def/csdm/property/pose> ;
     sosa:resultTime "2023-05-22T16:41:00" .
 
