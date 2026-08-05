@@ -1,5 +1,5 @@
 Validation report for icsm.csdm.features.CSD - Cadastral Survey Dataset
-Generated 2026-08-05T00:59:46.301044+00:00
+Generated 2026-08-05T01:51:07.843008+00:00
 === Files ===
 Using occupation.json from test resources
 JSON-LD context is present - uplifting
@@ -12,6 +12,24 @@ Validation passed
 === End JSON Schema ===
 
 === SHACL ===
+Validation result for _sources/csdm/shapes/parcel_module.shapes.ttl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/csdm/shapes/parcel_module.shapes.ttl:
+ - Shape :PrimaryParcel: *none*
+ - Shape :Apellation: *none*
+ - Shape :SecondaryParcel: *none*
+ - Shape :ParcelQualityClass: *none*
+ - Shape :LandInterest: *none*
+ - Shape :ParcelType: *none*
+ - Shape :Parcel: *none*
+ - Shape :ParcelAggregate: *none*
+ - Shape :EstateParcel: *none*
+ - Shape :ParcelState: *none*
+ - Shape :PurposeOfSpatialUnit: *none*
+ - Shape :PropertyUnit: *none*
+
 Validation result for _sources/csdm/features/CSD/tests/obs-match-vectors.shacl:
   Validation Report
   Conforms: True
@@ -24,27 +42,57 @@ Validation result for _sources/csdm/shapes/container.shapes.ttl:
   Conforms: True
   
 Focus nodes for _sources/csdm/shapes/container.shapes.ttl:
- - Shape container:CSD: *none*
  - Shape <https://linked.data.gov.au/def/csdm/surveyprov/SurveyType>: *none*
  - Shape container:CSD-seeAlso: *none*
+ - Shape container:CSD: *none*
 
-Validation result for _sources/csdm/shapes/parcel_module.shapes.ttl:
+Validation result for https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl:
   Validation Report
   Conforms: True
   
-Focus nodes for _sources/csdm/shapes/parcel_module.shapes.ttl:
- - Shape :PurposeOfSpatialUnit: *none*
- - Shape :ParcelAggregate: *none*
- - Shape :Parcel: *none*
- - Shape :ParcelState: *none*
- - Shape :PrimaryParcel: *none*
- - Shape :SecondaryParcel: *none*
- - Shape :EstateParcel: *none*
- - Shape :Apellation: *none*
- - Shape :LandInterest: *none*
- - Shape :PropertyUnit: *none*
- - Shape :ParcelQualityClass: *none*
- - Shape :ParcelType: *none*
+Focus nodes for https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl:
+ - Shape _:nebb19c6c9d2e45c1ab3e43d2be69f57db1: eg1:4494877/ns1:name
+
+Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
+ - Shape toporules:testTopoReferencesExist: eg1:4494877/geojson:topology
+ - Shape toporules:testTopoLinesReferencePoints: eg1:964009/geojson:geometry
+ - Shape toporules:testTopoDirectedReferencesExist: *none*
+ - Shape toporules:testTopoEdgesReferencePoints: eg1:964009/geojson:geometry
+
+Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+ - Shape _:n13f3d016b5c346a19db8e5c4cd9e6ab1b1: eg1:4494877/dct:spatial
+ - Shape _:n13f3d016b5c346a19db8e5c4cd9e6ab1b3: eg1:964009/geojson:geometry
+
+Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:FeatureShape: *none*
+ - Shape geojson:FeatureCollectionShape: eg1:occupation-example,eg1:OccupationMarks
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+
+Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:FeatureShape: eg1:4494877,eg1:964009
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
 
 Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:
   Validation Report
@@ -58,63 +106,15 @@ Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/prop
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*
  - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
  - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
  - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: *none*
  - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
-
-Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:GeometryShape: *none*
- - Shape geojson:FeatureShape: eg1:4494877,eg1:964009
-
-Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
- - Shape toporules:testTopoEdgesReferencePoints: eg1:964009/geojson:geometry
- - Shape toporules:testTopoLinesReferencePoints: eg1:964009/geojson:geometry
- - Shape toporules:testTopoDirectedReferencesExist: *none*
- - Shape toporules:testTopoReferencesExist: eg1:4494877/geojson:topology
-
-Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
- - Shape _:n48991cb9a9e54c7a8bb000c8734113d1b3: eg1:964009/geojson:geometry
- - Shape _:n48991cb9a9e54c7a8bb000c8734113d1b1: eg1:4494877/dct:spatial
-
-Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:FeatureCollectionShape: eg1:occupation-example,eg1:OccupationMarks
- - Shape geojson:GeometryShape: *none*
- - Shape geojson:FeatureShape: *none*
-
-Validation result for https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl:
- - Shape _:nad9e6a48e87644c78b4847fa62a7e467b1: eg1:4494877/ns1:name
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
 
 === End SHACL ===
 

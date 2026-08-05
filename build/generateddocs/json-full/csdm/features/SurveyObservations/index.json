@@ -39,11 +39,11 @@
     ]
   },
   "dependsOn": [
+    "ogc.ogc-utils.iri-or-curie",
+    "ogc.sosa.features.observation",
     "icsm.csdm.datatypes.quality",
     "ogc.sosa.properties.observationCollection",
-    "ogc.sosa.features.observation",
-    "ogc.sosa.properties.observation",
-    "ogc.ogc-utils.iri-or-curie"
+    "ogc.sosa.properties.observation"
   ],
   "ldContext": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld",
   "schema": {
@@ -80,7 +80,7 @@
           "language": "ttl",
           "url": "https://surroundaustralia.github.io/3d-csdm-common/build/tests/csdm/features/SurveyObservations/newvector.ttl",
           "sizeBytes": 1114,
-          "code": "@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix geopose: <https://linked.data.gov.au/def/csdm/utils/geopose/> .\n@prefix ns1: <https://linked.data.gov.au/def/csdm/surveyobs/> .\n@prefix ns2: <https://linked.data.gov.au/def/csdm/sensors/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a geojson:Feature ;\n    sosa:hasFeatureOfInterest <file:///github/workspace/l973158> ;\n    sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;\n                    geopose:angles [ ] ] ] ;\n    sosa:hasResultQuality [ ns1:angleAccuracyClass <http://any.valid/> ;\n            ns1:angleAccuracyMeasure 2.815469e-02 ;\n            ns1:distanceAccuracyClass <http://any.valid/> ;\n            ns1:distanceAccuracyMeasure 1.00138e-04 ] ;\n    sosa:madeBySensor [ a ns2:DifferentialGPS ;\n            ns2:baseSensor \"gps+38666\" ;\n            ns2:roverSensor \"gps+37544\" ] ;\n    sosa:observedProperty <https://linked.data.gov.au/def/csdm/property/pose> ;\n    sosa:resultTime \"2023-05-22T16:41:00\" .\n\n"
+          "code": "@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix geopose: <https://linked.data.gov.au/def/csdm/utils/geopose/> .\n@prefix ns1: <https://linked.data.gov.au/def/csdm/sensors/> .\n@prefix ns2: <https://linked.data.gov.au/def/csdm/surveyobs/> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a geojson:Feature ;\n    sosa:hasFeatureOfInterest <file:///github/workspace/l973158> ;\n    sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;\n                    geopose:angles [ ] ] ] ;\n    sosa:hasResultQuality [ ns2:angleAccuracyClass <http://any.valid/> ;\n            ns2:angleAccuracyMeasure 2.815469e-02 ;\n            ns2:distanceAccuracyClass <http://any.valid/> ;\n            ns2:distanceAccuracyMeasure 1.00138e-04 ] ;\n    sosa:madeBySensor [ a ns1:DifferentialGPS ;\n            ns1:baseSensor \"gps+38666\" ;\n            ns1:roverSensor \"gps+37544\" ] ;\n    sosa:observedProperty <https://linked.data.gov.au/def/csdm/property/pose> ;\n    sosa:resultTime \"2023-05-22T16:41:00\" .\n\n"
         }
       ]
     },

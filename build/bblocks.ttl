@@ -21,12 +21,12 @@
     rdfs:label "Generalised annotation" ;
     dct:abstract "An annotation allowing multiple values, either links with descriptions or simple text."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2023-04-05T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/bblock/icsm.csdm.datatypes.annotation> ],
-        [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/build/generateddocs/markdown/csdm/datatypes/annotation/index.md> ],
         [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/build/generateddocs/json-full/csdm/datatypes/annotation/index.json> ] ;
+            rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/build/generateddocs/json-full/csdm/datatypes/annotation/index.json> ],
+        [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/bblock/icsm.csdm.datatypes.annotation> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-08-05"^^xsd:date ;
     dct:source <https://github.com/icsm-au/3d-csdm> ;
@@ -34,18 +34,18 @@
     skos:prefLabel "Generalised annotation" ;
     skos:topConceptOf <https://surroundaustralia.github.io/3d-csdm-common/> ;
     dcat:keyword "utils" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/yaml" ;
             prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/schema.yaml> ;
             prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/schema.json> ;
-            prof:hasRole role:schema ] ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:dependsOn <bblocks://ogc.geo.json-fg.link-role>,
         <bblocks://ogc.ogc-utils.iri-or-curie> ;
     bblocks:hasSourceJsonLdContext <https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/datatypes/annotation/context.jsonld> ;
@@ -57,18 +57,18 @@
 
 <https://surroundaustralia.github.io/3d-csdm-common/build/bblocks.ttl> a prov:Entity ;
     dct:format "text/turtle" ;
-    prov:wasAttributedTo _:Nf5fef2fa85384aaca0e37059b7d7b849 ;
+    prov:wasAttributedTo _:Nfcb073d065b94b14b56fcdb1cc2ad8e0 ;
     prov:wasGeneratedBy [ a prov:Activity ;
-            prov:endedAtTime "2026-08-05T00:59:50.153175"^^xsd:dateTime ;
-            prov:startedAtTime "2026-08-05T00:59:49.990661"^^xsd:dateTime ;
+            prov:endedAtTime "2026-08-05T01:51:11.990862"^^xsd:dateTime ;
+            prov:startedAtTime "2026-08-05T01:51:11.884824"^^xsd:dateTime ;
             prov:used [ a prov:Entity ;
                     dct:format "application/yaml" ;
                     rdfs:seeAlso <file:///src/ogc/bblocks/register-context.yaml> ],
                 [ a prov:Entity ;
                     dct:format "application/json" ;
-                    dct:hasVersion "git:06279e51b3a1f294611bff86f41026b7b3f6c731" ;
+                    dct:hasVersion "git:fb086ef9fdfbac65a79a1452856dfb8589381653" ;
                     rdfs:seeAlso <https://surroundaustralia.github.io/3d-csdm-common/build/register.json> ] ;
-            prov:wasAssociatedWith _:Nf5fef2fa85384aaca0e37059b7d7b849 ] .
+            prov:wasAssociatedWith _:Nfcb073d065b94b14b56fcdb1cc2ad8e0 ] .
 
 <bblocks://icsm.csdm.datatypes.quality> a skos:Concept,
         dcat:Dataset,
@@ -77,12 +77,12 @@
     rdfs:label "SurveyQuality" ;
     dct:abstract "A extensible quality descriptor object with standard properties for survey point and vector observations."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2023-04-05T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/build/generateddocs/markdown/csdm/datatypes/quality/index.md> ],
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/bblock/icsm.csdm.datatypes.quality> ],
         [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/build/generateddocs/json-full/csdm/datatypes/quality/index.json> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/bblock/icsm.csdm.datatypes.quality> ] ;
+        [ dct:format "text/markdown" ;
+            rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/build/generateddocs/markdown/csdm/datatypes/quality/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-08-05"^^xsd:date ;
     dct:source <https://github.com/icsm-au/3d-csdm> ;
@@ -90,18 +90,18 @@
     skos:prefLabel "SurveyQuality" ;
     skos:topConceptOf <https://surroundaustralia.github.io/3d-csdm-common/> ;
     dcat:keyword "utils" ;
-    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/context.jsonld> ;
-            prof:hasRole role:mapping ],
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml> ;
-            prof:hasRole role:schema ] ;
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/context.jsonld> ;
+            prof:hasRole role:mapping ] ;
     bblocks:hasSourceJsonLdContext <https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/datatypes/quality/context.jsonld> ;
     bblocks:scope <http://www.opengis.net/def/bblocks/scope/unstable> ;
     bblocks:status <http://www.opengis.net/def/status/under-development> ;
@@ -130,25 +130,23 @@
         "o&m&s",
         "sosa",
         "ssn" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/schema.yaml> ;
-            prof:hasRole role:schema ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.geo.topo.features.topo-feature> ;
-            prof:hasArtifact <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl>,
-                <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/context.jsonld> ;
-            prof:hasRole role:mapping ],
-        [ dct:conformsTo shacl: ;
+    prof:hasResource [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.sosa.properties.observation> ;
             prof:hasArtifact <https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl> ;
             prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/schema.json> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/schema.yaml> ;
+            prof:hasRole role:schema ],
+        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://icsm.csdm.features.CSD> ;
@@ -158,17 +156,7 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.bbr.utils.compoundName> ;
-            prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.geo.features.feature> ;
-            prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.geo.topo.features.topo-arc> ;
+            rdfs:seeAlso <bblocks://ogc.geo.topo.features.topo-feature> ;
             prof:hasArtifact <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl>,
                 <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl> ;
             prof:hasRole role:validation ],
@@ -180,18 +168,30 @@
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://icsm.csdm.features.SurveyObservations> ;
-            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/rules.shacl> ;
+            rdfs:seeAlso <bblocks://ogc.bbr.utils.compoundName> ;
+            prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.geo.topo.features.topo-arc> ;
+            prof:hasArtifact <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl>,
+                <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl> ;
+            prof:hasRole role:validation ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.geo.features.feature> ;
+            prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.geo.features.featureCollection> ;
             prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl> ;
             prof:hasRole role:validation ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/schema.json> ;
-            prof:hasRole role:schema ] ;
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://icsm.csdm.features.SurveyObservations> ;
+            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/rules.shacl> ;
+            prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://icsm.csdm.features.SurveyFeatures>,
         <bblocks://icsm.csdm.features.SurveyObservations>,
         <bblocks://ogc.bbr.utils.compoundName>,
@@ -219,12 +219,12 @@
     rdfs:label "Survey Features" ;
     dct:abstract "The set of geographic features present on a survey - these include the FeatureOfInterest for observations"^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2023-04-05T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
-            rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/build/generateddocs/json-full/csdm/features/SurveyFeatures/index.json> ],
-        [ dct:format "text/markdown" ;
+    dct:description [ dct:format "text/markdown" ;
             rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/build/generateddocs/markdown/csdm/features/SurveyFeatures/index.md> ],
         [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/bblock/icsm.csdm.features.SurveyFeatures> ] ;
+            rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/bblock/icsm.csdm.features.SurveyFeatures> ],
+        [ dct:format "application/json" ;
+            rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/build/generateddocs/json-full/csdm/features/SurveyFeatures/index.json> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-08-05"^^xsd:date ;
     dct:source <https://github.com/icsm-au/3d-csdm> ;
@@ -235,19 +235,13 @@
         "features",
         "icsm",
         "survey" ;
-    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/json" ;
-            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/schema.json> ;
-            prof:hasRole role:schema ],
+    prof:hasResource [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
+            dct:format "application/ld+json" ;
+            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/context.jsonld> ;
+            prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.geo.topo.features.topo-feature> ;
-            prof:hasArtifact <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl>,
-                <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.geo.topo.features.topo-feature-collection> ;
             prof:hasArtifact <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl>,
                 <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl> ;
             prof:hasRole role:validation ],
@@ -255,6 +249,12 @@
             dct:format "application/yaml" ;
             prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/schema.yaml> ;
             prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://ogc.geo.topo.features.topo-feature-collection> ;
+            prof:hasArtifact <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl>,
+                <https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.geo.features.featureCollection> ;
@@ -265,15 +265,15 @@
             rdfs:seeAlso <bblocks://ogc.bbr.utils.compoundName> ;
             prof:hasArtifact <https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl> ;
             prof:hasRole role:validation ],
+        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/json" ;
+            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/schema.json> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.geo.features.feature> ;
             prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl> ;
-            prof:hasRole role:validation ],
-        [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
-            dct:format "application/ld+json" ;
-            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/context.jsonld> ;
-            prof:hasRole role:mapping ] ;
+            prof:hasRole role:validation ] ;
     bblocks:dependsOn <bblocks://ogc.bbr.utils.compoundName>,
         <bblocks://ogc.geo.common.data_types.geojson>,
         <bblocks://ogc.geo.json-fg.feature>,
@@ -293,12 +293,12 @@
     rdfs:label "Survey Observations" ;
     dct:abstract "An Observation specialisation for an aspect of a survey - typically vectors with new or adopted bearings and distances."^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
     dct:created "2023-04-05T00:00:00+00:00"^^xsd:dateTime ;
-    dct:description [ dct:format "application/json" ;
+    dct:description [ dct:format "text/html" ;
+            rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/bblock/icsm.csdm.features.SurveyObservations> ],
+        [ dct:format "application/json" ;
             rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/build/generateddocs/json-full/csdm/features/SurveyObservations/index.json> ],
         [ dct:format "text/markdown" ;
-            rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/build/generateddocs/markdown/csdm/features/SurveyObservations/index.md> ],
-        [ dct:format "text/html" ;
-            rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/bblock/icsm.csdm.features.SurveyObservations> ] ;
+            rdfs:isDefinedBy <https://surroundaustralia.github.io/3d-csdm-common/build/generateddocs/markdown/csdm/features/SurveyObservations/index.md> ] ;
     dct:hasVersion "0.1" ;
     dct:modified "2026-08-05"^^xsd:date ;
     dct:source <https://github.com/icsm-au/3d-csdm> ;
@@ -311,28 +311,28 @@
         "icsm",
         "observation",
         "survey" ;
-    prof:hasResource [ dct:conformsTo shacl: ;
-            dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://ogc.geo.features.feature> ;
-            prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl> ;
-            prof:hasRole role:validation ],
+    prof:hasResource [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
+            dct:format "application/yaml" ;
+            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/schema.yaml> ;
+            prof:hasRole role:schema ],
         [ dct:conformsTo <https://www.w3.org/TR/json-ld11/> ;
             dct:format "application/ld+json" ;
             prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld> ;
             prof:hasRole role:mapping ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
-            rdfs:seeAlso <bblocks://icsm.csdm.features.SurveyObservations> ;
-            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/rules.shacl> ;
+            rdfs:seeAlso <bblocks://ogc.geo.features.feature> ;
+            prof:hasArtifact <https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl> ;
             prof:hasRole role:validation ],
         [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
             dct:format "application/json" ;
             prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/schema.json> ;
             prof:hasRole role:schema ],
-        [ dct:conformsTo <https://json-schema.org/draft/2020-12/schema> ;
-            dct:format "application/yaml" ;
-            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/schema.yaml> ;
-            prof:hasRole role:schema ],
+        [ dct:conformsTo shacl: ;
+            dct:format "text/turtle" ;
+            rdfs:seeAlso <bblocks://icsm.csdm.features.SurveyObservations> ;
+            prof:hasArtifact <https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/rules.shacl> ;
+            prof:hasRole role:validation ],
         [ dct:conformsTo shacl: ;
             dct:format "text/turtle" ;
             rdfs:seeAlso <bblocks://ogc.sosa.properties.observation> ;
@@ -388,7 +388,7 @@ This implementation pattern:
 The "semantic annotation" capabilities of the OGC Building Block design links the schema to the conceptual and logical models.
 _NB Publication of these models as Linked Data would allow access to documentation of each element by online systems_.
 """^^<https://www.w3.org/ns/iana/media-types/text/markdown> ;
-    dct:modified "2026-08-05T00:59:17.078889"^^xsd:dateTime ;
+    dct:modified "2026-08-05T01:50:45.284782"^^xsd:dateTime ;
     owl:imports <https://ogcincubator.github.io/bblock-prov-schema/build/register.json>,
         <https://ogcincubator.github.io/bblocks-land-parcels/build/register.json>,
         <https://ogcincubator.github.io/topo-feature/build/register.json>,
@@ -400,22 +400,22 @@ _NB Publication of these models as Linked Data would allow access to documentati
         <bblocks://icsm.csdm.features.SurveyFeatures>,
         <bblocks://icsm.csdm.features.SurveyObservations> ;
     skos:prefLabel "Building Blocks - 3D Cadastre Survey Data Exchange Specification" ;
-    prof:hasResource [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
+    prof:hasResource [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
+            dct:type "application/ld+json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:hasTarget <https://surroundaustralia.github.io/3d-csdm-common/build/bblocks.jsonld> ],
+        [ rdfs:label "This Building Blocks Register in RDF Turtle format" ;
             dct:type "text/turtle" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
             ns2:hasTarget <https://surroundaustralia.github.io/3d-csdm-common/build/bblocks.ttl> ],
         [ rdfs:label "This Building Blocks Register in JSON format" ;
             dct:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://surroundaustralia.github.io/3d-csdm-common/build/register.json> ],
-        [ rdfs:label "This Building Blocks Register in JSON-LD format" ;
-            dct:type "application/ld+json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            ns2:hasTarget <https://surroundaustralia.github.io/3d-csdm-common/build/bblocks.jsonld> ] ;
+            ns2:hasTarget <https://surroundaustralia.github.io/3d-csdm-common/build/register.json> ] ;
     foaf:homepage <https://surroundaustralia.github.io/3d-csdm-common/> ;
     bblocks:hasValidationReport <https://surroundaustralia.github.io/3d-csdm-common/build/tests/report.html> .
 
-_:Nf5fef2fa85384aaca0e37059b7d7b849 a prov:Agent,
+_:Nfcb073d065b94b14b56fcdb1cc2ad8e0 a prov:Agent,
         schema:SoftwareApplication ;
     rdfs:label "OGC-NA tools" ;
     dct:hasVersion "0.5.31" ;

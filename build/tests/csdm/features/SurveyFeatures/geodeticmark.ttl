@@ -15,10 +15,10 @@
 eg1:P2 a surv:GeodeticReferenceMark,
         geojson:Feature ;
     commonpatterns:name [ rdfs:label "IS II - DP 3333" ;
-            dct:hasPart [ rdfs:label "DP 3333" ;
-                    ns1:namePartType "Source" ],
-                [ rdfs:label "IS II" ;
-                    ns1:namePartType "Stamp" ] ] ;
+            dct:hasPart [ rdfs:label "IS II" ;
+                    ns1:namePartType "Stamp" ],
+                [ rdfs:label "DP 3333" ;
+                    ns1:namePartType "Source" ] ] ;
     surv:geodeticid "XX 33455" ;
     surv:monumentedBy [ surv:condition nz-monument-condition:fair ;
             surv:form nz-monument-form:pin ;

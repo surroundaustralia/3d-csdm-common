@@ -6,8 +6,8 @@
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix geopose: <https://linked.data.gov.au/def/csdm/utils/geopose/> .
 @prefix icsm-survey-type: <https://linked.data.gov.au/def/csdm/icsm-survey-type/> .
-@prefix ns1: <https://linked.data.gov.au/def/csdm/commonpatterns/> .
-@prefix ns2: <https://linked.data.gov.au/def/csdm/sensors/> .
+@prefix ns1: <https://linked.data.gov.au/def/csdm/sensors/> .
+@prefix ns2: <https://linked.data.gov.au/def/csdm/commonpatterns/> .
 @prefix nz-line-purpose: <https://linked.data.gov.au/def/csdm/nz-linepurpose/> .
 @prefix nz-monument-condition: <https://linked.data.gov.au/def/csdm/nz-monument-condition/> .
 @prefix nz-monument-form: <https://linked.data.gov.au/def/csdm/nz-monument-form/> .
@@ -36,11 +36,11 @@ eg1:DP_572532 a geojson:FeatureCollection ;
 
 eg1:44396823 a surv:CadastralMark,
         geojson:Feature ;
-    ns1:name [ rdfs:label "ALP I DP 481392" ;
-            dct:hasPart [ rdfs:label "ALP I" ;
-                    commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "DP 481392" ;
-                    commonpatterns:namePartType "Source" ] ] ;
+    ns2:name [ rdfs:label "ALP I DP 481392" ;
+            dct:hasPart [ rdfs:label "DP 481392" ;
+                    commonpatterns:namePartType "Source" ],
+                [ rdfs:label "ALP I" ;
+                    commonpatterns:namePartType "Stamp" ] ] ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
             surv:form nz-monument-form:pin ;
             surv:state nz-monument-state:original ] ;
@@ -63,9 +63,9 @@ eg1:obs a sosa:ObservationCollection,
         geojson:FeatureCollection ;
     sosa:hasMember eg1:FailsToDeclareObservedProperty,
         eg1:FailsValueObservedProperty ;
-    sosa:madeBySensor [ a ns2:DifferentialGPS ;
-            ns2:baseSensor "gps+38666" ;
-            ns2:roverSensor "gps+37544" ] ;
+    sosa:madeBySensor [ a ns1:DifferentialGPS ;
+            ns1:baseSensor "gps+38666" ;
+            ns1:roverSensor "gps+37544" ] ;
     sosa:resultTime "2023-05-24" ;
     sosa:usedProcedure surveyproc:traverse .
 
@@ -80,16 +80,16 @@ eg1:points a geojson:FeatureCollection ;
 
 eg1:11745104 a surv:GeodeticReferenceMark,
         geojson:Feature ;
-    ns1:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
-            dct:hasPart [ rdfs:label "DP" ;
-                    commonpatterns:namePartType "PlanType" ],
+    ns2:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
+            dct:hasPart [ rdfs:label "EQ9W" ;
+                    commonpatterns:namePartType "geodeticStamp" ],
                 [ rdfs:label "RM" ;
                     commonpatterns:namePartType "MarkType" ],
-                [ rdfs:label "C" ;
-                    commonpatterns:namePartType "Stamp" ],
-                [ rdfs:label "EQ9W" ;
-                    commonpatterns:namePartType "geodeticStamp" ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType "PlanType" ],
                 [ rdfs:label "119552" ;
+                    commonpatterns:namePartType "Stamp" ],
+                [ rdfs:label "C" ;
                     commonpatterns:namePartType "Stamp" ] ] ;
     surv:geodeticid "XX FFF" ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
@@ -102,7 +102,7 @@ eg1:11745104 a surv:GeodeticReferenceMark,
 eg1:1725787 a surv:BoundaryMark,
         geojson:Feature ;
     rdfs:comment "ALP in channel of drive" ;
-    ns1:name [ rdfs:label "RM E DP 119552" ;
+    ns2:name [ rdfs:label "RM E DP 119552" ;
             dct:hasPart [ rdfs:label "RM E" ;
                     commonpatterns:namePartType "Stamp" ],
                 [ rdfs:label "DP 119552" ;

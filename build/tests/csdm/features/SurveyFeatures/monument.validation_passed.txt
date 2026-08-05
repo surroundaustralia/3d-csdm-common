@@ -1,5 +1,5 @@
 Validation report for icsm.csdm.features.SurveyFeatures - Survey Features
-Generated 2026-08-05T00:59:37.048605+00:00
+Generated 2026-08-05T01:51:00.929411+00:00
 === Files ===
 Using examples/monument.json from examples
 JSON-LD context is present - uplifting
@@ -12,35 +12,12 @@ Validation passed
 === End JSON Schema ===
 
 === SHACL ===
-Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
+Validation result for https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl:
   Validation Report
   Conforms: True
   
-Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
- - Shape toporules:testTopoEdgesReferencePoints: *none*
- - Shape toporules:testTopoLinesReferencePoints: *none*
- - Shape toporules:testTopoDirectedReferencesExist: *none*
- - Shape toporules:testTopoReferencesExist: *none*
-
-Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
- - Shape _:nf6fc0483df074ac18d24d4b807c3c92eb3: *none*
- - Shape _:nf6fc0483df074ac18d24d4b807c3c92eb1: *none*
-
-Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
- - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:FeatureCollectionShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:GeometryShape: *none*
- - Shape geojson:FeatureShape: *none*
+Focus nodes for https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl:
+ - Shape _:nbd641b1e3d364a85a510455463197605b1: *none*
 
 Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
   Validation Report
@@ -48,17 +25,40 @@ Validation result for https://opengeospatial.github.io/bblocks/registereditems/g
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
  - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:LinkShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
  - Shape geojson:GeometryShape: *none*
+ - Shape geojson:LinkShape: *none*
  - Shape geojson:FeatureShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
 
-Validation result for https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl:
+Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
   Validation Report
   Conforms: True
   
-Focus nodes for https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl:
- - Shape _:n0edb978cb60f433bb60b6f856c3f2169b1: *none*
+Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
+ - Shape toporules:testTopoReferencesExist: *none*
+ - Shape toporules:testTopoLinesReferencePoints: *none*
+ - Shape toporules:testTopoDirectedReferencesExist: *none*
+ - Shape toporules:testTopoEdgesReferencePoints: *none*
+
+Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+ - Shape _:nc10d186c276841418464a799130c6bc2b1: *none*
+ - Shape _:nc10d186c276841418464a799130c6bc2b3: *none*
+
+Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:FeatureShape: *none*
+ - Shape geojson:FeatureCollectionShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
 
 === End SHACL ===
 

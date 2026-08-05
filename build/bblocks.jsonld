@@ -194,7 +194,7 @@
   "name": "Building Blocks - 3D Cadastre Survey Data Exchange Specification",
   "abstract": "This resource is a view of the specification for the 3D Cadastral Survey Data (CSD) Exchange Schema. \n\nThe specification is a machine-readable, modular data exchange model using the JSON language, using JSON Schema for structure and a semantic model (JSON-LD and SHACL rules) for more complex constraints. \n\n  **[Implementation profiles](https://icsm-au.github.io/3d-csdm-profiles/)**  with extensive examples are available for Australian and New Zealand jurisdictions.**\n\nThe core (top level container) schema can be viewed using the in-built documentation system **[here](bblock/icsm.csdm.features.CSD)** \n\nThe schema re-uses, flexible, standards based components using the [OGC Building Blocks methodology](https://github.com/opengeospatial/bblock-template/blob/master/USAGE.md).  \n\nThe [set of modules comprising the specification](bblock) is implemented as a \"register\" of \"Building Blocks\" managed within a [Git repository](https://icsm-au.github.io/3d-csdm-schema/). \n\nThe [documentation for the underlying 3D CSDM](https://icsm-au.github.io/3d-csdm/docs/) data model collates the elements from all the inherited components into a single comprehensive document (directly from the machine-readable sources) \n\n_Implementation Profiles (e.g. for each Jurisdiction) use the same documentation form extended with specific constraints and vocabulary usages_\n",
   "description": "This specification defines a [JSON schema](https://json-schema.org/) compatible with the [OGC API Features](https://opengeospatial.github.io/e-learning/ogcapi-features/text/basic-main.html) data exchange model.\n\nThis schema is linked to the underlying [3D Cadastre Model](https://icsm-au.github.io/3d-csdm/) using JSON-LD, which allows additional constraint rules to be specified using the [SHACL (Shapes Constraint Language) standard](https://www.w3.org/TR/shacl/).\n\n_The **[REVIEW GUIDE](https://github.com/icsm-au/3d-csdm-profiles/blob/main/REVIEW_GUIDE.md)** provides a detailed overview of all aspects of the design and testing process, and related materials._\n\nThis implementation pattern:\n\n- is supported by the OGC with a set of [open source tools](https://github.com/opengeospatial/bblock-template) and a library of building blocks based on OGC specifications.\n- simplifies development, testing and documentation of each component\n- allows for transparent, machine-readable, identification of the underlying standards each component is based on\n- allows richer machine readable specifications of implementation constraints and controlled vocabulary requirements.\n- supports explicit machine readable profile specifications to support discovery of all the different components required.\n\nThe \"semantic annotation\" capabilities of the OGC Building Block design links the schema to the conceptual and logical models.\n_NB Publication of these models as Linked Data would allow access to documentation of each element by online systems_.\n",
-  "modified": "2026-08-05T00:59:17.078889",
+  "modified": "2026-08-05T01:50:45.284782",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"f3952c38e56b44bfa91d3b3ddf5a320e0c4efa8a",
@@ -382,8 +382,8 @@
       ],
       "shaclShapes": null,
       "dependsOn": [
-        "bblocks://ogc.geo.json-fg.link-role",
-        "bblocks://ogc.ogc-utils.iri-or-curie"
+        "bblocks://ogc.ogc-utils.iri-or-curie",
+        "bblocks://ogc.geo.json-fg.link-role"
       ],
       "ldContext": {
         "prof:hasArtifact": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/context.jsonld",
@@ -498,11 +498,11 @@
         }
       ],
       "dependsOn": [
+        "bblocks://ogc.ogc-utils.iri-or-curie",
+        "bblocks://ogc.sosa.features.observation",
         "bblocks://icsm.csdm.datatypes.quality",
         "bblocks://ogc.sosa.properties.observationCollection",
-        "bblocks://ogc.sosa.features.observation",
-        "bblocks://ogc.sosa.properties.observation",
-        "bblocks://ogc.ogc-utils.iri-or-curie"
+        "bblocks://ogc.sosa.properties.observation"
       ],
       "ldContext": {
         "prof:hasArtifact": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld",
@@ -588,6 +588,24 @@
       "shaclShapes": [
         {
           "prof:hasArtifact": [
+            "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.bbr.utils.compoundName",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.geo.features.feature",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
             "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
             "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl"
           ],
@@ -614,34 +632,16 @@
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://ogc.geo.features.feature",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://ogc.bbr.utils.compoundName",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
         }
       ],
       "dependsOn": [
-        "bblocks://ogc.geo.topo.features.topo-line",
-        "bblocks://ogc.geo.json-fg.feature",
         "bblocks://ogc.ogc-utils.prov",
+        "bblocks://ogc.bbr.utils.compoundName",
+        "bblocks://ogc.geo.json-fg.feature-lenient",
+        "bblocks://ogc.geo.topo.features.topo-line",
         "bblocks://ogc.ogc-utils.iri-or-curie",
         "bblocks://ogc.geo.common.data_types.geojson",
-        "bblocks://ogc.bbr.utils.compoundName",
-        "bblocks://ogc.geo.json-fg.feature-lenient"
+        "bblocks://ogc.geo.json-fg.feature"
       ],
       "ldContext": {
         "prof:hasArtifact": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/context.jsonld",
@@ -730,8 +730,8 @@
         {
           "prof:hasArtifact": [
             "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/shapes/parcel_module.shapes.ttl",
-            "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/shapes/container.shapes.ttl",
-            "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/CSD/tests/obs-match-vectors.shacl"
+            "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/CSD/tests/obs-match-vectors.shacl",
+            "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/shapes/container.shapes.ttl"
           ],
           "rdfs:seeAlso": "bblocks://icsm.csdm.features.CSD",
           "prof:hasRole": "role:validation",
@@ -740,27 +740,9 @@
         },
         {
           "prof:hasArtifact": [
-            "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/rules.shacl"
+            "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://icsm.csdm.features.SurveyObservations",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://ogc.sosa.properties.observation",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://ogc.geo.features.feature",
+          "rdfs:seeAlso": "bblocks://ogc.bbr.utils.compoundName",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -796,9 +778,9 @@
         },
         {
           "prof:hasArtifact": [
-            "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl"
+            "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://ogc.bbr.utils.compoundName",
+          "rdfs:seeAlso": "bblocks://ogc.geo.features.feature",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -812,24 +794,42 @@
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://icsm.csdm.features.SurveyObservations",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.sosa.properties.observation",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
         }
       ],
       "dependsOn": [
-        "bblocks://icsm.csdm.features.SurveyObservations",
-        "bblocks://ogc.geo.topo.features.topo-line",
-        "bblocks://ogc.sosa.properties.observationCollection",
-        "bblocks://ogc.geo.json-fg.link-role",
-        "bblocks://ogc.geo.topo.features.topo-feature-collection",
-        "bblocks://ogc.geo.json-fg.feature-lenient",
-        "bblocks://ogc.ogc-utils.iri-or-curie",
-        "bblocks://ogc.geo.topo.datatypes.topology",
-        "bblocks://ogc.geo.topo.features.topo-feature",
-        "bblocks://ogc.ladm.land-parcels.parcelCollection",
-        "bblocks://icsm.csdm.features.SurveyFeatures",
         "bblocks://ogc.bbr.utils.compoundName",
+        "bblocks://ogc.ogc-utils.prov",
+        "bblocks://ogc.geo.json-fg.link-role",
+        "bblocks://ogc.geo.topo.features.topo-feature",
+        "bblocks://ogc.geo.topo.features.topo-line",
+        "bblocks://ogc.geo.json-fg.feature-lenient",
         "bblocks://ogc.geo.topo.features.topo-arc",
+        "bblocks://icsm.csdm.features.SurveyObservations",
+        "bblocks://ogc.ogc-utils.iri-or-curie",
+        "bblocks://icsm.csdm.features.SurveyFeatures",
+        "bblocks://ogc.geo.topo.features.topo-feature-collection",
         "bblocks://ogc.geo.json-fg.time",
-        "bblocks://ogc.ogc-utils.prov"
+        "bblocks://ogc.geo.topo.datatypes.topology",
+        "bblocks://ogc.ladm.land-parcels.parcelCollection",
+        "bblocks://ogc.sosa.properties.observationCollection"
       ],
       "ldContext": {
         "prof:hasArtifact": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/context.jsonld",

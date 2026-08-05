@@ -24,8 +24,8 @@
   ],
   "shaclShapes": {},
   "dependsOn": [
-    "ogc.geo.json-fg.link-role",
-    "ogc.ogc-utils.iri-or-curie"
+    "ogc.ogc-utils.iri-or-curie",
+    "ogc.geo.json-fg.link-role"
   ],
   "ldContext": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/annotation/context.jsonld",
   "schema": {
