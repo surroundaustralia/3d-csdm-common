@@ -1,0 +1,295 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.750540074,
+              -36.9310610479
+            ],
+            [
+              174.7507225544,
+              -36.9310215435
+            ],
+            [
+              174.7507606923,
+              -36.9310291431
+            ],
+            [
+              174.7509672626,
+              -36.9311839118
+            ],
+            [
+              174.7509918818,
+              -36.9312023381
+            ],
+            [
+              174.750791041,
+              -36.9312489607
+            ],
+            [
+              174.750540074,
+              -36.9310610479
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "appellation": {
+          "label": "Lot 1 DP 572532",
+          "hasPart": [
+            {
+              "type": "PlanType",
+              "label": "DP"
+            },
+            {
+              "type": "PlanIdentifier",
+              "label": "572532"
+            },
+            {
+              "type": "ParcelType",
+              "label": "Lot"
+            },
+            {
+              "type": "ParcelIdentifier",
+              "label": "1"
+            }
+          ]
+        },
+        "area": 484,
+        "parcelType": "nz-parcel-type:l",
+        "parcelPurpose": "nz-parcel-purpose:fst",
+        "parcelState": "nz-parcel-state:created",
+        "class": "nz-parcel-class:allotment",
+        "interests": [
+          {
+            "interestLink": "1040074",
+            "interestType": "nz-interest-type:fh"
+          }
+        ]
+      },
+      "id": "8446454"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7505110058,
+              -36.9310392342
+            ],
+            [
+              174.7508909488,
+              -36.9309571156
+            ],
+            [
+              174.7512489947,
+              -36.9308797133
+            ],
+            [
+              174.7513031028,
+              -36.9310543825
+            ],
+            [
+              174.7510988383,
+              -36.9311774613
+            ],
+            [
+              174.7509918818,
+              -36.9312023381
+            ],
+            [
+              174.7509672626,
+              -36.9311839118
+            ],
+            [
+              174.7507606923,
+              -36.9310291431
+            ],
+            [
+              174.7507225544,
+              -36.9310215435
+            ],
+            [
+              174.750540074,
+              -36.9310610479
+            ],
+            [
+              174.7505110058,
+              -36.9310392342
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "appellation": {
+          "label": "Lot 2 DP 572532",
+          "hasPart": [
+            {
+              "type": "PlanType",
+              "label": "DP"
+            },
+            {
+              "type": "PlanIdentifier",
+              "label": "572532"
+            },
+            {
+              "type": "ParcelType",
+              "label": "Lot"
+            },
+            {
+              "type": "ParcelIdentifier",
+              "label": "2"
+            }
+          ]
+        },
+        "area": 1196,
+        "parcelType": "nz-parcel-type:l",
+        "parcelPurpose": "nz-parcel-purpose:fst",
+        "parcelState": "nz-parcel-state:created",
+        "class": "nz-parcel-class:allotment",
+        "interests": [
+          {
+            "interestLink": "1040075",
+            "interestType": "nz-interest-type:fh"
+          }
+        ]
+      },
+      "id": "8446455"
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              174.7508909488,
+              -36.9309571156
+            ],
+            [
+              174.7512489947,
+              -36.9308797133
+            ],
+            [
+              174.7513031028,
+              -36.9310543825
+            ],
+            [
+              174.751324788,
+              -36.9311247115
+            ],
+            [
+              174.7510988383,
+              -36.9311774613
+            ],
+            [
+              174.7510438631,
+              -36.9311710421
+            ],
+            [
+              174.7509568685,
+              -36.9311076188
+            ],
+            [
+              174.7509509094,
+              -36.9310856987
+            ],
+            [
+              174.7509573691,
+              -36.9310656315
+            ],
+            [
+              174.750980056,
+              -36.9310510313
+            ],
+            [
+              174.7510101475,
+              -36.9310253792
+            ],
+            [
+              174.751010805,
+              -36.9310015962
+            ],
+            [
+              174.7509925285,
+              -36.9309870924
+            ],
+            [
+              174.7509396099,
+              -36.9309904554
+            ],
+            [
+              174.7508909488,
+              -36.9309571156
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "appellation": {
+          "label": "Area Z DP 572532",
+          "hasPart": [
+            {
+              "type": "PlanType",
+              "label": "DP"
+            },
+            {
+              "type": "PlanIdentifier",
+              "label": "572532"
+            },
+            {
+              "type": "ParcelType",
+              "label": "Area"
+            },
+            {
+              "type": "ParcelIdentifier",
+              "label": "Z"
+            }
+          ]
+        },
+        "area": 1196,
+        "parcelType": "nz-parcel-type:covenant-land",
+        "parcelPurpose": "nz-parcel-purpose:c-l",
+        "parcelState": "nz-parcel-state:created",
+        "interests": [
+          {
+            "interestLink": "1040075",
+            "interestType": "nz-interest-type:fh"
+          }
+        ],
+        "burdened": {
+          "x-comment": "References the parcel ID of the burdened primary parcel.",
+          "references": [
+            "8446455"
+          ]
+        }
+      },
+      "id": "8446456"
+    }
+  ],
+  "@context": [
+    "https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/featureCollection/context.jsonld",
+    {
+      "@base": "http://csdm-example-surveys/DP-572532/",
+      "eg2": "http://csdm-example-surveys/DP-572532/",
+      "surveyable": "https://linked.data.gov.au/def/csdm/observedProperties/",
+      "surveyproc": "https://linked.data.gov.au/def/csdm/observationProcedures/",
+      "nz-surveypoint-purpose": "https://linked.data.gov.au/def/csdm/nz-surveypointpurpose/",
+      "nz-line-purpose": "https://linked.data.gov.au/def/csdm/nz-linepurpose/",
+      "icsm-survey-type": "https://linked.data.gov.au/def/csdm/icsm-survey-type/",
+      "nz-monument-form": "https://linked.data.gov.au/def/csdm/nz-monument-form/",
+      "nz-monument-condition": "https://linked.data.gov.au/def/csdm/nz-monument-condition/",
+      "nz-monument-state": "https://linked.data.gov.au/def/csdm/nz-monument-state/",
+      "registered-surveyors": "https://example.org/surveyors/",
+      "icsm-jurisdictions": "https://linked.data.gov.au/def/jurisdictions/",
+      "epsg": "http://www.opengis.net/def/crs/EPSG/0/"
+    }
+  ]
+}

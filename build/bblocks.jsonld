@@ -194,7 +194,7 @@
   "name": "Building Blocks - 3D Cadastre Survey Data Exchange Specification",
   "abstract": "This resource is a view of the specification for the 3D Cadastral Survey Data (CSD) Exchange Schema. \n\nThe specification is a machine-readable, modular data exchange model using the JSON language, using JSON Schema for structure and a semantic model (JSON-LD and SHACL rules) for more complex constraints. \n\n  **[Implementation profiles](https://icsm-au.github.io/3d-csdm-profiles/)**  with extensive examples are available for Australian and New Zealand jurisdictions.**\n\nThe core (top level container) schema can be viewed using the in-built documentation system **[here](bblock/icsm.csdm.features.CSD)** \n\nThe schema re-uses, flexible, standards based components using the [OGC Building Blocks methodology](https://github.com/opengeospatial/bblock-template/blob/master/USAGE.md).  \n\nThe [set of modules comprising the specification](bblock) is implemented as a \"register\" of \"Building Blocks\" managed within a [Git repository](https://icsm-au.github.io/3d-csdm-schema/). \n\nThe [documentation for the underlying 3D CSDM](https://icsm-au.github.io/3d-csdm/docs/) data model collates the elements from all the inherited components into a single comprehensive document (directly from the machine-readable sources) \n\n_Implementation Profiles (e.g. for each Jurisdiction) use the same documentation form extended with specific constraints and vocabulary usages_\n",
   "description": "This specification defines a [JSON schema](https://json-schema.org/) compatible with the [OGC API Features](https://opengeospatial.github.io/e-learning/ogcapi-features/text/basic-main.html) data exchange model.\n\nThis schema is linked to the underlying [3D Cadastre Model](https://icsm-au.github.io/3d-csdm/) using JSON-LD, which allows additional constraint rules to be specified using the [SHACL (Shapes Constraint Language) standard](https://www.w3.org/TR/shacl/).\n\n_The **[REVIEW GUIDE](https://github.com/icsm-au/3d-csdm-profiles/blob/main/REVIEW_GUIDE.md)** provides a detailed overview of all aspects of the design and testing process, and related materials._\n\nThis implementation pattern:\n\n- is supported by the OGC with a set of [open source tools](https://github.com/opengeospatial/bblock-template) and a library of building blocks based on OGC specifications.\n- simplifies development, testing and documentation of each component\n- allows for transparent, machine-readable, identification of the underlying standards each component is based on\n- allows richer machine readable specifications of implementation constraints and controlled vocabulary requirements.\n- supports explicit machine readable profile specifications to support discovery of all the different components required.\n\nThe \"semantic annotation\" capabilities of the OGC Building Block design links the schema to the conceptual and logical models.\n_NB Publication of these models as Linked Data would allow access to documentation of each element by online systems_.\n",
-  "modified": "2026-08-03T06:28:18.839815",
+  "modified": "2026-08-05T00:59:17.078889",
   "tooling": {
     "bblocks-postprocess": {
       "commitId": "\"f3952c38e56b44bfa91d3b3ddf5a320e0c4efa8a",
@@ -212,9 +212,17 @@
     "https://opengeospatial.github.io/bblocks/register.json",
     "https://opengeospatial.github.io/ogcapi-sosa/build/register.json",
     "https://ogcincubator.github.io/bblocks-land-parcels/build/register.json",
-    "https://surroundaustralia.github.io/topo-feature/build/register.json",
+    "https://ogcincubator.github.io/topo-feature/build/register.json",
     "https://ogcincubator.github.io/bblock-prov-schema/build/register.json"
   ],
+  "viewer": {
+    "viewPlugins": [
+      {
+        "url": "https://cdn.jsdelivr.net/gh/ogcincubator/bblocks-viewer-topo-feature-plugin@dist/index.js",
+        "export": "TopoFeaturePlugin"
+      }
+    ]
+  },
   "transformPlugins": [
     {
       "modules": [
@@ -279,7 +287,7 @@
       "itemClass": "schema",
       "register": "icsm-csdm",
       "version": "0.1",
-      "dateOfLastChange": "2026-08-03",
+      "dateOfLastChange": "2026-08-05",
       "link": "https://github.com/icsm-au/3d-csdm-schema",
       "sources": [
         {
@@ -359,7 +367,7 @@
       "itemClass": "schema",
       "register": "icsm-csdm",
       "version": "0.1",
-      "dateOfLastChange": "2026-08-03",
+      "dateOfLastChange": "2026-08-05",
       "link": "https://github.com/icsm-au/3d-csdm-schema",
       "sources": [
         {
@@ -442,7 +450,7 @@
       "itemClass": "schema",
       "register": "icsm-csdm",
       "version": "0.1",
-      "dateOfLastChange": "2026-08-03",
+      "dateOfLastChange": "2026-08-05",
       "link": "https://github.com/icsm-au/3d-csdm-schema",
       "sources": [
         {
@@ -490,11 +498,11 @@
         }
       ],
       "dependsOn": [
-        "bblocks://ogc.sosa.features.observation",
         "bblocks://icsm.csdm.datatypes.quality",
         "bblocks://ogc.sosa.properties.observationCollection",
-        "bblocks://ogc.ogc-utils.iri-or-curie",
-        "bblocks://ogc.sosa.properties.observation"
+        "bblocks://ogc.sosa.features.observation",
+        "bblocks://ogc.sosa.properties.observation",
+        "bblocks://ogc.ogc-utils.iri-or-curie"
       ],
       "ldContext": {
         "prof:hasArtifact": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/context.jsonld",
@@ -561,7 +569,7 @@
       "itemClass": "schema",
       "register": "icsm-csdm",
       "version": "0.1",
-      "dateOfLastChange": "2026-08-03",
+      "dateOfLastChange": "2026-08-05",
       "link": "https://github.com/icsm-au/3d-csdm-schema",
       "sources": [
         {
@@ -578,24 +586,6 @@
         "features"
       ],
       "shaclShapes": [
-        {
-          "prof:hasArtifact": [
-            "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://ogc.geo.features.feature",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://ogc.bbr.utils.compoundName",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
         {
           "prof:hasArtifact": [
             "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
@@ -624,16 +614,34 @@
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.geo.features.feature",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.bbr.utils.compoundName",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
         }
       ],
       "dependsOn": [
+        "bblocks://ogc.geo.topo.features.topo-line",
         "bblocks://ogc.geo.json-fg.feature",
-        "bblocks://ogc.geo.json-fg.feature-lenient",
+        "bblocks://ogc.ogc-utils.prov",
+        "bblocks://ogc.ogc-utils.iri-or-curie",
         "bblocks://ogc.geo.common.data_types.geojson",
         "bblocks://ogc.bbr.utils.compoundName",
-        "bblocks://ogc.ogc-utils.prov",
-        "bblocks://ogc.geo.topo.features.topo-line",
-        "bblocks://ogc.ogc-utils.iri-or-curie"
+        "bblocks://ogc.geo.json-fg.feature-lenient"
       ],
       "ldContext": {
         "prof:hasArtifact": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyFeatures/context.jsonld",
@@ -701,7 +709,7 @@
       "itemClass": "schema",
       "register": "icsm-csdm",
       "version": "0.1",
-      "dateOfLastChange": "2026-08-03",
+      "dateOfLastChange": "2026-08-05",
       "sources": [
         {
           "title": "3D Cadastre Survey Data Model",
@@ -732,18 +740,27 @@
         },
         {
           "prof:hasArtifact": [
-            "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+            "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/rules.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://ogc.geo.features.feature",
+          "rdfs:seeAlso": "bblocks://icsm.csdm.features.SurveyObservations",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
         },
         {
           "prof:hasArtifact": [
-            "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl"
+            "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl"
           ],
-          "rdfs:seeAlso": "bblocks://ogc.bbr.utils.compoundName",
+          "rdfs:seeAlso": "bblocks://ogc.sosa.properties.observation",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
+            "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.geo.features.feature",
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
@@ -779,6 +796,15 @@
         },
         {
           "prof:hasArtifact": [
+            "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/rules.shacl"
+          ],
+          "rdfs:seeAlso": "bblocks://ogc.bbr.utils.compoundName",
+          "prof:hasRole": "role:validation",
+          "dct:format": "text/turtle",
+          "dct:conformsTo": "shacl:"
+        },
+        {
+          "prof:hasArtifact": [
             "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl",
             "https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl"
           ],
@@ -786,42 +812,24 @@
           "prof:hasRole": "role:validation",
           "dct:format": "text/turtle",
           "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/rules.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://icsm.csdm.features.SurveyObservations",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
-        },
-        {
-          "prof:hasArtifact": [
-            "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl"
-          ],
-          "rdfs:seeAlso": "bblocks://ogc.sosa.properties.observation",
-          "prof:hasRole": "role:validation",
-          "dct:format": "text/turtle",
-          "dct:conformsTo": "shacl:"
         }
       ],
       "dependsOn": [
-        "bblocks://ogc.geo.json-fg.feature-lenient",
-        "bblocks://ogc.bbr.utils.compoundName",
-        "bblocks://icsm.csdm.features.SurveyFeatures",
-        "bblocks://ogc.geo.json-fg.time",
-        "bblocks://ogc.ladm.land-parcels.parcelCollection",
-        "bblocks://ogc.ogc-utils.prov",
-        "bblocks://ogc.geo.topo.features.topo-feature",
-        "bblocks://ogc.geo.topo.features.topo-line",
-        "bblocks://ogc.geo.topo.features.topo-arc",
-        "bblocks://ogc.ogc-utils.iri-or-curie",
-        "bblocks://ogc.geo.json-fg.link-role",
-        "bblocks://ogc.geo.topo.datatypes.topology",
-        "bblocks://ogc.geo.topo.features.topo-feature-collection",
         "bblocks://icsm.csdm.features.SurveyObservations",
-        "bblocks://ogc.sosa.properties.observationCollection"
+        "bblocks://ogc.geo.topo.features.topo-line",
+        "bblocks://ogc.sosa.properties.observationCollection",
+        "bblocks://ogc.geo.json-fg.link-role",
+        "bblocks://ogc.geo.topo.features.topo-feature-collection",
+        "bblocks://ogc.geo.json-fg.feature-lenient",
+        "bblocks://ogc.ogc-utils.iri-or-curie",
+        "bblocks://ogc.geo.topo.datatypes.topology",
+        "bblocks://ogc.geo.topo.features.topo-feature",
+        "bblocks://ogc.ladm.land-parcels.parcelCollection",
+        "bblocks://icsm.csdm.features.SurveyFeatures",
+        "bblocks://ogc.bbr.utils.compoundName",
+        "bblocks://ogc.geo.topo.features.topo-arc",
+        "bblocks://ogc.geo.json-fg.time",
+        "bblocks://ogc.ogc-utils.prov"
       ],
       "ldContext": {
         "prof:hasArtifact": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/CSD/context.jsonld",
@@ -878,13 +886,42 @@
           }
         },
         {
+          "id": "Polygons-2D",
+          "description": "GeoJSON Polygons from bounded 2D topology",
+          "type": "topo2geojson",
+          "metadata": {
+            "objects": "parcels:Polygon",
+            "mode": "parcels"
+          },
+          "code": "Extracts a 2D view of polygon geometries from 2 or 3D topology models",
+          "inputs": {
+            "mediaTypes": [
+              {
+                "mimeType": "application/json",
+                "label": "JSON",
+                "defaultExtension": "json"
+              }
+            ]
+          },
+          "outputs": {
+            "mediaTypes": [
+              {
+                "mimeType": "application/geo+json",
+                "label": "GeoJSON",
+                "defaultExtension": "geojson"
+              }
+            ]
+          }
+        },
+        {
           "id": "Faces-as-Polygons",
           "description": "GeoJSON Polygons for faces",
           "type": "topo2geojson",
           "metadata": {
-            "mode": "faces,parcels"
+            "objects": "parcels:Polygon",
+            "mode": "faces"
           },
-          "code": "is this required",
+          "code": "Extracts a 2D view of polygon geometries from faces in 3D topology models",
           "inputs": {
             "mediaTypes": [
               {

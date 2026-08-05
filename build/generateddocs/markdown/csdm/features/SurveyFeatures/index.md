@@ -155,10 +155,10 @@ eg1:P1 a surv:BoundaryMark,
         geojson:Feature ;
     rdfs:comment "All survey marks will have a monumented state - a physical monument may be absent however using a monument type which is an explicit statement about the state" ;
     commonpatterns:name [ rdfs:label "IS I - DP 3333" ;
-            dct:hasPart [ rdfs:label "IS I" ;
-                    ns1:namePartType "Stamp" ],
-                [ rdfs:label "DP 3333" ;
-                    ns1:namePartType "Source" ] ] ;
+            dct:hasPart [ rdfs:label "DP 3333" ;
+                    ns1:namePartType "Source" ],
+                [ rdfs:label "IS I" ;
+                    ns1:namePartType "Stamp" ] ] ;
     surv:monumentedBy [ surv:condition nz-monument-condition:fair ;
             surv:form nz-monument-form:pin ;
             surv:state nz-monument-state:present ] ;
@@ -297,10 +297,10 @@ An example Geodetic Mark extending Survey Point with additional geodeticid attri
 eg1:P2 a surv:GeodeticReferenceMark,
         geojson:Feature ;
     commonpatterns:name [ rdfs:label "IS II - DP 3333" ;
-            dct:hasPart [ rdfs:label "IS II" ;
-                    ns1:namePartType "Stamp" ],
-                [ rdfs:label "DP 3333" ;
-                    ns1:namePartType "Source" ] ] ;
+            dct:hasPart [ rdfs:label "DP 3333" ;
+                    ns1:namePartType "Source" ],
+                [ rdfs:label "IS II" ;
+                    ns1:namePartType "Stamp" ] ] ;
     surv:geodeticid "XX 33455" ;
     surv:monumentedBy [ surv:condition nz-monument-condition:fair ;
             surv:form nz-monument-form:pin ;
