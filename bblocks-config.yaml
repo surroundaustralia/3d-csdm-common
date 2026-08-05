@@ -41,7 +41,7 @@ imports:
   - default
   - https://opengeospatial.github.io/ogcapi-sosa
   - https://ogcincubator.github.io/bblocks-land-parcels
-  - https://surroundaustralia.github.io/topo-feature
+  - https://ogcincubator.github.io/topo-feature
   - https://ogcincubator.github.io/bblock-prov-schema
 
 plugins:
@@ -49,3 +49,8 @@ plugins:
     - pip: git+https://github.com/ogcincubator/topo-functions.git
       modules:
         - topo2geojson
+
+viewer:
+  view-plugins:
+    - url: https://cdn.jsdelivr.net/gh/ogcincubator/bblocks-viewer-topo-feature-plugin@dist/index.js
+      export: TopoFeaturePlugin

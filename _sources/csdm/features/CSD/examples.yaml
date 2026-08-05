@@ -1,17 +1,5 @@
 - title: Example CSDM container
   content: |-
-    A minimal survey (CSDM container) with a few key objects populated - no occupations for example.
-
-    (Note different views available in panel to right)
-  base-output-filename: example
-  snippets:
-    - language: json
-      ref: example.json
-      base-uri: http://www.example.com/features/
-
-
-- title: Extended Example CSDM container
-  content: |-
     This has a realistic set of features for a minimal survey (splitting a primary parcel, one secondary etc.)
 
 
@@ -19,4 +7,14 @@
   snippets:
     - language: json
       ref: extended_example.json
+      base-uri: http://www.example.com/features/
+
+- title: Simple CSDM container
+  content: |-
+    A simplified example with no parcels - just the edge and observations pattern
+
+  base-output-filename: example
+  snippets:
+    - language: json
+      ref: example.json
       base-uri: http://www.example.com/features/
