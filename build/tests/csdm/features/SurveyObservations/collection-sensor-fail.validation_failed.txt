@@ -1,5 +1,5 @@
 Validation report for icsm.csdm.features.SurveyObservations - Survey Observations
-Generated 2026-10-26T11:02:38.961998+00:00
+Generated 2026-10-26T23:03:10.346549+00:00
 === Files ===
 Using collection-sensor-fail.json from test resources
 JSON-LD context is present - uplifting
@@ -26,7 +26,7 @@ Failed validating 'anyOf' in schema:
                                                                  'roverSensor']},
                                                    {'properties': {'sensorType': {'not': {'const': 'DifferentialGPS'},
                                                                                   'x-jsonld-id': '@type'}}}]}]},
-               'SurveyVectorObsCollection': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml'},
+               'SurveyVectorObsCollection': {'allOf': [{'$ref': 'https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml'},
                                                        {'properties': {'features': {'items': {'$ref': '#/$defs/SurveyVectorObsMember'},
                                                                                     'type': 'array',
                                                                                     'x-jsonld-container': '@set',
@@ -49,16 +49,16 @@ Failed validating 'anyOf' in schema:
                                                                                                                           'x-jsonld-type': '@id'}},
                                                                                       'required': ['madeBySensor',
                                                                                                    'observedProperty']}}}]},
-               'SurveyVectorObsFeature': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml'},
+               'SurveyVectorObsFeature': {'allOf': [{'$ref': 'https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml'},
                                                     {'properties': {'properties': {'$ref': '#/$defs/SurveyVectorObsProps'}}}]},
-               'SurveyVectorObsMember': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml#/$defs/member'},
+               'SurveyVectorObsMember': {'allOf': [{'$ref': 'https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml#/$defs/member'},
                                                    {'properties': {'properties': {'$ref': '#/$defs/SurveyVectorObsMemberProps'}}}],
                                          'description': 'A vector '
                                                         'observation '
                                                         'feature as a '
                                                         'member of a '
                                                         'SurveyVectorObsCollection'},
-               'SurveyVectorObsMemberProps': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml#/$defs/member'},
+               'SurveyVectorObsMemberProps': {'allOf': [{'$ref': 'https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml#/$defs/member'},
                                                         {'$ref': '#/$defs/SurveyVectorObsResult'}],
                                               'description': 'Properties '
                                                              'of a vector '
@@ -72,7 +72,7 @@ Failed validating 'anyOf' in schema:
                                                              'provided by '
                                                              'the '
                                                              'collection'},
-               'SurveyVectorObsProps': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml'},
+               'SurveyVectorObsProps': {'allOf': [{'$ref': 'https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml'},
                                                   {'$ref': '#/$defs/SurveyVectorObsResult'}]},
                'SurveyVectorObsResult': {'properties': {'hasResult': {'anyOf': [{'required': ['pose']},
                                                                                 {'required': ['distance']},

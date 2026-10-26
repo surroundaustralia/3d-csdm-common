@@ -23,14 +23,14 @@ eg1:4494877 a eg1:OccupationMark,
     geojson:topology [ a eg1:Touches ;
             topo:relatedFeatures ( eg1:964009 ) ] ;
     commonpatterns:name [ rdfs:label "Post II LT 584372" ;
-            dct:hasPart [ rdfs:label "Post" ;
-                    commonpatterns:namePartType eg1:MarkType ],
+            dct:hasPart [ rdfs:label "584372" ;
+                    commonpatterns:namePartType eg1:PlanStamp ],
                 [ rdfs:label "LT" ;
                     commonpatterns:namePartType eg1:PlanType ],
+                [ rdfs:label "Post" ;
+                    commonpatterns:namePartType eg1:MarkType ],
                 [ rdfs:label "II" ;
-                    commonpatterns:namePartType eg1:MarkStamp ],
-                [ rdfs:label "584372" ;
-                    commonpatterns:namePartType eg1:PlanStamp ] ] .
+                    commonpatterns:namePartType eg1:MarkStamp ] ] .
 
 eg1:LT_584372 a geojson:FeatureCollection ;
     rdfs:label "LT 584372" ;

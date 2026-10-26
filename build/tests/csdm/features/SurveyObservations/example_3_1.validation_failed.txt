@@ -1,5 +1,5 @@
 Validation report for icsm.csdm.features.SurveyObservations - Survey Observations
-Generated 2026-10-26T11:02:39.002191+00:00
+Generated 2026-10-26T23:03:10.373645+00:00
 === Files ===
 Using examples/onlydistance.json from examples
 JSON-LD context is present - uplifting

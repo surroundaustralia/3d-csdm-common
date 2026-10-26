@@ -49,10 +49,10 @@
             surv:state nz-monument-state:original ] ;
     surv:purpose nz-surveypoint-purpose:nonBoundary ;
     commonpatterns:name [ rdfs:label "ALP I DP 481392" ;
-            dct:hasPart [ rdfs:label "ALP I" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
-                [ rdfs:label "DP 481392" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Source> ] ] .
+            dct:hasPart [ rdfs:label "DP 481392" ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Source> ],
+                [ rdfs:label "ALP I" ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ] ] .
 
 <https://linked.data.gov.au/def/csdm/csd-example/obs> a sosa:ObservationCollection,
         geojson:FeatureCollection ;
@@ -92,14 +92,14 @@
     commonpatterns:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
             dct:hasPart [ rdfs:label "C" ;
                     commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
-                [ rdfs:label "EQ9W" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/geodeticStamp> ],
+                [ rdfs:label "DP" ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/PlanType> ],
                 [ rdfs:label "RM" ;
                     commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/MarkType> ],
+                [ rdfs:label "EQ9W" ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/geodeticStamp> ],
                 [ rdfs:label "119552" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
-                [ rdfs:label "DP" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/PlanType> ] ] .
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ] ] .
 
 <https://linked.data.gov.au/def/csdm/csd-example/1725787> a surv:BoundaryMark,
         geojson:Feature ;
@@ -112,10 +112,10 @@
             surv:state nz-monument-state:original ] ;
     surv:purpose nz-surveypoint-purpose:boundary ;
     commonpatterns:name [ rdfs:label "RM E DP 119552" ;
-            dct:hasPart [ rdfs:label "DP 119552" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Source> ],
-                [ rdfs:label "RM E" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ] ] .
+            dct:hasPart [ rdfs:label "RM E" ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
+                [ rdfs:label "DP 119552" ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Source> ] ] .
 
 <https://linked.data.gov.au/def/csdm/csd-example/DP_119552> rdfs:label "DP 119552" ;
     dct:time [ owlTime:hasTime "2022-05-23"^^xsd:date ] ;

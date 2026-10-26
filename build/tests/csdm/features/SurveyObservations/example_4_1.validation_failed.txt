@@ -1,5 +1,5 @@
 Validation report for icsm.csdm.features.SurveyObservations - Survey Observations
-Generated 2026-10-26T11:02:39.008155+00:00
+Generated 2026-10-26T23:03:10.377583+00:00
 === Files ===
 Using examples/onlybearing.json from examples
 JSON-LD context is present - uplifting

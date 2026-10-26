@@ -442,8 +442,8 @@ Example Collection of Survey Observations
 @prefix distancetype: <https://linked.data.gov.au/def/csdm/defs/distancetypes/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix geopose: <https://linked.data.gov.au/def/csdm/utils/geopose/> .
-@prefix ns1: <https://linked.data.gov.au/def/csdm/sensors/> .
-@prefix ns2: <https://linked.data.gov.au/def/csdm/surveyobs/> .
+@prefix ns1: <https://linked.data.gov.au/def/csdm/surveyobs/> .
+@prefix ns2: <https://linked.data.gov.au/def/csdm/sensors/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .
 @prefix surveyable: <https://linked.data.gov.au/def/csdm/defs/surveyableproperties/> .
@@ -456,14 +456,14 @@ Example Collection of Survey Observations
             sosa:hasFeatureOfInterest <http://www.example.com/features/l973158> ;
             sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;
                             geopose:angles [ ] ] ] ] ;
-    sosa:madeBySensor [ a ns1:DifferentialGPS ;
-            ns1:baseSensor "gps+38666" ;
-            ns1:roverSensor "gps+37544" ] ;
+    sosa:madeBySensor [ a ns2:DifferentialGPS ;
+            ns2:baseSensor "gps+38666" ;
+            ns2:roverSensor "gps+37544" ] ;
     sosa:observedProperty surveyable:VectorDetermination ;
     sosa:resultTime "2023-05-24T00:00:00"^^xsd:dateTime ;
     sosa:usedProcedure surveyproc:traverse ;
-    ns2:angleType angletype:bearing ;
-    ns2:distanceType distancetype:ellipsoidal .
+    ns1:angleType angletype:bearing ;
+    ns1:distanceType distancetype:ellipsoidal .
 
 
 ```
@@ -552,30 +552,30 @@ $defs:
     - hasResult
   SurveyVectorObsProps:
     allOf:
-    - $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml
     - $ref: '#/$defs/SurveyVectorObsResult'
   SurveyVectorObsMemberProps:
     description: 'Properties of a vector observation in a SurveyVectorObsCollection:
       observedProperty, feature of interest and times may be provided by the collection'
     allOf:
-    - $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml#/$defs/member
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml#/$defs/member
     - $ref: '#/$defs/SurveyVectorObsResult'
   SurveyVectorObsFeature:
     allOf:
-    - $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml
     - properties:
         properties:
           $ref: '#/$defs/SurveyVectorObsProps'
   SurveyVectorObsMember:
     description: A vector observation feature as a member of a SurveyVectorObsCollection
     allOf:
-    - $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml#/$defs/member
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml#/$defs/member
     - properties:
         properties:
           $ref: '#/$defs/SurveyVectorObsMemberProps'
   SurveyVectorObsCollection:
     allOf:
-    - $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml
+    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml
     - properties:
         features:
           type: array

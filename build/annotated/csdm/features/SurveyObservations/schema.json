@@ -132,7 +132,7 @@
     "SurveyVectorObsProps": {
       "allOf": [
         {
-          "$ref": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.json"
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.json"
         },
         {
           "$ref": "#/$defs/SurveyVectorObsResult"
@@ -143,7 +143,7 @@
       "description": "Properties of a vector observation in a SurveyVectorObsCollection: observedProperty, feature of interest and times may be provided by the collection",
       "allOf": [
         {
-          "$ref": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.json#/$defs/member"
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.json#/$defs/member"
         },
         {
           "$ref": "#/$defs/SurveyVectorObsResult"
@@ -153,7 +153,7 @@
     "SurveyVectorObsFeature": {
       "allOf": [
         {
-          "$ref": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.json"
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.json"
         },
         {
           "properties": {
@@ -168,7 +168,7 @@
       "description": "A vector observation feature as a member of a SurveyVectorObsCollection",
       "allOf": [
         {
-          "$ref": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.json#/$defs/member"
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.json#/$defs/member"
         },
         {
           "properties": {
@@ -182,7 +182,7 @@
     "SurveyVectorObsCollection": {
       "allOf": [
         {
-          "$ref": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.json"
+          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.json"
         },
         {
           "properties": {

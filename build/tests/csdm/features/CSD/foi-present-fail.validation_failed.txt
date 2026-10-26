@@ -1,5 +1,5 @@
 Validation report for icsm.csdm.features.CSD - Cadastral Survey Dataset
-Generated 2026-10-26T11:02:53.212458+00:00
+Generated 2026-10-26T23:03:20.364416+00:00
 === Files ===
 Using foi-present-fail.json from test resources
 JSON-LD context is present - uplifting
