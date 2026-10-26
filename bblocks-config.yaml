@@ -40,8 +40,8 @@ description: |
 imports:
   - default
 # temporary for regression testing against SOSA updates - remove after upstream PR completed.
-  - https://rob-metalinkage.github.io/ogcapi-sosa
-#  - https://opengeospatial.github.io/ogcapi-sosa
+#  - https://rob-metalinkage.github.io/ogcapi-sosa
+  - https://opengeospatial.github.io/ogcapi-sosa
   - https://ogcincubator.github.io/bblocks-land-parcels
   - https://ogcincubator.github.io/topo-feature
   - https://ogcincubator.github.io/bblock-prov-schema
