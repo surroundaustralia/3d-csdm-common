@@ -2,6 +2,7 @@
   "name": "SurveyQuality",
   "abstract": "A extensible quality descriptor object with standard properties for survey point and vector observations.",
   "status": "under-development",
+  "group": "4. Datatypes",
   "dateTimeAddition": "2023-04-05T00:00:00Z",
   "itemClass": "schema",
   "register": "icsm-csdm",

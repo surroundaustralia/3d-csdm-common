@@ -1,1 +1,0 @@
-docker run --rm --workdir /workspace -v "$(pwd):/workspace" ghcr.io/opengeospatial/bblocks-postprocess   --clean true --base-url https://example.com/base-url

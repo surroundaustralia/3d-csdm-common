@@ -3,6 +3,7 @@
   "highlighted": true,
   "abstract": "CSDM container for survey features and observations. This schema defines key metadata for a survey and uses the other components in this repository to implement details using standards based, flexible, extensible implementation patterns compatible with OGC API standards.",
   "status": "under-development",
+  "group": "1. Core Containers",
   "dateTimeAddition": "2023-04-13T00:00:00Z",
   "itemClass": "schema",
   "register": "icsm-csdm",

@@ -43,7 +43,7 @@
 .
 
 <https://linked.data.gov.au/def/csdm/parcels/Appellation>
-    rdfs:subClassOf com:CompoundName ;
+    rdfs:subClassOf <https://w3id.org/ogc/utils/label/CompoundName> ;
 .
 
 <https://linked.data.gov.au/def/csdm/parcels/EstateParcel>

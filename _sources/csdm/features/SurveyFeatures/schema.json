@@ -35,7 +35,7 @@
       "type": "object",
       "properties": {
         "name": {
-          "$ref": "bblocks://ogc.bbr.utils.compoundName"
+          "$ref": "bblocks://ogc.bbr.utils.compoundName.schema"
         },
         "purpose": {
           "oneOf": [
@@ -160,7 +160,7 @@
           "type": "object",
           "properties": {
             "geodeticid": {
-              "$ref": "bblocks://ogc.bbr.utils.compoundName"
+              "$ref": "bblocks://ogc.bbr.utils.compoundName.schema"
             }
           },
           "required": [

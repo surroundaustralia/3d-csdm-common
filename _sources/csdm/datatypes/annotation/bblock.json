@@ -2,6 +2,7 @@
   "name": "Generalised annotation",
   "abstract": "An annotation allowing multiple values, either links with descriptions or simple text.",
   "status": "under-development",
+  "group": "4. Datatypes",
   "dateTimeAddition": "2023-04-05T00:00:00Z",
   "itemClass": "schema",
   "register": "icsm-csdm",

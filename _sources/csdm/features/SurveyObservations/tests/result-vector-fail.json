@@ -4,8 +4,11 @@
   "time": null,
   "place": null,
   "properties": {
+    "comment": "Should only fail on result not correct type",
     "hasFeatureOfInterest": "l973158",
     "resultTime": "2023-05-22T16:41:00",
+    "observedProperty": "anything",
+    "usedProcedure": "anything",
     "madeBySensor": {
       "sensorType": "DifferentialGPS",
       "baseSensor": "gps+38666",

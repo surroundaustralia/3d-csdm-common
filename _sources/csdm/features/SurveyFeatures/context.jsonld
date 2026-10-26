@@ -2,7 +2,7 @@
   "@context": {
     "csdm": "https://linked.data.gov.au/def/csdm/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "commonpatterns": "https://linked.data.gov.au/def/csdm/commonpatterns/",
+    "commonpatterns": "https://w3id.org/ogc/utils/label/",
     "geojson": "https://purl.org/geojson/vocab#",
     "geosparql": "http://www.opengis.net/ont/geosparql#",
     "surv": "https://linked.data.gov.au/def/csdm/surveyfeatures/",

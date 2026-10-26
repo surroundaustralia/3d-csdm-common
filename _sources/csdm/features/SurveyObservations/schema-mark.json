@@ -7,7 +7,7 @@
       "type": "object",
       "properties": {
         "name": {
-          "$ref": "bblocks://ogc.bbr.utils.compoundName"
+          "$ref": "bblocks://ogc.bbr.utils.compoundName.schema"
         },
         "purpose": {
           "type": "string",
@@ -120,7 +120,7 @@
           "$ref": "#/$defs/SurveyMarkProperties"
         },
         "geodecitid": {
-          "$ref": "bblocks://ogc.bbr.utils.compoundName"
+          "$ref": "bblocks://ogc.bbr.utils.compoundName.schema"
         }
       }
     },

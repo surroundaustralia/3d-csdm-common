@@ -4,7 +4,6 @@
   "featureType": "sosa:ObservationCollection",
   "time": null,
   "properties": {
-    "resultTime": "2023-05-24",
     "observedProperty": "surveyable:VectorDetermination",
     "usedProcedure": "surveyproc:traverse",
     "angleType": "angletype:bearing",

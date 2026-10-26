@@ -2,6 +2,7 @@
   "name": "Survey Observations",
   "abstract": "An Observation specialisation for an aspect of a survey - typically vectors with new or adopted bearings and distances.",
   "status": "under-development",
+  "group": "3. Features",
   "dateTimeAddition": "2023-04-05T00:00:00Z",
   "itemClass": "schema",
   "register": "icsm-csdm",

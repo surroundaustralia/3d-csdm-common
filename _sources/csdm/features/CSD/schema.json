@@ -246,7 +246,7 @@
       "type": "string"
     },
     "surveyDescriptors": {
-      "$ref": "bblocks://ogc.bbr.utils.compoundName"
+      "$ref": "bblocks://ogc.bbr.utils.compoundName.schema"
     },
     "purpose": {
       "oneOf": [

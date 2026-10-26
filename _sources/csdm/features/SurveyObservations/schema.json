@@ -79,51 +79,65 @@
         "angles"
       ]
     },
+    "SurveyVectorObsResult": {
+      "type": "object",
+      "properties": {
+        "hasResultQuality": {
+          "$ref": "../../datatypes/quality/schema.json"
+        },
+        "hasResult": {
+          "properties": {
+            "pose": {
+              "$ref": "#/$defs/pose-lenient"
+            },
+            "angle": {
+              "type": "number"
+            },
+            "distance": {
+              "type": "number"
+            }
+          },
+          "anyOf": [
+            {
+              "required": [
+                "pose"
+              ]
+            },
+            {
+              "required": [
+                "distance"
+              ]
+            },
+            {
+              "required": [
+                "angle"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "hasResult"
+      ]
+    },
     "SurveyVectorObsProps": {
       "allOf": [
         {
           "$ref": "bblocks://ogc.sosa.properties.observation"
         },
         {
-          "type": "object",
-          "properties": {
-            "hasResultQuality": {
-              "$ref": "../../datatypes/quality/schema.json"
-            },
-            "hasResult": {
-              "properties": {
-                "pose": {
-                  "$ref": "#/$defs/pose-lenient"
-                },
-                "angle": {
-                  "type": "number"
-                },
-                "distance": {
-                  "type": "number"
-                }
-              },
-              "anyOf": [
-                {
-                  "required": [
-                    "pose"
-                  ]
-                },
-                {
-                  "required": [
-                    "distance"
-                  ]
-                },
-                {
-                  "required": [
-                    "angle"
-                  ]
-                }
-              ]
-            }
-          },
-          "required": [
-            "hasResult"
-          ]
+          "$ref": "#/$defs/SurveyVectorObsResult"
+        }
+      ]
+    },
+    "SurveyVectorObsMemberProps": {
+      "description": "Properties of a vector observation in a SurveyVectorObsCollection: observedProperty, feature of interest and times may be provided by the collection",
+      "allOf": [
+        {
+          "$ref": "bblocks://ogc.sosa.properties.observation#/$defs/member"
+        },
+        {
+          "$ref": "#/$defs/SurveyVectorObsResult"
         }
       ]
     },
@@ -141,6 +155,21 @@
         }
       ]
     },
+    "SurveyVectorObsMember": {
+      "description": "A vector observation feature as a member of a SurveyVectorObsCollection",
+      "allOf": [
+        {
+          "$ref": "bblocks://ogc.sosa.features.observation#/$defs/member"
+        },
+        {
+          "properties": {
+            "properties": {
+              "$ref": "#/$defs/SurveyVectorObsMemberProps"
+            }
+          }
+        }
+      ]
+    },
     "SurveyVectorObsCollection": {
       "allOf": [
         {
@@ -151,7 +180,7 @@
             "features": {
               "type": "array",
               "items": {
-                "$ref": "#/$defs/SurveyVectorObsFeature"
+                "$ref": "#/$defs/SurveyVectorObsMember"
               }
             },
             "properties": {

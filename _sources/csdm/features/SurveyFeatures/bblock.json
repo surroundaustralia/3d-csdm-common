@@ -2,6 +2,7 @@
   "name": "Survey Features",
   "abstract": "The set of geographic features present on a survey - these include the FeatureOfInterest for observations",
   "status": "under-development",
+  "group": "3. Features",
   "dateTimeAddition": "2023-04-05T00:00:00Z",
   "itemClass": "schema",
   "register": "icsm-csdm",
