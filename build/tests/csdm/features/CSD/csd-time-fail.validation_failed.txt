@@ -1,0 +1,61 @@
+Validation report for icsm.csdm.features.CSD - Cadastral Survey Dataset
+Generated 2026-10-26T11:02:48.980805+00:00
+=== Files ===
+Using csd-time-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD csd-time-fail.jsonld created
+Output Turtle csd-time-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: '2023-23-12' is not valid under any of the given schemas
+
+Failed validating 'oneOf' in schema['allOf'][1]['properties']['time']:
+    {'$defs': {'date': {'pattern': '^\\d{4}-\\d{2}-\\d{2}$',
+                        'type': 'string'},
+               'interval': {'items': {'anyOf': [{'oneOf': [{'$ref': '#/$defs/date'},
+                                                           {'enum': ['..'],
+                                                            'type': 'string'}]},
+                                                {'oneOf': [{'$ref': '#/$defs/timestamp'},
+                                                           {'enum': ['..'],
+                                                            'type': 'string'}]}]},
+                            'maxItems': 2,
+                            'minItems': 2,
+                            'type': 'array'},
+               'timestamp': {'pattern': '^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z$',
+                             'type': 'string'}},
+     '$id': 'https://beta.schemas.opengis.net/json-fg/time.json',
+     '$schema': 'https://json-schema.org/draft/2020-12/schema',
+     'description': 'This JSON Schema is part of JSON-FG version 0.3.0.',
+     'oneOf': [{'type': 'null'},
+               {'minProperties': 1,
+                'properties': {'date': {'$ref': '#/$defs/date',
+                                        'x-jsonld-id': 'http://www.w3.org/2006/time#hasTime',
+                                        'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#date'},
+                               'interval': {'$ref': '#/$defs/interval',
+                                            'x-jsonld-container': '@list',
+                                            'x-jsonld-id': 'http://www.w3.org/2006/time#hasTime'},
+                               'timestamp': {'$ref': '#/$defs/timestamp',
+                                             'x-jsonld-id': 'http://www.w3.org/2006/time#hasTime',
+                                             'x-jsonld-type': 'http://www.w3.org/2001/XMLSchema#dateTime'}},
+                'type': 'object'}],
+     'title': "the value of the 'time' member",
+     'x-bblocks-metadata': {'dateOfLastChange': '2026-10-18',
+                            'itemIdentifier': 'ogc.geo.json-fg.time',
+                            'register': 'https://opengeospatial.github.io/bblocks/register.json',
+                            'version': '0.2.2'},
+     'x-jsonld-prefixes': {'time': 'http://www.w3.org/2006/time#',
+                           'xsd': 'http://www.w3.org/2001/XMLSchema#'}}
+
+On instance['time']:
+    '2023-23-12'
+=== End JSON Schema ===
+
+=== SHACL ===
+
+** Validation error **
+Error processing _sources/csdm/features/CSD/_sources/properties/observation/shapes.shacl: [Errno 2] No such file or directory: '/github/_sources/csdm/features/CSD/_sources/properties/observation/shapes.shacl'
+=== End SHACL ===
+

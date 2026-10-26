@@ -2171,7 +2171,7 @@
       "type": "FeatureCollection",
       "featureType": "sosa:ObservationCollection",
       "time": null,
-      "resultTime": "2023-05-24",
+      "resultTime": "2023-05-24T00:00:00",
       "observedProperty": "surveyable:VectorDetermination",
       "usedProcedure": "surveyproc:traverse",
       "features": [

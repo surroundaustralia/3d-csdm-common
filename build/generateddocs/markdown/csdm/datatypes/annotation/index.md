@@ -56,13 +56,13 @@ A name with a label, but also a set of parts with roles that can be validated ag
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix prof: <http://www.w3.org/ns/dx/prof/> .
 
-[] dcterms:description "Annotation with role" ;
-    prof:hasRole <http://example.org/myReason> .
-
 [] dcterms:description "Annotation with link and role" ;
     ns1:relation <http://www.iana.org/assignments/relation/related> ;
     prof:hasRole <http://example.org/myReason> ;
     oa:hasTarget <http://example.org/aDocument> .
+
+[] dcterms:description "Annotation with role" ;
+    prof:hasRole <http://example.org/myReason> .
 
 
 ```
@@ -101,6 +101,11 @@ x-jsonld-extra-terms:
   description: http://purl.org/dc/terms/description
 x-jsonld-prefixes:
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: icsm.csdm.datatypes.annotation
+  register: https://surroundaustralia.github.io/3d-csdm-common/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-26'
 
 ```
 

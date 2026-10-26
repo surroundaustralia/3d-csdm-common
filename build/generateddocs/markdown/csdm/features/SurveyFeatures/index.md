@@ -136,11 +136,10 @@ Either geometry will inherit its CRS from the container's defaults.
 
 #### ttl
 ```ttl
-@prefix commonpatterns: <https://linked.data.gov.au/def/csdm/commonpatterns/> .
+@prefix commonpatterns: <https://w3id.org/ogc/utils/label/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix eg1: <https://linked.data.gov.au/def/csdm/csd-example/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <https://w3id.org/ogc/utils/label/> .
 @prefix nz-monument-condition: <https://linked.data.gov.au/def/csdm/nz-monument-condition/> .
 @prefix nz-monument-form: <https://linked.data.gov.au/def/csdm/nz-monument-form/> .
 @prefix nz-monument-state: <https://linked.data.gov.au/def/csdm/nz-monument-state/> .
@@ -154,18 +153,18 @@ Either geometry will inherit its CRS from the container's defaults.
 eg1:P1 a surv:BoundaryMark,
         geojson:Feature ;
     rdfs:comment "All survey marks will have a monumented state - a physical monument may be absent however using a monument type which is an explicit statement about the state" ;
-    commonpatterns:name [ rdfs:label "IS I - DP 3333" ;
-            dct:hasPart [ rdfs:label "IS I" ;
-                    ns1:namePartType "Stamp" ],
-                [ rdfs:label "DP 3333" ;
-                    ns1:namePartType "Source" ] ] ;
     surv:monumentedBy [ surv:condition nz-monument-condition:fair ;
             surv:form nz-monument-form:pin ;
             surv:state nz-monument-state:present ] ;
     surv:purpose nz-surveypoint-purpose:boundary ;
     surv:state nz-surveypoint-state:original ;
     geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.1e+00 2.7e+00 ) ] .
+            geojson:coordinates ( 1.1e+00 2.7e+00 ) ] ;
+    commonpatterns:name [ rdfs:label "IS I - DP 3333" ;
+            dct:hasPart [ rdfs:label "DP 3333" ;
+                    commonpatterns:namePartType eg1:Source ],
+                [ rdfs:label "IS I" ;
+                    commonpatterns:namePartType eg1:Stamp ] ] .
 
 
 ```
@@ -280,11 +279,10 @@ An example Geodetic Mark extending Survey Point with additional geodeticid attri
 
 #### ttl
 ```ttl
-@prefix commonpatterns: <https://linked.data.gov.au/def/csdm/commonpatterns/> .
+@prefix commonpatterns: <https://w3id.org/ogc/utils/label/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix eg1: <https://linked.data.gov.au/def/csdm/csd-example/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <https://w3id.org/ogc/utils/label/> .
 @prefix nz-monument-condition: <https://linked.data.gov.au/def/csdm/nz-monument-condition/> .
 @prefix nz-monument-form: <https://linked.data.gov.au/def/csdm/nz-monument-form/> .
 @prefix nz-monument-state: <https://linked.data.gov.au/def/csdm/nz-monument-state/> .
@@ -296,18 +294,18 @@ An example Geodetic Mark extending Survey Point with additional geodeticid attri
 
 eg1:P2 a surv:GeodeticReferenceMark,
         geojson:Feature ;
-    commonpatterns:name [ rdfs:label "IS II - DP 3333" ;
-            dct:hasPart [ rdfs:label "IS II" ;
-                    ns1:namePartType "Stamp" ],
-                [ rdfs:label "DP 3333" ;
-                    ns1:namePartType "Source" ] ] ;
     surv:geodeticid "XX 33455" ;
     surv:monumentedBy [ surv:condition nz-monument-condition:fair ;
             surv:form nz-monument-form:pin ;
             surv:state nz-monument-state:present ] ;
     surv:purpose nz-surveypoint-purpose:geodeticref ;
     geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 2.1e+00 3.7e+00 ) ] .
+            geojson:coordinates ( 2.1e+00 3.7e+00 ) ] ;
+    commonpatterns:name [ rdfs:label "IS II - DP 3333" ;
+            dct:hasPart [ rdfs:label "DP 3333" ;
+                    commonpatterns:namePartType eg1:Source ],
+                [ rdfs:label "IS II" ;
+                    commonpatterns:namePartType eg1:Stamp ] ] .
 
 
 ```
@@ -490,8 +488,8 @@ $defs:
     type: object
     properties:
       name:
-        $ref: https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema.yaml
-        x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/name
+        $ref: https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/schema.yaml
+        x-jsonld-id: https://w3id.org/ogc/utils/label/name
         x-jsonld-type: '@id'
       purpose:
         oneOf:
@@ -505,11 +503,11 @@ $defs:
         $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml
       ptQuality:
         $ref: '#/$defs/coderef'
-        x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/qualityClass
+        x-jsonld-id: https://w3id.org/ogc/utils/label/qualityClass
         x-jsonld-type: '@id'
       ptQualityMeasure:
         type: number
-        x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/qualityMeasure
+        x-jsonld-id: https://w3id.org/ogc/utils/label/qualityMeasure
         x-jsonld-type: '@id'
       comment:
         $ref: '#/$defs/nullableString'
@@ -571,7 +569,7 @@ $defs:
     - type: object
       properties:
         geodeticid:
-          $ref: https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema.yaml
+          $ref: https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/schema.yaml
           x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/geodeticid
       required:
       - geodeticid
@@ -693,10 +691,10 @@ x-jsonld-extra-terms:
     x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/BoundaryMark
     x-jsonld-type: '@id'
   ptQuality:
-    x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/qualityClass
+    x-jsonld-id: https://w3id.org/ogc/utils/label/qualityClass
     x-jsonld-type: '@id'
   ptQualityMeasure:
-    x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/qualityMeasure
+    x-jsonld-id: https://w3id.org/ogc/utils/label/qualityMeasure
     x-jsonld-type: '@id'
   GeodeticReferenceMark:
     x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/GeodeticReferenceMark
@@ -708,17 +706,22 @@ x-jsonld-extra-terms:
     x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/SurveyedVector
     x-jsonld-type: '@id'
   name:
-    x-jsonld-id: https://linked.data.gov.au/def/csdm/commonpatterns/name
+    x-jsonld-id: https://w3id.org/ogc/utils/label/name
     x-jsonld-type: '@id'
   label: http://www.w3.org/2000/01/rdf-schema#label
 x-jsonld-prefixes:
   geojson: https://purl.org/geojson/vocab#
   surv: https://linked.data.gov.au/def/csdm/surveyfeatures/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
-  commonpatterns: https://linked.data.gov.au/def/csdm/commonpatterns/
+  commonpatterns: https://w3id.org/ogc/utils/label/
   csdm: https://linked.data.gov.au/def/csdm/
   geosparql: http://www.opengis.net/ont/geosparql#
   dct: http://purl.org/dc/terms/
+x-bblocks-metadata:
+  itemIdentifier: icsm.csdm.features.SurveyFeatures
+  register: https://surroundaustralia.github.io/3d-csdm-common/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-26'
 
 ```
 
@@ -903,11 +906,16 @@ Links to the schema:
     "geodeticid": {
       "@id": "surv:geodeticid",
       "@context": {
-        "name": "https://w3id.org/ogc/utils/label/name",
         "hasPart": {
           "@context": {
-            "ref": "https://w3id.org/ogc/utils/label/namePartRef",
-            "type": "https://w3id.org/ogc/utils/label/namePartType"
+            "ref": {
+              "@type": "@id",
+              "@id": "commonpatterns:namePartRef"
+            },
+            "type": {
+              "@type": "@id",
+              "@id": "commonpatterns:namePartType"
+            }
           },
           "@id": "dct:hasPart"
         }
@@ -949,18 +957,23 @@ Links to the schema:
       "@id": "commonpatterns:name",
       "@type": "@id",
       "@context": {
-        "name": "https://w3id.org/ogc/utils/label/name",
         "hasPart": {
           "@context": {
-            "ref": "https://w3id.org/ogc/utils/label/namePartRef",
-            "type": "https://w3id.org/ogc/utils/label/namePartType"
+            "ref": {
+              "@type": "@id",
+              "@id": "commonpatterns:namePartRef"
+            },
+            "type": {
+              "@type": "@id",
+              "@id": "commonpatterns:namePartType"
+            }
           },
           "@id": "dct:hasPart"
         }
       }
     },
     "label": "rdfs:label",
-    "CompoundName": "https://w3id.org/ogc/utils/label/CompoundName",
+    "CompoundName": "commonpatterns:CompoundName",
     "activityType": "@type",
     "agentType": "@type",
     "entityType": "@type",
@@ -1300,6 +1313,7 @@ Links to the schema:
     "Ring": "topo:Ring",
     "Shell": "topo:Shell",
     "Solid": "topo:Solid",
+    "AggregateSolid": "topo:AggregateSolid",
     "rings": {
       "@id": "topo:rings",
       "@container": "@list"
@@ -1315,7 +1329,7 @@ Links to the schema:
     "geojson": "https://purl.org/geojson/vocab#",
     "surv": "csdm:surveyfeatures/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "commonpatterns": "csdm:commonpatterns/",
+    "commonpatterns": "https://w3id.org/ogc/utils/label/",
     "csdm": "https://linked.data.gov.au/def/csdm/",
     "geosparql": "http://www.opengis.net/ont/geosparql#",
     "dct": "http://purl.org/dc/terms/",

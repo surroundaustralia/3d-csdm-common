@@ -1,0 +1,19 @@
+Validation report for icsm.csdm.features.CSD - Cadastral Survey Dataset
+Generated 2026-10-26T11:02:53.686834+00:00
+=== Files ===
+Using nonprimary-parcel.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD nonprimary-parcel.jsonld created
+Output Turtle nonprimary-parcel.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+
+=== SHACL ===
+
+** Validation error **
+Error processing _sources/csdm/features/CSD/_sources/properties/observation/shapes.shacl: [Errno 2] No such file or directory: '/github/_sources/csdm/features/CSD/_sources/properties/observation/shapes.shacl'
+=== End SHACL ===
+

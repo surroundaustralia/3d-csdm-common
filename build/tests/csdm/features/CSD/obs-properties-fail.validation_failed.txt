@@ -1,0 +1,47 @@
+Validation report for icsm.csdm.features.CSD - Cadastral Survey Dataset
+Generated 2026-10-26T11:02:53.727295+00:00
+=== Files ===
+Using obs-properties-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD obs-properties-fail.jsonld created
+Output Turtle obs-properties-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: 'observedProperty' is a required property
+
+Failed validating 'required' in schema['properties']['vectorObservations']['items']['allOf'][1]['properties']['properties']:
+    {'not': {'required': ['hasResult']},
+     'properties': {'angleType': {'$ref': '#/$defs/coderef',
+                                  'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/defs/angletypes/',
+                                  'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyobs/angleType',
+                                  'x-jsonld-type': '@id'},
+                    'distanceType': {'$ref': '#/$defs/coderef',
+                                     'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/defs/distancetypes/',
+                                     'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyobs/distanceType',
+                                     'x-jsonld-type': '@id'},
+                    'madeBySensor': {'$ref': '#/$defs/SensorType',
+                                     'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/sensors/Sensor',
+                                     'x-jsonld-id': 'sosa:madeBySensor'},
+                    'observedProperty': {'$ref': '#/$defs/coderef',
+                                         'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/property/',
+                                         'x-jsonld-id': 'sosa:observedProperty',
+                                         'x-jsonld-type': '@id'}},
+     'required': ['madeBySensor', 'observedProperty']}
+
+On instance['vectorObservations'][0]['properties']:
+    {'madeBySensor': {'baseSensor': 'gps+38666',
+                      'roverSensor': 'gps+37544',
+                      'sensorType': 'DifferentialGPS'},
+     'resultTime': '2023-05-24T00:00:00',
+     'usedProcedure': 'surveyproc:traverse'}
+=== End JSON Schema ===
+
+=== SHACL ===
+
+** Validation error **
+Error processing _sources/csdm/features/CSD/_sources/properties/observation/shapes.shacl: [Errno 2] No such file or directory: '/github/_sources/csdm/features/CSD/_sources/properties/observation/shapes.shacl'
+=== End SHACL ===
+

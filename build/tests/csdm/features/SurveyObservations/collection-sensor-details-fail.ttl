@@ -16,11 +16,10 @@
             sosa:hasFeatureOfInterest <file:///github/workspace/l973158> ;
             sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;
                             geopose:angles [ ] ] ] ;
-            sosa:resultTime "2023-05-22T16:41:00" ] ;
+            sosa:resultTime "2023-05-22T16:41:00"^^xsd:dateTime ] ;
     sosa:madeBySensor [ a ns2:DifferentialGPS ;
             ns2:roverSensor "gps+37544" ] ;
     sosa:observedProperty surveyable:VectorDetermination ;
-    sosa:resultTime "2023-05-24" ;
     sosa:usedProcedure surveyproc:traverse ;
     ns1:angleType angletype:bearing ;
     ns1:distanceType distancetype:ellipsoidal .

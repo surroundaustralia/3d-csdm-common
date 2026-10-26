@@ -5,7 +5,7 @@
   "properties": {
     "hasFeatureOfInterest": "l973158",
     "observedProperty": "pose",
-    "resultTime": "2023-05-22T16:41:00+2",
+    "resultTime": "2023-05-22T16:41:00+02:00",
     "madeBySensor": {
       "sensorType": "DifferentialGPS",
       "baseSensor": "gps+38666",

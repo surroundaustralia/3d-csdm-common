@@ -69,6 +69,11 @@ properties:
     x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyobs/angleAccuracyClass
 x-jsonld-prefixes:
   csdm: https://linked.data.gov.au/def/csdm/
+x-bblocks-metadata:
+  itemIdentifier: icsm.csdm.datatypes.quality
+  register: https://surroundaustralia.github.io/3d-csdm-common/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-26'
 
 ```
 

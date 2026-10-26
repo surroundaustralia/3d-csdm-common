@@ -93,8 +93,8 @@ An example observation of a vector based on bearing and distance - in 2D
 ```ttl
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix geopose: <https://linked.data.gov.au/def/csdm/utils/geopose/> .
-@prefix ns1: <https://linked.data.gov.au/def/csdm/sensors/> .
-@prefix ns2: <https://linked.data.gov.au/def/csdm/surveyobs/> .
+@prefix ns1: <https://linked.data.gov.au/def/csdm/surveyobs/> .
+@prefix ns2: <https://linked.data.gov.au/def/csdm/sensors/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -103,15 +103,15 @@ An example observation of a vector based on bearing and distance - in 2D
     sosa:hasFeatureOfInterest <file:///github/workspace/l973158> ;
     sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;
                     geopose:angles [ ] ] ] ;
-    sosa:hasResultQuality [ ns2:angleAccuracyClass <http://any.valid/> ;
-            ns2:angleAccuracyMeasure 2.815469e-02 ;
-            ns2:distanceAccuracyClass <http://any.valid/> ;
-            ns2:distanceAccuracyMeasure 1.00138e-04 ] ;
-    sosa:madeBySensor [ a ns1:DifferentialGPS ;
-            ns1:baseSensor "gps+38666" ;
-            ns1:roverSensor "gps+37544" ] ;
+    sosa:hasResultQuality [ ns1:angleAccuracyClass <http://any.valid/> ;
+            ns1:angleAccuracyMeasure 2.815469e-02 ;
+            ns1:distanceAccuracyClass <http://any.valid/> ;
+            ns1:distanceAccuracyMeasure 1.00138e-04 ] ;
+    sosa:madeBySensor [ a ns2:DifferentialGPS ;
+            ns2:baseSensor "gps+38666" ;
+            ns2:roverSensor "gps+37544" ] ;
     sosa:observedProperty <https://linked.data.gov.au/def/csdm/property/pose> ;
-    sosa:resultTime "2023-05-22T16:41:00" .
+    sosa:resultTime "2023-05-22T16:41:00"^^xsd:dateTime .
 
 
 ```
@@ -195,7 +195,7 @@ An example observation of a vector based on bearing,pitch (azimuth angle) and di
             ns1:baseSensor "gps+38666" ;
             ns1:roverSensor "gps+37544" ] ;
     sosa:observedProperty <https://linked.data.gov.au/def/csdm/property/pose> ;
-    sosa:resultTime "2023-05-22T16:41:00" .
+    sosa:resultTime "2023-05-22T16:41:00"^^xsd:dateTime .
 
 
 ```
@@ -211,7 +211,7 @@ Example Survey Observation - vector only distance
   "properties": {
     "hasFeatureOfInterest": "l973158",
     "observedProperty": "pose",
-    "resultTime": "2023-05-22T16:41:00+2",
+    "resultTime": "2023-05-22T16:41:00+02:00",
     "madeBySensor": {
       "sensorType": "DifferentialGPS",
       "baseSensor": "gps+38666",
@@ -233,7 +233,7 @@ Example Survey Observation - vector only distance
   "properties": {
     "hasFeatureOfInterest": "l973158",
     "observedProperty": "pose",
-    "resultTime": "2023-05-22T16:41:00+2",
+    "resultTime": "2023-05-22T16:41:00+02:00",
     "madeBySensor": {
       "sensorType": "DifferentialGPS",
       "baseSensor": "gps+38666",
@@ -261,7 +261,7 @@ Example Survey Observation - vector only distance
             ns1:baseSensor "gps+38666" ;
             ns1:roverSensor "gps+37544" ] ;
     sosa:observedProperty <https://linked.data.gov.au/def/csdm/property/pose> ;
-    sosa:resultTime "2023-05-22T16:41:00+2" .
+    sosa:resultTime "2023-05-22T16:41:00+02:00"^^xsd:dateTime .
 
 
 ```
@@ -333,6 +333,7 @@ Example Survey Observation - vector only bearing
 @prefix ns1: <https://linked.data.gov.au/def/csdm/sensors/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 [] a geojson:Feature ;
     sosa:hasFeatureOfInterest <file:///github/workspace/l973158> ;
@@ -341,7 +342,7 @@ Example Survey Observation - vector only bearing
             ns1:baseSensor "gps+38666" ;
             ns1:roverSensor "gps+37544" ] ;
     sosa:observedProperty <https://linked.data.gov.au/def/csdm/property/pose> ;
-    sosa:resultTime "2023-05-22T16:41:00" .
+    sosa:resultTime "2023-05-22T16:41:00"^^xsd:dateTime .
 
 
 ```
@@ -441,8 +442,8 @@ Example Collection of Survey Observations
 @prefix distancetype: <https://linked.data.gov.au/def/csdm/defs/distancetypes/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix geopose: <https://linked.data.gov.au/def/csdm/utils/geopose/> .
-@prefix ns1: <https://linked.data.gov.au/def/csdm/surveyobs/> .
-@prefix ns2: <https://linked.data.gov.au/def/csdm/sensors/> .
+@prefix ns1: <https://linked.data.gov.au/def/csdm/sensors/> .
+@prefix ns2: <https://linked.data.gov.au/def/csdm/surveyobs/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .
 @prefix surveyable: <https://linked.data.gov.au/def/csdm/defs/surveyableproperties/> .
@@ -455,14 +456,14 @@ Example Collection of Survey Observations
             sosa:hasFeatureOfInterest <http://www.example.com/features/l973158> ;
             sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;
                             geopose:angles [ ] ] ] ] ;
-    sosa:madeBySensor [ a ns2:DifferentialGPS ;
-            ns2:baseSensor "gps+38666" ;
-            ns2:roverSensor "gps+37544" ] ;
+    sosa:madeBySensor [ a ns1:DifferentialGPS ;
+            ns1:baseSensor "gps+38666" ;
+            ns1:roverSensor "gps+37544" ] ;
     sosa:observedProperty surveyable:VectorDetermination ;
-    sosa:resultTime "2023-05-24T00:00:00" ;
+    sosa:resultTime "2023-05-24T00:00:00"^^xsd:dateTime ;
     sosa:usedProcedure surveyproc:traverse ;
-    ns1:angleType angletype:bearing ;
-    ns1:distanceType distancetype:ellipsoidal .
+    ns2:angleType angletype:bearing ;
+    ns2:distanceType distancetype:ellipsoidal .
 
 
 ```
@@ -524,47 +525,62 @@ $defs:
         x-jsonld-id: https://linked.data.gov.au/def/csdm/utils/geopose/angles
     required:
     - angles
+  SurveyVectorObsResult:
+    type: object
+    properties:
+      hasResultQuality:
+        $ref: https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml
+      hasResult:
+        properties:
+          pose:
+            $ref: '#/$defs/pose-lenient'
+            x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/pose
+          angle:
+            type: number
+          distance:
+            type: number
+            x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/distance
+        anyOf:
+        - required:
+          - pose
+        - required:
+          - distance
+        - required:
+          - angle
+        x-jsonld-id: sosa:hasResult
+    required:
+    - hasResult
   SurveyVectorObsProps:
     allOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml
-    - type: object
-      properties:
-        hasResultQuality:
-          $ref: https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml
-        hasResult:
-          properties:
-            pose:
-              $ref: '#/$defs/pose-lenient'
-              x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/pose
-            angle:
-              type: number
-            distance:
-              type: number
-              x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/distance
-          anyOf:
-          - required:
-            - pose
-          - required:
-            - distance
-          - required:
-            - angle
-          x-jsonld-id: sosa:hasResult
-      required:
-      - hasResult
+    - $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml
+    - $ref: '#/$defs/SurveyVectorObsResult'
+  SurveyVectorObsMemberProps:
+    description: 'Properties of a vector observation in a SurveyVectorObsCollection:
+      observedProperty, feature of interest and times may be provided by the collection'
+    allOf:
+    - $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml#/$defs/member
+    - $ref: '#/$defs/SurveyVectorObsResult'
   SurveyVectorObsFeature:
     allOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml
+    - $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml
     - properties:
         properties:
           $ref: '#/$defs/SurveyVectorObsProps'
+  SurveyVectorObsMember:
+    description: A vector observation feature as a member of a SurveyVectorObsCollection
+    allOf:
+    - $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml#/$defs/member
+    - properties:
+        properties:
+          $ref: '#/$defs/SurveyVectorObsMemberProps'
   SurveyVectorObsCollection:
     allOf:
-    - $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml
+    - $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml
     - properties:
         features:
           type: array
           items:
-            $ref: '#/$defs/SurveyVectorObsFeature'
+            $ref: '#/$defs/SurveyVectorObsMember'
           x-jsonld-id: sosa:hasMember
           x-jsonld-container: '@set'
         properties:
@@ -627,6 +643,11 @@ x-jsonld-prefixes:
   distancetype: https://linked.data.gov.au/def/csdm/defs/distancetypes/
   surveyproc: https://linked.data.gov.au/def/csdm/defs/surveyprocedures/
   surveyable: https://linked.data.gov.au/def/csdm/defs/surveyableproperties/
+x-bblocks-metadata:
+  itemIdentifier: icsm.csdm.features.SurveyObservations
+  register: https://surroundaustralia.github.io/3d-csdm-common/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-26'
 
 ```
 
@@ -655,12 +676,12 @@ Links to the schema:
       "@id": "sosa:hasMember",
       "@type": "@id",
       "@context": {
-        "observedProperty": {
-          "@id": "sosa:observedProperty",
-          "@type": "@id"
-        },
         "madeBySensor": {
           "@id": "sosa:madeBySensor",
+          "@type": "@id"
+        },
+        "observedProperty": {
+          "@id": "sosa:observedProperty",
           "@type": "@id"
         }
       }
@@ -817,8 +838,16 @@ Links to the schema:
       "@id": "sosa:System",
       "@type": "@id"
     },
+    "actsOn": {
+      "@id": "sosa:actsOn",
+      "@type": "@id"
+    },
     "actsOnProperty": {
       "@id": "sosa:actsOnProperty",
+      "@type": "@id"
+    },
+    "deployedAsset": {
+      "@id": "sosa:deployedAsset",
       "@type": "@id"
     },
     "deployedOnPlatform": {
@@ -849,16 +878,53 @@ Links to the schema:
       "@id": "sosa:hasMember",
       "@type": "@id",
       "@context": {
-        "hasResult": {
-          "@id": "sosa:hasResult",
+        "madeBySensor": {
+          "@id": "sosa:madeBySensor",
           "@type": "@id"
         },
         "observedProperty": {
           "@id": "sosa:observedProperty",
           "@type": "@id"
         },
-        "madeBySensor": {
-          "@id": "sosa:madeBySensor",
+        "phenomenonTime": {
+          "@context": {
+            "hasBeginning": "owlTime:hasBeginning",
+            "hasEnd": "owlTime:hasEnd",
+            "inXSDDateTime": {
+              "@id": "owlTime:inXSDDateTime",
+              "@type": "xsd:dateTime"
+            },
+            "inXSDDateTimeStamp": {
+              "@id": "owlTime:inXSDDateTimeStamp",
+              "@type": "xsd:dateTimeStamp"
+            },
+            "inXSDDate": {
+              "@id": "owlTime:inXSDDate",
+              "@type": "xsd:date"
+            },
+            "Instant": "owlTime:Instant",
+            "Interval": "owlTime:Interval",
+            "ProperInterval": "owlTime:ProperInterval",
+            "hasDuration": "owlTime:hasDuration",
+            "hasXSDDuration": {
+              "@id": "owlTime:hasXSDDuration",
+              "@type": "xsd:duration"
+            },
+            "inTimePosition": "owlTime:inTimePosition",
+            "inXSDgYear": {
+              "@id": "owlTime:inXSDgYear",
+              "@type": "xsd:gYear"
+            },
+            "inXSDgYearMonth": {
+              "@id": "owlTime:inXSDgYearMonth",
+              "@type": "xsd:gYearMonth"
+            }
+          },
+          "@id": "sosa:phenomenonTime",
+          "@type": "xsd:dateTime"
+        },
+        "hasResult": {
+          "@id": "sosa:hasResult",
           "@type": "@id"
         }
       }
@@ -874,19 +940,6 @@ Links to the schema:
     "hasProperty": {
       "@id": "sosa:hasProperty",
       "@type": "@id"
-    },
-    "hasResult": {
-      "@id": "sosa:hasResult",
-      "@type": "@id",
-      "@context": {
-        "pose": {
-          "@context": {
-            "angles": "csdm:utils/geopose/angles"
-          },
-          "@id": "csdm:surveyfeatures/pose"
-        },
-        "distance": "csdm:surveyfeatures/distance"
-      }
     },
     "hasResultQuality": {
       "@id": "sosa:hasResultQuality",
@@ -912,18 +965,10 @@ Links to the schema:
       "@id": "sosa:hasSampledFeature",
       "@type": "@id"
     },
-    "hasSimpleResult": {
-      "@id": "sosa:hasSimpleResult",
-      "@type": "@id"
-    },
     "hasSubSystem": {
       "@id": "sosa:hasSubSystem",
       "@type": "@id",
       "@container": "@set"
-    },
-    "hasUltimateFeatureOfInterest": {
-      "@id": "sosa:hasUltimateFeatureOfInterest",
-      "@type": "@id"
     },
     "hosts": {
       "@id": "sosa:hosts",
@@ -958,6 +1003,10 @@ Links to the schema:
       "@id": "sosa:isObservedBy",
       "@type": "@id"
     },
+    "isOriginalSampleOf": {
+      "@id": "sosa:isOriginalSampleOf",
+      "@type": "@id"
+    },
     "isPropertyOf": {
       "@id": "sosa:isPropertyOf",
       "@type": "@id"
@@ -982,6 +1031,14 @@ Links to the schema:
       "@id": "sosa:isSampleOf",
       "@type": "@id"
     },
+    "isSampleOfUltimateFOI": {
+      "@id": "sosa:isSampleOfUltimateFOI",
+      "@type": "@id"
+    },
+    "isSubSystemOf": {
+      "@id": "sosa:isSubSystemOf",
+      "@type": "@id"
+    },
     "madeActuation": {
       "@id": "sosa:madeActuation",
       "@type": "@id"
@@ -994,6 +1051,24 @@ Links to the schema:
       "@id": "sosa:madeBySampler",
       "@type": "@id"
     },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
+      "@type": "@id",
+      "@context": {
+        "@base": "https://linked.data.gov.au/def/csdm/sensors/Sensor",
+        "sensorType": "@type",
+        "baseSensor": "csdm:sensors/baseSensor",
+        "roverSensor": "csdm:sensors/roverSensor"
+      }
+    },
+    "madeBySystem": {
+      "@id": "sosa:madeBySystem",
+      "@type": "@id"
+    },
+    "madeExecution": {
+      "@id": "sosa:madeExecution",
+      "@type": "@id"
+    },
     "madeObservation": {
       "@id": "sosa:madeObservation",
       "@type": "@id"
@@ -1001,6 +1076,13 @@ Links to the schema:
     "madeSampling": {
       "@id": "sosa:madeSampling",
       "@type": "@id"
+    },
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id",
+      "@context": {
+        "@base": "https://linked.data.gov.au/def/csdm/property/"
+      }
     },
     "observes": {
       "@id": "sosa:observes",
@@ -1130,34 +1212,83 @@ Links to the schema:
       "@id": "ssn-system:qualityOfObservation",
       "@type": "@id"
     },
-    "resultTime": "sosa:resultTime",
+    "resultTime": {
+      "@id": "sosa:resultTime",
+      "@type": "xsd:dateTime"
+    },
     "phenomenonTime": {
+      "@context": {
+        "hasBeginning": "owlTime:hasBeginning",
+        "hasEnd": "owlTime:hasEnd",
+        "inXSDDateTime": {
+          "@id": "owlTime:inXSDDateTime",
+          "@type": "xsd:dateTime"
+        },
+        "inXSDDateTimeStamp": {
+          "@id": "owlTime:inXSDDateTimeStamp",
+          "@type": "xsd:dateTimeStamp"
+        },
+        "inXSDDate": {
+          "@id": "owlTime:inXSDDate",
+          "@type": "xsd:date"
+        },
+        "Instant": "owlTime:Instant",
+        "Interval": "owlTime:Interval",
+        "ProperInterval": "owlTime:ProperInterval",
+        "hasDuration": "owlTime:hasDuration",
+        "hasXSDDuration": {
+          "@id": "owlTime:hasXSDDuration",
+          "@type": "xsd:duration"
+        },
+        "inTimePosition": "owlTime:inTimePosition",
+        "inXSDgYear": {
+          "@id": "owlTime:inXSDgYear",
+          "@type": "xsd:gYear"
+        },
+        "inXSDgYearMonth": {
+          "@id": "owlTime:inXSDgYearMonth",
+          "@type": "xsd:gYearMonth"
+        }
+      },
       "@id": "sosa:phenomenonTime",
-      "@type": "@id"
+      "@type": "xsd:dateTime"
     },
     "hasFeatureOfInterest": {
       "@id": "sosa:hasFeatureOfInterest",
       "@type": "@id"
     },
-    "observedProperty": {
-      "@context": {
-        "@base": "https://linked.data.gov.au/def/csdm/property/"
-      },
-      "@id": "sosa:observedProperty",
+    "hasUltimateFeatureOfInterest": {
+      "@id": "sosa:hasUltimateFeatureOfInterest",
       "@type": "@id"
     },
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"
     },
-    "madeBySensor": {
+    "startTime": {
+      "@id": "sosa:startTime",
+      "@type": "xsd:dateTime"
+    },
+    "endTime": {
+      "@id": "sosa:endTime",
+      "@type": "xsd:dateTime"
+    },
+    "hasResult": {
       "@context": {
-        "@base": "https://linked.data.gov.au/def/csdm/sensors/Sensor",
-        "sensorType": "@type",
-        "baseSensor": "csdm:sensors/baseSensor",
-        "roverSensor": "csdm:sensors/roverSensor"
+        "pose": {
+          "@context": {
+            "angles": "csdm:utils/geopose/angles"
+          },
+          "@id": "csdm:surveyfeatures/pose"
+        },
+        "distance": "csdm:surveyfeatures/distance"
       },
-      "@id": "sosa:madeBySensor",
+      "@id": "sosa:hasResult",
+      "@type": "@id"
+    },
+    "hasSimpleResult": "sosa:hasSimpleResult",
+    "hasInputValue": {
+      "@id": "sosa:hasInputValue",
       "@type": "@id"
     },
     "geojson": "https://purl.org/geojson/vocab#",

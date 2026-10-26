@@ -85,61 +85,75 @@
         "angles"
       ]
     },
+    "SurveyVectorObsResult": {
+      "type": "object",
+      "properties": {
+        "hasResultQuality": {
+          "$ref": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.json"
+        },
+        "hasResult": {
+          "properties": {
+            "pose": {
+              "$ref": "#/$defs/pose-lenient",
+              "x-jsonld-id": "https://linked.data.gov.au/def/csdm/surveyfeatures/pose"
+            },
+            "angle": {
+              "type": "number"
+            },
+            "distance": {
+              "type": "number",
+              "x-jsonld-id": "https://linked.data.gov.au/def/csdm/surveyfeatures/distance"
+            }
+          },
+          "anyOf": [
+            {
+              "required": [
+                "pose"
+              ]
+            },
+            {
+              "required": [
+                "distance"
+              ]
+            },
+            {
+              "required": [
+                "angle"
+              ]
+            }
+          ],
+          "x-jsonld-id": "sosa:hasResult"
+        }
+      },
+      "required": [
+        "hasResult"
+      ]
+    },
     "SurveyVectorObsProps": {
       "allOf": [
         {
-          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.json"
+          "$ref": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.json"
         },
         {
-          "type": "object",
-          "properties": {
-            "hasResultQuality": {
-              "$ref": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.json"
-            },
-            "hasResult": {
-              "properties": {
-                "pose": {
-                  "$ref": "#/$defs/pose-lenient",
-                  "x-jsonld-id": "https://linked.data.gov.au/def/csdm/surveyfeatures/pose"
-                },
-                "angle": {
-                  "type": "number"
-                },
-                "distance": {
-                  "type": "number",
-                  "x-jsonld-id": "https://linked.data.gov.au/def/csdm/surveyfeatures/distance"
-                }
-              },
-              "anyOf": [
-                {
-                  "required": [
-                    "pose"
-                  ]
-                },
-                {
-                  "required": [
-                    "distance"
-                  ]
-                },
-                {
-                  "required": [
-                    "angle"
-                  ]
-                }
-              ],
-              "x-jsonld-id": "sosa:hasResult"
-            }
-          },
-          "required": [
-            "hasResult"
-          ]
+          "$ref": "#/$defs/SurveyVectorObsResult"
+        }
+      ]
+    },
+    "SurveyVectorObsMemberProps": {
+      "description": "Properties of a vector observation in a SurveyVectorObsCollection: observedProperty, feature of interest and times may be provided by the collection",
+      "allOf": [
+        {
+          "$ref": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.json#/$defs/member"
+        },
+        {
+          "$ref": "#/$defs/SurveyVectorObsResult"
         }
       ]
     },
     "SurveyVectorObsFeature": {
       "allOf": [
         {
-          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.json"
+          "$ref": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.json"
         },
         {
           "properties": {
@@ -150,17 +164,32 @@
         }
       ]
     },
+    "SurveyVectorObsMember": {
+      "description": "A vector observation feature as a member of a SurveyVectorObsCollection",
+      "allOf": [
+        {
+          "$ref": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.json#/$defs/member"
+        },
+        {
+          "properties": {
+            "properties": {
+              "$ref": "#/$defs/SurveyVectorObsMemberProps"
+            }
+          }
+        }
+      ]
+    },
     "SurveyVectorObsCollection": {
       "allOf": [
         {
-          "$ref": "https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.json"
+          "$ref": "https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.json"
         },
         {
           "properties": {
             "features": {
               "type": "array",
               "items": {
-                "$ref": "#/$defs/SurveyVectorObsFeature"
+                "$ref": "#/$defs/SurveyVectorObsMember"
               },
               "x-jsonld-id": "sosa:hasMember",
               "x-jsonld-container": "@set"
@@ -253,5 +282,11 @@
     "distancetype": "https://linked.data.gov.au/def/csdm/defs/distancetypes/",
     "surveyproc": "https://linked.data.gov.au/def/csdm/defs/surveyprocedures/",
     "surveyable": "https://linked.data.gov.au/def/csdm/defs/surveyableproperties/"
+  },
+  "x-bblocks-metadata": {
+    "itemIdentifier": "icsm.csdm.features.SurveyObservations",
+    "register": "https://surroundaustralia.github.io/3d-csdm-common/build/register.json",
+    "version": "0.1",
+    "dateOfLastChange": "2026-10-26"
   }
 }

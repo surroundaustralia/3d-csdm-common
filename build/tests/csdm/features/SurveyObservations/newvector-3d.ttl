@@ -13,5 +13,5 @@
             ns1:baseSensor "gps+38666" ;
             ns1:roverSensor "gps+37544" ] ;
     sosa:observedProperty <https://linked.data.gov.au/def/csdm/property/pose> ;
-    sosa:resultTime "2023-05-22T16:41:00" .
+    sosa:resultTime "2023-05-22T16:41:00"^^xsd:dateTime .
 

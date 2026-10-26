@@ -34,7 +34,7 @@ $defs:
   TopoFeatureCollection:
     $ref: https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-feature-collection/schema.yaml
   SOSAObsCollection:
-    $ref: https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml
+    $ref: https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml
   TopoLine:
     allOf:
     - $ref: https://ogcincubator.github.io/topo-feature/build/annotated/geo/topo/features/topo-line/schema.yaml
@@ -138,7 +138,7 @@ properties:
     type: string
     x-jsonld-id: https://linked.data.gov.au/def/csdm/container/surveyDescription
   surveyDescriptors:
-    $ref: https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema.yaml
+    $ref: https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/schema.yaml
     x-jsonld-id: https://linked.data.gov.au/def/csdm/container/surveyDescriptors
   purpose:
     oneOf:
@@ -330,3 +330,8 @@ x-jsonld-prefixes:
   sdo: https://schema.org/
   csd: https://linked.data.gov.au/def/csdm/csd/
   surv: https://linked.data.gov.au/def/csdm/surveyfeatures/
+x-bblocks-metadata:
+  itemIdentifier: icsm.csdm.features.CSD
+  register: https://surroundaustralia.github.io/3d-csdm-common/build/register.json
+  version: '0.1'
+  dateOfLastChange: '2026-10-26'

@@ -17,7 +17,7 @@
                             geopose:angles [ ] ] ] ] ;
     sosa:madeBySensor [ a <https://linked.data.gov.au/def/csdm/sensors/someCustomSensor> ] ;
     sosa:observedProperty surveyable:VectorDetermination ;
-    sosa:resultTime "2023-05-24T16:41:00" ;
+    sosa:resultTime "2023-05-24T16:41:00"^^xsd:dateTime ;
     sosa:usedProcedure surveyproc:traverse ;
     ns1:angleType angletype:bearing ;
     ns1:distanceType distancetype:ellipsoidal .

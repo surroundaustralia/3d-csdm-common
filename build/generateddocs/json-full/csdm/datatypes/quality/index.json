@@ -5,11 +5,12 @@
   "name": "SurveyQuality",
   "abstract": "A extensible quality descriptor object with standard properties for survey point and vector observations.",
   "status": "under-development",
+  "group": "4. Datatypes",
   "dateTimeAddition": "2023-04-05T00:00:00Z",
   "itemClass": "schema",
   "register": "icsm-csdm",
   "version": "0.1",
-  "dateOfLastChange": "2026-08-05",
+  "dateOfLastChange": "2026-10-26",
   "link": "https://github.com/icsm-au/3d-csdm-schema",
   "sources": [
     {
@@ -23,6 +24,9 @@
     "utils"
   ],
   "shaclShapes": {},
+  "license": {
+    "url": "https://surroundaustralia.github.io/3d-csdm-common/LICENSE"
+  },
   "ldContext": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/context.jsonld",
   "schema": {
     "application/yaml": "https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml",
@@ -62,7 +66,7 @@
       ]
     }
   ],
-  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Survey Vector Observation Quality\nproperties:\n  angleAccuracy:\n    type: number\n    x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyobs/angleAccuracyMeasure\n  distanceAccuracy:\n    type: number\n    x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyobs/distanceAccuracyMeasure\n  distanceAccuracyClass:\n    type: string\n    x-jsonld-type: '@id'\n    x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyobs/distanceAccuracyClass\n  angleAccuracyClass:\n    type: string\n    x-jsonld-type: '@id'\n    x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyobs/angleAccuracyClass\nx-jsonld-prefixes:\n  csdm: https://linked.data.gov.au/def/csdm/\n",
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Survey Vector Observation Quality\nproperties:\n  angleAccuracy:\n    type: number\n    x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyobs/angleAccuracyMeasure\n  distanceAccuracy:\n    type: number\n    x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyobs/distanceAccuracyMeasure\n  distanceAccuracyClass:\n    type: string\n    x-jsonld-type: '@id'\n    x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyobs/distanceAccuracyClass\n  angleAccuracyClass:\n    type: string\n    x-jsonld-type: '@id'\n    x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyobs/angleAccuracyClass\nx-jsonld-prefixes:\n  csdm: https://linked.data.gov.au/def/csdm/\nx-bblocks-metadata:\n  itemIdentifier: icsm.csdm.datatypes.quality\n  register: https://surroundaustralia.github.io/3d-csdm-common/build/register.json\n  version: '0.1'\n  dateOfLastChange: '2026-10-26'\n",
   "gitRepository": "https://github.com/surroundaustralia/3d-csdm-common",
   "gitPath": "_sources/csdm/datatypes/quality"
 }

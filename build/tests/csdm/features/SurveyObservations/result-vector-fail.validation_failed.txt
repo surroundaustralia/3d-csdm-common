@@ -1,0 +1,35 @@
+Validation report for icsm.csdm.features.SurveyObservations - Survey Observations
+Generated 2026-10-26T11:02:38.983911+00:00
+=== Files ===
+Using result-vector-fail.json from test resources
+JSON-LD context is present - uplifting
+Output JSON-LD result-vector-fail.jsonld created
+Output Turtle result-vector-fail.ttl created
+=== End Files ===
+
+=== JSON Schema ===
+
+** Validation error **
+ValidationError: {'something': 'else'} is not valid under any of the given schemas
+
+Failed validating 'anyOf' in schema[0]['allOf'][1]['properties']['properties']['allOf'][1]['properties']['hasResult']:
+    {'anyOf': [{'required': ['pose']},
+               {'required': ['distance']},
+               {'required': ['angle']}],
+     'properties': {'angle': {'type': 'number'},
+                    'distance': {'type': 'number',
+                                 'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/distance'},
+                    'pose': {'$ref': '#/$defs/pose-lenient',
+                             'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/pose'}},
+     'x-jsonld-id': 'sosa:hasResult'}
+
+On instance['properties']['hasResult']:
+    {'something': 'else'}
+=== End JSON Schema ===
+
+=== SHACL ===
+
+** Validation error **
+Error processing _sources/csdm/features/SurveyObservations/_sources/properties/observation/shapes.shacl: [Errno 2] No such file or directory: '/github/_sources/csdm/features/SurveyObservations/_sources/properties/observation/shapes.shacl'
+=== End SHACL ===
+

@@ -14,12 +14,12 @@
       "@id": "sosa:hasMember",
       "@type": "@id",
       "@context": {
-        "observedProperty": {
-          "@id": "sosa:observedProperty",
-          "@type": "@id"
-        },
         "madeBySensor": {
           "@id": "sosa:madeBySensor",
+          "@type": "@id"
+        },
+        "observedProperty": {
+          "@id": "sosa:observedProperty",
           "@type": "@id"
         }
       }
@@ -176,8 +176,16 @@
       "@id": "sosa:System",
       "@type": "@id"
     },
+    "actsOn": {
+      "@id": "sosa:actsOn",
+      "@type": "@id"
+    },
     "actsOnProperty": {
       "@id": "sosa:actsOnProperty",
+      "@type": "@id"
+    },
+    "deployedAsset": {
+      "@id": "sosa:deployedAsset",
       "@type": "@id"
     },
     "deployedOnPlatform": {
@@ -208,16 +216,53 @@
       "@id": "sosa:hasMember",
       "@type": "@id",
       "@context": {
-        "hasResult": {
-          "@id": "sosa:hasResult",
+        "madeBySensor": {
+          "@id": "sosa:madeBySensor",
           "@type": "@id"
         },
         "observedProperty": {
           "@id": "sosa:observedProperty",
           "@type": "@id"
         },
-        "madeBySensor": {
-          "@id": "sosa:madeBySensor",
+        "phenomenonTime": {
+          "@context": {
+            "hasBeginning": "owlTime:hasBeginning",
+            "hasEnd": "owlTime:hasEnd",
+            "inXSDDateTime": {
+              "@id": "owlTime:inXSDDateTime",
+              "@type": "xsd:dateTime"
+            },
+            "inXSDDateTimeStamp": {
+              "@id": "owlTime:inXSDDateTimeStamp",
+              "@type": "xsd:dateTimeStamp"
+            },
+            "inXSDDate": {
+              "@id": "owlTime:inXSDDate",
+              "@type": "xsd:date"
+            },
+            "Instant": "owlTime:Instant",
+            "Interval": "owlTime:Interval",
+            "ProperInterval": "owlTime:ProperInterval",
+            "hasDuration": "owlTime:hasDuration",
+            "hasXSDDuration": {
+              "@id": "owlTime:hasXSDDuration",
+              "@type": "xsd:duration"
+            },
+            "inTimePosition": "owlTime:inTimePosition",
+            "inXSDgYear": {
+              "@id": "owlTime:inXSDgYear",
+              "@type": "xsd:gYear"
+            },
+            "inXSDgYearMonth": {
+              "@id": "owlTime:inXSDgYearMonth",
+              "@type": "xsd:gYearMonth"
+            }
+          },
+          "@id": "sosa:phenomenonTime",
+          "@type": "xsd:dateTime"
+        },
+        "hasResult": {
+          "@id": "sosa:hasResult",
           "@type": "@id"
         }
       }
@@ -233,19 +278,6 @@
     "hasProperty": {
       "@id": "sosa:hasProperty",
       "@type": "@id"
-    },
-    "hasResult": {
-      "@id": "sosa:hasResult",
-      "@type": "@id",
-      "@context": {
-        "pose": {
-          "@context": {
-            "angles": "csdm:utils/geopose/angles"
-          },
-          "@id": "csdm:surveyfeatures/pose"
-        },
-        "distance": "csdm:surveyfeatures/distance"
-      }
     },
     "hasResultQuality": {
       "@id": "sosa:hasResultQuality",
@@ -271,18 +303,10 @@
       "@id": "sosa:hasSampledFeature",
       "@type": "@id"
     },
-    "hasSimpleResult": {
-      "@id": "sosa:hasSimpleResult",
-      "@type": "@id"
-    },
     "hasSubSystem": {
       "@id": "sosa:hasSubSystem",
       "@type": "@id",
       "@container": "@set"
-    },
-    "hasUltimateFeatureOfInterest": {
-      "@id": "sosa:hasUltimateFeatureOfInterest",
-      "@type": "@id"
     },
     "hosts": {
       "@id": "sosa:hosts",
@@ -317,6 +341,10 @@
       "@id": "sosa:isObservedBy",
       "@type": "@id"
     },
+    "isOriginalSampleOf": {
+      "@id": "sosa:isOriginalSampleOf",
+      "@type": "@id"
+    },
     "isPropertyOf": {
       "@id": "sosa:isPropertyOf",
       "@type": "@id"
@@ -341,6 +369,14 @@
       "@id": "sosa:isSampleOf",
       "@type": "@id"
     },
+    "isSampleOfUltimateFOI": {
+      "@id": "sosa:isSampleOfUltimateFOI",
+      "@type": "@id"
+    },
+    "isSubSystemOf": {
+      "@id": "sosa:isSubSystemOf",
+      "@type": "@id"
+    },
     "madeActuation": {
       "@id": "sosa:madeActuation",
       "@type": "@id"
@@ -353,6 +389,24 @@
       "@id": "sosa:madeBySampler",
       "@type": "@id"
     },
+    "madeBySensor": {
+      "@id": "sosa:madeBySensor",
+      "@type": "@id",
+      "@context": {
+        "@base": "https://linked.data.gov.au/def/csdm/sensors/Sensor",
+        "sensorType": "@type",
+        "baseSensor": "csdm:sensors/baseSensor",
+        "roverSensor": "csdm:sensors/roverSensor"
+      }
+    },
+    "madeBySystem": {
+      "@id": "sosa:madeBySystem",
+      "@type": "@id"
+    },
+    "madeExecution": {
+      "@id": "sosa:madeExecution",
+      "@type": "@id"
+    },
     "madeObservation": {
       "@id": "sosa:madeObservation",
       "@type": "@id"
@@ -360,6 +414,13 @@
     "madeSampling": {
       "@id": "sosa:madeSampling",
       "@type": "@id"
+    },
+    "observedProperty": {
+      "@id": "sosa:observedProperty",
+      "@type": "@id",
+      "@context": {
+        "@base": "https://linked.data.gov.au/def/csdm/property/"
+      }
     },
     "observes": {
       "@id": "sosa:observes",
@@ -489,34 +550,83 @@
       "@id": "ssn-system:qualityOfObservation",
       "@type": "@id"
     },
-    "resultTime": "sosa:resultTime",
+    "resultTime": {
+      "@id": "sosa:resultTime",
+      "@type": "xsd:dateTime"
+    },
     "phenomenonTime": {
+      "@context": {
+        "hasBeginning": "owlTime:hasBeginning",
+        "hasEnd": "owlTime:hasEnd",
+        "inXSDDateTime": {
+          "@id": "owlTime:inXSDDateTime",
+          "@type": "xsd:dateTime"
+        },
+        "inXSDDateTimeStamp": {
+          "@id": "owlTime:inXSDDateTimeStamp",
+          "@type": "xsd:dateTimeStamp"
+        },
+        "inXSDDate": {
+          "@id": "owlTime:inXSDDate",
+          "@type": "xsd:date"
+        },
+        "Instant": "owlTime:Instant",
+        "Interval": "owlTime:Interval",
+        "ProperInterval": "owlTime:ProperInterval",
+        "hasDuration": "owlTime:hasDuration",
+        "hasXSDDuration": {
+          "@id": "owlTime:hasXSDDuration",
+          "@type": "xsd:duration"
+        },
+        "inTimePosition": "owlTime:inTimePosition",
+        "inXSDgYear": {
+          "@id": "owlTime:inXSDgYear",
+          "@type": "xsd:gYear"
+        },
+        "inXSDgYearMonth": {
+          "@id": "owlTime:inXSDgYearMonth",
+          "@type": "xsd:gYearMonth"
+        }
+      },
       "@id": "sosa:phenomenonTime",
-      "@type": "@id"
+      "@type": "xsd:dateTime"
     },
     "hasFeatureOfInterest": {
       "@id": "sosa:hasFeatureOfInterest",
       "@type": "@id"
     },
-    "observedProperty": {
-      "@context": {
-        "@base": "https://linked.data.gov.au/def/csdm/property/"
-      },
-      "@id": "sosa:observedProperty",
+    "hasUltimateFeatureOfInterest": {
+      "@id": "sosa:hasUltimateFeatureOfInterest",
       "@type": "@id"
     },
     "usedProcedure": {
       "@id": "sosa:usedProcedure",
       "@type": "@id"
     },
-    "madeBySensor": {
+    "startTime": {
+      "@id": "sosa:startTime",
+      "@type": "xsd:dateTime"
+    },
+    "endTime": {
+      "@id": "sosa:endTime",
+      "@type": "xsd:dateTime"
+    },
+    "hasResult": {
       "@context": {
-        "@base": "https://linked.data.gov.au/def/csdm/sensors/Sensor",
-        "sensorType": "@type",
-        "baseSensor": "csdm:sensors/baseSensor",
-        "roverSensor": "csdm:sensors/roverSensor"
+        "pose": {
+          "@context": {
+            "angles": "csdm:utils/geopose/angles"
+          },
+          "@id": "csdm:surveyfeatures/pose"
+        },
+        "distance": "csdm:surveyfeatures/distance"
       },
-      "@id": "sosa:madeBySensor",
+      "@id": "sosa:hasResult",
+      "@type": "@id"
+    },
+    "hasSimpleResult": "sosa:hasSimpleResult",
+    "hasInputValue": {
+      "@id": "sosa:hasInputValue",
       "@type": "@id"
     },
     "geojson": "https://purl.org/geojson/vocab#",

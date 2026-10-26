@@ -4,7 +4,6 @@
 @prefix eg1: <https://linked.data.gov.au/def/csdm/csd-example/> .
 @prefix epsg: <http://www.opengis.net/def/crs/EPSG/0/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <https://linked.data.gov.au/def/csdm/commonpatterns/> .
 @prefix nz-surveypoint-purpose: <https://linked.data.gov.au/def/csdm/nz-surveypointpurpose/> .
 @prefix owlTime: <http://www.w3.org/2006/time#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -18,20 +17,20 @@ eg1:4494877 a eg1:OccupationMark,
     dct:spatial [ a geojson:Point ;
             geojson:coordinates ( 7.62376e+05 3.664124e+05 ) ] ;
     rdfs:comment "Wooden Post" ;
-    ns1:name [ rdfs:label "Post II LT 584372" ;
-            dct:hasPart [ rdfs:label "584372" ;
-                    commonpatterns:namePartType "PlanStamp" ],
-                [ rdfs:label "Post" ;
-                    commonpatterns:namePartType "MarkType" ],
-                [ rdfs:label "LT" ;
-                    commonpatterns:namePartType "PlanType" ],
-                [ rdfs:label "II" ;
-                    commonpatterns:namePartType "MarkStamp" ] ] ;
     surv:age "40+ years" ;
     surv:fromSurvey eg1:LT_584372 ;
     surv:purpose nz-surveypoint-purpose:occupation ;
     geojson:topology [ a eg1:Touches ;
-            topo:relatedFeatures ( eg1:964009 ) ] .
+            topo:relatedFeatures ( eg1:964009 ) ] ;
+    commonpatterns:name [ rdfs:label "Post II LT 584372" ;
+            dct:hasPart [ rdfs:label "Post" ;
+                    commonpatterns:namePartType eg1:MarkType ],
+                [ rdfs:label "LT" ;
+                    commonpatterns:namePartType eg1:PlanType ],
+                [ rdfs:label "II" ;
+                    commonpatterns:namePartType eg1:MarkStamp ],
+                [ rdfs:label "584372" ;
+                    commonpatterns:namePartType eg1:PlanStamp ] ] .
 
 eg1:LT_584372 a geojson:FeatureCollection ;
     rdfs:label "LT 584372" ;

@@ -2,8 +2,8 @@
   "title": "Validation report for icsm.csdm.features.SurveyObservations - Survey Observations",
   "bblockName": "Survey Observations",
   "bblockId": "icsm.csdm.features.SurveyObservations",
-  "generated": "2026-08-05T01:50:58.551188+00:00",
-  "result": true,
+  "generated": "2026-10-26T11:02:39.016022+00:00",
+  "result": false,
   "items": [
     {
       "source": {
@@ -13,19 +13,8 @@
         "url": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/tests/collection-sensor-details-fail.json",
         "language": "json"
       },
-      "result": true,
+      "result": false,
       "sections": [
-        {
-          "name": "GENERAL",
-          "title": "General",
-          "entries": [
-            {
-              "op": "require-fail",
-              "isError": false,
-              "message": "Test was expected to fail and it did."
-            }
-          ]
-        },
         {
           "name": "FILES",
           "title": "Files",
@@ -49,7 +38,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "collection-sensor-details-fail.ttl",
-              "size": 18,
+              "size": 17,
               "isError": false,
               "message": "Output Turtle collection-sensor-details-fail.ttl created"
             }
@@ -72,107 +61,7 @@
         {
           "name": "SHACL",
           "title": "SHACL",
-          "entries": [
-            {
-              "op": "shacl-report",
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "focusNodes": {
-                ":testRequiredProperties": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>"
-                  ]
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:\n - Shape :testRequiredProperties: <file:///github/workspace/vectorObservations>\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "graph": "@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix ns1: <https://linked.data.gov.au/def/csdm/utils/geopose/> .\n@prefix ns2: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/vectorObservations> ;\n            sh:resultMessage \"Collection member values do not match those of the collections (http://www.w3.org/ns/sosa/resultTime property in Na9b13f5163bb42dcb0d36d57aba1df15: 2023-05-22T16:41:00 != 2023-05-24)\" ;\n            sh:resultPath sosa:resultTime ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ sh:select \"\"\"\n        PREFIX sosa: <http://www.w3.org/ns/sosa/>\n        PREFIX geojson: <https://purl.org/geojson/vocab#>\n        PREFIX time: <http://www.w3.org/2006/time#>\n        SELECT $this ?path (?member AS ?value) ?failedValue WHERE {\n            $this (sosa:hasMember|^sosa:memberOf)+ ?member ;\n                ?path ?collectionValue .\n            ?member ?path ?memberValue .\n            FILTER(?path in ( sosa:resultTime, sosa:phenomenonTime, sosa:hasResult, sosa:hasSimpleResult,\n                sosa:hasFeatureOfInterest, sosa:hasUltimateFeatureOfInterest, sosa:observedProperty, sosa:madeBySystem,\n                sosa:usedProcedure, sosa:madeBySensor, sosa:madeBySampler, sosa:isSampleOf, sosa:madeByActuator,\n                sosa:actsOn, sosa:actsOnProperty, sosa:hasInputValue, sosa:observationRelatedTo,\n                sosa:relatedObservation, sosa:resultQuality, sosa:isOriginalSampleOf, sosa:isResultOfMadeBySampler,\n                sosa:isResultOfUsedProcedure ))\n            FILTER((isLiteral(?collectionValue) || isIRI(?collectionValue)) && ?collectionValue != ?memberValue)\n            FILTER NOT EXISTS { $this ?path ?memberValue }\n            FILTER NOT EXISTS { ?collectionValue a time:Interval }\n            BIND(CONCAT(STR(?memberValue), \" != \", STR(?collectionValue)) as ?failedValue)\n        }\n    \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues> ;\n            sh:value [ a geojson:Feature ;\n                    sosa:hasFeatureOfInterest <file:///github/workspace/l973158> ;\n                    sosa:hasResult [ ns2:pose [ ns2:distance 3.332071e+05 ;\n                                    ns1:angles [ ] ] ] ;\n                    sosa:resultTime \"2023-05-22T16:41:00\" ] ] .\n\n",
-              "isError": true,
-              "message": "Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>\n  \tFocus Node: <file:///github/workspace/vectorObservations>\n  \tValue Node: [ rdf:type geojson:Feature ; sosa:hasFeatureOfInterest <file:///github/workspace/l973158> ; sosa:hasResult [ surv:pose [ geopose:angles [ ] ; surv:distance Literal(\"333207.1\", datatype=xsd:double) ] ] ; sosa:resultTime Literal(\"2023-05-22T16:41:00\") ]\n  \tResult Path: sosa:resultTime\n  \tSource Constraint: [ sh:select Literal(\"\n          PREFIX sosa: <http://www.w3.org/ns/sosa/>\n          PREFIX geojson: <https://purl.org/geojson/vocab#>\n          PREFIX time: <http://www.w3.org/2006/time#>\n          SELECT $this ?path (?member AS ?value) ?failedValue WHERE {\n              $this (sosa:hasMember|^sosa:memberOf)+ ?member ;\n                  ?path ?collectionValue .\n              ?member ?path ?memberValue .\n              FILTER(?path in ( sosa:resultTime, sosa:phenomenonTime, sosa:hasResult, sosa:hasSimpleResult,\n                  sosa:hasFeatureOfInterest, sosa:hasUltimateFeatureOfInterest, sosa:observedProperty, sosa:madeBySystem,\n                  sosa:usedProcedure, sosa:madeBySensor, sosa:madeBySampler, sosa:isSampleOf, sosa:madeByActuator,\n                  sosa:actsOn, sosa:actsOnProperty, sosa:hasInputValue, sosa:observationRelatedTo,\n                  sosa:relatedObservation, sosa:resultQuality, sosa:isOriginalSampleOf, sosa:isResultOfMadeBySampler,\n                  sosa:isResultOfUsedProcedure ))\n              FILTER((isLiteral(?collectionValue) || isIRI(?collectionValue)) && ?collectionValue != ?memberValue)\n              FILTER NOT EXISTS { $this ?path ?memberValue }\n              FILTER NOT EXISTS { ?collectionValue a time:Interval }\n              BIND(CONCAT(STR(?memberValue), \" != \", STR(?collectionValue)) as ?failedValue)\n          }\n      \") ]\n  \tMessage: Collection member values do not match those of the collections (http://www.w3.org/ns/sosa/resultTime property in Na9b13f5163bb42dcb0d36d57aba1df15: 2023-05-22T16:41:00 != 2023-05-24)\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "focusNodes": {
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResult>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>/sosa:hasMember"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>"
-                  ]
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <file:///github/workspace/vectorObservations>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <file:///github/workspace/vectorObservations>/sosa:hasMember\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <file:///github/workspace/vectorObservations>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <file:///github/workspace/vectorObservations>\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "focusNodes": {
-                "geojson:GeometryShape": {
-                  "nodes": []
-                },
-                "geojson:LinkShape": {
-                  "nodes": []
-                },
-                "geojson:FeatureShape": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>/sosa:hasMember"
-                  ]
-                },
-                "geojson:GeometryShape/sh:or/rdf:first": {
-                  "nodes": []
-                },
-                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:FeatureShape: <file:///github/workspace/vectorObservations>/sosa:hasMember\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n"
-            }
-          ]
+          "entries": []
         }
       ]
     },
@@ -184,7 +73,7 @@
         "url": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/tests/collection-sensor-extension.json",
         "language": "json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -230,107 +119,7 @@
         {
           "name": "SHACL",
           "title": "SHACL",
-          "entries": [
-            {
-              "op": "shacl-report",
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "focusNodes": {
-                ":testRequiredProperties": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>"
-                  ]
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:\n - Shape :testRequiredProperties: <file:///github/workspace/vectorObservations>\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "focusNodes": {
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResult>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>/sosa:hasMember"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>"
-                  ]
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <file:///github/workspace/vectorObservations>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <file:///github/workspace/vectorObservations>/sosa:hasMember\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <file:///github/workspace/vectorObservations>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <file:///github/workspace/vectorObservations>\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "focusNodes": {
-                "geojson:GeometryShape": {
-                  "nodes": []
-                },
-                "geojson:LinkShape": {
-                  "nodes": []
-                },
-                "geojson:FeatureShape": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>/sosa:hasMember"
-                  ]
-                },
-                "geojson:GeometryShape/sh:or/rdf:first": {
-                  "nodes": []
-                },
-                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:FeatureShape: <file:///github/workspace/vectorObservations>/sosa:hasMember\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n"
-            }
-          ]
+          "entries": []
         }
       ]
     },
@@ -342,19 +131,8 @@
         "url": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/tests/collection-sensor-fail.json",
         "language": "json"
       },
-      "result": true,
+      "result": false,
       "sections": [
-        {
-          "name": "GENERAL",
-          "title": "General",
-          "entries": [
-            {
-              "op": "require-fail",
-              "isError": false,
-              "message": "Test was expected to fail and it did."
-            }
-          ]
-        },
         {
           "name": "FILES",
           "title": "Files",
@@ -394,114 +172,14 @@
               "exception": "ValidationError",
               "errorMessage": "{'id': 'vectorObservations', 'type': 'FeatureCollection', 'featureType': 'sosa:ObservationCollection', 'time': None, 'properties': {'resultTime': '2023-05-24T16:41:00', 'observedProperty': 'surveyable:VectorDetermination', 'usedProcedure': 'surveyproc:traverse', 'angleType': 'angletype:bearing', 'distanceType': 'distancetype:ellipsoidal'}, 'features': [{'type': 'Feature', 'geometry': None, 'time': None, 'place': None, 'properties': {'hasFeatureOfInterest': 'l973158', 'hasResult': {'pose': {'angles': {'yaw': 231.38, 'pitch': -0.001}, 'distance': 333207.1}}}}]} is not valid under any of the given schemas",
               "isError": true,
-              "message": "ValidationError: {'id': 'vectorObservations', 'type': 'FeatureCollection', 'featureType': 'sosa:ObservationCollection', 'time': None, 'properties': {'resultTime': '2023-05-24T16:41:00', 'observedProperty': 'surveyable:VectorDetermination', 'usedProcedure': 'surveyproc:traverse', 'angleType': 'angletype:bearing', 'distanceType': 'distancetype:ellipsoidal'}, 'features': [{'type': 'Feature', 'geometry': None, 'time': None, 'place': None, 'properties': {'hasFeatureOfInterest': 'l973158', 'hasResult': {'pose': {'angles': {'yaw': 231.38, 'pitch': -0.001}, 'distance': 333207.1}}}}]} is not valid under any of the given schemas\n\nFailed validating 'anyOf' in schema:\n    {'$defs': {'SensorType': {'allOf': [{'properties': {'sensorType': {'$ref': '#/$defs/coderef',\n                                                                       'x-jsonld-id': '@type'}},\n                                         'required': ['sensorType']},\n                                        {'oneOf': [{'properties': {'baseSensor': {'type': 'string',\n                                                                                  'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/sensors/baseSensor'},\n                                                                   'roverSensor': {'type': 'string',\n                                                                                   'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/sensors/roverSensor'},\n                                                                   'sensorType': {'const': 'DifferentialGPS',\n                                                                                  'x-jsonld-id': '@type'}},\n                                                    'required': ['baseSensor',\n                                                                 'roverSensor']},\n                                                   {'properties': {'sensorType': {'not': {'const': 'DifferentialGPS'},\n                                                                                  'x-jsonld-id': '@type'}}}]}]},\n               'SurveyVectorObsCollection': {'allOf': [{'$ref': 'https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml'},\n                                                       {'properties': {'features': {'items': {'$ref': '#/$defs/SurveyVectorObsFeature'},\n                                                                                    'type': 'array',\n                                                                                    'x-jsonld-container': '@set',\n                                                                                    'x-jsonld-id': 'sosa:hasMember'},\n                                                                       'properties': {'not': {'required': ['hasResult']},\n                                                                                      'properties': {'angleType': {'$ref': '#/$defs/coderef',\n                                                                                                                   'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/defs/angletypes/',\n                                                                                                                   'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyobs/angleType',\n                                                                                                                   'x-jsonld-type': '@id'},\n                                                                                                     'distanceType': {'$ref': '#/$defs/coderef',\n                                                                                                                      'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/defs/distancetypes/',\n                                                                                                                      'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyobs/distanceType',\n                                                                                                                      'x-jsonld-type': '@id'},\n                                                                                                     'madeBySensor': {'$ref': '#/$defs/SensorType',\n                                                                                                                      'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/sensors/Sensor',\n                                                                                                                      'x-jsonld-id': 'sosa:madeBySensor'},\n                                                                                                     'observedProperty': {'$ref': '#/$defs/coderef',\n                                                                                                                          'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/property/',\n                                                                                                                          'x-jsonld-id': 'sosa:observedProperty',\n                                                                                                                          'x-jsonld-type': '@id'}},\n                                                                                      'required': ['madeBySensor',\n                                                                                                   'observedProperty']}}}]},\n               'SurveyVectorObsFeature': {'allOf': [{'$ref': 'https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml'},\n                                                    {'properties': {'properties': {'$ref': '#/$defs/SurveyVectorObsProps'}}}]},\n               'SurveyVectorObsProps': {'allOf': [{'$ref': 'https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml'},\n                                                  {'properties': {'hasResult': {'anyOf': [{'required': ['pose']},\n                                                                                          {'required': ['distance']},\n                                                                                          {'required': ['angle']}],\n                                                                                'properties': {'angle': {'type': 'number'},\n                                                                                               'distance': {'type': 'number',\n                                                                                                            'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/distance'},\n                                                                                               'pose': {'$ref': '#/$defs/pose-lenient',\n                                                                                                        'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/pose'}},\n                                                                                'x-jsonld-id': 'sosa:hasResult'},\n                                                                  'hasResultQuality': {'$ref': 'https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml'}},\n                                                   'required': ['hasResult'],\n                                                   'type': 'object'}]},\n               'angles': {'description': 'Basic-YPR: Basic GeoPose using '\n                                         'yaw, pitch, and roll to specify '\n                                         'orientation - only yaw is '\n                                         'mandatory allowing basic 2D '\n                                         'applications',\n                          'properties': {'pitch': {'type': 'number'},\n                                         'roll': {'type': 'number'},\n                                         'yaw': {'type': 'number'}},\n                          'required': ['yaw'],\n                          'type': 'object'},\n               'coderef': {'$ref': 'https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml'},\n               'pose-lenient': {'description': 'Basic-YPR: Basic GeoPose '\n                                               'using yaw, pitch, and roll '\n                                               'to specify orientation',\n                                'properties': {'angles': {'$ref': '#/$defs/angles',\n                                                          'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/utils/geopose/angles'}},\n                                'required': ['angles'],\n                                'type': 'object'}},\n     '$schema': 'https://json-schema.org/draft/2020-12/schema',\n     'anyOf': [{'$ref': '#/$defs/SurveyVectorObsFeature'},\n               {'$ref': '#/$defs/SurveyVectorObsCollection'}],\n     'description': 'Survey Vector Observation',\n     'x-jsonld-extra-terms': {'hasResult': {'x-jsonld-context': {'distance': 'https://linked.data.gov.au/def/csdm/surveyfeatures/distance',\n                                                                 'pose': {'@context': {'angles': {'@context': {'pitch': 'https://linked.data.gov.au/def/csdm/utils/geopose/pitch',\n                                                                                                               'roll': 'https://linked.data.gov.au/def/csdm/utils/geopose/roll',\n                                                                                                               'yaw': 'https://linked.data.gov.au/def/csdm/utils/geopose/yaw'},\n                                                                                                  '@id': 'https://linked.data.gov.au/def/csdm/utils/geopose/angles'},\n                                                                                       'position': {'@context': {'h': 'https://linked.data.gov.au/def/csdm/utils/geopose/h',\n                                                                                                                 'lat': 'geo:lat',\n                                                                                                                 'lon': 'geo:long'},\n                                                                                                    '@id': 'https://linked.data.gov.au/def/csdm/utils/geopose/position'}},\n                                                                          '@id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/pose'}},\n                                            'x-jsonld-id': 'sosa:hasResult'}},\n     'x-jsonld-prefixes': {'angletype': 'https://linked.data.gov.au/def/csdm/defs/angletypes/',\n                           'csdm': 'https://linked.data.gov.au/def/csdm/',\n                           'dct': 'http://purl.org/dc/terms/',\n                           'distancetype': 'https://linked.data.gov.au/def/csdm/defs/distancetypes/',\n                           'geopose': 'https://linked.data.gov.au/def/csdm/utils/geopose/',\n                           'rdfs': 'http://www.w3.org/2000/01/rdf-schema#',\n                           'surv': 'https://linked.data.gov.au/def/csdm/surveyfeatures/',\n                           'surveyable': 'https://linked.data.gov.au/def/csdm/defs/surveyableproperties/',\n                           'surveyproc': 'https://linked.data.gov.au/def/csdm/defs/surveyprocedures/'}}\n\nOn instance:\n    {'featureType': 'sosa:ObservationCollection',\n     'features': [{'geometry': None,\n                   'place': None,\n                   'properties': {'hasFeatureOfInterest': 'l973158',\n                                  'hasResult': {'pose': {'angles': {'pitch': -0.001,\n                                                                    'yaw': 231.38},\n                                                         'distance': 333207.1}}},\n                   'time': None,\n                   'type': 'Feature'}],\n     'id': 'vectorObservations',\n     'properties': {'angleType': 'angletype:bearing',\n                    'distanceType': 'distancetype:ellipsoidal',\n                    'observedProperty': 'surveyable:VectorDetermination',\n                    'resultTime': '2023-05-24T16:41:00',\n                    'usedProcedure': 'surveyproc:traverse'},\n     'time': None,\n     'type': 'FeatureCollection'}"
+              "message": "ValidationError: {'id': 'vectorObservations', 'type': 'FeatureCollection', 'featureType': 'sosa:ObservationCollection', 'time': None, 'properties': {'resultTime': '2023-05-24T16:41:00', 'observedProperty': 'surveyable:VectorDetermination', 'usedProcedure': 'surveyproc:traverse', 'angleType': 'angletype:bearing', 'distanceType': 'distancetype:ellipsoidal'}, 'features': [{'type': 'Feature', 'geometry': None, 'time': None, 'place': None, 'properties': {'hasFeatureOfInterest': 'l973158', 'hasResult': {'pose': {'angles': {'yaw': 231.38, 'pitch': -0.001}, 'distance': 333207.1}}}}]} is not valid under any of the given schemas\n\nFailed validating 'anyOf' in schema:\n    {'$defs': {'SensorType': {'allOf': [{'properties': {'sensorType': {'$ref': '#/$defs/coderef',\n                                                                       'x-jsonld-id': '@type'}},\n                                         'required': ['sensorType']},\n                                        {'oneOf': [{'properties': {'baseSensor': {'type': 'string',\n                                                                                  'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/sensors/baseSensor'},\n                                                                   'roverSensor': {'type': 'string',\n                                                                                   'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/sensors/roverSensor'},\n                                                                   'sensorType': {'const': 'DifferentialGPS',\n                                                                                  'x-jsonld-id': '@type'}},\n                                                    'required': ['baseSensor',\n                                                                 'roverSensor']},\n                                                   {'properties': {'sensorType': {'not': {'const': 'DifferentialGPS'},\n                                                                                  'x-jsonld-id': '@type'}}}]}]},\n               'SurveyVectorObsCollection': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml'},\n                                                       {'properties': {'features': {'items': {'$ref': '#/$defs/SurveyVectorObsMember'},\n                                                                                    'type': 'array',\n                                                                                    'x-jsonld-container': '@set',\n                                                                                    'x-jsonld-id': 'sosa:hasMember'},\n                                                                       'properties': {'not': {'required': ['hasResult']},\n                                                                                      'properties': {'angleType': {'$ref': '#/$defs/coderef',\n                                                                                                                   'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/defs/angletypes/',\n                                                                                                                   'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyobs/angleType',\n                                                                                                                   'x-jsonld-type': '@id'},\n                                                                                                     'distanceType': {'$ref': '#/$defs/coderef',\n                                                                                                                      'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/defs/distancetypes/',\n                                                                                                                      'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyobs/distanceType',\n                                                                                                                      'x-jsonld-type': '@id'},\n                                                                                                     'madeBySensor': {'$ref': '#/$defs/SensorType',\n                                                                                                                      'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/sensors/Sensor',\n                                                                                                                      'x-jsonld-id': 'sosa:madeBySensor'},\n                                                                                                     'observedProperty': {'$ref': '#/$defs/coderef',\n                                                                                                                          'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/property/',\n                                                                                                                          'x-jsonld-id': 'sosa:observedProperty',\n                                                                                                                          'x-jsonld-type': '@id'}},\n                                                                                      'required': ['madeBySensor',\n                                                                                                   'observedProperty']}}}]},\n               'SurveyVectorObsFeature': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml'},\n                                                    {'properties': {'properties': {'$ref': '#/$defs/SurveyVectorObsProps'}}}]},\n               'SurveyVectorObsMember': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml#/$defs/member'},\n                                                   {'properties': {'properties': {'$ref': '#/$defs/SurveyVectorObsMemberProps'}}}],\n                                         'description': 'A vector '\n                                                        'observation '\n                                                        'feature as a '\n                                                        'member of a '\n                                                        'SurveyVectorObsCollection'},\n               'SurveyVectorObsMemberProps': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml#/$defs/member'},\n                                                        {'$ref': '#/$defs/SurveyVectorObsResult'}],\n                                              'description': 'Properties '\n                                                             'of a vector '\n                                                             'observation '\n                                                             'in a '\n                                                             'SurveyVectorObsCollection: '\n                                                             'observedProperty, '\n                                                             'feature of '\n                                                             'interest and '\n                                                             'times may be '\n                                                             'provided by '\n                                                             'the '\n                                                             'collection'},\n               'SurveyVectorObsProps': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml'},\n                                                  {'$ref': '#/$defs/SurveyVectorObsResult'}]},\n               'SurveyVectorObsResult': {'properties': {'hasResult': {'anyOf': [{'required': ['pose']},\n                                                                                {'required': ['distance']},\n                                                                                {'required': ['angle']}],\n                                                                      'properties': {'angle': {'type': 'number'},\n                                                                                     'distance': {'type': 'number',\n                                                                                                  'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/distance'},\n                                                                                     'pose': {'$ref': '#/$defs/pose-lenient',\n                                                                                              'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/pose'}},\n                                                                      'x-jsonld-id': 'sosa:hasResult'},\n                                                        'hasResultQuality': {'$ref': 'https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml'}},\n                                         'required': ['hasResult'],\n                                         'type': 'object'},\n               'angles': {'description': 'Basic-YPR: Basic GeoPose using '\n                                         'yaw, pitch, and roll to specify '\n                                         'orientation - only yaw is '\n                                         'mandatory allowing basic 2D '\n                                         'applications',\n                          'properties': {'pitch': {'type': 'number'},\n                                         'roll': {'type': 'number'},\n                                         'yaw': {'type': 'number'}},\n                          'required': ['yaw'],\n                          'type': 'object'},\n               'coderef': {'$ref': 'https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml'},\n               'pose-lenient': {'description': 'Basic-YPR: Basic GeoPose '\n                                               'using yaw, pitch, and roll '\n                                               'to specify orientation',\n                                'properties': {'angles': {'$ref': '#/$defs/angles',\n                                                          'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/utils/geopose/angles'}},\n                                'required': ['angles'],\n                                'type': 'object'}},\n     '$schema': 'https://json-schema.org/draft/2020-12/schema',\n     'anyOf': [{'$ref': '#/$defs/SurveyVectorObsFeature'},\n               {'$ref': '#/$defs/SurveyVectorObsCollection'}],\n     'description': 'Survey Vector Observation',\n     'x-bblocks-metadata': {'dateOfLastChange': '2026-10-26',\n                            'itemIdentifier': 'icsm.csdm.features.SurveyObservations',\n                            'register': 'https://surroundaustralia.github.io/3d-csdm-common/build/register.json',\n                            'version': '0.1'},\n     'x-jsonld-extra-terms': {'hasResult': {'x-jsonld-context': {'distance': 'https://linked.data.gov.au/def/csdm/surveyfeatures/distance',\n                                                                 'pose': {'@context': {'angles': {'@context': {'pitch': 'https://linked.data.gov.au/def/csdm/utils/geopose/pitch',\n                                                                                                               'roll': 'https://linked.data.gov.au/def/csdm/utils/geopose/roll',\n                                                                                                               'yaw': 'https://linked.data.gov.au/def/csdm/utils/geopose/yaw'},\n                                                                                                  '@id': 'https://linked.data.gov.au/def/csdm/utils/geopose/angles'},\n                                                                                       'position': {'@context': {'h': 'https://linked.data.gov.au/def/csdm/utils/geopose/h',\n                                                                                                                 'lat': 'geo:lat',\n                                                                                                                 'lon': 'geo:long'},\n                                                                                                    '@id': 'https://linked.data.gov.au/def/csdm/utils/geopose/position'}},\n                                                                          '@id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/pose'}},\n                                            'x-jsonld-id': 'sosa:hasResult'}},\n     'x-jsonld-prefixes': {'angletype': 'https://linked.data.gov.au/def/csdm/defs/angletypes/',\n                           'csdm': 'https://linked.data.gov.au/def/csdm/',\n                           'dct': 'http://purl.org/dc/terms/',\n                           'distancetype': 'https://linked.data.gov.au/def/csdm/defs/distancetypes/',\n                           'geopose': 'https://linked.data.gov.au/def/csdm/utils/geopose/',\n                           'rdfs': 'http://www.w3.org/2000/01/rdf-schema#',\n                           'surv': 'https://linked.data.gov.au/def/csdm/surveyfeatures/',\n                           'surveyable': 'https://linked.data.gov.au/def/csdm/defs/surveyableproperties/',\n                           'surveyproc': 'https://linked.data.gov.au/def/csdm/defs/surveyprocedures/'}}\n\nOn instance:\n    {'featureType': 'sosa:ObservationCollection',\n     'features': [{'geometry': None,\n                   'place': None,\n                   'properties': {'hasFeatureOfInterest': 'l973158',\n                                  'hasResult': {'pose': {'angles': {'pitch': -0.001,\n                                                                    'yaw': 231.38},\n                                                         'distance': 333207.1}}},\n                   'time': None,\n                   'type': 'Feature'}],\n     'id': 'vectorObservations',\n     'properties': {'angleType': 'angletype:bearing',\n                    'distanceType': 'distancetype:ellipsoidal',\n                    'observedProperty': 'surveyable:VectorDetermination',\n                    'resultTime': '2023-05-24T16:41:00',\n                    'usedProcedure': 'surveyproc:traverse'},\n     'time': None,\n     'type': 'FeatureCollection'}"
             }
           ]
         },
         {
           "name": "SHACL",
           "title": "SHACL",
-          "entries": [
-            {
-              "op": "shacl-report",
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "graph": "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode <file:///github/workspace/vectorObservations> ;\n            sh:resultMessage \"Less than 1 values on <file:///github/workspace/vectorObservations>->( [ sh:zeroOrMorePath [ sh:inversePath sosa:hasMember ] ] sosa:madeBySensor )\" ;\n            sh:resultPath ( [ sh:zeroOrMorePath [ sh:inversePath sosa:hasMember ] ] sosa:madeBySensor ) ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;\n            sh:sourceShape [ sh:maxCount 1 ;\n                    sh:minCount 1 ;\n                    sh:path ( [ sh:zeroOrMorePath [ sh:inversePath sosa:hasMember ] ] sosa:madeBySensor ) ] ] .\n\n",
-              "isError": true,
-              "message": "Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: [ sh:maxCount Literal(\"1\", datatype=xsd:integer) ; sh:minCount Literal(\"1\", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:inversePath sosa:hasMember ] ] sosa:madeBySensor ) ]\n  \tFocus Node: <file:///github/workspace/vectorObservations>\n  \tResult Path: ( [ sh:zeroOrMorePath [ sh:inversePath sosa:hasMember ] ] sosa:madeBySensor )\n  \tMessage: Less than 1 values on <file:///github/workspace/vectorObservations>->( [ sh:zeroOrMorePath [ sh:inversePath sosa:hasMember ] ] sosa:madeBySensor )\n  "
-            },
-            {
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "focusNodes": {
-                ":testRequiredProperties": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>"
-                  ]
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:\n - Shape :testRequiredProperties: <file:///github/workspace/vectorObservations>\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "focusNodes": {
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResult>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>/sosa:hasMember"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>"
-                  ]
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <file:///github/workspace/vectorObservations>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <file:///github/workspace/vectorObservations>/sosa:hasMember\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <file:///github/workspace/vectorObservations>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <file:///github/workspace/vectorObservations>\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "focusNodes": {
-                "geojson:GeometryShape": {
-                  "nodes": []
-                },
-                "geojson:LinkShape": {
-                  "nodes": []
-                },
-                "geojson:FeatureShape": {
-                  "nodes": [
-                    "<file:///github/workspace/vectorObservations>/sosa:hasMember"
-                  ]
-                },
-                "geojson:GeometryShape/sh:or/rdf:first": {
-                  "nodes": []
-                },
-                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:FeatureShape: <file:///github/workspace/vectorObservations>/sosa:hasMember\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n"
-            }
-          ]
+          "entries": []
         }
       ]
     },
@@ -513,19 +191,8 @@
         "url": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/tests/quality-fail.json",
         "language": "json"
       },
-      "result": true,
+      "result": false,
       "sections": [
-        {
-          "name": "GENERAL",
-          "title": "General",
-          "entries": [
-            {
-              "op": "require-fail",
-              "isError": false,
-              "message": "Test was expected to fail and it did."
-            }
-          ]
-        },
         {
           "name": "FILES",
           "title": "Files",
@@ -565,106 +232,14 @@
               "exception": "ValidationError",
               "errorMessage": "{'type': 'Feature', 'geometry': None, 'time': None, 'place': None, 'properties': {'hasFeatureOfInterest': 'l973158', 'observedProperty': 'pose', 'resultTime': '2023-05-22T16:41:00', 'madeBySensor': {'sensorType': 'DifferentialGPS', 'baseSensor': 'gps+38666', 'roverSensor': 'gps+37544'}, 'hasResultQuality': {'distanceAccuracy': 'a string', 'angleAccuracy': 0.028154691543, 'distanceAccuracyClass': 1.2, 'angleAccuracyClass': 'http://any.valid/'}, 'hasResult': {'pose': {'angles': {'yaw': 231.38}, 'distance': 333207.1}}}} is not valid under any of the given schemas",
               "isError": true,
-              "message": "ValidationError: {'type': 'Feature', 'geometry': None, 'time': None, 'place': None, 'properties': {'hasFeatureOfInterest': 'l973158', 'observedProperty': 'pose', 'resultTime': '2023-05-22T16:41:00', 'madeBySensor': {'sensorType': 'DifferentialGPS', 'baseSensor': 'gps+38666', 'roverSensor': 'gps+37544'}, 'hasResultQuality': {'distanceAccuracy': 'a string', 'angleAccuracy': 0.028154691543, 'distanceAccuracyClass': 1.2, 'angleAccuracyClass': 'http://any.valid/'}, 'hasResult': {'pose': {'angles': {'yaw': 231.38}, 'distance': 333207.1}}}} is not valid under any of the given schemas\n\nFailed validating 'anyOf' in schema:\n    {'$defs': {'SensorType': {'allOf': [{'properties': {'sensorType': {'$ref': '#/$defs/coderef',\n                                                                       'x-jsonld-id': '@type'}},\n                                         'required': ['sensorType']},\n                                        {'oneOf': [{'properties': {'baseSensor': {'type': 'string',\n                                                                                  'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/sensors/baseSensor'},\n                                                                   'roverSensor': {'type': 'string',\n                                                                                   'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/sensors/roverSensor'},\n                                                                   'sensorType': {'const': 'DifferentialGPS',\n                                                                                  'x-jsonld-id': '@type'}},\n                                                    'required': ['baseSensor',\n                                                                 'roverSensor']},\n                                                   {'properties': {'sensorType': {'not': {'const': 'DifferentialGPS'},\n                                                                                  'x-jsonld-id': '@type'}}}]}]},\n               'SurveyVectorObsCollection': {'allOf': [{'$ref': 'https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml'},\n                                                       {'properties': {'features': {'items': {'$ref': '#/$defs/SurveyVectorObsFeature'},\n                                                                                    'type': 'array',\n                                                                                    'x-jsonld-container': '@set',\n                                                                                    'x-jsonld-id': 'sosa:hasMember'},\n                                                                       'properties': {'not': {'required': ['hasResult']},\n                                                                                      'properties': {'angleType': {'$ref': '#/$defs/coderef',\n                                                                                                                   'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/defs/angletypes/',\n                                                                                                                   'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyobs/angleType',\n                                                                                                                   'x-jsonld-type': '@id'},\n                                                                                                     'distanceType': {'$ref': '#/$defs/coderef',\n                                                                                                                      'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/defs/distancetypes/',\n                                                                                                                      'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyobs/distanceType',\n                                                                                                                      'x-jsonld-type': '@id'},\n                                                                                                     'madeBySensor': {'$ref': '#/$defs/SensorType',\n                                                                                                                      'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/sensors/Sensor',\n                                                                                                                      'x-jsonld-id': 'sosa:madeBySensor'},\n                                                                                                     'observedProperty': {'$ref': '#/$defs/coderef',\n                                                                                                                          'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/property/',\n                                                                                                                          'x-jsonld-id': 'sosa:observedProperty',\n                                                                                                                          'x-jsonld-type': '@id'}},\n                                                                                      'required': ['madeBySensor',\n                                                                                                   'observedProperty']}}}]},\n               'SurveyVectorObsFeature': {'allOf': [{'$ref': 'https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml'},\n                                                    {'properties': {'properties': {'$ref': '#/$defs/SurveyVectorObsProps'}}}]},\n               'SurveyVectorObsProps': {'allOf': [{'$ref': 'https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml'},\n                                                  {'properties': {'hasResult': {'anyOf': [{'required': ['pose']},\n                                                                                          {'required': ['distance']},\n                                                                                          {'required': ['angle']}],\n                                                                                'properties': {'angle': {'type': 'number'},\n                                                                                               'distance': {'type': 'number',\n                                                                                                            'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/distance'},\n                                                                                               'pose': {'$ref': '#/$defs/pose-lenient',\n                                                                                                        'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/pose'}},\n                                                                                'x-jsonld-id': 'sosa:hasResult'},\n                                                                  'hasResultQuality': {'$ref': 'https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml'}},\n                                                   'required': ['hasResult'],\n                                                   'type': 'object'}]},\n               'angles': {'description': 'Basic-YPR: Basic GeoPose using '\n                                         'yaw, pitch, and roll to specify '\n                                         'orientation - only yaw is '\n                                         'mandatory allowing basic 2D '\n                                         'applications',\n                          'properties': {'pitch': {'type': 'number'},\n                                         'roll': {'type': 'number'},\n                                         'yaw': {'type': 'number'}},\n                          'required': ['yaw'],\n                          'type': 'object'},\n               'coderef': {'$ref': 'https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml'},\n               'pose-lenient': {'description': 'Basic-YPR: Basic GeoPose '\n                                               'using yaw, pitch, and roll '\n                                               'to specify orientation',\n                                'properties': {'angles': {'$ref': '#/$defs/angles',\n                                                          'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/utils/geopose/angles'}},\n                                'required': ['angles'],\n                                'type': 'object'}},\n     '$schema': 'https://json-schema.org/draft/2020-12/schema',\n     'anyOf': [{'$ref': '#/$defs/SurveyVectorObsFeature'},\n               {'$ref': '#/$defs/SurveyVectorObsCollection'}],\n     'description': 'Survey Vector Observation',\n     'x-jsonld-extra-terms': {'hasResult': {'x-jsonld-context': {'distance': 'https://linked.data.gov.au/def/csdm/surveyfeatures/distance',\n                                                                 'pose': {'@context': {'angles': {'@context': {'pitch': 'https://linked.data.gov.au/def/csdm/utils/geopose/pitch',\n                                                                                                               'roll': 'https://linked.data.gov.au/def/csdm/utils/geopose/roll',\n                                                                                                               'yaw': 'https://linked.data.gov.au/def/csdm/utils/geopose/yaw'},\n                                                                                                  '@id': 'https://linked.data.gov.au/def/csdm/utils/geopose/angles'},\n                                                                                       'position': {'@context': {'h': 'https://linked.data.gov.au/def/csdm/utils/geopose/h',\n                                                                                                                 'lat': 'geo:lat',\n                                                                                                                 'lon': 'geo:long'},\n                                                                                                    '@id': 'https://linked.data.gov.au/def/csdm/utils/geopose/position'}},\n                                                                          '@id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/pose'}},\n                                            'x-jsonld-id': 'sosa:hasResult'}},\n     'x-jsonld-prefixes': {'angletype': 'https://linked.data.gov.au/def/csdm/defs/angletypes/',\n                           'csdm': 'https://linked.data.gov.au/def/csdm/',\n                           'dct': 'http://purl.org/dc/terms/',\n                           'distancetype': 'https://linked.data.gov.au/def/csdm/defs/distancetypes/',\n                           'geopose': 'https://linked.data.gov.au/def/csdm/utils/geopose/',\n                           'rdfs': 'http://www.w3.org/2000/01/rdf-schema#',\n                           'surv': 'https://linked.data.gov.au/def/csdm/surveyfeatures/',\n                           'surveyable': 'https://linked.data.gov.au/def/csdm/defs/surveyableproperties/',\n                           'surveyproc': 'https://linked.data.gov.au/def/csdm/defs/surveyprocedures/'}}\n\nOn instance:\n    {'geometry': None,\n     'place': None,\n     'properties': {'hasFeatureOfInterest': 'l973158',\n                    'hasResult': {'pose': {'angles': {'yaw': 231.38},\n                                           'distance': 333207.1}},\n                    'hasResultQuality': {'angleAccuracy': 0.028154691543,\n                                         'angleAccuracyClass': 'http://any.valid/',\n                                         'distanceAccuracy': 'a string',\n                                         'distanceAccuracyClass': 1.2},\n                    'madeBySensor': {'baseSensor': 'gps+38666',\n                                     'roverSensor': 'gps+37544',\n                                     'sensorType': 'DifferentialGPS'},\n                    'observedProperty': 'pose',\n                    'resultTime': '2023-05-22T16:41:00'},\n     'time': None,\n     'type': 'Feature'}"
+              "message": "ValidationError: {'type': 'Feature', 'geometry': None, 'time': None, 'place': None, 'properties': {'hasFeatureOfInterest': 'l973158', 'observedProperty': 'pose', 'resultTime': '2023-05-22T16:41:00', 'madeBySensor': {'sensorType': 'DifferentialGPS', 'baseSensor': 'gps+38666', 'roverSensor': 'gps+37544'}, 'hasResultQuality': {'distanceAccuracy': 'a string', 'angleAccuracy': 0.028154691543, 'distanceAccuracyClass': 1.2, 'angleAccuracyClass': 'http://any.valid/'}, 'hasResult': {'pose': {'angles': {'yaw': 231.38}, 'distance': 333207.1}}}} is not valid under any of the given schemas\n\nFailed validating 'anyOf' in schema:\n    {'$defs': {'SensorType': {'allOf': [{'properties': {'sensorType': {'$ref': '#/$defs/coderef',\n                                                                       'x-jsonld-id': '@type'}},\n                                         'required': ['sensorType']},\n                                        {'oneOf': [{'properties': {'baseSensor': {'type': 'string',\n                                                                                  'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/sensors/baseSensor'},\n                                                                   'roverSensor': {'type': 'string',\n                                                                                   'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/sensors/roverSensor'},\n                                                                   'sensorType': {'const': 'DifferentialGPS',\n                                                                                  'x-jsonld-id': '@type'}},\n                                                    'required': ['baseSensor',\n                                                                 'roverSensor']},\n                                                   {'properties': {'sensorType': {'not': {'const': 'DifferentialGPS'},\n                                                                                  'x-jsonld-id': '@type'}}}]}]},\n               'SurveyVectorObsCollection': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml'},\n                                                       {'properties': {'features': {'items': {'$ref': '#/$defs/SurveyVectorObsMember'},\n                                                                                    'type': 'array',\n                                                                                    'x-jsonld-container': '@set',\n                                                                                    'x-jsonld-id': 'sosa:hasMember'},\n                                                                       'properties': {'not': {'required': ['hasResult']},\n                                                                                      'properties': {'angleType': {'$ref': '#/$defs/coderef',\n                                                                                                                   'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/defs/angletypes/',\n                                                                                                                   'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyobs/angleType',\n                                                                                                                   'x-jsonld-type': '@id'},\n                                                                                                     'distanceType': {'$ref': '#/$defs/coderef',\n                                                                                                                      'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/defs/distancetypes/',\n                                                                                                                      'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyobs/distanceType',\n                                                                                                                      'x-jsonld-type': '@id'},\n                                                                                                     'madeBySensor': {'$ref': '#/$defs/SensorType',\n                                                                                                                      'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/sensors/Sensor',\n                                                                                                                      'x-jsonld-id': 'sosa:madeBySensor'},\n                                                                                                     'observedProperty': {'$ref': '#/$defs/coderef',\n                                                                                                                          'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/property/',\n                                                                                                                          'x-jsonld-id': 'sosa:observedProperty',\n                                                                                                                          'x-jsonld-type': '@id'}},\n                                                                                      'required': ['madeBySensor',\n                                                                                                   'observedProperty']}}}]},\n               'SurveyVectorObsFeature': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml'},\n                                                    {'properties': {'properties': {'$ref': '#/$defs/SurveyVectorObsProps'}}}]},\n               'SurveyVectorObsMember': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml#/$defs/member'},\n                                                   {'properties': {'properties': {'$ref': '#/$defs/SurveyVectorObsMemberProps'}}}],\n                                         'description': 'A vector '\n                                                        'observation '\n                                                        'feature as a '\n                                                        'member of a '\n                                                        'SurveyVectorObsCollection'},\n               'SurveyVectorObsMemberProps': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml#/$defs/member'},\n                                                        {'$ref': '#/$defs/SurveyVectorObsResult'}],\n                                              'description': 'Properties '\n                                                             'of a vector '\n                                                             'observation '\n                                                             'in a '\n                                                             'SurveyVectorObsCollection: '\n                                                             'observedProperty, '\n                                                             'feature of '\n                                                             'interest and '\n                                                             'times may be '\n                                                             'provided by '\n                                                             'the '\n                                                             'collection'},\n               'SurveyVectorObsProps': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml'},\n                                                  {'$ref': '#/$defs/SurveyVectorObsResult'}]},\n               'SurveyVectorObsResult': {'properties': {'hasResult': {'anyOf': [{'required': ['pose']},\n                                                                                {'required': ['distance']},\n                                                                                {'required': ['angle']}],\n                                                                      'properties': {'angle': {'type': 'number'},\n                                                                                     'distance': {'type': 'number',\n                                                                                                  'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/distance'},\n                                                                                     'pose': {'$ref': '#/$defs/pose-lenient',\n                                                                                              'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/pose'}},\n                                                                      'x-jsonld-id': 'sosa:hasResult'},\n                                                        'hasResultQuality': {'$ref': 'https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml'}},\n                                         'required': ['hasResult'],\n                                         'type': 'object'},\n               'angles': {'description': 'Basic-YPR: Basic GeoPose using '\n                                         'yaw, pitch, and roll to specify '\n                                         'orientation - only yaw is '\n                                         'mandatory allowing basic 2D '\n                                         'applications',\n                          'properties': {'pitch': {'type': 'number'},\n                                         'roll': {'type': 'number'},\n                                         'yaw': {'type': 'number'}},\n                          'required': ['yaw'],\n                          'type': 'object'},\n               'coderef': {'$ref': 'https://opengeospatial.github.io/bblocks/annotated-schemas/ogc-utils/iri-or-curie/schema.yaml'},\n               'pose-lenient': {'description': 'Basic-YPR: Basic GeoPose '\n                                               'using yaw, pitch, and roll '\n                                               'to specify orientation',\n                                'properties': {'angles': {'$ref': '#/$defs/angles',\n                                                          'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/utils/geopose/angles'}},\n                                'required': ['angles'],\n                                'type': 'object'}},\n     '$schema': 'https://json-schema.org/draft/2020-12/schema',\n     'anyOf': [{'$ref': '#/$defs/SurveyVectorObsFeature'},\n               {'$ref': '#/$defs/SurveyVectorObsCollection'}],\n     'description': 'Survey Vector Observation',\n     'x-bblocks-metadata': {'dateOfLastChange': '2026-10-26',\n                            'itemIdentifier': 'icsm.csdm.features.SurveyObservations',\n                            'register': 'https://surroundaustralia.github.io/3d-csdm-common/build/register.json',\n                            'version': '0.1'},\n     'x-jsonld-extra-terms': {'hasResult': {'x-jsonld-context': {'distance': 'https://linked.data.gov.au/def/csdm/surveyfeatures/distance',\n                                                                 'pose': {'@context': {'angles': {'@context': {'pitch': 'https://linked.data.gov.au/def/csdm/utils/geopose/pitch',\n                                                                                                               'roll': 'https://linked.data.gov.au/def/csdm/utils/geopose/roll',\n                                                                                                               'yaw': 'https://linked.data.gov.au/def/csdm/utils/geopose/yaw'},\n                                                                                                  '@id': 'https://linked.data.gov.au/def/csdm/utils/geopose/angles'},\n                                                                                       'position': {'@context': {'h': 'https://linked.data.gov.au/def/csdm/utils/geopose/h',\n                                                                                                                 'lat': 'geo:lat',\n                                                                                                                 'lon': 'geo:long'},\n                                                                                                    '@id': 'https://linked.data.gov.au/def/csdm/utils/geopose/position'}},\n                                                                          '@id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/pose'}},\n                                            'x-jsonld-id': 'sosa:hasResult'}},\n     'x-jsonld-prefixes': {'angletype': 'https://linked.data.gov.au/def/csdm/defs/angletypes/',\n                           'csdm': 'https://linked.data.gov.au/def/csdm/',\n                           'dct': 'http://purl.org/dc/terms/',\n                           'distancetype': 'https://linked.data.gov.au/def/csdm/defs/distancetypes/',\n                           'geopose': 'https://linked.data.gov.au/def/csdm/utils/geopose/',\n                           'rdfs': 'http://www.w3.org/2000/01/rdf-schema#',\n                           'surv': 'https://linked.data.gov.au/def/csdm/surveyfeatures/',\n                           'surveyable': 'https://linked.data.gov.au/def/csdm/defs/surveyableproperties/',\n                           'surveyproc': 'https://linked.data.gov.au/def/csdm/defs/surveyprocedures/'}}\n\nOn instance:\n    {'geometry': None,\n     'place': None,\n     'properties': {'hasFeatureOfInterest': 'l973158',\n                    'hasResult': {'pose': {'angles': {'yaw': 231.38},\n                                           'distance': 333207.1}},\n                    'hasResultQuality': {'angleAccuracy': 0.028154691543,\n                                         'angleAccuracyClass': 'http://any.valid/',\n                                         'distanceAccuracy': 'a string',\n                                         'distanceAccuracyClass': 1.2},\n                    'madeBySensor': {'baseSensor': 'gps+38666',\n                                     'roverSensor': 'gps+37544',\n                                     'sensorType': 'DifferentialGPS'},\n                    'observedProperty': 'pose',\n                    'resultTime': '2023-05-22T16:41:00'},\n     'time': None,\n     'type': 'Feature'}"
             }
           ]
         },
         {
           "name": "SHACL",
           "title": "SHACL",
-          "entries": [
-            {
-              "op": "shacl-report",
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "focusNodes": {
-                ":testRequiredProperties": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:\n - Shape :testRequiredProperties: *none*\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "focusNodes": {
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResult>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
-                  "nodes": [
-                    "_:N7ef4c45d0eb54ad4b6bb41a03372cb1e"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:N7ef4c45d0eb54ad4b6bb41a03372cb1e\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "focusNodes": {
-                "geojson:GeometryShape": {
-                  "nodes": []
-                },
-                "geojson:LinkShape": {
-                  "nodes": []
-                },
-                "geojson:FeatureShape": {
-                  "nodes": [
-                    "_:N7ef4c45d0eb54ad4b6bb41a03372cb1e"
-                  ]
-                },
-                "geojson:GeometryShape/sh:or/rdf:first": {
-                  "nodes": []
-                },
-                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:FeatureShape: _:N7ef4c45d0eb54ad4b6bb41a03372cb1e\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n"
-            }
-          ]
+          "entries": []
         }
       ]
     },
@@ -676,19 +251,8 @@
         "url": "https://surroundaustralia.github.io/3d-csdm-common/_sources/csdm/features/SurveyObservations/tests/result-vector-fail.json",
         "language": "json"
       },
-      "result": true,
+      "result": false,
       "sections": [
-        {
-          "name": "GENERAL",
-          "title": "General",
-          "entries": [
-            {
-              "op": "require-fail",
-              "isError": false,
-              "message": "Test was expected to fail and it did."
-            }
-          ]
-        },
         {
           "name": "FILES",
           "title": "Files",
@@ -712,7 +276,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "result-vector-fail.ttl",
-              "size": 8,
+              "size": 10,
               "isError": false,
               "message": "Output Turtle result-vector-fail.ttl created"
             }
@@ -735,99 +299,7 @@
         {
           "name": "SHACL",
           "title": "SHACL",
-          "entries": [
-            {
-              "op": "shacl-report",
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "focusNodes": {
-                ":testRequiredProperties": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:\n - Shape :testRequiredProperties: *none*\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "graph": "@prefix geojson: <https://purl.org/geojson/vocab#> .\n@prefix ns1: <https://linked.data.gov.au/def/csdm/sensors/> .\n@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix sosa: <http://www.w3.org/ns/sosa/> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms false ;\n    sh:result [ a sh:ValidationResult ;\n            sh:focusNode [ a geojson:Feature ;\n                    sosa:hasFeatureOfInterest <file:///github/workspace/l973158> ;\n                    sosa:hasResult [ ] ;\n                    sosa:madeBySensor [ a ns1:DifferentialGPS ;\n                            ns1:baseSensor \"gps+38666\" ;\n                            ns1:roverSensor \"gps+37544\" ] ;\n                    sosa:resultTime \"2023-05-22T16:41:00\" ] ;\n            sh:resultMessage \"sosa:observedProperty is required\" ;\n            sh:resultPath sosa:observedProperty ;\n            sh:resultSeverity sh:Violation ;\n            sh:sourceConstraint [ sh:message \"sosa:observedProperty is required\" ;\n                    sh:select \"\"\"\n            PREFIX sh: <http://www.w3.org/ns/shacl#>\n            PREFIX sosa: <http://www.w3.org/ns/sosa/>\n            PREFIX geojson: <https://purl.org/geojson/vocab#>\n            SELECT $this (sosa:observedProperty as ?path) (GROUP_CONCAT(?prop; separator=';') AS ?value)\n            WHERE {\n                OPTIONAL { $this sosa:observedProperty ?prop .\n                 $this (sosa:hasResult|sosa:hasSimpleResult) ?result_so_observation }\n                OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:observedProperty ?prop }\n            }\n            GROUP BY ?prop\n            HAVING (count(?prop) < 1)\n        \"\"\" ] ;\n            sh:sourceConstraintComponent sh:SPARQLConstraintComponent ;\n            sh:sourceShape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent> ;\n            sh:value \"\" ] .\n\n",
-              "isError": true,
-              "message": "Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: False\n  Results (1):\n  Constraint Violation in SPARQLConstraintComponent (http://www.w3.org/ns/shacl#SPARQLConstraintComponent):\n  \tSeverity: sh:Violation\n  \tSource Shape: <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>\n  \tFocus Node: [ rdf:type geojson:Feature ; sosa:hasFeatureOfInterest <file:///github/workspace/l973158> ; sosa:hasResult [ ] ; sosa:madeBySensor [ ns1:baseSensor Literal(\"gps+38666\") ; ns1:roverSensor Literal(\"gps+37544\") ; rdf:type ns1:DifferentialGPS ] ; sosa:resultTime Literal(\"2023-05-22T16:41:00\") ]\n  \tValue Node: Literal(\"\")\n  \tResult Path: sosa:observedProperty\n  \tSource Constraint: [ sh:message Literal(\"sosa:observedProperty is required\") ; sh:select Literal(\"\n              PREFIX sh: <http://www.w3.org/ns/shacl#>\n              PREFIX sosa: <http://www.w3.org/ns/sosa/>\n              PREFIX geojson: <https://purl.org/geojson/vocab#>\n              SELECT $this (sosa:observedProperty as ?path) (GROUP_CONCAT(?prop; separator=';') AS ?value)\n              WHERE {\n                  OPTIONAL { $this sosa:observedProperty ?prop .\n                   $this (sosa:hasResult|sosa:hasSimpleResult) ?result_so_observation }\n                  OPTIONAL { ?collection (sosa:hasMember|geojson:features)+ $this ; sosa:observedProperty ?prop }\n              }\n              GROUP BY ?prop\n              HAVING (count(?prop) < 1)\n          \") ]\n  \tMessage: sosa:observedProperty is required\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "focusNodes": {
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResult>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
-                  "nodes": [
-                    "_:Ncb6aad914a8f45dd8da7ed9f60db56a5"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:Ncb6aad914a8f45dd8da7ed9f60db56a5\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "focusNodes": {
-                "geojson:GeometryShape": {
-                  "nodes": []
-                },
-                "geojson:LinkShape": {
-                  "nodes": []
-                },
-                "geojson:FeatureShape": {
-                  "nodes": [
-                    "_:Ncb6aad914a8f45dd8da7ed9f60db56a5"
-                  ]
-                },
-                "geojson:GeometryShape/sh:or/rdf:first": {
-                  "nodes": []
-                },
-                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:FeatureShape: _:Ncb6aad914a8f45dd8da7ed9f60db56a5\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n"
-            }
-          ]
+          "entries": []
         }
       ]
     },
@@ -841,7 +313,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -887,99 +359,7 @@
         {
           "name": "SHACL",
           "title": "SHACL",
-          "entries": [
-            {
-              "op": "shacl-report",
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "focusNodes": {
-                ":testRequiredProperties": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:\n - Shape :testRequiredProperties: *none*\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "focusNodes": {
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResult>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
-                  "nodes": [
-                    "_:Ne7527ad262374b9ebaf58b344563b89b"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:Ne7527ad262374b9ebaf58b344563b89b\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "focusNodes": {
-                "geojson:GeometryShape": {
-                  "nodes": []
-                },
-                "geojson:LinkShape": {
-                  "nodes": []
-                },
-                "geojson:FeatureShape": {
-                  "nodes": [
-                    "_:Ne7527ad262374b9ebaf58b344563b89b"
-                  ]
-                },
-                "geojson:GeometryShape/sh:or/rdf:first": {
-                  "nodes": []
-                },
-                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:FeatureShape: _:Ne7527ad262374b9ebaf58b344563b89b\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n"
-            }
-          ]
+          "entries": []
         }
       ]
     },
@@ -993,7 +373,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -1039,99 +419,7 @@
         {
           "name": "SHACL",
           "title": "SHACL",
-          "entries": [
-            {
-              "op": "shacl-report",
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "focusNodes": {
-                ":testRequiredProperties": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:\n - Shape :testRequiredProperties: *none*\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "focusNodes": {
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResult>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
-                  "nodes": [
-                    "_:Nfa390f2e6b9e4216827de884ef5ca6db"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:Nfa390f2e6b9e4216827de884ef5ca6db\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "focusNodes": {
-                "geojson:GeometryShape": {
-                  "nodes": []
-                },
-                "geojson:LinkShape": {
-                  "nodes": []
-                },
-                "geojson:FeatureShape": {
-                  "nodes": [
-                    "_:Nfa390f2e6b9e4216827de884ef5ca6db"
-                  ]
-                },
-                "geojson:GeometryShape/sh:or/rdf:first": {
-                  "nodes": []
-                },
-                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:FeatureShape: _:Nfa390f2e6b9e4216827de884ef5ca6db\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n"
-            }
-          ]
+          "entries": []
         }
       ]
     },
@@ -1145,7 +433,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -1191,99 +479,7 @@
         {
           "name": "SHACL",
           "title": "SHACL",
-          "entries": [
-            {
-              "op": "shacl-report",
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "focusNodes": {
-                ":testRequiredProperties": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:\n - Shape :testRequiredProperties: *none*\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "focusNodes": {
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResult>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
-                  "nodes": [
-                    "_:N948643e685bc408180fc1b5fdaff54cb"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:N948643e685bc408180fc1b5fdaff54cb\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "focusNodes": {
-                "geojson:GeometryShape": {
-                  "nodes": []
-                },
-                "geojson:LinkShape": {
-                  "nodes": []
-                },
-                "geojson:FeatureShape": {
-                  "nodes": [
-                    "_:N948643e685bc408180fc1b5fdaff54cb"
-                  ]
-                },
-                "geojson:GeometryShape/sh:or/rdf:first": {
-                  "nodes": []
-                },
-                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:FeatureShape: _:N948643e685bc408180fc1b5fdaff54cb\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n"
-            }
-          ]
+          "entries": []
         }
       ]
     },
@@ -1297,7 +493,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -1343,99 +539,7 @@
         {
           "name": "SHACL",
           "title": "SHACL",
-          "entries": [
-            {
-              "op": "shacl-report",
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "focusNodes": {
-                ":testRequiredProperties": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:\n - Shape :testRequiredProperties: *none*\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "focusNodes": {
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResult>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
-                  "nodes": [
-                    "_:N9a5d129572024318ad9a1de7c9ee7e38"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:N9a5d129572024318ad9a1de7c9ee7e38\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "focusNodes": {
-                "geojson:GeometryShape": {
-                  "nodes": []
-                },
-                "geojson:LinkShape": {
-                  "nodes": []
-                },
-                "geojson:FeatureShape": {
-                  "nodes": [
-                    "_:N9a5d129572024318ad9a1de7c9ee7e38"
-                  ]
-                },
-                "geojson:GeometryShape/sh:or/rdf:first": {
-                  "nodes": []
-                },
-                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:FeatureShape: _:N9a5d129572024318ad9a1de7c9ee7e38\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n"
-            }
-          ]
+          "entries": []
         }
       ]
     },
@@ -1449,7 +553,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -1495,115 +599,20 @@
         {
           "name": "SHACL",
           "title": "SHACL",
-          "entries": [
-            {
-              "op": "shacl-report",
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "_sources/csdm/features/SurveyObservations/rules.shacl",
-              "focusNodes": {
-                ":testRequiredProperties": {
-                  "nodes": [
-                    "<http://www.example.com/features/vectorObservations>"
-                  ]
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:\n - Shape :testRequiredProperties: <http://www.example.com/features/vectorObservations>\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl",
-              "focusNodes": {
-                "<https://www.ogc.org/rules/sosa/#testFeatureOfInterest>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResult>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>": {
-                  "nodes": [
-                    "<http://www.example.com/features/vectorObservations>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>": {
-                  "nodes": [
-                    "<http://www.example.com/features/vectorObservations>/sosa:hasMember"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>": {
-                  "nodes": [
-                    "<http://www.example.com/features/vectorObservations>"
-                  ]
-                },
-                "<https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testRequiredTime>": {
-                  "nodes": []
-                },
-                "<https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>": {
-                  "nodes": [
-                    "<http://www.example.com/features/vectorObservations>"
-                  ]
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:\n - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <http://www.example.com/features/vectorObservations>\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <http://www.example.com/features/vectorObservations>/sosa:hasMember\n - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <http://www.example.com/features/vectorObservations>\n - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*\n - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <http://www.example.com/features/vectorObservations>\n"
-            },
-            {
-              "op": "shacl-report",
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "graph": "@prefix sh: <http://www.w3.org/ns/shacl#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n\n[] a sh:ValidationReport ;\n    sh:conforms true .\n\n",
-              "isError": false,
-              "message": "Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n  Validation Report\n  Conforms: True\n  "
-            },
-            {
-              "shaclFile": "https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl",
-              "focusNodes": {
-                "geojson:GeometryShape": {
-                  "nodes": []
-                },
-                "geojson:LinkShape": {
-                  "nodes": []
-                },
-                "geojson:FeatureShape": {
-                  "nodes": [
-                    "<http://www.example.com/features/vectorObservations>/sosa:hasMember"
-                  ]
-                },
-                "geojson:GeometryShape/sh:or/rdf:first": {
-                  "nodes": []
-                },
-                "geojson:GeometryShape/sh:or/rdf:rest/rdf:first": {
-                  "nodes": []
-                }
-              },
-              "isError": false,
-              "message": "Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:\n - Shape geojson:GeometryShape: *none*\n - Shape geojson:LinkShape: *none*\n - Shape geojson:FeatureShape: <http://www.example.com/features/vectorObservations>/sosa:hasMember\n - Shape geojson:GeometryShape/sh:or/rdf:first: *none*\n - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*\n"
-            }
-          ]
+          "entries": []
         }
       ]
     }
   ],
-  "globalErrors": {},
+  "globalErrors": {
+    "SHACL": {
+      "isError": true,
+      "message": "Error processing _sources/csdm/features/SurveyObservations/_sources/properties/observation/shapes.shacl: [Errno 2] No such file or directory: '/github/_sources/csdm/features/SurveyObservations/_sources/properties/observation/shapes.shacl'"
+    }
+  },
   "counts": {
     "total": 10,
-    "passed": 10,
-    "failed": 0
+    "passed": 0,
+    "failed": 10
   }
 }

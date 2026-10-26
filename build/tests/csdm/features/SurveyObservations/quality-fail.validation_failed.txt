@@ -1,20 +1,16 @@
 Validation report for icsm.csdm.features.SurveyObservations - Survey Observations
-Generated 2026-08-05T01:50:58.317063+00:00
-=== General ===
-Test was expected to fail and it did.
-=== End General ===
-
+Generated 2026-10-26T11:02:38.977050+00:00
 === Files ===
-Using collection-sensor-fail.json from test resources
+Using quality-fail.json from test resources
 JSON-LD context is present - uplifting
-Output JSON-LD collection-sensor-fail.jsonld created
-Output Turtle collection-sensor-fail.ttl created
+Output JSON-LD quality-fail.jsonld created
+Output Turtle quality-fail.ttl created
 === End Files ===
 
 === JSON Schema ===
 
 ** Validation error **
-ValidationError: {'id': 'vectorObservations', 'type': 'FeatureCollection', 'featureType': 'sosa:ObservationCollection', 'time': None, 'properties': {'resultTime': '2023-05-24T16:41:00', 'observedProperty': 'surveyable:VectorDetermination', 'usedProcedure': 'surveyproc:traverse', 'angleType': 'angletype:bearing', 'distanceType': 'distancetype:ellipsoidal'}, 'features': [{'type': 'Feature', 'geometry': None, 'time': None, 'place': None, 'properties': {'hasFeatureOfInterest': 'l973158', 'hasResult': {'pose': {'angles': {'yaw': 231.38, 'pitch': -0.001}, 'distance': 333207.1}}}}]} is not valid under any of the given schemas
+ValidationError: {'type': 'Feature', 'geometry': None, 'time': None, 'place': None, 'properties': {'hasFeatureOfInterest': 'l973158', 'observedProperty': 'pose', 'resultTime': '2023-05-22T16:41:00', 'madeBySensor': {'sensorType': 'DifferentialGPS', 'baseSensor': 'gps+38666', 'roverSensor': 'gps+37544'}, 'hasResultQuality': {'distanceAccuracy': 'a string', 'angleAccuracy': 0.028154691543, 'distanceAccuracyClass': 1.2, 'angleAccuracyClass': 'http://any.valid/'}, 'hasResult': {'pose': {'angles': {'yaw': 231.38}, 'distance': 333207.1}}}} is not valid under any of the given schemas
 
 Failed validating 'anyOf' in schema:
     {'$defs': {'SensorType': {'allOf': [{'properties': {'sensorType': {'$ref': '#/$defs/coderef',
@@ -30,8 +26,8 @@ Failed validating 'anyOf' in schema:
                                                                  'roverSensor']},
                                                    {'properties': {'sensorType': {'not': {'const': 'DifferentialGPS'},
                                                                                   'x-jsonld-id': '@type'}}}]}]},
-               'SurveyVectorObsCollection': {'allOf': [{'$ref': 'https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml'},
-                                                       {'properties': {'features': {'items': {'$ref': '#/$defs/SurveyVectorObsFeature'},
+               'SurveyVectorObsCollection': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml'},
+                                                       {'properties': {'features': {'items': {'$ref': '#/$defs/SurveyVectorObsMember'},
                                                                                     'type': 'array',
                                                                                     'x-jsonld-container': '@set',
                                                                                     'x-jsonld-id': 'sosa:hasMember'},
@@ -53,21 +49,43 @@ Failed validating 'anyOf' in schema:
                                                                                                                           'x-jsonld-type': '@id'}},
                                                                                       'required': ['madeBySensor',
                                                                                                    'observedProperty']}}}]},
-               'SurveyVectorObsFeature': {'allOf': [{'$ref': 'https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml'},
+               'SurveyVectorObsFeature': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml'},
                                                     {'properties': {'properties': {'$ref': '#/$defs/SurveyVectorObsProps'}}}]},
-               'SurveyVectorObsProps': {'allOf': [{'$ref': 'https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml'},
-                                                  {'properties': {'hasResult': {'anyOf': [{'required': ['pose']},
-                                                                                          {'required': ['distance']},
-                                                                                          {'required': ['angle']}],
-                                                                                'properties': {'angle': {'type': 'number'},
-                                                                                               'distance': {'type': 'number',
-                                                                                                            'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/distance'},
-                                                                                               'pose': {'$ref': '#/$defs/pose-lenient',
-                                                                                                        'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/pose'}},
-                                                                                'x-jsonld-id': 'sosa:hasResult'},
-                                                                  'hasResultQuality': {'$ref': 'https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml'}},
-                                                   'required': ['hasResult'],
-                                                   'type': 'object'}]},
+               'SurveyVectorObsMember': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/features/observation/schema.yaml#/$defs/member'},
+                                                   {'properties': {'properties': {'$ref': '#/$defs/SurveyVectorObsMemberProps'}}}],
+                                         'description': 'A vector '
+                                                        'observation '
+                                                        'feature as a '
+                                                        'member of a '
+                                                        'SurveyVectorObsCollection'},
+               'SurveyVectorObsMemberProps': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml#/$defs/member'},
+                                                        {'$ref': '#/$defs/SurveyVectorObsResult'}],
+                                              'description': 'Properties '
+                                                             'of a vector '
+                                                             'observation '
+                                                             'in a '
+                                                             'SurveyVectorObsCollection: '
+                                                             'observedProperty, '
+                                                             'feature of '
+                                                             'interest and '
+                                                             'times may be '
+                                                             'provided by '
+                                                             'the '
+                                                             'collection'},
+               'SurveyVectorObsProps': {'allOf': [{'$ref': 'https://rob-metalinkage.github.io/ogcapi-sosa/build/annotated/sosa/properties/observation/schema.yaml'},
+                                                  {'$ref': '#/$defs/SurveyVectorObsResult'}]},
+               'SurveyVectorObsResult': {'properties': {'hasResult': {'anyOf': [{'required': ['pose']},
+                                                                                {'required': ['distance']},
+                                                                                {'required': ['angle']}],
+                                                                      'properties': {'angle': {'type': 'number'},
+                                                                                     'distance': {'type': 'number',
+                                                                                                  'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/distance'},
+                                                                                     'pose': {'$ref': '#/$defs/pose-lenient',
+                                                                                              'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/pose'}},
+                                                                      'x-jsonld-id': 'sosa:hasResult'},
+                                                        'hasResultQuality': {'$ref': 'https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml'}},
+                                         'required': ['hasResult'],
+                                         'type': 'object'},
                'angles': {'description': 'Basic-YPR: Basic GeoPose using '
                                          'yaw, pitch, and roll to specify '
                                          'orientation - only yaw is '
@@ -90,6 +108,10 @@ Failed validating 'anyOf' in schema:
      'anyOf': [{'$ref': '#/$defs/SurveyVectorObsFeature'},
                {'$ref': '#/$defs/SurveyVectorObsCollection'}],
      'description': 'Survey Vector Observation',
+     'x-bblocks-metadata': {'dateOfLastChange': '2026-10-26',
+                            'itemIdentifier': 'icsm.csdm.features.SurveyObservations',
+                            'register': 'https://surroundaustralia.github.io/3d-csdm-common/build/register.json',
+                            'version': '0.1'},
      'x-jsonld-extra-terms': {'hasResult': {'x-jsonld-context': {'distance': 'https://linked.data.gov.au/def/csdm/surveyfeatures/distance',
                                                                  'pose': {'@context': {'angles': {'@context': {'pitch': 'https://linked.data.gov.au/def/csdm/utils/geopose/pitch',
                                                                                                                'roll': 'https://linked.data.gov.au/def/csdm/utils/geopose/roll',
@@ -112,67 +134,27 @@ Failed validating 'anyOf' in schema:
                            'surveyproc': 'https://linked.data.gov.au/def/csdm/defs/surveyprocedures/'}}
 
 On instance:
-    {'featureType': 'sosa:ObservationCollection',
-     'features': [{'geometry': None,
-                   'place': None,
-                   'properties': {'hasFeatureOfInterest': 'l973158',
-                                  'hasResult': {'pose': {'angles': {'pitch': -0.001,
-                                                                    'yaw': 231.38},
-                                                         'distance': 333207.1}}},
-                   'time': None,
-                   'type': 'Feature'}],
-     'id': 'vectorObservations',
-     'properties': {'angleType': 'angletype:bearing',
-                    'distanceType': 'distancetype:ellipsoidal',
-                    'observedProperty': 'surveyable:VectorDetermination',
-                    'resultTime': '2023-05-24T16:41:00',
-                    'usedProcedure': 'surveyproc:traverse'},
+    {'geometry': None,
+     'place': None,
+     'properties': {'hasFeatureOfInterest': 'l973158',
+                    'hasResult': {'pose': {'angles': {'yaw': 231.38},
+                                           'distance': 333207.1}},
+                    'hasResultQuality': {'angleAccuracy': 0.028154691543,
+                                         'angleAccuracyClass': 'http://any.valid/',
+                                         'distanceAccuracy': 'a string',
+                                         'distanceAccuracyClass': 1.2},
+                    'madeBySensor': {'baseSensor': 'gps+38666',
+                                     'roverSensor': 'gps+37544',
+                                     'sensorType': 'DifferentialGPS'},
+                    'observedProperty': 'pose',
+                    'resultTime': '2023-05-22T16:41:00'},
      'time': None,
-     'type': 'FeatureCollection'}
+     'type': 'Feature'}
 === End JSON Schema ===
 
 === SHACL ===
 
 ** Validation error **
-Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:
-  Validation Report
-  Conforms: False
-  Results (1):
-  Constraint Violation in MinCountConstraintComponent (http://www.w3.org/ns/shacl#MinCountConstraintComponent):
-  	Severity: sh:Violation
-  	Source Shape: [ sh:maxCount Literal("1", datatype=xsd:integer) ; sh:minCount Literal("1", datatype=xsd:integer) ; sh:path ( [ sh:zeroOrMorePath [ sh:inversePath sosa:hasMember ] ] sosa:madeBySensor ) ]
-  	Focus Node: <file:///github/workspace/vectorObservations>
-  	Result Path: ( [ sh:zeroOrMorePath [ sh:inversePath sosa:hasMember ] ] sosa:madeBySensor )
-  	Message: Less than 1 values on <file:///github/workspace/vectorObservations>->( [ sh:zeroOrMorePath [ sh:inversePath sosa:hasMember ] ] sosa:madeBySensor )
-  
-Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:
- - Shape :testRequiredProperties: <file:///github/workspace/vectorObservations>
-
-Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: <file:///github/workspace/vectorObservations>
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: <file:///github/workspace/vectorObservations>/sosa:hasMember
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: <file:///github/workspace/vectorObservations>
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: <file:///github/workspace/vectorObservations>
-
-Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
-  Validation Report
-  Conforms: True
-  
-Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape: *none*
- - Shape geojson:LinkShape: *none*
- - Shape geojson:FeatureShape: <file:///github/workspace/vectorObservations>/sosa:hasMember
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
-
+Error processing _sources/csdm/features/SurveyObservations/_sources/properties/observation/shapes.shacl: [Errno 2] No such file or directory: '/github/_sources/csdm/features/SurveyObservations/_sources/properties/observation/shapes.shacl'
 === End SHACL ===
 

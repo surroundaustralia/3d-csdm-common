@@ -199,7 +199,7 @@
       "featureType": "sosa:ObservationCollection",
       "time": null,
       "properties": {
-        "resultTime": "2023-05-24",
+        "resultTime": "2023-05-24T00:00:00",
         "usedProcedure": "surveyproc:traverse",
         "madeBySensor": {
           "sensorType": "DifferentialGPS",

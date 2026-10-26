@@ -1,13 +1,13 @@
 path	@id	schema
 /_anyOf/0/featureType		/github/workspace/build/annotated/csdm/features/SurveyFeatures/schema.yaml
 /_anyOf/0/properties		/github/workspace/build/annotated/csdm/features/SurveyFeatures/schema.yaml
-/_anyOf/0/properties/name	https://linked.data.gov.au/def/csdm/commonpatterns/name	/github/workspace/build/annotated/csdm/features/SurveyFeatures/schema.yaml
-/_anyOf/0/properties/name/label	http://www.w3.org/2000/01/rdf-schema#label	https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema.yaml
-/_anyOf/0/properties/name/template		https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema.yaml
-/_anyOf/0/properties/name/hasPart	http://purl.org/dc/terms/hasPart	https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema.yaml
-/_anyOf/0/properties/name/hasPart/label	http://www.w3.org/2000/01/rdf-schema#label	https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema.yaml
-/_anyOf/0/properties/name/hasPart/ref	https://w3id.org/ogc/utils/label/namePartRef	https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema.yaml
-/_anyOf/0/properties/name/hasPart/type	https://w3id.org/ogc/utils/label/namePartType	https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema.yaml
+/_anyOf/0/properties/name	https://w3id.org/ogc/utils/label/name	/github/workspace/build/annotated/csdm/features/SurveyFeatures/schema.yaml
+/_anyOf/0/properties/name/label	http://www.w3.org/2000/01/rdf-schema#label	https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/schema.yaml
+/_anyOf/0/properties/name/template		https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/schema.yaml
+/_anyOf/0/properties/name/hasPart	http://purl.org/dc/terms/hasPart	https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/schema.yaml
+/_anyOf/0/properties/name/hasPart/label	http://www.w3.org/2000/01/rdf-schema#label	https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/schema.yaml
+/_anyOf/0/properties/name/hasPart/ref	https://w3id.org/ogc/utils/label/namePartRef	https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/schema.yaml
+/_anyOf/0/properties/name/hasPart/type	https://w3id.org/ogc/utils/label/namePartType	https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/schema.yaml
 /_anyOf/0/properties/purpose	https://linked.data.gov.au/def/csdm/surveyfeatures/purpose	/github/workspace/build/annotated/csdm/features/SurveyFeatures/schema.yaml
 /_anyOf/0/properties/has_provenance		/github/workspace/build/annotated/csdm/features/SurveyFeatures/schema.yaml
 /_anyOf/0/properties/has_provenance/_anyOf/0/_oneOf/0/wasInfluencedBy	http://www.w3.org/ns/prov#wasInfluencedBy	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov/schema.yaml
@@ -124,8 +124,8 @@ path	@id	schema
 /_anyOf/0/properties/has_provenance/_anyOf/0/_oneOf/0/qualifiedAttribution/_oneOf/1/id	@id	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /_anyOf/0/properties/has_provenance/_anyOf/0/_oneOf/0/qualifiedAttribution/_oneOf/1/type		https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
 /_anyOf/0/properties/has_provenance/_anyOf/0/_oneOf/0/qualifiedAttribution/_oneOf/1/agent	http://www.w3.org/ns/prov#agent	https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
-/_anyOf/0/properties/ptQuality	https://linked.data.gov.au/def/csdm/commonpatterns/qualityClass	/github/workspace/build/annotated/csdm/features/SurveyFeatures/schema.yaml
-/_anyOf/0/properties/ptQualityMeasure	https://linked.data.gov.au/def/csdm/commonpatterns/qualityMeasure	/github/workspace/build/annotated/csdm/features/SurveyFeatures/schema.yaml
+/_anyOf/0/properties/ptQuality	https://w3id.org/ogc/utils/label/qualityClass	/github/workspace/build/annotated/csdm/features/SurveyFeatures/schema.yaml
+/_anyOf/0/properties/ptQualityMeasure	https://w3id.org/ogc/utils/label/qualityMeasure	/github/workspace/build/annotated/csdm/features/SurveyFeatures/schema.yaml
 /_anyOf/0/properties/comment	http://www.w3.org/2000/01/rdf-schema#comment	/github/workspace/build/annotated/csdm/features/SurveyFeatures/schema.yaml
 /_anyOf/0/properties/monumentedBy	https://linked.data.gov.au/def/csdm/surveyfeatures/monumentedBy	/github/workspace/build/annotated/csdm/features/SurveyFeatures/schema.yaml
 /_anyOf/0/properties/monumentedBy/condition	https://linked.data.gov.au/def/csdm/surveyfeatures/condition	/github/workspace/build/annotated/csdm/features/SurveyFeatures/schema.yaml
