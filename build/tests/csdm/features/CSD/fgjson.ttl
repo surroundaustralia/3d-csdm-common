@@ -49,10 +49,10 @@
             surv:state nz-monument-state:original ] ;
     surv:purpose nz-surveypoint-purpose:nonBoundary ;
     commonpatterns:name [ rdfs:label "ALP I DP 481392" ;
-            dct:hasPart [ rdfs:label "ALP I" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
-                [ rdfs:label "DP 481392" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Source> ] ] .
+            dct:hasPart [ rdfs:label "DP 481392" ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Source> ],
+                [ rdfs:label "ALP I" ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ] ] .
 
 <https://linked.data.gov.au/def/csdm/csd-example/obs> a sosa:ObservationCollection,
         geojson:FeatureCollection ;
@@ -90,14 +90,14 @@
             surv:state nz-monument-state:original ] ;
     surv:purpose <https://linked.data.gov.au/def/csdm/csd-example/prm> ;
     commonpatterns:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
-            dct:hasPart [ rdfs:label "C" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
-                [ rdfs:label "119552" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
-                [ rdfs:label "EQ9W" ;
+            dct:hasPart [ rdfs:label "EQ9W" ;
                     commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/geodeticStamp> ],
                 [ rdfs:label "DP" ;
                     commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/PlanType> ],
+                [ rdfs:label "119552" ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
+                [ rdfs:label "C" ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
                 [ rdfs:label "RM" ;
                     commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/MarkType> ] ] .
 

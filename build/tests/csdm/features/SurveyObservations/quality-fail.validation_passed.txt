@@ -1,5 +1,9 @@
 Validation report for icsm.csdm.features.SurveyObservations - Survey Observations
-Generated 2026-10-27T04:10:50.009706+00:00
+Generated 2026-10-27T12:34:59.014837+00:00
+=== General ===
+Test was expected to fail and it did.
+=== End General ===
+
 === Files ===
 Using quality-fail.json from test resources
 JSON-LD context is present - uplifting
@@ -108,7 +112,7 @@ Failed validating 'anyOf' in schema:
      'anyOf': [{'$ref': '#/$defs/SurveyVectorObsFeature'},
                {'$ref': '#/$defs/SurveyVectorObsCollection'}],
      'description': 'Survey Vector Observation',
-     'x-bblocks-metadata': {'dateOfLastChange': '2026-10-26',
+     'x-bblocks-metadata': {'dateOfLastChange': '2026-10-27',
                             'itemIdentifier': 'icsm.csdm.features.SurveyObservations',
                             'register': 'https://surroundaustralia.github.io/3d-csdm-common/build/register.json',
                             'version': '0.1'},
@@ -153,8 +157,44 @@ On instance:
 === End JSON Schema ===
 
 === SHACL ===
+Validation result for _sources/csdm/features/SurveyObservations/rules.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for _sources/csdm/features/SurveyObservations/rules.shacl:
+ - Shape :testRequiredProperties: *none*
 
-** Validation error **
-Error processing _sources/csdm/features/SurveyObservations/_sources/properties/observation/shapes.shacl: [Errno 2] No such file or directory: '/github/_sources/csdm/features/SurveyObservations/_sources/properties/observation/shapes.shacl'
+Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
+ - Shape geojson:GeometryShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:FeatureShape: _:Ne1340d40b9f440a38f2df1930ce39762
+ - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+
+Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:Ne1340d40b9f440a38f2df1930ce39762
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:Ne1340d40b9f440a38f2df1930ce39762
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:Ne1340d40b9f440a38f2df1930ce39762
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
+
+Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
+  Validation Report
+  Conforms: True
+  
+Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:Ne1340d40b9f440a38f2df1930ce39762
+ - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
+
 === End SHACL ===
 

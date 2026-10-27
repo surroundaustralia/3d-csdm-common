@@ -161,10 +161,10 @@ eg1:P1 a surv:BoundaryMark,
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 1.1e+00 2.7e+00 ) ] ;
     commonpatterns:name [ rdfs:label "IS I - DP 3333" ;
-            dct:hasPart [ rdfs:label "DP 3333" ;
-                    commonpatterns:namePartType eg1:Source ],
-                [ rdfs:label "IS I" ;
-                    commonpatterns:namePartType eg1:Stamp ] ] .
+            dct:hasPart [ rdfs:label "IS I" ;
+                    commonpatterns:namePartType eg1:Stamp ],
+                [ rdfs:label "DP 3333" ;
+                    commonpatterns:namePartType eg1:Source ] ] .
 
 
 ```
@@ -302,10 +302,10 @@ eg1:P2 a surv:GeodeticReferenceMark,
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 2.1e+00 3.7e+00 ) ] ;
     commonpatterns:name [ rdfs:label "IS II - DP 3333" ;
-            dct:hasPart [ rdfs:label "DP 3333" ;
-                    commonpatterns:namePartType eg1:Source ],
-                [ rdfs:label "IS II" ;
-                    commonpatterns:namePartType eg1:Stamp ] ] .
+            dct:hasPart [ rdfs:label "IS II" ;
+                    commonpatterns:namePartType eg1:Stamp ],
+                [ rdfs:label "DP 3333" ;
+                    commonpatterns:namePartType eg1:Source ] ] .
 
 
 ```
@@ -721,7 +721,7 @@ x-bblocks-metadata:
   itemIdentifier: icsm.csdm.features.SurveyFeatures
   register: https://surroundaustralia.github.io/3d-csdm-common/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-10-26'
+  dateOfLastChange: '2026-10-27'
 
 ```
 

@@ -89,14 +89,14 @@ eg1:11745104 a surv:GeodeticReferenceMark,
     commonpatterns:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
             dct:hasPart [ rdfs:label "DP" ;
                     commonpatterns:namePartType eg1:PlanType ],
-                [ rdfs:label "RM" ;
-                    commonpatterns:namePartType eg1:MarkType ],
                 [ rdfs:label "119552" ;
                     commonpatterns:namePartType eg1:Stamp ],
-                [ rdfs:label "EQ9W" ;
-                    commonpatterns:namePartType eg1:geodeticStamp ],
                 [ rdfs:label "C" ;
-                    commonpatterns:namePartType eg1:Stamp ] ] .
+                    commonpatterns:namePartType eg1:Stamp ],
+                [ rdfs:label "RM" ;
+                    commonpatterns:namePartType eg1:MarkType ],
+                [ rdfs:label "EQ9W" ;
+                    commonpatterns:namePartType eg1:geodeticStamp ] ] .
 
 eg1:1725787 a surv:BoundaryMark,
         geojson:Feature ;
