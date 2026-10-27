@@ -64,7 +64,7 @@
     <body>
         <div class="container">
             <h1 class="title">Building blocks validation report</h1>
-            <small class="datetime">Generated at 2026-10-26T23:03:21.970231+00:00</small>
+            <small class="datetime">Generated at 2026-10-27T04:11:08.365031+00:00</small>
                 <p class="summary fw-semibold text-danger">
                     Number of passing building blocks: 3 / 5 (60%)
                 </p>
@@ -1038,9 +1038,9 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/ontology/shapes.shacl:
- - Shape :NamePartShape: *none*
  - Shape :MeasureShape: *none*
  - Shape :CompoundNameShape: eg1:P1/commonpatterns:name
+ - Shape :NamePartShape: *none*
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
@@ -1049,21 +1049,11 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:FeatureShape: eg1:P1
- - Shape geojson:LinkShape: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:FeatureShape: eg1:P1
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:LinkShape: *none*
  - Shape geojson:GeometryShape: *none*
-</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
- - Shape _:n85bb313a878643f7b67d8f3fe38e4824b1: eg1:P1/geojson:geometry
- - Shape _:n85bb313a878643f7b67d8f3fe38e4824b3: eg1:P1/geojson:geometry
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
@@ -1072,10 +1062,20 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
- - Shape toporules:testTopoEdgesReferencePoints: *none*
- - Shape toporules:testTopoLinesReferencePoints: *none*
- - Shape toporules:testTopoReferencesExist: *none*
  - Shape toporules:testTopoDirectedReferencesExist: *none*
+ - Shape toporules:testTopoLinesReferencePoints: *none*
+ - Shape toporules:testTopoEdgesReferencePoints: *none*
+ - Shape toporules:testTopoReferencesExist: *none*
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+ - Shape _:n63ca52bbd8bd407bb63f6a5cc84ddeeeb3: eg1:P1/geojson:geometry
+ - Shape _:n63ca52bbd8bd407bb63f6a5cc84ddeeeb1: eg1:P1/geojson:geometry
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
@@ -1084,11 +1084,11 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
- - Shape geojson:FeatureShape: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:FeatureCollectionShape: *none*
+ - Shape geojson:FeatureShape: *none*
  - Shape geojson:LinkShape: *none*
+ - Shape geojson:FeatureCollectionShape: *none*
  - Shape geojson:GeometryShape: *none*
 </div>
                                                                     
@@ -1098,61 +1098,61 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadUsage&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-activity&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadActivity&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasStartedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Usage-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedRevision&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedStart&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadGeneration&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInfluencedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAttributedTo&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasQuotedFrom&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDelegation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAssociation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-generated&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Bundle-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAssociatedWith&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Generation-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasDerivedFrom&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-invalidated&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Plan-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAttribution&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPrimarySource&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasRevisionOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Entity-shape&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#Collection-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Start-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInformedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasGeneratedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Entity-shape&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedGeneration&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedUsage&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Invalidation-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedCommunication&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDerivation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPlan&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasGeneratedBy&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-influencer&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadMember&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-entity&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-agent&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedEnd&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-used&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-alternateOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-specializationOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasEndedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDerivation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Generation-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInformedBy&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#EmptyCollection-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadRole&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedInfluence&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Activity-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedQuotation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPlan&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAssociatedWith&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-invalidated&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasEndedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Start-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Usage-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Invalidation-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAttributedTo&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#InstantaneousEvent-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasStartedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadActivity&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAssociation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadUsage&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-entity&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-generated&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-influencer&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-agent&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-used&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPrimarySource&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadRole&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasQuotedFrom&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAttribution&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-specializationOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedCommunication&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedEnd&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedRevision&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasRevisionOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-alternateOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadGeneration&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#prop-atLocation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedStart&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInfluencedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Activity-shape&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#End-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Plan-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedUsage&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasDerivedFrom&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Bundle-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDelegation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedQuotation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-activity&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadMember&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedInfluence&gt;: *none*
 </div>
                                                     </div>
                                                 </div>
@@ -1207,9 +1207,9 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/ontology/shapes.shacl:
- - Shape :NamePartShape: *none*
  - Shape :MeasureShape: *none*
  - Shape :CompoundNameShape: eg1:P1/commonpatterns:name
+ - Shape :NamePartShape: *none*
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
@@ -1218,21 +1218,11 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:FeatureShape: eg1:P1
- - Shape geojson:LinkShape: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:FeatureShape: eg1:P1
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:LinkShape: *none*
  - Shape geojson:GeometryShape: *none*
-</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
- - Shape _:n85bb313a878643f7b67d8f3fe38e4824b1: eg1:P1/geojson:geometry
- - Shape _:n85bb313a878643f7b67d8f3fe38e4824b3: eg1:P1/geojson:geometry
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
@@ -1241,10 +1231,20 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
- - Shape toporules:testTopoEdgesReferencePoints: *none*
- - Shape toporules:testTopoLinesReferencePoints: *none*
- - Shape toporules:testTopoReferencesExist: *none*
  - Shape toporules:testTopoDirectedReferencesExist: *none*
+ - Shape toporules:testTopoLinesReferencePoints: *none*
+ - Shape toporules:testTopoEdgesReferencePoints: *none*
+ - Shape toporules:testTopoReferencesExist: *none*
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+ - Shape _:n63ca52bbd8bd407bb63f6a5cc84ddeeeb3: eg1:P1/geojson:geometry
+ - Shape _:n63ca52bbd8bd407bb63f6a5cc84ddeeeb1: eg1:P1/geojson:geometry
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
@@ -1253,11 +1253,11 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
- - Shape geojson:FeatureShape: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:FeatureCollectionShape: *none*
+ - Shape geojson:FeatureShape: *none*
  - Shape geojson:LinkShape: *none*
+ - Shape geojson:FeatureCollectionShape: *none*
  - Shape geojson:GeometryShape: *none*
 </div>
                                                                     
@@ -1267,61 +1267,61 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadUsage&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-activity&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadActivity&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasStartedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Usage-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedRevision&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedStart&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadGeneration&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInfluencedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAttributedTo&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasQuotedFrom&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDelegation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAssociation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-generated&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Bundle-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAssociatedWith&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Generation-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasDerivedFrom&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-invalidated&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Plan-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAttribution&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPrimarySource&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasRevisionOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Entity-shape&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#Collection-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Start-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInformedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasGeneratedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Entity-shape&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedGeneration&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedUsage&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Invalidation-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedCommunication&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDerivation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPlan&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasGeneratedBy&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-influencer&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadMember&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-entity&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-agent&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedEnd&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-used&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-alternateOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-specializationOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasEndedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDerivation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Generation-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInformedBy&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#EmptyCollection-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadRole&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedInfluence&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Activity-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedQuotation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPlan&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAssociatedWith&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-invalidated&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasEndedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Start-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Usage-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Invalidation-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAttributedTo&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#InstantaneousEvent-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasStartedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadActivity&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAssociation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadUsage&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-entity&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-generated&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-influencer&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-agent&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-used&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPrimarySource&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadRole&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasQuotedFrom&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAttribution&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-specializationOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedCommunication&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedEnd&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedRevision&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasRevisionOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-alternateOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadGeneration&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#prop-atLocation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedStart&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInfluencedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Activity-shape&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#End-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Plan-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedUsage&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasDerivedFrom&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Bundle-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDelegation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedQuotation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-activity&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadMember&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedInfluence&gt;: *none*
 </div>
                                                     </div>
                                                 </div>
@@ -1376,9 +1376,9 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/ontology/shapes.shacl:
- - Shape :NamePartShape: *none*
  - Shape :MeasureShape: *none*
  - Shape :CompoundNameShape: eg1:P2/commonpatterns:name
+ - Shape :NamePartShape: *none*
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
@@ -1387,21 +1387,11 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:FeatureShape: eg1:P2
- - Shape geojson:LinkShape: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:FeatureShape: eg1:P2
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:LinkShape: *none*
  - Shape geojson:GeometryShape: *none*
-</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
- - Shape _:n85bb313a878643f7b67d8f3fe38e4824b1: eg1:P2/geojson:geometry
- - Shape _:n85bb313a878643f7b67d8f3fe38e4824b3: eg1:P2/geojson:geometry
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
@@ -1410,10 +1400,20 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
- - Shape toporules:testTopoEdgesReferencePoints: *none*
- - Shape toporules:testTopoLinesReferencePoints: *none*
- - Shape toporules:testTopoReferencesExist: *none*
  - Shape toporules:testTopoDirectedReferencesExist: *none*
+ - Shape toporules:testTopoLinesReferencePoints: *none*
+ - Shape toporules:testTopoEdgesReferencePoints: *none*
+ - Shape toporules:testTopoReferencesExist: *none*
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+ - Shape _:n63ca52bbd8bd407bb63f6a5cc84ddeeeb3: eg1:P2/geojson:geometry
+ - Shape _:n63ca52bbd8bd407bb63f6a5cc84ddeeeb1: eg1:P2/geojson:geometry
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
@@ -1422,11 +1422,11 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
- - Shape geojson:FeatureShape: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:FeatureCollectionShape: *none*
+ - Shape geojson:FeatureShape: *none*
  - Shape geojson:LinkShape: *none*
+ - Shape geojson:FeatureCollectionShape: *none*
  - Shape geojson:GeometryShape: *none*
 </div>
                                                                     
@@ -1436,61 +1436,61 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadUsage&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-activity&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadActivity&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasStartedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Usage-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedRevision&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedStart&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadGeneration&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInfluencedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAttributedTo&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasQuotedFrom&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDelegation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAssociation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-generated&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Bundle-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAssociatedWith&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Generation-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasDerivedFrom&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-invalidated&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Plan-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAttribution&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPrimarySource&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasRevisionOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Entity-shape&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#Collection-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Start-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInformedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasGeneratedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Entity-shape&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedGeneration&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedUsage&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Invalidation-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedCommunication&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDerivation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPlan&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasGeneratedBy&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-influencer&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadMember&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-entity&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-agent&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedEnd&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-used&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-alternateOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-specializationOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasEndedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDerivation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Generation-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInformedBy&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#EmptyCollection-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadRole&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedInfluence&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Activity-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedQuotation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPlan&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAssociatedWith&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-invalidated&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasEndedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Start-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Usage-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Invalidation-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAttributedTo&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#InstantaneousEvent-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasStartedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadActivity&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAssociation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadUsage&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-entity&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-generated&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-influencer&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-agent&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-used&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPrimarySource&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadRole&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasQuotedFrom&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAttribution&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-specializationOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedCommunication&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedEnd&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedRevision&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasRevisionOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-alternateOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadGeneration&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#prop-atLocation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedStart&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInfluencedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Activity-shape&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#End-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Plan-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedUsage&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasDerivedFrom&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Bundle-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDelegation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedQuotation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-activity&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadMember&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedInfluence&gt;: *none*
 </div>
                                                     </div>
                                                 </div>
@@ -1545,9 +1545,9 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/ontology/shapes.shacl:
- - Shape :NamePartShape: *none*
  - Shape :MeasureShape: *none*
  - Shape :CompoundNameShape: *none*
+ - Shape :NamePartShape: *none*
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
@@ -1556,21 +1556,11 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:FeatureShape: *none*
- - Shape geojson:LinkShape: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:FeatureShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:LinkShape: *none*
  - Shape geojson:GeometryShape: *none*
-</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
- - Shape _:n85bb313a878643f7b67d8f3fe38e4824b1: *none*
- - Shape _:n85bb313a878643f7b67d8f3fe38e4824b3: *none*
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
@@ -1579,10 +1569,20 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
- - Shape toporules:testTopoEdgesReferencePoints: *none*
- - Shape toporules:testTopoLinesReferencePoints: *none*
- - Shape toporules:testTopoReferencesExist: *none*
  - Shape toporules:testTopoDirectedReferencesExist: *none*
+ - Shape toporules:testTopoLinesReferencePoints: *none*
+ - Shape toporules:testTopoEdgesReferencePoints: *none*
+ - Shape toporules:testTopoReferencesExist: *none*
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+ - Shape _:n63ca52bbd8bd407bb63f6a5cc84ddeeeb3: *none*
+ - Shape _:n63ca52bbd8bd407bb63f6a5cc84ddeeeb1: *none*
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
@@ -1591,11 +1591,11 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
- - Shape geojson:FeatureShape: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:FeatureCollectionShape: *none*
+ - Shape geojson:FeatureShape: *none*
  - Shape geojson:LinkShape: *none*
+ - Shape geojson:FeatureCollectionShape: *none*
  - Shape geojson:GeometryShape: *none*
 </div>
                                                                     
@@ -1605,61 +1605,61 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadUsage&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-activity&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadActivity&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasStartedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Usage-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedRevision&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedStart&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadGeneration&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInfluencedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAttributedTo&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasQuotedFrom&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDelegation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAssociation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-generated&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Bundle-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAssociatedWith&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Generation-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasDerivedFrom&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-invalidated&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Plan-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAttribution&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPrimarySource&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasRevisionOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Entity-shape&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#Collection-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Start-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInformedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasGeneratedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Entity-shape&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedGeneration&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedUsage&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Invalidation-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedCommunication&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDerivation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPlan&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasGeneratedBy&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-influencer&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadMember&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-entity&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-agent&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedEnd&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-used&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-alternateOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-specializationOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasEndedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDerivation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Generation-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInformedBy&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#EmptyCollection-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadRole&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedInfluence&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Activity-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedQuotation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPlan&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAssociatedWith&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-invalidated&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasEndedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Start-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Usage-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Invalidation-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAttributedTo&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#InstantaneousEvent-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasStartedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadActivity&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAssociation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadUsage&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-entity&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-generated&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-influencer&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-agent&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-used&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPrimarySource&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadRole&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasQuotedFrom&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAttribution&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-specializationOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedCommunication&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedEnd&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedRevision&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasRevisionOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-alternateOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadGeneration&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#prop-atLocation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedStart&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInfluencedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Activity-shape&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#End-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Plan-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedUsage&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasDerivedFrom&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Bundle-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDelegation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedQuotation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-activity&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadMember&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedInfluence&gt;: *none*
 </div>
                                                     </div>
                                                 </div>
@@ -1717,9 +1717,9 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/ontology/shapes.shacl:
- - Shape :NamePartShape: *none*
  - Shape :MeasureShape: *none*
  - Shape :CompoundNameShape: *none*
+ - Shape :NamePartShape: *none*
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
@@ -1728,21 +1728,11 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:FeatureShape: eg1:P1P3
- - Shape geojson:LinkShape: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
+ - Shape geojson:FeatureShape: eg1:P1P3
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:LinkShape: *none*
  - Shape geojson:GeometryShape: *none*
-</div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
-  Validation Report
-  Conforms: True
-  </div>
-                                                                    
-                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
- - Shape _:n85bb313a878643f7b67d8f3fe38e4824b1: *none*
- - Shape _:n85bb313a878643f7b67d8f3fe38e4824b3: *none*
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
@@ -1751,10 +1741,20 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature-collection/tests/topo-refs-exist.shacl:
- - Shape toporules:testTopoEdgesReferencePoints: eg1:P1P3/geojson:topology
- - Shape toporules:testTopoLinesReferencePoints: eg1:P1P3/geojson:topology
- - Shape toporules:testTopoReferencesExist: eg1:P1P3/geojson:topology
  - Shape toporules:testTopoDirectedReferencesExist: *none*
+ - Shape toporules:testTopoLinesReferencePoints: eg1:P1P3/geojson:topology
+ - Shape toporules:testTopoEdgesReferencePoints: eg1:P1P3/geojson:topology
+ - Shape toporules:testTopoReferencesExist: eg1:P1P3/geojson:topology
+</div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Validation result for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+  Validation Report
+  Conforms: True
+  </div>
+                                                                    
+                                                                    <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/topo-feature/_sources/features/topo-feature/tests/geometry-coordinates.shacl:
+ - Shape _:n63ca52bbd8bd407bb63f6a5cc84ddeeeb3: *none*
+ - Shape _:n63ca52bbd8bd407bb63f6a5cc84ddeeeb1: *none*
 </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Validation result for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
@@ -1763,11 +1763,11 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/featureCollection/shapes.shacl:
- - Shape geojson:FeatureShape: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
- - Shape geojson:FeatureCollectionShape: *none*
+ - Shape geojson:FeatureShape: *none*
  - Shape geojson:LinkShape: *none*
+ - Shape geojson:FeatureCollectionShape: *none*
  - Shape geojson:GeometryShape: *none*
 </div>
                                                                     
@@ -1777,61 +1777,61 @@ On instance[&#x27;properties&#x27;][&#x27;hasResult&#x27;]:
   </div>
                                                                     
                                                                     <div class="font-monospace entry-message section-shacl ">Focus nodes for https://ogcincubator.github.io/cross-domain-model/_sources/prov/shapes.shacl:
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadUsage&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-activity&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadActivity&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasStartedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Usage-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedRevision&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedStart&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadGeneration&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInfluencedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAttributedTo&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasQuotedFrom&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDelegation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAssociation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-generated&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Bundle-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAssociatedWith&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Generation-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasDerivedFrom&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-invalidated&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Plan-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAttribution&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPrimarySource&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasRevisionOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Entity-shape&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#Collection-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Start-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInformedBy&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasGeneratedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Entity-shape&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedGeneration&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedUsage&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Invalidation-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedCommunication&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDerivation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPlan&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasGeneratedBy&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedInvalidation&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-influencer&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadMember&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-entity&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-agent&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedEnd&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-used&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-alternateOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-specializationOf&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasEndedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDerivation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Generation-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInformedBy&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#EmptyCollection-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadRole&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedInfluence&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#Activity-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedQuotation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPlan&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAssociatedWith&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-invalidated&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasEndedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Start-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Usage-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInvalidatedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Invalidation-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasAttributedTo&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#InstantaneousEvent-shape&gt;: *none*
- - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasStartedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadActivity&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAssociation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadUsage&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-entity&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-generated&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-influencer&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-agent&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-used&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadPrimarySource&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadRole&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasQuotedFrom&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedAttribution&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-specializationOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedCommunication&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-actedOnBehalfOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedEnd&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedRevision&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasRevisionOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-alternateOf&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadGeneration&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#prop-atLocation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedStart&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasInfluencedBy&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Activity-shape&gt;: *none*
  - Shape &lt;https://www.ogc.org/rules/prov/#End-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Plan-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedUsage&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-wasDerivedFrom&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#Bundle-shape&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedPrimarySource&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedDelegation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedQuotation&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-activity&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-hadMember&gt;: *none*
+ - Shape &lt;https://www.ogc.org/rules/prov/#prop-qualifiedInfluence&gt;: *none*
 </div>
                                                     </div>
                                                 </div>
