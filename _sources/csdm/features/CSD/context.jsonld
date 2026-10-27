@@ -4,6 +4,9 @@
     "sdo": "https://schema.org/" ,
     "surv": "https://linked.data.gov.au/def/csdm/surveyfeatures/",
     "container": "https://linked.data.gov.au/def/csdm/container/",
+    "parcel": "https://w3id.org/ogc/ladm/parcels/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "topo": "https://purl.org/geojson/topo#",
     "featureType": "@type",
     "CSD": {
       "@id": "container:CSD"
@@ -13,7 +16,6 @@
     "surveyDescription": "container:surveyDescription",
     "surveyDescriptors": "container:surveyDescriptors",
     "bearingRotation": "container:bearingRotation",
-    "properties": "@nest",
     "points": {
       "@id": "container:points"
     },

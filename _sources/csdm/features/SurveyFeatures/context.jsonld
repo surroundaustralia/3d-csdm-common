@@ -80,10 +80,7 @@
       "@id": "surv:SurveyedVector",
       "@type": "@id"
     },
-    "name": {
-      "@id": "commonpatterns:name",
-      "@type": "@id"
-    },
+    "name": "commonpatterns:name",
     "label": "rdfs:label"
   }
 }
