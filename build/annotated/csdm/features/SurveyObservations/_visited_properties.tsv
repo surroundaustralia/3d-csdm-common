@@ -165,7 +165,7 @@ path	@id	schema
 /_anyOf/0/properties/usedProcedure	http://www.w3.org/ns/sosa/usedProcedure	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
 /_anyOf/0/properties/startTime	http://www.w3.org/ns/sosa/startTime	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
 /_anyOf/0/properties/endTime	http://www.w3.org/ns/sosa/endTime	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
-/_anyOf/0/properties/hasResult	sosa:hasResult	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
+/_anyOf/0/properties/hasResult	http://www.w3.org/ns/sosa/hasResult	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
 /_anyOf/0/properties/result		https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
 /_anyOf/0/properties/result@links		https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
 /_anyOf/0/properties/hasSimpleResult	http://www.w3.org/ns/sosa/hasSimpleResult	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/execution/schema.yaml
@@ -199,15 +199,15 @@ path	@id	schema
 /_anyOf/1/observedProperty	http://www.w3.org/ns/sosa/observedProperty	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml
 /_anyOf/1/madeBySensor	http://www.w3.org/ns/sosa/madeBySensor	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml
 /_anyOf/1/hasMember	http://www.w3.org/ns/sosa/hasMember	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/observationCollection/schema.yaml
-/_anyOf/1/features	sosa:hasMember	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
+/_anyOf/1/features	http://www.w3.org/ns/sosa/hasMember	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
 /_anyOf/1/features/properties		/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
 /_anyOf/1/properties		/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
 /_anyOf/1/properties/angleType	https://linked.data.gov.au/def/csdm/surveyobs/angleType	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
 /_anyOf/1/properties/distanceType	https://linked.data.gov.au/def/csdm/surveyobs/distanceType	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
-/_anyOf/1/properties/madeBySensor	sosa:madeBySensor	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
+/_anyOf/1/properties/madeBySensor	http://www.w3.org/ns/sosa/madeBySensor	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
 /_anyOf/1/properties/madeBySensor/sensorType	@type	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
 /_anyOf/1/properties/madeBySensor/_oneOf/0/sensorType	@type	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
 /_anyOf/1/properties/madeBySensor/_oneOf/0/baseSensor	https://linked.data.gov.au/def/csdm/sensors/baseSensor	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
 /_anyOf/1/properties/madeBySensor/_oneOf/0/roverSensor	https://linked.data.gov.au/def/csdm/sensors/roverSensor	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
 /_anyOf/1/properties/madeBySensor/_oneOf/1/sensorType	@type	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
-/_anyOf/1/properties/observedProperty	sosa:observedProperty	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
+/_anyOf/1/properties/observedProperty	http://www.w3.org/ns/sosa/observedProperty	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml

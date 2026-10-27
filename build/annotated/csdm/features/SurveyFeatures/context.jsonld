@@ -219,7 +219,6 @@
     },
     "name": {
       "@id": "commonpatterns:name",
-      "@type": "@id",
       "@context": {
         "hasPart": {
           "@context": {

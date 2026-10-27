@@ -12,17 +12,7 @@
     "features": {
       "@container": "@set",
       "@id": "sosa:hasMember",
-      "@type": "@id",
-      "@context": {
-        "madeBySensor": {
-          "@id": "sosa:madeBySensor",
-          "@type": "@id"
-        },
-        "observedProperty": {
-          "@id": "sosa:observedProperty",
-          "@type": "@id"
-        }
-      }
+      "@type": "@id"
     },
     "type": "@type",
     "id": "@id",
@@ -216,14 +206,6 @@
       "@id": "sosa:hasMember",
       "@type": "@id",
       "@context": {
-        "madeBySensor": {
-          "@id": "sosa:madeBySensor",
-          "@type": "@id"
-        },
-        "observedProperty": {
-          "@id": "sosa:observedProperty",
-          "@type": "@id"
-        },
         "phenomenonTime": {
           "@context": {
             "hasBeginning": "owlTime:hasBeginning",
@@ -260,10 +242,6 @@
           },
           "@id": "sosa:phenomenonTime",
           "@type": "xsd:dateTime"
-        },
-        "hasResult": {
-          "@id": "sosa:hasResult",
-          "@type": "@id"
         }
       }
     },
@@ -641,6 +619,7 @@
     "csdm": "https://linked.data.gov.au/def/csdm/",
     "surv": "csdm:surveyfeatures/",
     "geopose": "csdm:utils/geopose/",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
     "angletype": "csdm:defs/angletypes/",
     "distancetype": "csdm:defs/distancetypes/",
     "surveyproc": "csdm:defs/surveyprocedures/",

@@ -90,13 +90,13 @@
             surv:state nz-monument-state:original ] ;
     surv:purpose <https://linked.data.gov.au/def/csdm/csd-example/prm> ;
     commonpatterns:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
-            dct:hasPart [ rdfs:label "EQ9W" ;
+            dct:hasPart [ rdfs:label "C" ;
+                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
+                [ rdfs:label "EQ9W" ;
                     commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/geodeticStamp> ],
                 [ rdfs:label "DP" ;
                     commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/PlanType> ],
                 [ rdfs:label "119552" ;
-                    commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
-                [ rdfs:label "C" ;
                     commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
                 [ rdfs:label "RM" ;
                     commonpatterns:namePartType <https://linked.data.gov.au/def/csdm/csd-example/MarkType> ] ] .

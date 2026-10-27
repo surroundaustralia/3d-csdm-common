@@ -74,7 +74,8 @@ $defs:
           - distance
         - required:
           - angle
-        x-jsonld-id: sosa:hasResult
+        x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
+        x-jsonld-type: '@id'
     required:
     - hasResult
   SurveyVectorObsProps:
@@ -108,7 +109,8 @@ $defs:
           type: array
           items:
             $ref: '#/$defs/SurveyVectorObsMember'
-          x-jsonld-id: sosa:hasMember
+          x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
+          x-jsonld-type: '@id'
           x-jsonld-container: '@set'
         properties:
           properties:
@@ -124,11 +126,12 @@ $defs:
               x-jsonld-base: https://linked.data.gov.au/def/csdm/defs/distancetypes/
             madeBySensor:
               $ref: '#/$defs/SensorType'
-              x-jsonld-id: sosa:madeBySensor
+              x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
+              x-jsonld-type: '@id'
               x-jsonld-base: https://linked.data.gov.au/def/csdm/sensors/Sensor
             observedProperty:
               $ref: '#/$defs/coderef'
-              x-jsonld-id: sosa:observedProperty
+              x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
               x-jsonld-type: '@id'
               x-jsonld-base: https://linked.data.gov.au/def/csdm/property/
           required:
@@ -142,7 +145,8 @@ anyOf:
 - $ref: '#/$defs/SurveyVectorObsCollection'
 x-jsonld-extra-terms:
   hasResult:
-    x-jsonld-id: sosa:hasResult
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
+    x-jsonld-type: '@id'
     x-jsonld-context:
       pose:
         '@id': https://linked.data.gov.au/def/csdm/surveyfeatures/pose
@@ -150,8 +154,8 @@ x-jsonld-extra-terms:
           position:
             '@id': https://linked.data.gov.au/def/csdm/utils/geopose/position
             '@context':
-              lat: geo:lat
-              lon: geo:long
+              lat: http://www.w3.org/2003/01/geo/wgs84_pos#lat
+              lon: http://www.w3.org/2003/01/geo/wgs84_pos#long
               h: https://linked.data.gov.au/def/csdm/utils/geopose/h
           angles:
             '@id': https://linked.data.gov.au/def/csdm/utils/geopose/angles
@@ -162,8 +166,10 @@ x-jsonld-extra-terms:
       distance: https://linked.data.gov.au/def/csdm/surveyfeatures/distance
 x-jsonld-prefixes:
   csdm: https://linked.data.gov.au/def/csdm/
+  sosa: http://www.w3.org/ns/sosa/
   surv: https://linked.data.gov.au/def/csdm/surveyfeatures/
   geopose: https://linked.data.gov.au/def/csdm/utils/geopose/
+  geo: http://www.w3.org/2003/01/geo/wgs84_pos#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   dct: http://purl.org/dc/terms/
   angletype: https://linked.data.gov.au/def/csdm/defs/angletypes/

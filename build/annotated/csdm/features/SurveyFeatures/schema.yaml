@@ -20,7 +20,6 @@ $defs:
       name:
         $ref: https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/schema.yaml
         x-jsonld-id: https://w3id.org/ogc/utils/label/name
-        x-jsonld-type: '@id'
       purpose:
         oneOf:
         - $ref: '#/$defs/coderef'
@@ -235,9 +234,7 @@ x-jsonld-extra-terms:
   AdoptedVector:
     x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/SurveyedVector
     x-jsonld-type: '@id'
-  name:
-    x-jsonld-id: https://w3id.org/ogc/utils/label/name
-    x-jsonld-type: '@id'
+  name: https://w3id.org/ogc/utils/label/name
   label: http://www.w3.org/2000/01/rdf-schema#label
 x-jsonld-prefixes:
   geojson: https://purl.org/geojson/vocab#

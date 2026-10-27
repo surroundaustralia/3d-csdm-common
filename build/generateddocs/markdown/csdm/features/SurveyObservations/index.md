@@ -442,8 +442,8 @@ Example Collection of Survey Observations
 @prefix distancetype: <https://linked.data.gov.au/def/csdm/defs/distancetypes/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix geopose: <https://linked.data.gov.au/def/csdm/utils/geopose/> .
-@prefix ns1: <https://linked.data.gov.au/def/csdm/sensors/> .
-@prefix ns2: <https://linked.data.gov.au/def/csdm/surveyobs/> .
+@prefix ns1: <https://linked.data.gov.au/def/csdm/surveyobs/> .
+@prefix ns2: <https://linked.data.gov.au/def/csdm/sensors/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .
 @prefix surveyable: <https://linked.data.gov.au/def/csdm/defs/surveyableproperties/> .
@@ -456,14 +456,14 @@ Example Collection of Survey Observations
             sosa:hasFeatureOfInterest <http://www.example.com/features/l973158> ;
             sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;
                             geopose:angles [ ] ] ] ] ;
-    sosa:madeBySensor [ a ns1:DifferentialGPS ;
-            ns1:baseSensor "gps+38666" ;
-            ns1:roverSensor "gps+37544" ] ;
+    sosa:madeBySensor [ a ns2:DifferentialGPS ;
+            ns2:baseSensor "gps+38666" ;
+            ns2:roverSensor "gps+37544" ] ;
     sosa:observedProperty surveyable:VectorDetermination ;
     sosa:resultTime "2023-05-24T00:00:00"^^xsd:dateTime ;
     sosa:usedProcedure surveyproc:traverse ;
-    ns2:angleType angletype:bearing ;
-    ns2:distanceType distancetype:ellipsoidal .
+    ns1:angleType angletype:bearing ;
+    ns1:distanceType distancetype:ellipsoidal .
 
 
 ```
@@ -547,7 +547,8 @@ $defs:
           - distance
         - required:
           - angle
-        x-jsonld-id: sosa:hasResult
+        x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
+        x-jsonld-type: '@id'
     required:
     - hasResult
   SurveyVectorObsProps:
@@ -581,7 +582,8 @@ $defs:
           type: array
           items:
             $ref: '#/$defs/SurveyVectorObsMember'
-          x-jsonld-id: sosa:hasMember
+          x-jsonld-id: http://www.w3.org/ns/sosa/hasMember
+          x-jsonld-type: '@id'
           x-jsonld-container: '@set'
         properties:
           properties:
@@ -597,11 +599,12 @@ $defs:
               x-jsonld-base: https://linked.data.gov.au/def/csdm/defs/distancetypes/
             madeBySensor:
               $ref: '#/$defs/SensorType'
-              x-jsonld-id: sosa:madeBySensor
+              x-jsonld-id: http://www.w3.org/ns/sosa/madeBySensor
+              x-jsonld-type: '@id'
               x-jsonld-base: https://linked.data.gov.au/def/csdm/sensors/Sensor
             observedProperty:
               $ref: '#/$defs/coderef'
-              x-jsonld-id: sosa:observedProperty
+              x-jsonld-id: http://www.w3.org/ns/sosa/observedProperty
               x-jsonld-type: '@id'
               x-jsonld-base: https://linked.data.gov.au/def/csdm/property/
           required:
@@ -615,7 +618,8 @@ anyOf:
 - $ref: '#/$defs/SurveyVectorObsCollection'
 x-jsonld-extra-terms:
   hasResult:
-    x-jsonld-id: sosa:hasResult
+    x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
+    x-jsonld-type: '@id'
     x-jsonld-context:
       pose:
         '@id': https://linked.data.gov.au/def/csdm/surveyfeatures/pose
@@ -623,8 +627,8 @@ x-jsonld-extra-terms:
           position:
             '@id': https://linked.data.gov.au/def/csdm/utils/geopose/position
             '@context':
-              lat: geo:lat
-              lon: geo:long
+              lat: http://www.w3.org/2003/01/geo/wgs84_pos#lat
+              lon: http://www.w3.org/2003/01/geo/wgs84_pos#long
               h: https://linked.data.gov.au/def/csdm/utils/geopose/h
           angles:
             '@id': https://linked.data.gov.au/def/csdm/utils/geopose/angles
@@ -635,8 +639,10 @@ x-jsonld-extra-terms:
       distance: https://linked.data.gov.au/def/csdm/surveyfeatures/distance
 x-jsonld-prefixes:
   csdm: https://linked.data.gov.au/def/csdm/
+  sosa: http://www.w3.org/ns/sosa/
   surv: https://linked.data.gov.au/def/csdm/surveyfeatures/
   geopose: https://linked.data.gov.au/def/csdm/utils/geopose/
+  geo: http://www.w3.org/2003/01/geo/wgs84_pos#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   dct: http://purl.org/dc/terms/
   angletype: https://linked.data.gov.au/def/csdm/defs/angletypes/
@@ -674,17 +680,7 @@ Links to the schema:
     "features": {
       "@container": "@set",
       "@id": "sosa:hasMember",
-      "@type": "@id",
-      "@context": {
-        "madeBySensor": {
-          "@id": "sosa:madeBySensor",
-          "@type": "@id"
-        },
-        "observedProperty": {
-          "@id": "sosa:observedProperty",
-          "@type": "@id"
-        }
-      }
+      "@type": "@id"
     },
     "type": "@type",
     "id": "@id",
@@ -878,14 +874,6 @@ Links to the schema:
       "@id": "sosa:hasMember",
       "@type": "@id",
       "@context": {
-        "madeBySensor": {
-          "@id": "sosa:madeBySensor",
-          "@type": "@id"
-        },
-        "observedProperty": {
-          "@id": "sosa:observedProperty",
-          "@type": "@id"
-        },
         "phenomenonTime": {
           "@context": {
             "hasBeginning": "owlTime:hasBeginning",
@@ -922,10 +910,6 @@ Links to the schema:
           },
           "@id": "sosa:phenomenonTime",
           "@type": "xsd:dateTime"
-        },
-        "hasResult": {
-          "@id": "sosa:hasResult",
-          "@type": "@id"
         }
       }
     },
@@ -1303,6 +1287,7 @@ Links to the schema:
     "csdm": "https://linked.data.gov.au/def/csdm/",
     "surv": "csdm:surveyfeatures/",
     "geopose": "csdm:utils/geopose/",
+    "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
     "angletype": "csdm:defs/angletypes/",
     "distancetype": "csdm:defs/distancetypes/",
     "surveyproc": "csdm:defs/surveyprocedures/",
