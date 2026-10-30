@@ -11,6 +11,9 @@
     "surveyproc": "csdm:defs/surveyprocedures/",
     "surveyable": "csdm:defs/surveyableproperties/",
     "geopose": "csdm:utils/geopose/",
+    "yaw": "geopose:yaw",
+    "pitch": "geopose:pitch",
+    "roll": "geopose:roll",
     "features": {
       "@id": "sosa:hasMember",
       "@type": "@id",
@@ -53,7 +56,8 @@
                         }
                       }
                     },
-                    "distance": "surv:distance"
+                    "distance": "surv:distance",
+        "angle": "surv:angle"
                   }
                 }
               }
@@ -118,7 +122,8 @@
             }
           }
         },
-        "distance": "surv:distance"
+        "distance": "surv:distance",
+        "angle": "surv:angle"
       }
     }
   }

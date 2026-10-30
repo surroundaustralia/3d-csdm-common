@@ -78,7 +78,23 @@
       "@type": "@id"
     },
     "AdoptedVector": {
+      "@id": "surv:AdoptedVector",
+      "@type": "@id"
+    },
+    "SurveyedVector": {
       "@id": "surv:SurveyedVector",
+      "@type": "@id"
+    },
+    "SurveyPoint": {
+      "@id": "surv:SurveyPoint",
+      "@type": "@id"
+    },
+    "SurveyMark": {
+      "@id": "surv:SurveyMark",
+      "@type": "@id"
+    },
+    "OccupationMark": {
+      "@id": "surv:OccupationMark",
       "@type": "@id"
     },
     "name": "compoundname:name",
