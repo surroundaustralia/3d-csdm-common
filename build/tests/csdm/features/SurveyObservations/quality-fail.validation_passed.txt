@@ -1,5 +1,5 @@
 Validation report for icsm.csdm.features.SurveyObservations - Survey Observations
-Generated 2026-10-27T12:34:59.014837+00:00
+Generated 2026-10-27T21:36:47.061007+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -34,7 +34,8 @@ Failed validating 'anyOf' in schema:
                                                        {'properties': {'features': {'items': {'$ref': '#/$defs/SurveyVectorObsMember'},
                                                                                     'type': 'array',
                                                                                     'x-jsonld-container': '@set',
-                                                                                    'x-jsonld-id': 'sosa:hasMember'},
+                                                                                    'x-jsonld-id': 'http://www.w3.org/ns/sosa/hasMember',
+                                                                                    'x-jsonld-type': '@id'},
                                                                        'properties': {'not': {'required': ['hasResult']},
                                                                                       'properties': {'angleType': {'$ref': '#/$defs/coderef',
                                                                                                                    'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/defs/angletypes/',
@@ -46,10 +47,11 @@ Failed validating 'anyOf' in schema:
                                                                                                                       'x-jsonld-type': '@id'},
                                                                                                      'madeBySensor': {'$ref': '#/$defs/SensorType',
                                                                                                                       'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/sensors/Sensor',
-                                                                                                                      'x-jsonld-id': 'sosa:madeBySensor'},
+                                                                                                                      'x-jsonld-id': 'http://www.w3.org/ns/sosa/madeBySensor',
+                                                                                                                      'x-jsonld-type': '@id'},
                                                                                                      'observedProperty': {'$ref': '#/$defs/coderef',
                                                                                                                           'x-jsonld-base': 'https://linked.data.gov.au/def/csdm/property/',
-                                                                                                                          'x-jsonld-id': 'sosa:observedProperty',
+                                                                                                                          'x-jsonld-id': 'http://www.w3.org/ns/sosa/observedProperty',
                                                                                                                           'x-jsonld-type': '@id'}},
                                                                                       'required': ['madeBySensor',
                                                                                                    'observedProperty']}}}]},
@@ -86,7 +88,8 @@ Failed validating 'anyOf' in schema:
                                                                                                   'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/distance'},
                                                                                      'pose': {'$ref': '#/$defs/pose-lenient',
                                                                                               'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/pose'}},
-                                                                      'x-jsonld-id': 'sosa:hasResult'},
+                                                                      'x-jsonld-id': 'http://www.w3.org/ns/sosa/hasResult',
+                                                                      'x-jsonld-type': '@id'},
                                                         'hasResultQuality': {'$ref': 'https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml'}},
                                          'required': ['hasResult'],
                                          'type': 'object'},
@@ -122,17 +125,20 @@ Failed validating 'anyOf' in schema:
                                                                                                                'yaw': 'https://linked.data.gov.au/def/csdm/utils/geopose/yaw'},
                                                                                                   '@id': 'https://linked.data.gov.au/def/csdm/utils/geopose/angles'},
                                                                                        'position': {'@context': {'h': 'https://linked.data.gov.au/def/csdm/utils/geopose/h',
-                                                                                                                 'lat': 'geo:lat',
-                                                                                                                 'lon': 'geo:long'},
+                                                                                                                 'lat': 'http://www.w3.org/2003/01/geo/wgs84_pos#lat',
+                                                                                                                 'lon': 'http://www.w3.org/2003/01/geo/wgs84_pos#long'},
                                                                                                     '@id': 'https://linked.data.gov.au/def/csdm/utils/geopose/position'}},
                                                                           '@id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/pose'}},
-                                            'x-jsonld-id': 'sosa:hasResult'}},
+                                            'x-jsonld-id': 'http://www.w3.org/ns/sosa/hasResult',
+                                            'x-jsonld-type': '@id'}},
      'x-jsonld-prefixes': {'angletype': 'https://linked.data.gov.au/def/csdm/defs/angletypes/',
                            'csdm': 'https://linked.data.gov.au/def/csdm/',
                            'dct': 'http://purl.org/dc/terms/',
                            'distancetype': 'https://linked.data.gov.au/def/csdm/defs/distancetypes/',
+                           'geo': 'http://www.w3.org/2003/01/geo/wgs84_pos#',
                            'geopose': 'https://linked.data.gov.au/def/csdm/utils/geopose/',
                            'rdfs': 'http://www.w3.org/2000/01/rdf-schema#',
+                           'sosa': 'http://www.w3.org/ns/sosa/',
                            'surv': 'https://linked.data.gov.au/def/csdm/surveyfeatures/',
                            'surveyable': 'https://linked.data.gov.au/def/csdm/defs/surveyableproperties/',
                            'surveyproc': 'https://linked.data.gov.au/def/csdm/defs/surveyprocedures/'}}
@@ -170,9 +176,9 @@ Validation result for https://opengeospatial.github.io/bblocks/registereditems/g
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
  - Shape geojson:GeometryShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:FeatureShape: _:Ne1340d40b9f440a38f2df1930ce39762
  - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:FeatureShape: _:Na67be601d0e74dfbb8ea98ed816290de
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
 
 Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl:
@@ -180,20 +186,20 @@ Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/prop
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:Ne1340d40b9f440a38f2df1930ce39762
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:Ne1340d40b9f440a38f2df1930ce39762
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:Ne1340d40b9f440a38f2df1930ce39762
  - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:Na67be601d0e74dfbb8ea98ed816290de
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:Na67be601d0e74dfbb8ea98ed816290de
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:Na67be601d0e74dfbb8ea98ed816290de
 
 Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:Ne1340d40b9f440a38f2df1930ce39762
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:Na67be601d0e74dfbb8ea98ed816290de
  - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
 
 === End SHACL ===

@@ -1,5 +1,5 @@
 Validation report for icsm.csdm.features.SurveyObservations - Survey Observations
-Generated 2026-10-27T12:34:59.107212+00:00
+Generated 2026-10-27T21:36:47.134349+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -25,7 +25,8 @@ Failed validating 'anyOf' in schema[0]['allOf'][1]['properties']['properties']['
                                  'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/distance'},
                     'pose': {'$ref': '#/$defs/pose-lenient',
                              'x-jsonld-id': 'https://linked.data.gov.au/def/csdm/surveyfeatures/pose'}},
-     'x-jsonld-id': 'sosa:hasResult'}
+     'x-jsonld-id': 'http://www.w3.org/ns/sosa/hasResult',
+     'x-jsonld-type': '@id'}
 
 On instance['properties']['hasResult']:
     {'something': 'else'}
@@ -45,9 +46,9 @@ Validation result for https://opengeospatial.github.io/bblocks/registereditems/g
   
 Focus nodes for https://opengeospatial.github.io/bblocks/registereditems/geo/features/feature/shapes.shacl:
  - Shape geojson:GeometryShape: *none*
- - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
- - Shape geojson:FeatureShape: _:N74e5ef3fab5b4c3d8dc86045390ef8f7
  - Shape geojson:LinkShape: *none*
+ - Shape geojson:GeometryShape/sh:or/rdf:first: *none*
+ - Shape geojson:FeatureShape: _:N80055457820b409e927e189e13fe56f3
  - Shape geojson:GeometryShape/sh:or/rdf:rest/rdf:first: *none*
 
 Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl:
@@ -55,20 +56,20 @@ Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/prop
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/execution/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:N74e5ef3fab5b4c3d8dc86045390ef8f7
- - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
- - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:N74e5ef3fab5b4c3d8dc86045390ef8f7
- - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:N74e5ef3fab5b4c3d8dc86045390ef8f7
  - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValues>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testRequiredTime>: _:N80055457820b409e927e189e13fe56f3
+ - Shape <https://www.ogc.org/rules/sosa/#testCollectionPropertyValuesInterval>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testFeatureOfInterest>: _:N80055457820b409e927e189e13fe56f3
+ - Shape <https://www.ogc.org/rules/sosa/#testSimpleResultLiteral>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testResult>: _:N80055457820b409e927e189e13fe56f3
 
 Validation result for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
   Validation Report
   Conforms: True
   
 Focus nodes for https://opengeospatial.github.io/ogcapi-sosa/_sources/properties/observation/shapes.shacl:
- - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:N74e5ef3fab5b4c3d8dc86045390ef8f7
  - Shape <https://www.ogc.org/rules/sosa/#testResultNotEmptyNode>: *none*
+ - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyPresent>: _:N80055457820b409e927e189e13fe56f3
  - Shape <https://www.ogc.org/rules/sosa/#testObservedPropertyConsistent>: *none*
 
 === End SHACL ===

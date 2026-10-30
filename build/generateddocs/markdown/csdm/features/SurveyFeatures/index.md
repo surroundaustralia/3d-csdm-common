@@ -302,10 +302,10 @@ eg1:P2 a surv:GeodeticReferenceMark,
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 2.1e+00 3.7e+00 ) ] ;
     commonpatterns:name [ rdfs:label "IS II - DP 3333" ;
-            dct:hasPart [ rdfs:label "IS II" ;
-                    commonpatterns:namePartType eg1:Stamp ],
-                [ rdfs:label "DP 3333" ;
-                    commonpatterns:namePartType eg1:Source ] ] .
+            dct:hasPart [ rdfs:label "DP 3333" ;
+                    commonpatterns:namePartType eg1:Source ],
+                [ rdfs:label "IS II" ;
+                    commonpatterns:namePartType eg1:Stamp ] ] .
 
 
 ```
@@ -490,7 +490,6 @@ $defs:
       name:
         $ref: https://ogcincubator.github.io/bblocks-utility/build/annotated/bbr/utils/compoundName/schema/schema.yaml
         x-jsonld-id: https://w3id.org/ogc/utils/label/name
-        x-jsonld-type: '@id'
       purpose:
         oneOf:
         - $ref: '#/$defs/coderef'
@@ -705,9 +704,7 @@ x-jsonld-extra-terms:
   AdoptedVector:
     x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/SurveyedVector
     x-jsonld-type: '@id'
-  name:
-    x-jsonld-id: https://w3id.org/ogc/utils/label/name
-    x-jsonld-type: '@id'
+  name: https://w3id.org/ogc/utils/label/name
   label: http://www.w3.org/2000/01/rdf-schema#label
 x-jsonld-prefixes:
   geojson: https://purl.org/geojson/vocab#
@@ -955,7 +952,6 @@ Links to the schema:
     },
     "name": {
       "@id": "commonpatterns:name",
-      "@type": "@id",
       "@context": {
         "hasPart": {
           "@context": {

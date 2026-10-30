@@ -66,7 +66,7 @@ $defs:
     properties:
       name:
         type: string
-        x-jsonld-id: rdfs:label
+        x-jsonld-id: http://www.w3.org/2000/01/rdf-schema#label
       bearingRotation:
         type: number
         x-jsonld-id: https://linked.data.gov.au/def/csdm/container/bearingRotation
@@ -284,7 +284,6 @@ properties:
                   properties:
                     required:
                     - interests
-                    x-jsonld-id: '@nest'
     x-jsonld-id: https://linked.data.gov.au/def/csdm/container/parcels
   vectorObservations:
     type: array
@@ -318,17 +317,20 @@ x-jsonld-extra-terms:
   CSD: https://linked.data.gov.au/def/csdm/container/CSD
   address: https://schema.org/address
   locality: https://linked.data.gov.au/def/csdm/csd/locality
-  edges: topo:edges
+  edges: https://purl.org/geojson/topo#edges
   PrimaryParcel:
-    x-jsonld-id: parcel:PrimaryParcel
+    x-jsonld-id: https://w3id.org/ogc/ladm/parcels/PrimaryParcel
     x-jsonld-type: '@id'
   SecondaryParcel:
-    x-jsonld-id: parcel:SecondaryParcel
+    x-jsonld-id: https://w3id.org/ogc/ladm/parcels/SecondaryParcel
     x-jsonld-type: '@id'
 x-jsonld-prefixes:
   container: https://linked.data.gov.au/def/csdm/container/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
   sdo: https://schema.org/
   csd: https://linked.data.gov.au/def/csdm/csd/
+  topo: https://purl.org/geojson/topo#
+  parcel: https://w3id.org/ogc/ladm/parcels/
   surv: https://linked.data.gov.au/def/csdm/surveyfeatures/
 x-bblocks-metadata:
   itemIdentifier: icsm.csdm.features.CSD

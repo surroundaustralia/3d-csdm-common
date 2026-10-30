@@ -61,14 +61,14 @@ base:12595522 a geojson:Feature,
     geojson:topology [ a geojson:Polygon ;
             topo:relatedFeatures ( ( base:20220170 base:20220171 base:20220172 base:20220192 base:20220173 ) ) ] ;
     parcel:appellation [ rdfs:label "Lot 215 DP 572532" ;
-            dct:hasPart [ rdfs:label "215" ;
-                    commonpatterns:namePartType base:LotNumber ],
-                [ rdfs:label "DP" ;
+            dct:hasPart [ rdfs:label "DP" ;
                     commonpatterns:namePartType base:PlanType ],
+                [ rdfs:label "Lot" ;
+                    commonpatterns:namePartType base:LotType ],
                 [ rdfs:label "572532" ;
                     commonpatterns:namePartType base:PlanNumber ],
-                [ rdfs:label "Lot" ;
-                    commonpatterns:namePartType base:LotType ] ] ;
+                [ rdfs:label "215" ;
+                    commonpatterns:namePartType base:LotNumber ] ] ;
     parcel:interest [ parcel:interestLink base: ;
             parcel:interestType <wa-interest-type:fh> ] ;
     parcel:purpose wa-parcel-purpose:1 ;
@@ -81,14 +81,14 @@ base:12595523 a geojson:Feature,
     geojson:topology [ a geojson:Polygon ;
             topo:relatedFeatures ( ( base:20220192 base:20220172 base:20220174 base:20220175 base:20220191 base:20220176 ) ) ] ;
     parcel:appellation [ rdfs:label "Lot 216 DP 572532" ;
-            dct:hasPart [ rdfs:label "572532" ;
-                    commonpatterns:namePartType base:PlanNumber ],
-                [ rdfs:label "Lot" ;
-                    commonpatterns:namePartType base:LotType ],
-                [ rdfs:label "216" ;
+            dct:hasPart [ rdfs:label "216" ;
                     commonpatterns:namePartType base:LotNumber ],
+                [ rdfs:label "572532" ;
+                    commonpatterns:namePartType base:PlanNumber ],
                 [ rdfs:label "DP" ;
-                    commonpatterns:namePartType base:PlanType ] ] ;
+                    commonpatterns:namePartType base:PlanType ],
+                [ rdfs:label "Lot" ;
+                    commonpatterns:namePartType base:LotType ] ] ;
     parcel:interest [ parcel:interestLink base:BBBBBB ] ;
     parcel:purpose wa-parcel-purpose:1 ;
     parcel:state <wa-parcel-state:created> ;
@@ -145,38 +145,32 @@ base:observedVectors a surv:ObservedVector,
 <vectorobservation:theodolite+edm> a sosa:ObservationCollection,
         geojson:FeatureCollection ;
     sosa:hasMember [ a geojson:Feature ;
-            sosa:hasFeatureOfInterest base:20220173 ;
-            sosa:hasResult [ surv:distance 2.44e+01 ] ;
-            sosa:resultTime "2022-05-22T00:00:00"^^xsd:dateTime ;
-            ns1:angleType icsm-angle-type:bearing ;
-            ns1:distanceType icsm-distance-type:ground ],
-        [ a geojson:Feature ;
-            sosa:hasFeatureOfInterest base:20220170 ;
-            sosa:hasResult [ surv:distance 3.5e+01 ] ;
-            sosa:resultTime "2022-05-22T00:00:00"^^xsd:dateTime ;
-            ns1:angleType icsm-angle-type:bearing ;
-            ns1:distanceType icsm-distance-type:ground ],
-        [ a geojson:Feature ;
             sosa:hasFeatureOfInterest base:20220176 ;
             sosa:hasResult [ surv:distance 2.44e+01 ] ;
             sosa:resultTime "2022-05-22T00:00:00"^^xsd:dateTime ;
             ns1:angleType icsm-angle-type:bearing ;
             ns1:distanceType icsm-distance-type:ground ],
         [ a geojson:Feature ;
-            sosa:hasFeatureOfInterest base:20220192 ;
-            sosa:hasResult [ surv:distance 1.5e+00 ] ;
+            sosa:hasFeatureOfInterest base:20220173 ;
+            sosa:hasResult [ surv:distance 2.44e+01 ] ;
             sosa:resultTime "2022-05-22T00:00:00"^^xsd:dateTime ;
             ns1:angleType icsm-angle-type:bearing ;
             ns1:distanceType icsm-distance-type:ground ],
         [ a geojson:Feature ;
-            sosa:hasFeatureOfInterest base:20220172 ;
+            sosa:hasFeatureOfInterest base:20220174 ;
+            sosa:hasResult [ surv:distance 2.44e+01 ] ;
+            sosa:resultTime "2022-05-22T00:00:00"^^xsd:dateTime ;
+            ns1:angleType icsm-angle-type:bearing ;
+            ns1:distanceType icsm-distance-type:ground ],
+        [ a geojson:Feature ;
+            sosa:hasFeatureOfInterest base:20220175 ;
             sosa:hasResult [ surv:distance 3.35e+01 ] ;
             sosa:resultTime "2022-05-22T00:00:00"^^xsd:dateTime ;
             ns1:angleType icsm-angle-type:bearing ;
             ns1:distanceType icsm-distance-type:ground ],
         [ a geojson:Feature ;
-            sosa:hasFeatureOfInterest base:20220171 ;
-            sosa:hasResult [ surv:distance 2.44e+01 ] ;
+            sosa:hasFeatureOfInterest base:20220192 ;
+            sosa:hasResult [ surv:distance 1.5e+00 ] ;
             sosa:resultTime "2022-05-22T00:00:00"^^xsd:dateTime ;
             ns1:angleType icsm-angle-type:bearing ;
             ns1:distanceType icsm-distance-type:ground ],
@@ -193,14 +187,20 @@ base:observedVectors a surv:ObservedVector,
             ns1:angleType icsm-angle-type:bearing ;
             ns1:distanceType icsm-distance-type:ground ],
         [ a geojson:Feature ;
-            sosa:hasFeatureOfInterest base:20220174 ;
-            sosa:hasResult [ surv:distance 2.44e+01 ] ;
+            sosa:hasFeatureOfInterest base:20220170 ;
+            sosa:hasResult [ surv:distance 3.5e+01 ] ;
             sosa:resultTime "2022-05-22T00:00:00"^^xsd:dateTime ;
             ns1:angleType icsm-angle-type:bearing ;
             ns1:distanceType icsm-distance-type:ground ],
         [ a geojson:Feature ;
-            sosa:hasFeatureOfInterest base:20220175 ;
+            sosa:hasFeatureOfInterest base:20220172 ;
             sosa:hasResult [ surv:distance 3.35e+01 ] ;
+            sosa:resultTime "2022-05-22T00:00:00"^^xsd:dateTime ;
+            ns1:angleType icsm-angle-type:bearing ;
+            ns1:distanceType icsm-distance-type:ground ],
+        [ a geojson:Feature ;
+            sosa:hasFeatureOfInterest base:20220171 ;
+            sosa:hasResult [ surv:distance 2.44e+01 ] ;
             sosa:resultTime "2022-05-22T00:00:00"^^xsd:dateTime ;
             ns1:angleType icsm-angle-type:bearing ;
             ns1:distanceType icsm-distance-type:ground ] ;
