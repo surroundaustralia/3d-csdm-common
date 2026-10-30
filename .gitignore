@@ -2,3 +2,5 @@
 .vscode/
 .idea/
 build-local*/
+bblocks-config-local*.yml
+.volumes*
