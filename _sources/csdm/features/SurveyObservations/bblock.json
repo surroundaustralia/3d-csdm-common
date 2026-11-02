@@ -26,6 +26,8 @@
     "SOSA"
   ],
   "dependsOn": [
-    "bblocks://icsm.csdm.model.surveyobs"
+    "bblocks://icsm.csdm.model.surveyobs",
+    "bblocks://icsm.csdm.model.surveyfeatures",
+    "bblocks://icsm.csdm.model.geopose"
   ]
 }

@@ -17,10 +17,28 @@
     "surveyDescriptors": "container:surveyDescriptors",
     "bearingRotation": "container:bearingRotation",
     "points": {
-      "@id": "container:points"
+      "@id": "container:points",
+      "@context": {
+        "featureType": "https://purl.org/geojson/vocab#collectionFeatureType",
+        "features": {
+          "@id": "https://purl.org/geojson/vocab#features",
+          "@context": {
+            "featureType": "@type"
+          }
+        }
+      }
     },
     "parcels": {
-      "@id": "container:parcels"
+      "@id": "container:parcels",
+      "@context": {
+        "featureType": "https://purl.org/geojson/vocab#collectionFeatureType",
+        "features": {
+          "@id": "https://purl.org/geojson/vocab#features",
+          "@context": {
+            "featureType": "@type"
+          }
+        }
+      }
     },
     "annotations": {
       "@id": "container:annotations"
@@ -41,13 +59,40 @@
       "@id": "csd:locality"
     },
     "edges": {
-      "@id": "topo:edges"
+      "@id": "topo:edges",
+      "@context": {
+        "featureType": "https://purl.org/geojson/vocab#collectionFeatureType",
+        "features": {
+          "@id": "https://purl.org/geojson/vocab#features",
+          "@context": {
+            "featureType": "@type"
+          }
+        }
+      }
     },
     "observedVectors": {
-      "@id": "container:observedVectors"
+      "@id": "container:observedVectors",
+      "@context": {
+        "featureType": "https://purl.org/geojson/vocab#collectionFeatureType",
+        "features": {
+          "@id": "https://purl.org/geojson/vocab#features",
+          "@context": {
+            "featureType": "@type"
+          }
+        }
+      }
     },
     "adoptedVectors": {
-      "@id": "container:adoptedVectors"
+      "@id": "container:adoptedVectors",
+      "@context": {
+        "featureType": "https://purl.org/geojson/vocab#collectionFeatureType",
+        "features": {
+          "@id": "https://purl.org/geojson/vocab#features",
+          "@context": {
+            "featureType": "@type"
+          }
+        }
+      }
     },
     "purpose": {
       "@id": "container:purpose",

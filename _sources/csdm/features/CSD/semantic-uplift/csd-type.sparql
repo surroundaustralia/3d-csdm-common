@@ -1,0 +1,9 @@
+PREFIX container: <https://linked.data.gov.au/def/csdm/container/>
+PREFIX geojson: <https://purl.org/geojson/vocab#>
+INSERT {
+  ?csd a container:CSD .
+} WHERE {
+  ?csd a geojson:FeatureCollection ;
+    geojson:collectionFeatureType ?type .
+  FILTER (STR(?type) IN ("CSD", "csd:CSD", "container:CSD"))
+}

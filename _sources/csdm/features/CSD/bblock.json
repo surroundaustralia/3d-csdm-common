@@ -26,9 +26,10 @@
   ],
   "superBBlock": false,
   "shaclRules": [
-    "tests/obs-match-vectors.shacl"
+    "rules.shacl"
   ],
   "dependsOn": [
-    "bblocks://icsm.csdm.model.container"
+    "bblocks://icsm.csdm.model.container",
+    "bblocks://icsm.csdm.model.surveyfeatures"
   ]
 }

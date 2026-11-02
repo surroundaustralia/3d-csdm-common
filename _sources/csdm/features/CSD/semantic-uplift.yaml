@@ -1,0 +1,5 @@
+additionalSteps:
+  # The root of a CSD is a FeatureCollection whose featureType names the CSD itself. The JSON-FG feature collection
+  # context binds a collection's featureType to geojson:collectionFeatureType, so the root is typed here.
+  - type: sparql-update
+    ref: semantic-uplift/csd-type.sparql
