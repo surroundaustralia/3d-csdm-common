@@ -43,10 +43,7 @@ imports:
 #  - https://rob-metalinkage.github.io/ogcapi-sosa
   - https://opengeospatial.github.io/ogcapi-sosa
   - https://ogcincubator.github.io/bblocks-land-parcels
-# INTERIM: Topo-Feature from the surroundaustralia fork (adds ogc.geo.topo.ontology, needed by the CSDM model)
-# until https://github.com/ogcincubator/topo-feature/pull/11 is merged - then revert to
-#  - https://ogcincubator.github.io/topo-feature
-  - https://surroundaustralia.github.io/topo-feature
+  - https://ogcincubator.github.io/topo-feature
   - https://ogcincubator.github.io/bblock-prov-schema
 # CSDM ontologies (icsm.csdm.model.*), incl. Common Patterns used by the SurveyFeatures JSON-LD bindings
   - https://surroundaustralia.github.io/3d-csdm-model
