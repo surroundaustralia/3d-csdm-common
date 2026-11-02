@@ -28,6 +28,9 @@
     "vectorObservations": {
       "@id": "container:vectorObservations"
     },
+    "adoptedObservations": {
+      "@id": "container:adoptedObservations"
+    },
     "occupationObservations": {
       "@id": "container:occupationObservations"
     },
@@ -66,6 +69,7 @@
       "@id": "container:surveyType",
       "@type": "@id"
     },
+    "SubtendedAngle": "surv:SubtendedAngle",
     "PrimaryParcel": {
       "@id": "parcel:PrimaryParcel",
       "@type": "@id"

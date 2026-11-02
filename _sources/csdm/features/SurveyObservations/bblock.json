@@ -17,5 +17,15 @@
   ],
   "maturity": "development",
   "scope": "icsm",
-  "tags": ["icsm", "survey", "cadastre", "features" ,"observation", "SOSA"]
+  "tags": [
+    "icsm",
+    "survey",
+    "cadastre",
+    "features",
+    "observation",
+    "SOSA"
+  ],
+  "dependsOn": [
+    "bblocks://icsm.csdm.model.surveyobs"
+  ]
 }

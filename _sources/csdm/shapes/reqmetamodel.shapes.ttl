@@ -1,3 +1,6 @@
+# DEPRECATED (2026-10-30): this is an outdated copy of CSDM model shapes and is no longer used by any building
+# block in this register. The maintained shapes are in the CSDM model register (3d-csdm-model), in the
+# icsm.csdm.model.* blocks, which the schema blocks here depend on. See README.md in this directory.
 # baseURI: https://data.surroundaustralia.com/def/reqmetamodel
 # imports: http://datashapes.org/dash
 # imports: http://topbraid.org/skos.shapes

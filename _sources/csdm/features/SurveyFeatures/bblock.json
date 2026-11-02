@@ -15,7 +15,17 @@
       "link": "https://github.com/icsm-au/3d-csdm"
     }
   ],
+  "dependsOn": [
+    "bblocks://icsm.csdm.model.commonpatterns",
+    "bblocks://ogc.bbr.utils.compoundName.ontology",
+    "bblocks://icsm.csdm.model.surveyfeatures"
+  ],
   "maturity": "development",
   "scope": "icsm",
-  "tags": ["icsm", "survey", "cadastre", "features"]
+  "tags": [
+    "icsm",
+    "survey",
+    "cadastre",
+    "features"
+  ]
 }

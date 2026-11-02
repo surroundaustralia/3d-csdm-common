@@ -1,9 +1,0 @@
-@prefix commonpatterns: <https://data.surroundaustralia.com/def/csdm/commonpatterns/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-commonpatterns:qualityMeasure a rdf:Property; rdfs:label "quality measure"@en;
-  rdfs:range xsd:float.
-commonpatterns:value a rdf:Property; rdfs:label "value"@en;
-  rdfs:subPropertyOf rdf:value; rdfs:range xsd:float.

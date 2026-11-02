@@ -2,7 +2,8 @@
   "@context": {
     "csdm": "https://linked.data.gov.au/def/csdm/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "commonpatterns": "https://w3id.org/ogc/utils/label/",
+    "commonpatterns": "https://linked.data.gov.au/def/csdm/commonpatterns/",
+    "compoundname": "https://w3id.org/ogc/utils/label/",
     "geojson": "https://purl.org/geojson/vocab#",
     "geosparql": "http://www.opengis.net/ont/geosparql#",
     "surv": "https://linked.data.gov.au/def/csdm/surveyfeatures/",
@@ -77,10 +78,26 @@
       "@type": "@id"
     },
     "AdoptedVector": {
+      "@id": "surv:AdoptedVector",
+      "@type": "@id"
+    },
+    "SurveyedVector": {
       "@id": "surv:SurveyedVector",
       "@type": "@id"
     },
-    "name": "commonpatterns:name",
+    "SurveyPoint": {
+      "@id": "surv:SurveyPoint",
+      "@type": "@id"
+    },
+    "SurveyMark": {
+      "@id": "surv:SurveyMark",
+      "@type": "@id"
+    },
+    "OccupationMark": {
+      "@id": "surv:OccupationMark",
+      "@type": "@id"
+    },
+    "name": "compoundname:name",
     "label": "rdfs:label"
   }
 }

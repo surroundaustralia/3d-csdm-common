@@ -45,6 +45,8 @@ imports:
   - https://ogcincubator.github.io/bblocks-land-parcels
   - https://ogcincubator.github.io/topo-feature
   - https://ogcincubator.github.io/bblock-prov-schema
+# CSDM ontologies (icsm.csdm.model.*), incl. Common Patterns used by the SurveyFeatures JSON-LD bindings
+  - https://surroundaustralia.github.io/3d-csdm-model
 
 plugins:
   transforms:

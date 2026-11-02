@@ -26,8 +26,9 @@
   ],
   "superBBlock": false,
   "shaclRules": [
-    "tests/obs-match-vectors.shacl",
-    "../../shapes/container.shapes.ttl",
-    "../../shapes/parcel_module.shapes.ttl"
+    "tests/obs-match-vectors.shacl"
+  ],
+  "dependsOn": [
+    "bblocks://icsm.csdm.model.container"
   ]
 }
