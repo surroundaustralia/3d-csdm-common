@@ -25,14 +25,15 @@ eg1:4494877 a surv:OccupationMark,
     compoundname:name [ rdfs:label "Post II LT 584372" ;
             dct:hasPart [ rdfs:label "Post" ;
                     compoundname:namePartType eg1:MarkType ],
+                [ rdfs:label "LT" ;
+                    compoundname:namePartType eg1:PlanType ],
                 [ rdfs:label "II" ;
                     compoundname:namePartType eg1:MarkStamp ],
                 [ rdfs:label "584372" ;
-                    compoundname:namePartType eg1:PlanStamp ],
-                [ rdfs:label "LT" ;
-                    compoundname:namePartType eg1:PlanType ] ] .
+                    compoundname:namePartType eg1:PlanStamp ] ] .
 
-eg1:LT_584372 a geojson:FeatureCollection ;
+eg1:LT_584372 a container:CSD,
+        geojson:FeatureCollection ;
     rdfs:label "LT 584372" ;
     dct:time [ owlTime:hasTime "2022-10-29"^^xsd:date ] ;
     container:bearingRotation 0e+00 ;

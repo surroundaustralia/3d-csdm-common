@@ -30,6 +30,8 @@
   ],
   "dependsOn": [
     "icsm.csdm.datatypes.quality",
+    "icsm.csdm.model.geopose",
+    "icsm.csdm.model.surveyfeatures",
     "icsm.csdm.model.surveyobs",
     "ogc.ogc-utils.iri-or-curie",
     "ogc.sosa.features.observation",

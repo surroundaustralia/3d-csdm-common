@@ -23,7 +23,39 @@
   "tags": [
     "utils"
   ],
-  "shaclShapes": {},
+  "dependsOn": [
+    "icsm.csdm.model.surveyobs"
+  ],
+  "shaclShapes": {
+    "icsm.csdm.model.surveyobs": [
+      "https://surroundaustralia.github.io/3d-csdm-model/_sources/model/surveyobs/vector_observations.shapes.ttl",
+      "https://surroundaustralia.github.io/3d-csdm-model/_sources/model/surveyobs/owl-consistency.shapes.ttl"
+    ],
+    "icsm.csdm.model.commonpatterns": [
+      "https://surroundaustralia.github.io/3d-csdm-model/_sources/model/commonpatterns/shapes.shacl",
+      "https://surroundaustralia.github.io/3d-csdm-model/_sources/model/commonpatterns/owl-consistency.shapes.ttl"
+    ],
+    "ogc.bbr.utils.compoundName.ontology": [
+      "https://ogcincubator.github.io/bblocks-utility/_sources/compoundName/ontology/shapes.shacl"
+    ],
+    "icsm.csdm.model.geopose": [
+      "https://surroundaustralia.github.io/3d-csdm-model/_sources/model/geopose/owl-consistency.shapes.ttl"
+    ],
+    "icsm.csdm.model.surveyfeatures": [
+      "https://surroundaustralia.github.io/3d-csdm-model/_sources/model/surveyfeatures/survey_features.shapes.ttl",
+      "https://surroundaustralia.github.io/3d-csdm-model/_sources/model/surveyfeatures/owl-consistency.shapes.ttl"
+    ],
+    "icsm.csdm.model.geometry": [
+      "https://surroundaustralia.github.io/3d-csdm-model/_sources/model/geometry/geometryprimitives.shapes.ttl",
+      "https://surroundaustralia.github.io/3d-csdm-model/_sources/model/geometry/owl-consistency.shapes.ttl"
+    ],
+    "ogc.geo.topo.ontology": [
+      "https://ogcincubator.github.io/topo-feature/_sources/ontology/shapes.shacl"
+    ],
+    "ogc.model.cross-domain.sosa": [
+      "https://ogcincubator.github.io/cross-domain-model/_sources/sosa/rules.shacl"
+    ]
+  },
   "license": {
     "url": "https://surroundaustralia.github.io/3d-csdm-common/LICENSE"
   },

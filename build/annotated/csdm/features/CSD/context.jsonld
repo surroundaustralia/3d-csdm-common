@@ -192,7 +192,17 @@
     "CSD": "container:CSD",
     "address": "sdo:address",
     "locality": "csd:locality",
-    "edges": "topo:edges",
+    "edges": {
+      "@id": "topo:edges",
+      "@context": {
+        "features": {
+          "@id": "geojson:features",
+          "@context": {
+            "featureType": "@type"
+          }
+        }
+      }
+    },
     "SubtendedAngle": "surv:SubtendedAngle",
     "PrimaryParcel": {
       "@id": "parcel:PrimaryParcel",
@@ -445,22 +455,13 @@
       },
       "@id": "container:points"
     },
-    "observedVectors": {
-      "@context": {
-        "featureType": "@type"
-      },
-      "@id": "container:observedVectors"
-    },
-    "adoptedVectors": {
-      "@context": {
-        "featureType": "@type"
-      },
-      "@id": "container:adoptedVectors"
-    },
+    "observedVectors": "container:observedVectors",
+    "adoptedVectors": "container:adoptedVectors",
     "parcels": {
       "@context": {
         "features": {
           "@context": {
+            "featureType": "@type",
             "Prism": {
               "@id": "geojson:Prism",
               "@context": {
@@ -622,8 +623,7 @@
           },
           "@id": "geojson:features",
           "@container": "@set"
-        },
-        "featureType": "@type"
+        }
       },
       "@id": "container:parcels"
     },

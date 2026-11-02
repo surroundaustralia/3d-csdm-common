@@ -37,17 +37,17 @@ _NB Publication of these models as Linked Data would allow access to documentati
 
 ## Building Blocks
 
-### `icsm.csdm.datatypes.quality` — SurveyQuality
-
-**Type:** schema
-
-A extensible quality descriptor object with standard properties for survey point and vector observations.
-
 ### `icsm.csdm.datatypes.annotation` — Generalised annotation
 
 **Type:** schema
 
 An annotation allowing multiple values, either links with descriptions or simple text.
+
+### `icsm.csdm.datatypes.quality` — SurveyQuality
+
+**Type:** schema
+
+A extensible quality descriptor object with standard properties for survey point and vector observations.
 
 ### `icsm.csdm.features.SurveyObservations` — Survey Observations
 

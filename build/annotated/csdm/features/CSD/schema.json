@@ -202,7 +202,8 @@
                     }
                   }
                 ]
-              }
+              },
+              "x-jsonld-id": "https://purl.org/geojson/vocab#features"
             }
           }
         }
@@ -213,7 +214,8 @@
         "features": {
           "items": {
             "$ref": "#/$defs/TopoVector"
-          }
+          },
+          "x-jsonld-id": "https://purl.org/geojson/vocab#features"
         }
       }
     }
@@ -377,7 +379,7 @@
                       "ObservedVector",
                       "surv:ObservedVector"
                     ],
-                    "x-jsonld-id": "@type"
+                    "x-jsonld-id": "https://purl.org/geojson/vocab#collectionFeatureType"
                   }
                 },
                 "required": [
@@ -401,7 +403,8 @@
                       "required": [
                         "featureType"
                       ]
-                    }
+                    },
+                    "x-jsonld-id": "https://purl.org/geojson/vocab#features"
                   }
                 }
               }
@@ -427,7 +430,7 @@
                       "AdoptedVector",
                       "surv:AdoptedVector"
                     ],
-                    "x-jsonld-id": "@type"
+                    "x-jsonld-id": "https://purl.org/geojson/vocab#collectionFeatureType"
                   }
                 },
                 "required": [
@@ -449,7 +452,8 @@
                       "required": [
                         "featureType"
                       ]
-                    }
+                    },
+                    "x-jsonld-id": "https://purl.org/geojson/vocab#features"
                   }
                 }
               }
@@ -475,7 +479,7 @@
                   "SecondaryParcel",
                   "surv:SecondaryParcel"
                 ],
-                "x-jsonld-id": "@type"
+                "x-jsonld-id": "https://purl.org/geojson/vocab#collectionFeatureType"
               }
             },
             "required": [
@@ -491,7 +495,7 @@
                       "PrimaryParcel",
                       "surv:PrimaryParcel"
                     ],
-                    "x-jsonld-id": "@type"
+                    "x-jsonld-id": "https://purl.org/geojson/vocab#collectionFeatureType"
                   }
                 },
                 "required": [
@@ -505,7 +509,7 @@
                       "SecondaryParcel",
                       "surv:SecondaryParcel"
                     ],
-                    "x-jsonld-id": "@type"
+                    "x-jsonld-id": "https://purl.org/geojson/vocab#collectionFeatureType"
                   },
                   "features": {
                     "type": "array",
@@ -517,7 +521,8 @@
                           ]
                         }
                       }
-                    }
+                    },
+                    "x-jsonld-id": "https://purl.org/geojson/vocab#features"
                   }
                 }
               }
@@ -577,7 +582,18 @@
     "CSD": "https://linked.data.gov.au/def/csdm/container/CSD",
     "address": "https://schema.org/address",
     "locality": "https://linked.data.gov.au/def/csdm/csd/locality",
-    "edges": "https://purl.org/geojson/topo#edges",
+    "edges": {
+      "x-jsonld-id": "https://purl.org/geojson/topo#edges",
+      "x-jsonld-context": {
+        "featureType": "https://purl.org/geojson/vocab#collectionFeatureType",
+        "features": {
+          "@id": "https://purl.org/geojson/vocab#features",
+          "@context": {
+            "featureType": "@type"
+          }
+        }
+      }
+    },
     "SubtendedAngle": "https://linked.data.gov.au/def/csdm/surveyfeatures/SubtendedAngle",
     "PrimaryParcel": {
       "x-jsonld-id": "https://w3id.org/ogc/ladm/parcels/PrimaryParcel",

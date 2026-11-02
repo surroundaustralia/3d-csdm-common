@@ -5,7 +5,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://linked.data.gov.au/def/csdm/csd-example/DP_572532> a geojson:FeatureCollection ;
+<https://linked.data.gov.au/def/csdm/csd-example/DP_572532> a container:CSD,
+        geojson:FeatureCollection ;
     rdfs:label "DP 572532" ;
     dct:time "2023-23-12" ;
     container:bearingRotation 0e+00 ;

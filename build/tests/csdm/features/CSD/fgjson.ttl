@@ -24,7 +24,8 @@
 @prefix topo: <https://purl.org/geojson/topo#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://linked.data.gov.au/def/csdm/csd-example/DP_572532> a geojson:FeatureCollection ;
+<https://linked.data.gov.au/def/csdm/csd-example/DP_572532> a container:CSD,
+        geojson:FeatureCollection ;
     rdfs:label "DP 572532" ;
     dct:time [ owlTime:hasTime "2022-05-23"^^xsd:date ] ;
     container:annotations [ ns1:relation <http://www.iana.org/assignments/relation/related> ;
@@ -49,10 +50,10 @@
             surv:state nz-monument-state:original ] ;
     surv:purpose nz-surveypoint-purpose:nonBoundary ;
     compoundname:name [ rdfs:label "ALP I DP 481392" ;
-            dct:hasPart [ rdfs:label "ALP I" ;
-                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
-                [ rdfs:label "DP 481392" ;
-                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Source> ] ] .
+            dct:hasPart [ rdfs:label "DP 481392" ;
+                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Source> ],
+                [ rdfs:label "ALP I" ;
+                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ] ] .
 
 <https://linked.data.gov.au/def/csdm/csd-example/obs> a sosa:ObservationCollection,
         geojson:FeatureCollection ;
@@ -68,8 +69,8 @@
     sosa:resultTime "2023-05-24T00:00:00+00:00"^^xsd:dateTime ;
     sosa:usedProcedure surveyproc:traverse .
 
-<https://linked.data.gov.au/def/csdm/csd-example/ov> a surv:ObservedVector,
-        geojson:FeatureCollection ;
+<https://linked.data.gov.au/def/csdm/csd-example/ov> a geojson:FeatureCollection ;
+    geojson:collectionFeatureType "surv:ObservedVector" ;
     geojson:features <https://linked.data.gov.au/def/csdm/csd-example/l973158> .
 
 <https://linked.data.gov.au/def/csdm/csd-example/points> a geojson:FeatureCollection ;
@@ -91,14 +92,14 @@
             surv:state nz-monument-state:original ] ;
     surv:purpose <https://linked.data.gov.au/def/csdm/csd-example/prm> ;
     compoundname:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
-            dct:hasPart [ rdfs:label "EQ9W" ;
-                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/geodeticStamp> ],
-                [ rdfs:label "C" ;
+            dct:hasPart [ rdfs:label "C" ;
                     compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
-                [ rdfs:label "RM" ;
-                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/MarkType> ],
+                [ rdfs:label "EQ9W" ;
+                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/geodeticStamp> ],
                 [ rdfs:label "DP" ;
                     compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/PlanType> ],
+                [ rdfs:label "RM" ;
+                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/MarkType> ],
                 [ rdfs:label "119552" ;
                     compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ] ] .
 

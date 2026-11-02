@@ -161,10 +161,10 @@ eg1:P1 a surv:BoundaryMark,
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 1.1e+00 2.7e+00 ) ] ;
     compoundname:name [ rdfs:label "IS I - DP 3333" ;
-            dct:hasPart [ rdfs:label "DP 3333" ;
-                    compoundname:namePartType eg1:Source ],
-                [ rdfs:label "IS I" ;
-                    compoundname:namePartType eg1:Stamp ] ] .
+            dct:hasPart [ rdfs:label "IS I" ;
+                    compoundname:namePartType eg1:Stamp ],
+                [ rdfs:label "DP 3333" ;
+                    compoundname:namePartType eg1:Source ] ] .
 
 
 ```
@@ -302,10 +302,10 @@ eg1:P2 a surv:GeodeticReferenceMark,
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 2.1e+00 3.7e+00 ) ] ;
     compoundname:name [ rdfs:label "IS II - DP 3333" ;
-            dct:hasPart [ rdfs:label "IS II" ;
-                    compoundname:namePartType eg1:Stamp ],
-                [ rdfs:label "DP 3333" ;
-                    compoundname:namePartType eg1:Source ] ] .
+            dct:hasPart [ rdfs:label "DP 3333" ;
+                    compoundname:namePartType eg1:Source ],
+                [ rdfs:label "IS II" ;
+                    compoundname:namePartType eg1:Stamp ] ] .
 
 
 ```

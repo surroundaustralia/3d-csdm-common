@@ -109,11 +109,13 @@ $defs:
                   - SurveyPoint
                   - OccupationMark
                   x-jsonld-id: '@type'
+          x-jsonld-id: https://purl.org/geojson/vocab#features
   VectorFeatures:
     properties:
       features:
         items:
           $ref: '#/$defs/TopoVector'
+        x-jsonld-id: https://purl.org/geojson/vocab#features
 allOf:
 - $ref: '#/$defs/FeatureCollectionOptions'
 - properties:
@@ -206,7 +208,7 @@ properties:
               enum:
               - ObservedVector
               - surv:ObservedVector
-              x-jsonld-id: '@type'
+              x-jsonld-id: https://purl.org/geojson/vocab#collectionFeatureType
           required:
           - featureType
         - properties:
@@ -221,6 +223,7 @@ properties:
                     - surv:SubtendedAngle
                 required:
                 - featureType
+              x-jsonld-id: https://purl.org/geojson/vocab#features
     x-jsonld-id: https://linked.data.gov.au/def/csdm/container/observedVectors
   adoptedVectors:
     type: array
@@ -233,7 +236,7 @@ properties:
               enum:
               - AdoptedVector
               - surv:AdoptedVector
-              x-jsonld-id: '@type'
+              x-jsonld-id: https://purl.org/geojson/vocab#collectionFeatureType
           required:
           - featureType
         - properties:
@@ -246,6 +249,7 @@ properties:
                     - surv:AdoptedVector
                 required:
                 - featureType
+              x-jsonld-id: https://purl.org/geojson/vocab#features
     x-jsonld-id: https://linked.data.gov.au/def/csdm/container/adoptedVectors
   parcels:
     type: array
@@ -259,7 +263,7 @@ properties:
             - surv:PrimaryParcel
             - SecondaryParcel
             - surv:SecondaryParcel
-            x-jsonld-id: '@type'
+            x-jsonld-id: https://purl.org/geojson/vocab#collectionFeatureType
         required:
         - featureType
       - oneOf:
@@ -268,7 +272,7 @@ properties:
               enum:
               - PrimaryParcel
               - surv:PrimaryParcel
-              x-jsonld-id: '@type'
+              x-jsonld-id: https://purl.org/geojson/vocab#collectionFeatureType
           required:
           - featureType
         - properties:
@@ -276,7 +280,7 @@ properties:
               enum:
               - SecondaryParcel
               - surv:SecondaryParcel
-              x-jsonld-id: '@type'
+              x-jsonld-id: https://purl.org/geojson/vocab#collectionFeatureType
             features:
               type: array
               items:
@@ -284,6 +288,7 @@ properties:
                   properties:
                     required:
                     - interests
+              x-jsonld-id: https://purl.org/geojson/vocab#features
     x-jsonld-id: https://linked.data.gov.au/def/csdm/container/parcels
   vectorObservations:
     type: array
@@ -318,7 +323,14 @@ x-jsonld-extra-terms:
   CSD: https://linked.data.gov.au/def/csdm/container/CSD
   address: https://schema.org/address
   locality: https://linked.data.gov.au/def/csdm/csd/locality
-  edges: https://purl.org/geojson/topo#edges
+  edges:
+    x-jsonld-id: https://purl.org/geojson/topo#edges
+    x-jsonld-context:
+      featureType: https://purl.org/geojson/vocab#collectionFeatureType
+      features:
+        '@id': https://purl.org/geojson/vocab#features
+        '@context':
+          featureType: '@type'
   SubtendedAngle: https://linked.data.gov.au/def/csdm/surveyfeatures/SubtendedAngle
   PrimaryParcel:
     x-jsonld-id: https://w3id.org/ogc/ladm/parcels/PrimaryParcel

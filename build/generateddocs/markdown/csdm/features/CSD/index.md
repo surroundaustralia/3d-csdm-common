@@ -4484,6 +4484,186 @@ This has a realistic set of features for a minimal survey (splitting a primary p
 @prefix topo: <https://purl.org/geojson/topo#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+eg2:11745104 a surv:GeodeticReferenceMark,
+        geojson:Feature ;
+    rdfs:comment "Brass circular plaque flush in channel" ;
+    ns1:qualityMeasure 5 ;
+    surv:fromSurvey eg2:DP_119552 ;
+    surv:geodeticid "EQ9W" ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
+            surv:form nz-monument-form:plaque ;
+            surv:state nz-monument-state:original ] ;
+    surv:purpose nz-surveypoint-purpose:prm ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.7475e+02 -3.69309e+01 ) ] ;
+    compoundname:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
+            dcterms:hasPart [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "C" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "EQ9W" ;
+                    compoundname:namePartType eg2:geodeticStamp ],
+                [ rdfs:label "RM" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "119552" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:11745160 a surv:CadastralMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 6 ;
+    surv:fromSurvey eg2:DP_119552 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
+            surv:form nz-monument-form:plaque ;
+            surv:state nz-monument-state:original ] ;
+    surv:purpose nz-surveypoint-purpose:non-boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747502e+02 -3.693074e+01 ) ] ;
+    compoundname:name [ rdfs:label "RM E DP 119552" ;
+            dcterms:hasPart [ rdfs:label "E" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "RM" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "119552" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:11745161 a surv:CadastralMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 6 ;
+    surv:fromSurvey eg2:DP_119552 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
+            surv:form nz-monument-form:plug ;
+            surv:state nz-monument-state:original ] ;
+    surv:purpose nz-surveypoint-purpose:non-boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747504e+02 -3.693037e+01 ) ] ;
+    compoundname:name [ rdfs:label "LP X DP 119552" ;
+            dcterms:hasPart [ rdfs:label "119552" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "LP" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "X" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:1725787 a surv:BoundaryMark,
+        geojson:Feature ;
+    rdfs:comment "ALP in channel of drive" ;
+    surv:fromSurvey eg2:DP_119552 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
+            surv:form nz-monument-form:plaque ;
+            surv:state nz-monument-state:original ] ;
+    surv:purpose nz-surveypoint-purpose:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747502e+02 -3.693074e+01 ) ] ;
+    compoundname:name [ rdfs:label "RM E DP 119552" ;
+            dcterms:hasPart [ rdfs:label "DP 119552" ;
+                    compoundname:namePartType eg2:Source ],
+                [ rdfs:label "RM E" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:29959289 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_119553 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:not-found-replaced ;
+            surv:form nz-monument-form:peg ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747505e+02 -3.693104e+01 ) ] ;
+    compoundname:name [ rdfs:label "Peg 3 DP 119553" ;
+            dcterms:hasPart [ rdfs:label "3" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "119553" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "Peg" ;
+                    compoundname:namePartType eg2:MarkType ] ] .
+
+eg2:29960715 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_119553 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:searched-for-not-found ;
+            surv:form nz-monument-form:peg ;
+            surv:state nz-monument-state:Adopted ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747508e+02 -3.693125e+01 ) ] ;
+    compoundname:name [ rdfs:label "Peg 6 DP 119553" ;
+            dcterms:hasPart [ rdfs:label "119553" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "6" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "Peg" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ] ] .
+
+eg2:29962820 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_119552 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
+            surv:form nz-monument-form:peg ;
+            surv:state nz-monument-state:adopted ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747512e+02 -3.693088e+01 ) ] ;
+    compoundname:name [ rdfs:label "Peg 4 DP 119552" ;
+            dcterms:hasPart [ rdfs:label "119552" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "4" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "Peg" ;
+                    compoundname:namePartType eg2:MarkType ] ] .
+
+eg2:29963073 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_119553 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
+            surv:form nz-monument-form:peg ;
+            surv:state nz-monument-state:adopted ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747513e+02 -3.693105e+01 ) ] ;
+    compoundname:name [ rdfs:label "Peg 8 DP 119553" ;
+            dcterms:hasPart [ rdfs:label "119553" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "8" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "Peg" ;
+                    compoundname:namePartType eg2:MarkType ] ] .
+
+eg2:29963182 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_119553 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
+            surv:form nz-monument-form:peg ;
+            surv:state nz-monument-state:adopted ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747513e+02 -3.693112e+01 ) ] ;
+    compoundname:name [ rdfs:label "Peg 7 DP 119553" ;
+            dcterms:hasPart [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "Peg" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "7" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "119553" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
 eg2:44396823 a surv:CadastralMark,
         geojson:Feature ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
@@ -4498,18 +4678,422 @@ eg2:44396823 a surv:CadastralMark,
                 [ rdfs:label "DP 481392" ;
                     compoundname:namePartType eg2:Source ] ] .
 
+eg2:44438410 a surv:CadastralMark,
+        geojson:Feature ;
+    rdfs:comment "ORM in channel above catch pits" ;
+    ns1:qualityMeasure 6 ;
+    surv:fromSurvey eg2:DP_119553 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
+            surv:form nz-monument-form:plaque ;
+            surv:state nz-monument-state:original ] ;
+    surv:purpose nz-surveypoint-purpose:prm ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747506e+02 -3.693119e+01 ) ] ;
+    compoundname:name [ rdfs:label "RM I DP 119553" ;
+            dcterms:hasPart [ rdfs:label "RM" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "I" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "119553" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:44438418 a surv:CadastralMark,
+        geojson:Feature ;
+    rdfs:comment "ALP in channel of drive" ;
+    ns1:qualityMeasure 6 ;
+    surv:fromSurvey eg2:DP_481392 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
+            surv:form nz-monument-form:pin ;
+            surv:state nz-monument-state:original ] ;
+    surv:purpose nz-surveypoint-purpose:non-boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747508e+02 -3.693141e+01 ) ] ;
+    compoundname:name [ rdfs:label "ALP I DP 481392" ;
+            dcterms:hasPart [ rdfs:label "ALP" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "481392" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "I" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:49655170 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_572532 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:mark-impractible ;
+            surv:form nz-monument-form:UNMK ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.74751e+02 -3.69312e+01 ) ] ;
+    compoundname:name [ rdfs:label "UNMK 14 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "14" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "UNMK" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "572532" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:49655171 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_572532 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
+            surv:form nz-monument-form:peg ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747505e+02 -3.693106e+01 ) ] ;
+    compoundname:name [ rdfs:label "DISK 15 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "15" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "Disk" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "572532" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ] ] .
+
+eg2:49655172 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_572532 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
+            surv:form nz-monument-form:Peg ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747508e+02 -3.693103e+01 ) ] ;
+    compoundname:name [ rdfs:label "Peg 18 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "572532" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "Peg" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "18" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:49655173 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_572532 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
+            surv:form nz-monument-form:Peg ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747507e+02 -3.693102e+01 ) ] ;
+    compoundname:name [ rdfs:label "Peg 19 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "19" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "Peg" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "572532" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ] ] .
+
+eg2:49655174 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_572532 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
+            surv:form nz-monument-form:UNMK ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747509e+02 -3.693096e+01 ) ] ;
+    compoundname:name [ rdfs:label "UNMK 20 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "20" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "UNMK" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "572532" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:49655175 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_572532 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
+            surv:form nz-monument-form:UNMK ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747511e+02 -3.693118e+01 ) ] ;
+    compoundname:name [ rdfs:label "UNMK 21 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "UNMK" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "572532" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "21" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:49655176 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
+            surv:form nz-monument-form:UNMK ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747509e+02 -3.693099e+01 ) ] ;
+    compoundname:name [ rdfs:label "UNMK 22 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "22" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "UNMK" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "572532" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ] ] .
+
+eg2:49655177 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
+            surv:form nz-monument-form:UNMK ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.74751e+02 -3.693099e+01 ) ] ;
+    compoundname:name [ rdfs:label "UNMK 23 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "UNMK" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "23" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "572532" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:49655178 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
+            surv:form nz-monument-form:UNMK ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.74751e+02 -3.6931e+01 ) ] ;
+    compoundname:name [ rdfs:label "UNMK 24 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "24" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "UNMK" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "572532" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:49655179 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
+            surv:form nz-monument-form:UNMK ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.74751e+02 -3.693103e+01 ) ] ;
+    compoundname:name [ rdfs:label "UNMK 25 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "572532" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "UNMK" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "25" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:49655180 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
+            surv:form nz-monument-form:UNMK ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.74751e+02 -3.693105e+01 ) ] ;
+    compoundname:name [ rdfs:label "UNMK 26 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "UNMK" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "572532" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "26" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:49655181 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
+            surv:form nz-monument-form:UNMK ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.74751e+02 -3.693107e+01 ) ] ;
+    compoundname:name [ rdfs:label "UNMK 27 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "572532" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "UNMK" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "27" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:49655182 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
+            surv:form nz-monument-form:UNMK ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.74751e+02 -3.693109e+01 ) ] ;
+    compoundname:name [ rdfs:label "UNMK 28 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "572532" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "28" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "UNMK" ;
+                    compoundname:namePartType eg2:MarkType ] ] .
+
+eg2:49655183 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
+            surv:form nz-monument-form:UNMK ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.74751e+02 -3.693111e+01 ) ] ;
+    compoundname:name [ rdfs:label "UNMK 29 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "572532" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "UNMK" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "29" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:49655184 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 8 ;
+    surv:fromSurvey eg2:DP_572532 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
+            surv:form nz-monument-form:UNMK ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.74751e+02 -3.693117e+01 ) ] ;
+    compoundname:name [ rdfs:label "UNMK 30 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "572532" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "30" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "UNMK" ;
+                    compoundname:namePartType eg2:MarkType ] ] .
+
+eg2:49655185 a surv:CadastralMark,
+        geojson:Feature ;
+    rdfs:comment "Flush in conc" ;
+    ns1:qualityMeasure 6 ;
+    surv:fromSurvey eg2:DP_572532 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
+            surv:form nz-monument-form:pin ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose <icsm:prm> ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747504e+02 -3.693097e+01 ) ] ;
+    compoundname:name [ rdfs:label "AP 1 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "AP" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "1" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "572532" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:49655186 a surv:CadastralMark,
+        geojson:Feature ;
+    rdfs:comment "ORM in channel above catch pits" ;
+    ns1:qualityMeasure 6 ;
+    surv:fromSurvey eg2:DP_119553 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
+            surv:form nz-monument-form:plaque ;
+            surv:state nz-monument-state:original ] ;
+    surv:purpose nz-surveypoint-purpose:non-boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747502e+02 -3.693093e+01 ) ] ;
+    compoundname:name [ rdfs:label "RM H DP 119553" ;
+            dcterms:hasPart [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "119553" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "RM" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "H" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
+eg2:49655187 a surv:BoundaryMark,
+        geojson:Feature ;
+    ns1:qualityMeasure 7 ;
+    surv:fromSurvey eg2:DP_572532 ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
+            surv:form nz-monument-form:Peg ;
+            surv:state nz-monument-state:new ] ;
+    surv:purpose eg2:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.74751e+02 -3.693118e+01 ) ] ;
+    compoundname:name [ rdfs:label "Peg 38 DP 572532" ;
+            dcterms:hasPart [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "Peg" ;
+                    compoundname:namePartType eg2:MarkType ],
+                [ rdfs:label "38" ;
+                    compoundname:namePartType eg2:Stamp ],
+                [ rdfs:label "572532" ;
+                    compoundname:namePartType eg2:Stamp ] ] .
+
 eg2:8446454 a geojson:Feature ;
     geojson:topology [ a geojson:Polygon ;
             topo:relatedFeatures ( ( eg2:l535242 eg2:l535759 eg2:l985190 eg2:l952702 eg2:l965727 eg2:l589282 ) ) ] ;
     parcel:appellation [ rdfs:label "Lot 1 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "1" ;
-                    compoundname:namePartType eg2:ParcelIdentifier ],
-                [ rdfs:label "572532" ;
+            dcterms:hasPart [ rdfs:label "572532" ;
                     compoundname:namePartType eg2:PlanIdentifier ],
-                [ rdfs:label "Lot" ;
-                    compoundname:namePartType eg2:ParcelType ],
                 [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ] ] ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "1" ;
+                    compoundname:namePartType eg2:ParcelIdentifier ],
+                [ rdfs:label "Lot" ;
+                    compoundname:namePartType eg2:ParcelType ] ] ;
     parcel:interest [ parcel:interestLink eg2:1040074 ;
             parcel:interestType <nz-interest-type:fh> ] ;
     parcel:purpose <nz-parcel-purpose:fst> ;
@@ -4521,14 +5105,14 @@ eg2:8446455 a geojson:Feature ;
     geojson:topology [ a geojson:Polygon ;
             topo:relatedFeatures ( ( eg2:l746686 eg2:l999724 eg2:l591175 eg2:l369793 eg2:l435861 eg2:l874826 eg2:l952702 eg2:l985190 eg2:l535759 eg2:l535242 eg2:l329256 ) ) ] ;
     parcel:appellation [ rdfs:label "Lot 2 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "Lot" ;
+            dcterms:hasPart [ rdfs:label "2" ;
+                    compoundname:namePartType eg2:ParcelIdentifier ],
+                [ rdfs:label "Lot" ;
                     compoundname:namePartType eg2:ParcelType ],
                 [ rdfs:label "DP" ;
                     compoundname:namePartType eg2:PlanType ],
                 [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:PlanIdentifier ],
-                [ rdfs:label "2" ;
-                    compoundname:namePartType eg2:ParcelIdentifier ] ] ;
+                    compoundname:namePartType eg2:PlanIdentifier ] ] ;
     parcel:interest [ parcel:interestLink eg2:1040075 ;
             parcel:interestType <nz-interest-type:fh> ] ;
     parcel:purpose <nz-parcel-purpose:fst> ;
@@ -4541,14 +5125,14 @@ eg2:8446456 a geojson:Feature,
     geojson:topology [ a geojson:Polygon ;
             topo:relatedFeatures ( ( eg2:l999724 eg2:l591175 eg2:l369793 eg2:l435861 eg2:l345344 eg2:l685716 eg2:l832940 eg2:l715872 eg2:l641327 eg2:l852048 eg2:l949729 eg2:l951515 eg2:l761760 eg2:l580762 ) ) ] ;
     parcel:appellation [ rdfs:label "Area Z DP 572532" ;
-            dcterms:hasPart [ rdfs:label "Z" ;
+            dcterms:hasPart [ rdfs:label "DP" ;
+                    compoundname:namePartType eg2:PlanType ],
+                [ rdfs:label "Z" ;
                     compoundname:namePartType eg2:ParcelIdentifier ],
                 [ rdfs:label "572532" ;
                     compoundname:namePartType eg2:PlanIdentifier ],
                 [ rdfs:label "Area" ;
-                    compoundname:namePartType eg2:ParcelType ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ] ] ;
+                    compoundname:namePartType eg2:ParcelType ] ] ;
     parcel:interest [ parcel:interestLink eg2:1040075 ;
             parcel:interestType <nz-interest-type:fh> ] ;
     parcel:purpose <nz-parcel-purpose:c-l> ;
@@ -4599,81 +5183,51 @@ eg2:adoptedVectors a geojson:FeatureCollection ;
         eg2:l636624,
         eg2:l947230 .
 
-eg2:covenants a geojson:FeatureCollection,
-        parcel:SecondaryParcel ;
+eg2:covenants a geojson:FeatureCollection ;
+    geojson:collectionFeatureType "SecondaryParcel" ;
     geojson:features eg2:8446456 .
 
 eg2:l388393 a geojson:Feature ;
-    container:purpose eg2:radiation ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655185 eg2:49655172 ) ] .
+    container:purpose eg2:radiation .
 
 eg2:l472486 a geojson:Feature ;
-    container:purpose eg2:traverse ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:11745160 eg2:49655185 ) ] .
+    container:purpose eg2:traverse .
 
 eg2:l520719 a geojson:Feature ;
-    container:purpose eg2:adoption ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:44438410 eg2:49655186 ) ] .
+    container:purpose eg2:adoption .
 
 eg2:l595769 a geojson:Feature ;
-    container:purpose eg2:adoption ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:44438410 eg2:29960715 ) ],
-        [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:44438418 eg2:29960715 ) ] .
+    container:purpose eg2:adoption .
 
 eg2:l599462 a geojson:Feature ;
-    container:purpose eg2:radiation ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655185 eg2:49655171 ) ] .
+    container:purpose eg2:radiation .
 
 eg2:l622186 a geojson:Feature ;
-    container:purpose eg2:adoption ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:44438418 eg2:29959289 ) ] .
+    container:purpose eg2:adoption .
 
 eg2:l636624 a geojson:Feature ;
-    container:purpose eg2:adoption ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:11745104 eg2:49655186 ) ] .
+    container:purpose eg2:adoption .
 
 eg2:l773277 a geojson:Feature ;
-    container:purpose eg2:traverse ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655185 eg2:44438410 ) ] .
+    container:purpose eg2:traverse .
 
 eg2:l818068 a geojson:Feature ;
-    container:purpose eg2:calculation ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655185 eg2:49655170 ) ] .
+    container:purpose eg2:calculation .
 
 eg2:l910380 a geojson:Feature ;
-    container:purpose eg2:traverse ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:11745160 eg2:11745161 ) ] .
+    container:purpose eg2:traverse .
 
 eg2:l922788 a geojson:Feature ;
-    container:purpose eg2:radiation ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655185 eg2:49655186 ) ] .
+    container:purpose eg2:radiation .
 
 eg2:l941613 a geojson:Feature ;
-    container:purpose eg2:radiation ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655185 eg2:49655187 ) ] .
+    container:purpose eg2:radiation .
 
 eg2:l947230 a geojson:Feature ;
-    container:purpose eg2:adoption ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:11745104 eg2:44438418 ) ] .
+    container:purpose eg2:adoption .
 
 eg2:l973158 a geojson:Feature ;
-    container:purpose eg2:traverse ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:1725787 eg2:11745104 ) ] .
+    container:purpose eg2:traverse .
 
 eg2:observedVectors a geojson:FeatureCollection ;
     geojson:collectionFeatureType "ObservedVector" ;
@@ -4709,8 +5263,8 @@ eg2:observedVectors a geojson:FeatureCollection ;
         eg2:l985190,
         eg2:l999724 .
 
-eg2:primaryparcels a geojson:FeatureCollection,
-        parcel:PrimaryParcel ;
+eg2:primaryparcels a geojson:FeatureCollection ;
+    geojson:collectionFeatureType "PrimaryParcel" ;
     geojson:features eg2:8446454,
         eg2:8446455 .
 
@@ -4733,713 +5287,81 @@ eg2:vectorobservations-gps a sosa:ObservationCollection,
 
 <https://linked.data.gov.au/def/csdm/sensors/s2> a <icsm-equipment-type:gnss> .
 
-eg2:11745161 a surv:CadastralMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 6 ;
-    surv:fromSurvey eg2:DP_119552 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
-            surv:form nz-monument-form:plug ;
-            surv:state nz-monument-state:original ] ;
-    surv:purpose nz-surveypoint-purpose:non-boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747504e+02 -3.693037e+01 ) ] ;
-    compoundname:name [ rdfs:label "LP X DP 119552" ;
-            dcterms:hasPart [ rdfs:label "LP" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "X" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "119552" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ] ] .
-
-eg2:1725787 a surv:BoundaryMark,
-        geojson:Feature ;
-    rdfs:comment "ALP in channel of drive" ;
-    surv:fromSurvey eg2:DP_119552 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
-            surv:form nz-monument-form:plaque ;
-            surv:state nz-monument-state:original ] ;
-    surv:purpose nz-surveypoint-purpose:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747502e+02 -3.693074e+01 ) ] ;
-    compoundname:name [ rdfs:label "RM E DP 119552" ;
-            dcterms:hasPart [ rdfs:label "DP 119552" ;
-                    compoundname:namePartType eg2:Source ],
-                [ rdfs:label "RM E" ;
-                    compoundname:namePartType eg2:Stamp ] ] .
-
 eg2:l329256 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:29959289 eg2:49655171 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l345344 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655184 eg2:49655175 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l566592 a geojson:Feature ;
-    container:purpose eg2:radiation ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:11745160 eg2:44438418 ) ] .
+    container:purpose eg2:radiation .
 
 eg2:l580762 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655174 eg2:49655176 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l589282 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655171 eg2:29960715 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l641327 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655180 eg2:49655181 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l685716 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655183 eg2:49655184 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l715872 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655181 eg2:49655182 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l746686 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:29959289 eg2:49655174 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l761760 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655176 eg2:49655177 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l832940 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655182 eg2:49655183 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l852048 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655179 eg2:49655180 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l874826 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655175 eg2:49655170 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l949729 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655178 eg2:49655179 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l951515 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655177 eg2:49655178 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l965727 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655170 eg2:29960715 ) ] .
-
-eg2:29962820 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 7 ;
-    surv:fromSurvey eg2:DP_119552 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
-            surv:form nz-monument-form:peg ;
-            surv:state nz-monument-state:adopted ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747512e+02 -3.693088e+01 ) ] ;
-    compoundname:name [ rdfs:label "Peg 4 DP 119552" ;
-            dcterms:hasPart [ rdfs:label "119552" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "Peg" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "4" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ] ] .
-
-eg2:29963073 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 7 ;
-    surv:fromSurvey eg2:DP_119553 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
-            surv:form nz-monument-form:peg ;
-            surv:state nz-monument-state:adopted ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747513e+02 -3.693105e+01 ) ] ;
-    compoundname:name [ rdfs:label "Peg 8 DP 119553" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "119553" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "Peg" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "8" ;
-                    compoundname:namePartType eg2:Stamp ] ] .
-
-eg2:29963182 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 7 ;
-    surv:fromSurvey eg2:DP_119553 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
-            surv:form nz-monument-form:peg ;
-            surv:state nz-monument-state:adopted ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747513e+02 -3.693112e+01 ) ] ;
-    compoundname:name [ rdfs:label "Peg 7 DP 119553" ;
-            dcterms:hasPart [ rdfs:label "Peg" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "119553" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "7" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ] ] .
-
-eg2:49655173 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 7 ;
-    surv:fromSurvey eg2:DP_572532 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
-            surv:form nz-monument-form:Peg ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747507e+02 -3.693102e+01 ) ] ;
-    compoundname:name [ rdfs:label "Peg 19 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "19" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "Peg" ;
-                    compoundname:namePartType eg2:MarkType ] ] .
-
-eg2:49655176 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 8 ;
-    surv:fromSurvey eg2:DP_572532 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
-            surv:form nz-monument-form:UNMK ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747509e+02 -3.693099e+01 ) ] ;
-    compoundname:name [ rdfs:label "UNMK 22 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "22" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "UNMK" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:Stamp ] ] .
-
-eg2:49655177 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 8 ;
-    surv:fromSurvey eg2:DP_572532 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
-            surv:form nz-monument-form:UNMK ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.74751e+02 -3.693099e+01 ) ] ;
-    compoundname:name [ rdfs:label "UNMK 23 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "23" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "UNMK" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:Stamp ] ] .
-
-eg2:49655178 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 8 ;
-    surv:fromSurvey eg2:DP_572532 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
-            surv:form nz-monument-form:UNMK ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.74751e+02 -3.6931e+01 ) ] ;
-    compoundname:name [ rdfs:label "UNMK 24 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "24" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "UNMK" ;
-                    compoundname:namePartType eg2:MarkType ] ] .
-
-eg2:49655179 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 8 ;
-    surv:fromSurvey eg2:DP_572532 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
-            surv:form nz-monument-form:UNMK ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.74751e+02 -3.693103e+01 ) ] ;
-    compoundname:name [ rdfs:label "UNMK 25 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "25" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "UNMK" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ] ] .
-
-eg2:49655180 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 8 ;
-    surv:fromSurvey eg2:DP_572532 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
-            surv:form nz-monument-form:UNMK ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.74751e+02 -3.693105e+01 ) ] ;
-    compoundname:name [ rdfs:label "UNMK 26 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "26" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "UNMK" ;
-                    compoundname:namePartType eg2:MarkType ] ] .
-
-eg2:49655181 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 8 ;
-    surv:fromSurvey eg2:DP_572532 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
-            surv:form nz-monument-form:UNMK ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.74751e+02 -3.693107e+01 ) ] ;
-    compoundname:name [ rdfs:label "UNMK 27 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "UNMK" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "27" ;
-                    compoundname:namePartType eg2:Stamp ] ] .
-
-eg2:49655182 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 8 ;
-    surv:fromSurvey eg2:DP_572532 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
-            surv:form nz-monument-form:UNMK ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.74751e+02 -3.693109e+01 ) ] ;
-    compoundname:name [ rdfs:label "UNMK 28 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "28" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "UNMK" ;
-                    compoundname:namePartType eg2:MarkType ] ] .
-
-eg2:49655183 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 8 ;
-    surv:fromSurvey eg2:DP_572532 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
-            surv:form nz-monument-form:UNMK ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.74751e+02 -3.693111e+01 ) ] ;
-    compoundname:name [ rdfs:label "UNMK 29 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "29" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "UNMK" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:Stamp ] ] .
-
-eg2:49655184 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 8 ;
-    surv:fromSurvey eg2:DP_572532 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
-            surv:form nz-monument-form:UNMK ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.74751e+02 -3.693117e+01 ) ] ;
-    compoundname:name [ rdfs:label "UNMK 30 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "30" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "UNMK" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:Stamp ] ] .
+    container:purpose eg2:boundary .
 
 eg2:l369793 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:29963073 eg2:29963182 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l435861 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:29963182 eg2:49655175 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l535242 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655171 eg2:49655173 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l535759 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655173 eg2:49655172 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l591175 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:29962820 eg2:29963073 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l952702 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655187 eg2:49655170 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l985190 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655172 eg2:49655187 ) ] .
+    container:purpose eg2:boundary .
 
 eg2:l999724 a geojson:Feature ;
-    container:purpose eg2:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( eg2:49655174 eg2:29962820 ) ] .
-
-eg2:11745104 a surv:GeodeticReferenceMark,
-        geojson:Feature ;
-    rdfs:comment "Brass circular plaque flush in channel" ;
-    ns1:qualityMeasure 5 ;
-    surv:fromSurvey eg2:DP_119552 ;
-    surv:geodeticid "EQ9W" ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
-            surv:form nz-monument-form:plaque ;
-            surv:state nz-monument-state:original ] ;
-    surv:purpose nz-surveypoint-purpose:prm ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.7475e+02 -3.69309e+01 ) ] ;
-    compoundname:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
-            dcterms:hasPart [ rdfs:label "RM" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "119552" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "EQ9W" ;
-                    compoundname:namePartType eg2:geodeticStamp ],
-                [ rdfs:label "C" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ] ] .
-
-eg2:11745160 a surv:CadastralMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 6 ;
-    surv:fromSurvey eg2:DP_119552 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
-            surv:form nz-monument-form:plaque ;
-            surv:state nz-monument-state:original ] ;
-    surv:purpose nz-surveypoint-purpose:non-boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747502e+02 -3.693074e+01 ) ] ;
-    compoundname:name [ rdfs:label "RM E DP 119552" ;
-            dcterms:hasPart [ rdfs:label "119552" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "E" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "RM" ;
-                    compoundname:namePartType eg2:MarkType ] ] .
-
-eg2:29959289 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 7 ;
-    surv:fromSurvey eg2:DP_119553 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:not-found-replaced ;
-            surv:form nz-monument-form:peg ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747505e+02 -3.693104e+01 ) ] ;
-    compoundname:name [ rdfs:label "Peg 3 DP 119553" ;
-            dcterms:hasPart [ rdfs:label "119553" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "Peg" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "3" ;
-                    compoundname:namePartType eg2:Stamp ] ] .
-
-eg2:44438410 a surv:CadastralMark,
-        geojson:Feature ;
-    rdfs:comment "ORM in channel above catch pits" ;
-    ns1:qualityMeasure 6 ;
-    surv:fromSurvey eg2:DP_119553 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
-            surv:form nz-monument-form:plaque ;
-            surv:state nz-monument-state:original ] ;
-    surv:purpose nz-surveypoint-purpose:prm ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747506e+02 -3.693119e+01 ) ] ;
-    compoundname:name [ rdfs:label "RM I DP 119553" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "RM" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "119553" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "I" ;
-                    compoundname:namePartType eg2:Stamp ] ] .
-
-eg2:49655172 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 7 ;
-    surv:fromSurvey eg2:DP_572532 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
-            surv:form nz-monument-form:Peg ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747508e+02 -3.693103e+01 ) ] ;
-    compoundname:name [ rdfs:label "Peg 18 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "18" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "Peg" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ] ] .
-
-eg2:49655174 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 7 ;
-    surv:fromSurvey eg2:DP_572532 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
-            surv:form nz-monument-form:UNMK ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747509e+02 -3.693096e+01 ) ] ;
-    compoundname:name [ rdfs:label "UNMK 20 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "20" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "UNMK" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ] ] .
-
-eg2:49655175 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 7 ;
-    surv:fromSurvey eg2:DP_572532 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:not-specified ;
-            surv:form nz-monument-form:UNMK ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747511e+02 -3.693118e+01 ) ] ;
-    compoundname:name [ rdfs:label "UNMK 21 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "21" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "UNMK" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:Stamp ] ] .
-
-eg2:49655186 a surv:CadastralMark,
-        geojson:Feature ;
-    rdfs:comment "ORM in channel above catch pits" ;
-    ns1:qualityMeasure 6 ;
-    surv:fromSurvey eg2:DP_119553 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
-            surv:form nz-monument-form:plaque ;
-            surv:state nz-monument-state:original ] ;
-    surv:purpose nz-surveypoint-purpose:non-boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747502e+02 -3.693093e+01 ) ] ;
-    compoundname:name [ rdfs:label "RM H DP 119553" ;
-            dcterms:hasPart [ rdfs:label "119553" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "RM" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "H" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ] ] .
-
-eg2:49655187 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 7 ;
-    surv:fromSurvey eg2:DP_572532 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
-            surv:form nz-monument-form:Peg ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.74751e+02 -3.693118e+01 ) ] ;
-    compoundname:name [ rdfs:label "Peg 38 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "Peg" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "38" ;
-                    compoundname:namePartType eg2:Stamp ] ] .
-
-eg2:29960715 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 7 ;
-    surv:fromSurvey eg2:DP_119553 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:searched-for-not-found ;
-            surv:form nz-monument-form:peg ;
-            surv:state nz-monument-state:Adopted ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747508e+02 -3.693125e+01 ) ] ;
-    compoundname:name [ rdfs:label "Peg 6 DP 119553" ;
-            dcterms:hasPart [ rdfs:label "Peg" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "6" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "119553" ;
-                    compoundname:namePartType eg2:Stamp ] ] .
-
-eg2:44438418 a surv:CadastralMark,
-        geojson:Feature ;
-    rdfs:comment "ALP in channel of drive" ;
-    ns1:qualityMeasure 6 ;
-    surv:fromSurvey eg2:DP_481392 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:mark-found ;
-            surv:form nz-monument-form:pin ;
-            surv:state nz-monument-state:original ] ;
-    surv:purpose nz-surveypoint-purpose:non-boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747508e+02 -3.693141e+01 ) ] ;
-    compoundname:name [ rdfs:label "ALP I DP 481392" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "481392" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "ALP" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "I" ;
-                    compoundname:namePartType eg2:Stamp ] ] .
-
-eg2:49655170 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 7 ;
-    surv:fromSurvey eg2:DP_572532 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:mark-impractible ;
-            surv:form nz-monument-form:UNMK ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.74751e+02 -3.69312e+01 ) ] ;
-    compoundname:name [ rdfs:label "UNMK 14 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "14" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "UNMK" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ] ] .
-
-eg2:49655171 a surv:BoundaryMark,
-        geojson:Feature ;
-    ns1:qualityMeasure 7 ;
-    surv:fromSurvey eg2:DP_572532 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
-            surv:form nz-monument-form:peg ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose eg2:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747505e+02 -3.693106e+01 ) ] ;
-    compoundname:name [ rdfs:label "DISK 15 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "Disk" ;
-                    compoundname:namePartType eg2:MarkType ],
-                [ rdfs:label "15" ;
-                    compoundname:namePartType eg2:Stamp ] ] .
+    container:purpose eg2:boundary .
 
 eg2:DP_119552 rdfs:label "DP 119552" ;
     dcterms:time [ time:hasTime "2022-02-11"^^xsd:date ] ;
     container:bearingRotation 0e+00 .
-
-eg2:49655185 a surv:CadastralMark,
-        geojson:Feature ;
-    rdfs:comment "Flush in conc" ;
-    ns1:qualityMeasure 6 ;
-    surv:fromSurvey eg2:DP_572532 ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:reliably-placed ;
-            surv:form nz-monument-form:pin ;
-            surv:state nz-monument-state:new ] ;
-    surv:purpose <icsm:prm> ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747504e+02 -3.693097e+01 ) ] ;
-    compoundname:name [ rdfs:label "AP 1 DP 572532" ;
-            dcterms:hasPart [ rdfs:label "1" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType eg2:PlanType ],
-                [ rdfs:label "572532" ;
-                    compoundname:namePartType eg2:Stamp ],
-                [ rdfs:label "AP" ;
-                    compoundname:namePartType eg2:MarkType ] ] .
 
 eg2:DP_572532 a geojson:FeatureCollection ;
     rdfs:label "DP 572532" ;
@@ -6044,7 +5966,8 @@ A simplified example with no parcels - just the edge and observations pattern
 @prefix topo: <https://purl.org/geojson/topo#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://linked.data.gov.au/def/csdm/csd-example/DP_572532> a geojson:FeatureCollection ;
+<https://linked.data.gov.au/def/csdm/csd-example/DP_572532> a container:CSD,
+        geojson:FeatureCollection ;
     rdfs:label "DP 572532" ;
     dcterms:time [ time:hasTime "2022-05-23"^^xsd:date ] ;
     container:annotations [ ns2:relation <http://www.iana.org/assignments/relation/related> ;
@@ -6060,6 +5983,43 @@ A simplified example with no parcels - just the edge and observations pattern
     topo:edges <https://linked.data.gov.au/def/csdm/csd-example/ov> ;
     geojson:collectionFeatureType "CSD" .
 
+<https://linked.data.gov.au/def/csdm/csd-example/11745104> a surv:GeodeticReferenceMark,
+        geojson:Feature ;
+    surv:geodeticid "XX FFF" ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
+            surv:form nz-monument-form:pin ;
+            surv:state nz-monument-state:original ] ;
+    surv:purpose <https://linked.data.gov.au/def/csdm/csd-example/prm> ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.7475e+02 -3.69309e+01 ) ] ;
+    compoundname:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
+            dcterms:hasPart [ rdfs:label "RM" ;
+                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/MarkType> ],
+                [ rdfs:label "C" ;
+                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
+                [ rdfs:label "119552" ;
+                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
+                [ rdfs:label "EQ9W" ;
+                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/geodeticStamp> ],
+                [ rdfs:label "DP" ;
+                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/PlanType> ] ] .
+
+<https://linked.data.gov.au/def/csdm/csd-example/1725787> a surv:BoundaryMark,
+        geojson:Feature ;
+    rdfs:comment "ALP in channel of drive" ;
+    surv:fromSurvey <https://linked.data.gov.au/def/csdm/csd-example/DP_119552> ;
+    surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
+            surv:form nz-monument-form:plaque ;
+            surv:state nz-monument-state:original ] ;
+    surv:purpose nz-surveypoint-purpose:boundary ;
+    geojson:geometry [ a geojson:Point ;
+            geojson:coordinates ( 1.747502e+02 -3.693074e+01 ) ] ;
+    compoundname:name [ rdfs:label "RM E DP 119552" ;
+            dcterms:hasPart [ rdfs:label "DP 119552" ;
+                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Source> ],
+                [ rdfs:label "RM E" ;
+                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ] ] .
+
 <https://linked.data.gov.au/def/csdm/csd-example/44396823> a surv:CadastralMark,
         geojson:Feature ;
     surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
@@ -6069,10 +6029,10 @@ A simplified example with no parcels - just the edge and observations pattern
     geojson:geometry [ a geojson:Point ;
             geojson:coordinates ( 1.747508e+02 -3.693141e+01 ) ] ;
     compoundname:name [ rdfs:label "ALP I DP 481392" ;
-            dcterms:hasPart [ rdfs:label "ALP I" ;
-                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
-                [ rdfs:label "DP 481392" ;
-                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Source> ] ] .
+            dcterms:hasPart [ rdfs:label "DP 481392" ;
+                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Source> ],
+                [ rdfs:label "ALP I" ;
+                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ] ] .
 
 <https://linked.data.gov.au/def/csdm/csd-example/obs> a sosa:ObservationCollection,
         geojson:FeatureCollection ;
@@ -6097,51 +6057,12 @@ A simplified example with no parcels - just the edge and observations pattern
         <https://linked.data.gov.au/def/csdm/csd-example/1725787>,
         <https://linked.data.gov.au/def/csdm/csd-example/44396823> .
 
-<https://linked.data.gov.au/def/csdm/csd-example/11745104> a surv:GeodeticReferenceMark,
-        geojson:Feature ;
-    surv:geodeticid "XX FFF" ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
-            surv:form nz-monument-form:pin ;
-            surv:state nz-monument-state:original ] ;
-    surv:purpose <https://linked.data.gov.au/def/csdm/csd-example/prm> ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.7475e+02 -3.69309e+01 ) ] ;
-    compoundname:name [ rdfs:label "RM C DP 119552 (EQ9W)" ;
-            dcterms:hasPart [ rdfs:label "RM" ;
-                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/MarkType> ],
-                [ rdfs:label "119552" ;
-                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
-                [ rdfs:label "EQ9W" ;
-                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/geodeticStamp> ],
-                [ rdfs:label "C" ;
-                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
-                [ rdfs:label "DP" ;
-                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/PlanType> ] ] .
-
-<https://linked.data.gov.au/def/csdm/csd-example/1725787> a surv:BoundaryMark,
-        geojson:Feature ;
-    rdfs:comment "ALP in channel of drive" ;
-    surv:fromSurvey <https://linked.data.gov.au/def/csdm/csd-example/DP_119552> ;
-    surv:monumentedBy [ surv:condition nz-monument-condition:markfound ;
-            surv:form nz-monument-form:plaque ;
-            surv:state nz-monument-state:original ] ;
-    surv:purpose nz-surveypoint-purpose:boundary ;
-    geojson:geometry [ a geojson:Point ;
-            geojson:coordinates ( 1.747502e+02 -3.693074e+01 ) ] ;
-    compoundname:name [ rdfs:label "RM E DP 119552" ;
-            dcterms:hasPart [ rdfs:label "RM E" ;
-                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Stamp> ],
-                [ rdfs:label "DP 119552" ;
-                    compoundname:namePartType <https://linked.data.gov.au/def/csdm/csd-example/Source> ] ] .
-
 <https://linked.data.gov.au/def/csdm/csd-example/DP_119552> rdfs:label "DP 119552" ;
     dcterms:time [ time:hasTime "2022-05-23"^^xsd:date ] ;
     container:bearingRotation 1e-03 .
 
 <https://linked.data.gov.au/def/csdm/csd-example/l973158> a geojson:Feature ;
-    container:purpose nz-line-purpose:boundary ;
-    geojson:topology [ a topo:Edge ;
-            topo:relatedFeatures ( <https://linked.data.gov.au/def/csdm/csd-example/1725787> <https://linked.data.gov.au/def/csdm/csd-example/11745104> ) ] .
+    container:purpose nz-line-purpose:boundary .
 
 
 ```
@@ -6260,11 +6181,13 @@ $defs:
                   - SurveyPoint
                   - OccupationMark
                   x-jsonld-id: '@type'
+          x-jsonld-id: https://purl.org/geojson/vocab#features
   VectorFeatures:
     properties:
       features:
         items:
           $ref: '#/$defs/TopoVector'
+        x-jsonld-id: https://purl.org/geojson/vocab#features
 allOf:
 - $ref: '#/$defs/FeatureCollectionOptions'
 - properties:
@@ -6357,7 +6280,7 @@ properties:
               enum:
               - ObservedVector
               - surv:ObservedVector
-              x-jsonld-id: '@type'
+              x-jsonld-id: https://purl.org/geojson/vocab#collectionFeatureType
           required:
           - featureType
         - properties:
@@ -6372,6 +6295,7 @@ properties:
                     - surv:SubtendedAngle
                 required:
                 - featureType
+              x-jsonld-id: https://purl.org/geojson/vocab#features
     x-jsonld-id: https://linked.data.gov.au/def/csdm/container/observedVectors
   adoptedVectors:
     type: array
@@ -6384,7 +6308,7 @@ properties:
               enum:
               - AdoptedVector
               - surv:AdoptedVector
-              x-jsonld-id: '@type'
+              x-jsonld-id: https://purl.org/geojson/vocab#collectionFeatureType
           required:
           - featureType
         - properties:
@@ -6397,6 +6321,7 @@ properties:
                     - surv:AdoptedVector
                 required:
                 - featureType
+              x-jsonld-id: https://purl.org/geojson/vocab#features
     x-jsonld-id: https://linked.data.gov.au/def/csdm/container/adoptedVectors
   parcels:
     type: array
@@ -6410,7 +6335,7 @@ properties:
             - surv:PrimaryParcel
             - SecondaryParcel
             - surv:SecondaryParcel
-            x-jsonld-id: '@type'
+            x-jsonld-id: https://purl.org/geojson/vocab#collectionFeatureType
         required:
         - featureType
       - oneOf:
@@ -6419,7 +6344,7 @@ properties:
               enum:
               - PrimaryParcel
               - surv:PrimaryParcel
-              x-jsonld-id: '@type'
+              x-jsonld-id: https://purl.org/geojson/vocab#collectionFeatureType
           required:
           - featureType
         - properties:
@@ -6427,7 +6352,7 @@ properties:
               enum:
               - SecondaryParcel
               - surv:SecondaryParcel
-              x-jsonld-id: '@type'
+              x-jsonld-id: https://purl.org/geojson/vocab#collectionFeatureType
             features:
               type: array
               items:
@@ -6435,6 +6360,7 @@ properties:
                   properties:
                     required:
                     - interests
+              x-jsonld-id: https://purl.org/geojson/vocab#features
     x-jsonld-id: https://linked.data.gov.au/def/csdm/container/parcels
   vectorObservations:
     type: array
@@ -6469,7 +6395,14 @@ x-jsonld-extra-terms:
   CSD: https://linked.data.gov.au/def/csdm/container/CSD
   address: https://schema.org/address
   locality: https://linked.data.gov.au/def/csdm/csd/locality
-  edges: https://purl.org/geojson/topo#edges
+  edges:
+    x-jsonld-id: https://purl.org/geojson/topo#edges
+    x-jsonld-context:
+      featureType: https://purl.org/geojson/vocab#collectionFeatureType
+      features:
+        '@id': https://purl.org/geojson/vocab#features
+        '@context':
+          featureType: '@type'
   SubtendedAngle: https://linked.data.gov.au/def/csdm/surveyfeatures/SubtendedAngle
   PrimaryParcel:
     x-jsonld-id: https://w3id.org/ogc/ladm/parcels/PrimaryParcel
@@ -6696,7 +6629,17 @@ Links to the schema:
     "CSD": "container:CSD",
     "address": "sdo:address",
     "locality": "csd:locality",
-    "edges": "topo:edges",
+    "edges": {
+      "@id": "topo:edges",
+      "@context": {
+        "features": {
+          "@id": "geojson:features",
+          "@context": {
+            "featureType": "@type"
+          }
+        }
+      }
+    },
     "SubtendedAngle": "surv:SubtendedAngle",
     "PrimaryParcel": {
       "@id": "parcel:PrimaryParcel",
@@ -6949,22 +6892,13 @@ Links to the schema:
       },
       "@id": "container:points"
     },
-    "observedVectors": {
-      "@context": {
-        "featureType": "@type"
-      },
-      "@id": "container:observedVectors"
-    },
-    "adoptedVectors": {
-      "@context": {
-        "featureType": "@type"
-      },
-      "@id": "container:adoptedVectors"
-    },
+    "observedVectors": "container:observedVectors",
+    "adoptedVectors": "container:adoptedVectors",
     "parcels": {
       "@context": {
         "features": {
           "@context": {
+            "featureType": "@type",
             "Prism": {
               "@id": "geojson:Prism",
               "@context": {
@@ -7126,8 +7060,7 @@ Links to the schema:
           },
           "@id": "geojson:features",
           "@container": "@set"
-        },
-        "featureType": "@type"
+        }
       },
       "@id": "container:parcels"
     },
