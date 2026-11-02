@@ -102,7 +102,7 @@ An example observation of a vector based on bearing and distance - in 2D
 [] a geojson:Feature ;
     sosa:hasFeatureOfInterest <file:///github/workspace/l973158> ;
     sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;
-                    geopose:angles [ ] ] ] ;
+                    geopose:angles [ geopose:yaw 2.3138e+02 ] ] ] ;
     sosa:hasResultQuality [ ns1:angleAccuracyClass <http://any.valid/> ;
             ns1:angleAccuracyMeasure 2.815469e-02 ;
             ns1:distanceAccuracyClass <http://any.valid/> ;
@@ -190,7 +190,8 @@ An example observation of a vector based on bearing,pitch (azimuth angle) and di
 [] a geojson:Feature ;
     sosa:hasFeatureOfInterest <file:///github/workspace/l973158> ;
     sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;
-                    geopose:angles [ ] ] ] ;
+                    geopose:angles [ geopose:pitch -1e-03 ;
+                            geopose:yaw 2.3138e+02 ] ] ] ;
     sosa:madeBySensor [ a ns1:DifferentialGPS ;
             ns1:baseSensor "gps+38666" ;
             ns1:roverSensor "gps+37544" ] ;
@@ -337,7 +338,8 @@ Example Survey Observation - vector only bearing
 
 [] a geojson:Feature ;
     sosa:hasFeatureOfInterest <file:///github/workspace/l973158> ;
-    sosa:hasResult [ surv:pose [ geopose:angles [ ] ] ] ;
+    sosa:hasResult [ surv:pose [ geopose:angles [ geopose:pitch -1e-03 ;
+                            geopose:yaw 2.3138e+02 ] ] ] ;
     sosa:madeBySensor [ a ns1:DifferentialGPS ;
             ns1:baseSensor "gps+38666" ;
             ns1:roverSensor "gps+37544" ] ;
@@ -442,8 +444,8 @@ Example Collection of Survey Observations
 @prefix distancetype: <https://linked.data.gov.au/def/csdm/defs/distancetypes/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
 @prefix geopose: <https://linked.data.gov.au/def/csdm/utils/geopose/> .
-@prefix ns1: <https://linked.data.gov.au/def/csdm/surveyobs/> .
-@prefix ns2: <https://linked.data.gov.au/def/csdm/sensors/> .
+@prefix ns1: <https://linked.data.gov.au/def/csdm/sensors/> .
+@prefix ns2: <https://linked.data.gov.au/def/csdm/surveyobs/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix surv: <https://linked.data.gov.au/def/csdm/surveyfeatures/> .
 @prefix surveyable: <https://linked.data.gov.au/def/csdm/defs/surveyableproperties/> .
@@ -455,15 +457,16 @@ Example Collection of Survey Observations
     sosa:hasMember [ a geojson:Feature ;
             sosa:hasFeatureOfInterest <http://www.example.com/features/l973158> ;
             sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;
-                            geopose:angles [ ] ] ] ] ;
-    sosa:madeBySensor [ a ns2:DifferentialGPS ;
-            ns2:baseSensor "gps+38666" ;
-            ns2:roverSensor "gps+37544" ] ;
+                            geopose:angles [ geopose:pitch -1e-03 ;
+                                    geopose:yaw 2.3138e+02 ] ] ] ] ;
+    sosa:madeBySensor [ a ns1:DifferentialGPS ;
+            ns1:baseSensor "gps+38666" ;
+            ns1:roverSensor "gps+37544" ] ;
     sosa:observedProperty surveyable:VectorDetermination ;
     sosa:resultTime "2023-05-24T00:00:00"^^xsd:dateTime ;
     sosa:usedProcedure surveyproc:traverse ;
-    ns1:angleType angletype:bearing ;
-    ns1:distanceType distancetype:ellipsoidal .
+    ns2:angleType angletype:bearing ;
+    ns2:distanceType distancetype:ellipsoidal .
 
 
 ```
@@ -510,10 +513,13 @@ $defs:
     properties:
       yaw:
         type: number
+        x-jsonld-id: https://linked.data.gov.au/def/csdm/utils/geopose/yaw
       pitch:
         type: number
+        x-jsonld-id: https://linked.data.gov.au/def/csdm/utils/geopose/pitch
       roll:
         type: number
+        x-jsonld-id: https://linked.data.gov.au/def/csdm/utils/geopose/roll
     required:
     - yaw
   pose-lenient:
@@ -537,6 +543,7 @@ $defs:
             x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/pose
           angle:
             type: number
+            x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/angle
           distance:
             type: number
             x-jsonld-id: https://linked.data.gov.au/def/csdm/surveyfeatures/distance
@@ -617,6 +624,9 @@ anyOf:
 - $ref: '#/$defs/SurveyVectorObsFeature'
 - $ref: '#/$defs/SurveyVectorObsCollection'
 x-jsonld-extra-terms:
+  yaw: https://linked.data.gov.au/def/csdm/utils/geopose/yaw
+  pitch: https://linked.data.gov.au/def/csdm/utils/geopose/pitch
+  roll: https://linked.data.gov.au/def/csdm/utils/geopose/roll
   hasResult:
     x-jsonld-id: http://www.w3.org/ns/sosa/hasResult
     x-jsonld-type: '@id'
@@ -637,11 +647,12 @@ x-jsonld-extra-terms:
               pitch: https://linked.data.gov.au/def/csdm/utils/geopose/pitch
               roll: https://linked.data.gov.au/def/csdm/utils/geopose/roll
       distance: https://linked.data.gov.au/def/csdm/surveyfeatures/distance
+      angle: https://linked.data.gov.au/def/csdm/surveyfeatures/angle
 x-jsonld-prefixes:
   csdm: https://linked.data.gov.au/def/csdm/
+  geopose: https://linked.data.gov.au/def/csdm/utils/geopose/
   sosa: http://www.w3.org/ns/sosa/
   surv: https://linked.data.gov.au/def/csdm/surveyfeatures/
-  geopose: https://linked.data.gov.au/def/csdm/utils/geopose/
   geo: http://www.w3.org/2003/01/geo/wgs84_pos#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   dct: http://purl.org/dc/terms/
@@ -653,7 +664,7 @@ x-bblocks-metadata:
   itemIdentifier: icsm.csdm.features.SurveyObservations
   register: https://surroundaustralia.github.io/3d-csdm-common/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-10-27'
+  dateOfLastChange: '2026-11-02'
 
 ```
 
@@ -1265,6 +1276,7 @@ Links to the schema:
           },
           "@id": "csdm:surveyfeatures/pose"
         },
+        "angle": "csdm:surveyfeatures/angle",
         "distance": "csdm:surveyfeatures/distance"
       },
       "@id": "sosa:hasResult",
@@ -1275,6 +1287,9 @@ Links to the schema:
       "@id": "sosa:hasInputValue",
       "@type": "@id"
     },
+    "yaw": "csdm:utils/geopose/yaw",
+    "pitch": "csdm:utils/geopose/pitch",
+    "roll": "csdm:utils/geopose/roll",
     "geojson": "https://purl.org/geojson/vocab#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "oa": "http://www.w3.org/ns/oa#",
@@ -1285,8 +1300,8 @@ Links to the schema:
     "ssn-system": "ssn:systems/",
     "ssn": "http://www.w3.org/ns/ssn/",
     "csdm": "https://linked.data.gov.au/def/csdm/",
-    "surv": "csdm:surveyfeatures/",
     "geopose": "csdm:utils/geopose/",
+    "surv": "csdm:surveyfeatures/",
     "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
     "angletype": "csdm:defs/angletypes/",
     "distancetype": "csdm:defs/distancetypes/",

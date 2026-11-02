@@ -294,6 +294,7 @@ properties:
     type: array
     items:
       $ref: https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/features/SurveyObservations/schema.yaml#/$defs/SurveyVectorObsCollection
+    x-jsonld-id: https://linked.data.gov.au/def/csdm/container/adoptedObservations
   occupationObservations:
     type: array
     items:
@@ -318,6 +319,7 @@ x-jsonld-extra-terms:
   address: https://schema.org/address
   locality: https://linked.data.gov.au/def/csdm/csd/locality
   edges: https://purl.org/geojson/topo#edges
+  SubtendedAngle: https://linked.data.gov.au/def/csdm/surveyfeatures/SubtendedAngle
   PrimaryParcel:
     x-jsonld-id: https://w3id.org/ogc/ladm/parcels/PrimaryParcel
     x-jsonld-type: '@id'
@@ -330,10 +332,10 @@ x-jsonld-prefixes:
   sdo: https://schema.org/
   csd: https://linked.data.gov.au/def/csdm/csd/
   topo: https://purl.org/geojson/topo#
-  parcel: https://w3id.org/ogc/ladm/parcels/
   surv: https://linked.data.gov.au/def/csdm/surveyfeatures/
+  parcel: https://w3id.org/ogc/ladm/parcels/
 x-bblocks-metadata:
   itemIdentifier: icsm.csdm.features.CSD
   register: https://surroundaustralia.github.io/3d-csdm-common/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-10-27'
+  dateOfLastChange: '2026-11-02'

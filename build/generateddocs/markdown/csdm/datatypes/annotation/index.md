@@ -105,7 +105,7 @@ x-bblocks-metadata:
   itemIdentifier: icsm.csdm.datatypes.annotation
   register: https://surroundaustralia.github.io/3d-csdm-common/build/register.json
   version: '0.1'
-  dateOfLastChange: '2026-10-27'
+  dateOfLastChange: '2026-11-02'
 
 ```
 

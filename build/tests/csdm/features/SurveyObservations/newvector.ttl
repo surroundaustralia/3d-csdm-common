@@ -9,7 +9,7 @@
 [] a geojson:Feature ;
     sosa:hasFeatureOfInterest <file:///github/workspace/l973158> ;
     sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;
-                    geopose:angles [ ] ] ] ;
+                    geopose:angles [ geopose:yaw 2.3138e+02 ] ] ] ;
     sosa:hasResultQuality [ ns1:angleAccuracyClass <http://any.valid/> ;
             ns1:angleAccuracyMeasure 2.815469e-02 ;
             ns1:distanceAccuracyClass <http://any.valid/> ;

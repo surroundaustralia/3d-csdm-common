@@ -109,12 +109,6 @@
           "@container": "@list"
         },
         "directed_references": {
-          "@context": {
-            "ref": {
-              "@type": "@id",
-              "@id": "topo:ref"
-            }
-          },
           "@id": "topo:directedReferences",
           "@container": "@list"
         },
@@ -174,11 +168,11 @@
           "@context": {
             "ref": {
               "@type": "@id",
-              "@id": "commonpatterns:namePartRef"
+              "@id": "compoundname:namePartRef"
             },
             "type": {
               "@type": "@id",
-              "@id": "commonpatterns:namePartType"
+              "@id": "compoundname:namePartType"
             }
           },
           "@id": "dct:hasPart"
@@ -214,21 +208,37 @@
       "@type": "@id"
     },
     "AdoptedVector": {
+      "@id": "surv:AdoptedVector",
+      "@type": "@id"
+    },
+    "SurveyedVector": {
       "@id": "surv:SurveyedVector",
       "@type": "@id"
     },
+    "SurveyPoint": {
+      "@id": "surv:SurveyPoint",
+      "@type": "@id"
+    },
+    "SurveyMark": {
+      "@id": "surv:SurveyMark",
+      "@type": "@id"
+    },
+    "OccupationMark": {
+      "@id": "surv:OccupationMark",
+      "@type": "@id"
+    },
     "name": {
-      "@id": "commonpatterns:name",
+      "@id": "compoundname:name",
       "@context": {
         "hasPart": {
           "@context": {
             "ref": {
               "@type": "@id",
-              "@id": "commonpatterns:namePartRef"
+              "@id": "compoundname:namePartRef"
             },
             "type": {
               "@type": "@id",
-              "@id": "commonpatterns:namePartType"
+              "@id": "compoundname:namePartType"
             }
           },
           "@id": "dct:hasPart"
@@ -236,7 +246,7 @@
       }
     },
     "label": "rdfs:label",
-    "CompoundName": "commonpatterns:CompoundName",
+    "CompoundName": "compoundname:CompoundName",
     "activityType": "@type",
     "agentType": "@type",
     "entityType": "@type",
@@ -569,7 +579,10 @@
     "arcLength": "geojson:arcLength",
     "startTangentVector": "geojson:startTangentVector",
     "endTangentVector": "geojson:endTangentVector",
-    "ref": "topo:ref",
+    "ref": {
+      "@id": "topo:ref",
+      "@type": "@id"
+    },
     "orientation": "topo:orientation",
     "Edge": "topo:Edge",
     "Face": "topo:Face",
@@ -577,6 +590,7 @@
     "Shell": "topo:Shell",
     "Solid": "topo:Solid",
     "AggregateSolid": "topo:AggregateSolid",
+    "AggregatePolygon": "topo:AggregatePolygon",
     "rings": {
       "@id": "topo:rings",
       "@container": "@list"
@@ -592,7 +606,8 @@
     "geojson": "https://purl.org/geojson/vocab#",
     "surv": "csdm:surveyfeatures/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "commonpatterns": "https://w3id.org/ogc/utils/label/",
+    "commonpatterns": "csdm:commonpatterns/",
+    "compoundname": "https://w3id.org/ogc/utils/label/",
     "csdm": "https://linked.data.gov.au/def/csdm/",
     "geosparql": "http://www.opengis.net/ont/geosparql#",
     "dct": "http://purl.org/dc/terms/",

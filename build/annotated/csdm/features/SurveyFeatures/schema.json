@@ -58,12 +58,12 @@
         },
         "ptQuality": {
           "$ref": "#/$defs/coderef",
-          "x-jsonld-id": "https://w3id.org/ogc/utils/label/qualityClass",
+          "x-jsonld-id": "https://linked.data.gov.au/def/csdm/commonpatterns/qualityClass",
           "x-jsonld-type": "@id"
         },
         "ptQualityMeasure": {
           "type": "number",
-          "x-jsonld-id": "https://w3id.org/ogc/utils/label/qualityMeasure",
+          "x-jsonld-id": "https://linked.data.gov.au/def/csdm/commonpatterns/qualityMeasure",
           "x-jsonld-type": "@id"
         },
         "comment": {
@@ -379,11 +379,11 @@
       "x-jsonld-type": "@id"
     },
     "ptQuality": {
-      "x-jsonld-id": "https://w3id.org/ogc/utils/label/qualityClass",
+      "x-jsonld-id": "https://linked.data.gov.au/def/csdm/commonpatterns/qualityClass",
       "x-jsonld-type": "@id"
     },
     "ptQualityMeasure": {
-      "x-jsonld-id": "https://w3id.org/ogc/utils/label/qualityMeasure",
+      "x-jsonld-id": "https://linked.data.gov.au/def/csdm/commonpatterns/qualityMeasure",
       "x-jsonld-type": "@id"
     },
     "GeodeticReferenceMark": {
@@ -395,7 +395,23 @@
       "x-jsonld-type": "@id"
     },
     "AdoptedVector": {
+      "x-jsonld-id": "https://linked.data.gov.au/def/csdm/surveyfeatures/AdoptedVector",
+      "x-jsonld-type": "@id"
+    },
+    "SurveyedVector": {
       "x-jsonld-id": "https://linked.data.gov.au/def/csdm/surveyfeatures/SurveyedVector",
+      "x-jsonld-type": "@id"
+    },
+    "SurveyPoint": {
+      "x-jsonld-id": "https://linked.data.gov.au/def/csdm/surveyfeatures/SurveyPoint",
+      "x-jsonld-type": "@id"
+    },
+    "SurveyMark": {
+      "x-jsonld-id": "https://linked.data.gov.au/def/csdm/surveyfeatures/SurveyMark",
+      "x-jsonld-type": "@id"
+    },
+    "OccupationMark": {
+      "x-jsonld-id": "https://linked.data.gov.au/def/csdm/surveyfeatures/OccupationMark",
       "x-jsonld-type": "@id"
     },
     "name": "https://w3id.org/ogc/utils/label/name",
@@ -405,7 +421,8 @@
     "geojson": "https://purl.org/geojson/vocab#",
     "surv": "https://linked.data.gov.au/def/csdm/surveyfeatures/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "commonpatterns": "https://w3id.org/ogc/utils/label/",
+    "commonpatterns": "https://linked.data.gov.au/def/csdm/commonpatterns/",
+    "compoundname": "https://w3id.org/ogc/utils/label/",
     "csdm": "https://linked.data.gov.au/def/csdm/",
     "geosparql": "http://www.opengis.net/ont/geosparql#",
     "dct": "http://purl.org/dc/terms/"
@@ -414,6 +431,6 @@
     "itemIdentifier": "icsm.csdm.features.SurveyFeatures",
     "register": "https://surroundaustralia.github.io/3d-csdm-common/build/register.json",
     "version": "0.1",
-    "dateOfLastChange": "2026-10-27"
+    "dateOfLastChange": "2026-11-02"
   }
 }

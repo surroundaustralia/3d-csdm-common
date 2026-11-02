@@ -597,6 +597,7 @@
           },
           "@id": "csdm:surveyfeatures/pose"
         },
+        "angle": "csdm:surveyfeatures/angle",
         "distance": "csdm:surveyfeatures/distance"
       },
       "@id": "sosa:hasResult",
@@ -607,6 +608,9 @@
       "@id": "sosa:hasInputValue",
       "@type": "@id"
     },
+    "yaw": "csdm:utils/geopose/yaw",
+    "pitch": "csdm:utils/geopose/pitch",
+    "roll": "csdm:utils/geopose/roll",
     "geojson": "https://purl.org/geojson/vocab#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "oa": "http://www.w3.org/ns/oa#",
@@ -617,8 +621,8 @@
     "ssn-system": "ssn:systems/",
     "ssn": "http://www.w3.org/ns/ssn/",
     "csdm": "https://linked.data.gov.au/def/csdm/",
-    "surv": "csdm:surveyfeatures/",
     "geopose": "csdm:utils/geopose/",
+    "surv": "csdm:surveyfeatures/",
     "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
     "angletype": "csdm:defs/angletypes/",
     "distancetype": "csdm:defs/distancetypes/",

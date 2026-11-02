@@ -14,7 +14,8 @@
     sosa:hasMember [ a geojson:Feature ;
             sosa:hasFeatureOfInterest <file:///github/workspace/l973158> ;
             sosa:hasResult [ surv:pose [ surv:distance 3.332071e+05 ;
-                            geopose:angles [ ] ] ] ] ;
+                            geopose:angles [ geopose:pitch -1e-03 ;
+                                    geopose:yaw 2.3138e+02 ] ] ] ] ;
     sosa:madeBySensor [ a <https://linked.data.gov.au/def/csdm/sensors/someCustomSensor> ] ;
     sosa:observedProperty surveyable:VectorDetermination ;
     sosa:resultTime "2023-05-24T16:41:00"^^xsd:dateTime ;

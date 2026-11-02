@@ -179,10 +179,10 @@ path	@id	schema
 /_anyOf/0/properties/hasResultQuality/angleAccuracyClass	https://linked.data.gov.au/def/csdm/surveyobs/angleAccuracyClass	https://surroundaustralia.github.io/3d-csdm-common/build/annotated/csdm/datatypes/quality/schema.yaml
 /_anyOf/0/properties/hasResult/pose	https://linked.data.gov.au/def/csdm/surveyfeatures/pose	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
 /_anyOf/0/properties/hasResult/pose/angles	https://linked.data.gov.au/def/csdm/utils/geopose/angles	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
-/_anyOf/0/properties/hasResult/pose/angles/yaw		/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
-/_anyOf/0/properties/hasResult/pose/angles/pitch		/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
-/_anyOf/0/properties/hasResult/pose/angles/roll		/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
-/_anyOf/0/properties/hasResult/angle		/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
+/_anyOf/0/properties/hasResult/pose/angles/yaw	https://linked.data.gov.au/def/csdm/utils/geopose/yaw	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
+/_anyOf/0/properties/hasResult/pose/angles/pitch	https://linked.data.gov.au/def/csdm/utils/geopose/pitch	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
+/_anyOf/0/properties/hasResult/pose/angles/roll	https://linked.data.gov.au/def/csdm/utils/geopose/roll	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
+/_anyOf/0/properties/hasResult/angle	https://linked.data.gov.au/def/csdm/surveyfeatures/angle	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
 /_anyOf/0/properties/hasResult/distance	https://linked.data.gov.au/def/csdm/surveyfeatures/distance	/github/workspace/build/annotated/csdm/features/SurveyObservations/schema.yaml
 /_anyOf/1/resultTime	http://www.w3.org/ns/sosa/resultTime	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.yaml
 /_anyOf/1/phenomenonTime	http://www.w3.org/ns/sosa/phenomenonTime	https://opengeospatial.github.io/ogcapi-sosa/build/annotated/sosa/properties/executionCollection/schema.yaml

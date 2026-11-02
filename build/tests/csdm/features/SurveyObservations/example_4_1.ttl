@@ -7,7 +7,8 @@
 
 [] a geojson:Feature ;
     sosa:hasFeatureOfInterest <file:///github/workspace/l973158> ;
-    sosa:hasResult [ surv:pose [ geopose:angles [ ] ] ] ;
+    sosa:hasResult [ surv:pose [ geopose:angles [ geopose:pitch -1e-03 ;
+                            geopose:yaw 2.3138e+02 ] ] ] ;
     sosa:madeBySensor [ a ns1:DifferentialGPS ;
             ns1:baseSensor "gps+38666" ;
             ns1:roverSensor "gps+37544" ] ;
